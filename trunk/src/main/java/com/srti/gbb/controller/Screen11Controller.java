@@ -59,6 +59,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        setNextQuestionsAndAnswersToLabels();
     }
     
         @Override
@@ -70,32 +71,82 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToScreen10(ActionEvent event) 
     {
-        navigator.navigateTo(ScreensFramework.screen9ID);
+        if(qC==0)
+        {
+            navigator.navigateTo(ScreensFramework.screen9ID);
+            
+            
+        }
+        else
+        {
+            setPreviousQuestionsAndAnswersToLabels();
+        }
     }
 
     @FXML
     private void goToScreen12(ActionEvent event) 
     {
-        getNextQuestions();
+        setNextQuestionsAndAnswersToLabels();
     }
 
-    int questionCounter=4;
-    int ansCounter=1;
-    String Q="Q";
-    String O="O";
+    private int qC=0;
     
-    private void getNextQuestions() {
+    private String Q="Q";   
+
+    private void setNextQuestionsAndAnswersToLabels() 
+    {
         
-        q1.setText(GlobalConstants.getProperty(Q+questionCounter));
-        
-        q1o1.setText(GlobalConstants.getProperty(Q+questionCounter+GlobalConstants.underscore+O+ansCounter));
-        ansCounter++;
-        
-        q1o2.setText(GlobalConstants.getProperty(Q+questionCounter+GlobalConstants.underscore+O+ansCounter));
-        ansCounter++;
-        
-        q1o3.setText(GlobalConstants.getProperty(Q+questionCounter+GlobalConstants.underscore+O+ansCounter));
-        ansCounter=1;
+            qC++;
+            q1.setText(GlobalConstants.getProperty(Q+qC));
+            
+            q1o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
+            q1o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
+            q1o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            
+            qC++;
+                    
+            q2.setText(GlobalConstants.getProperty(Q+qC));
+            
+            q2o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
+            q2o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
+            q2o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            
+            qC++;
+                    
+            q3.setText(GlobalConstants.getProperty(Q+qC));
+            
+            q3o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
+            q3o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
+            q3o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+    }
+    
+    private void setPreviousQuestionsAndAnswersToLabels() 
+    {
+//        if(qC>3)
+//        {
+//            qC=qC-3;
+//        }
+            
+            q3.setText(GlobalConstants.getProperty(Q+qC));
+            
+            q3o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
+            q3o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
+            q3o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            qC--;
+            
+            q2.setText(GlobalConstants.getProperty(Q+qC));
+            
+            q2o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
+            q2o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
+            q2o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            qC--;
+            
+            q1.setText(GlobalConstants.getProperty(Q+qC));
+            
+            q1o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
+            q1o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
+            q1o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            qC--;
         
     }
     
