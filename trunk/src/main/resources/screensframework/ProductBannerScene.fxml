@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="38.3828125" prefWidth="800.0" styleClass="root, bannerBg" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.ProductBannerSceneController">
+  <children>
+    <Label fx:id="productLabel" graphicTextGap="4.0" prefHeight="55.00007792968245" prefWidth="456.9999000000025" style="" styleClass="banner-text" text="%ProductLabel" textAlignment="LEFT" textFill="WHITE" wrapText="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+      <font>
+        <Font size="22.0" />
+      </font>
+    </Label>
+    <Label onMouseClicked="#closeApplication" prefHeight="25.3828125" prefWidth="55.0" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="4.14" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.86" />
+  </children>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>
