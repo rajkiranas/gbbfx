@@ -26,10 +26,10 @@
     </AnchorPane>
     <GridPane id="GridPane" layoutX="19.0" layoutY="105.0" prefHeight="180.0" prefWidth="220.0">
       <children>
-        <Label fx:id="q1" styleClass="questionsStyle" text="%Q1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <CheckBox id="chkQ1" fx:id="q1o1" mnemonicParsing="false" styleClass="answersStyle" text="%Q1_1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <CheckBox fx:id="q1o2" mnemonicParsing="false" styleClass="answersStyle" text="%Q1_2" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <CheckBox fx:id="q1o3" mnemonicParsing="false" styleClass="answersStyle" text="%Q1_3" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label fx:id="q1" styleClass="questionsStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <CheckBox id="chkQ1" fx:id="q1o1" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <CheckBox fx:id="q1o2" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <CheckBox fx:id="q1o3" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
         <Separator prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
       </children>
       <columnConstraints>
@@ -46,10 +46,10 @@
     <Separator layoutX="256.0" layoutY="90.0" orientation="VERTICAL" prefHeight="200.0" />
     <GridPane id="GridPane" layoutX="286.0" layoutY="105.0" prefHeight="180.0" prefWidth="245.0">
       <children>
-        <Label fx:id="q2" styleClass="questionsStyle" text="%Q2" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <CheckBox fx:id="q2o1" mnemonicParsing="false" styleClass="answersStyle" text="%Q2_1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <CheckBox fx:id="q2o2" mnemonicParsing="false" styleClass="answersStyle" text="%Q2_2" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <CheckBox fx:id="q2o3" mnemonicParsing="false" styleClass="answersStyle" text="%Q2_3" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label fx:id="q2" styleClass="questionsStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <CheckBox fx:id="q2o1" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <CheckBox fx:id="q2o2" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <CheckBox fx:id="q2o3" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
         <Separator prefWidth="245.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
       </children>
       <columnConstraints>
@@ -66,10 +66,10 @@
     <Separator layoutX="545.0" layoutY="87.0" orientation="VERTICAL" prefHeight="200.0" />
     <GridPane id="GridPane" layoutX="571.0" layoutY="105.0" prefHeight="180.0" prefWidth="212.0">
       <children>
-        <Label fx:id="q3" styleClass="questionsStyle" text="%Q3" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <CheckBox fx:id="q3o1" mnemonicParsing="false" styleClass="answersStyle" text="%Q3_1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <CheckBox fx:id="q3o2" mnemonicParsing="false" styleClass="answersStyle" text="%Q3_2" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <CheckBox fx:id="q3o3" mnemonicParsing="false" styleClass="answersStyle" text="%Q3_3" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label fx:id="q3" styleClass="questionsStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <CheckBox fx:id="q3o1" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <CheckBox fx:id="q3o2" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <CheckBox fx:id="q3o3" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
         <Separator prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
       </children>
       <columnConstraints>

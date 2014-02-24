@@ -80,4 +80,7 @@ public class GlobalConstants {
     public static final String Entertainment_List="Entertainment_List";
     public static final String Lbl_Vehicle_Type_Options="Lbl_Vehicle_Type_Options";
     public static final String underscore="_";
+    public static final String ONE="1";
+    public static final String TWO="2";
+    public static final String THREE="3";
 }
