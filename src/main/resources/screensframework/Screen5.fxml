@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen5Controller">
+  <children>
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="65.0" layoutY="8.0" styleClass="screenHeading" text="%Family_Education_Heading">
+          <textFill>
+            <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
+          </textFill>
+        </Label>
+      </children>
+      <stylesheets>
+        <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <AnchorPane layoutX="61.0" layoutY="87.0" prefHeight="258.0" prefWidth="679.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="44.0" layoutY="32.0" prefHeight="161.0" prefWidth="621.0">
+          <children>
+            <Label text="%Lbl_Father" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Mother" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox id="cmbFamilyMember" fx:id="cmbFM1" prefWidth="91.0" promptText="%Lbl_Family_Member" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbFatherHQ" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbMotherHQ" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbFMHQ" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbFatherOccupation" prefHeight="21.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbMotherOccupation" prefHeight="21.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox id="cmbFM" fx:id="cmbFMOccupation" prefHeight="21.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbFatherProfession" prefHeight="21.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbMotherProfession" prefHeight="21.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbFMProfession" prefHeight="21.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbFatherIncome" prefHeight="21.0" prefWidth="83.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbMotherIncome" prefHeight="21.0" prefWidth="83.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbFMIncome" prefHeight="21.0" prefWidth="83.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="104.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="147.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="123.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="124.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="123.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <Button fx:id="btnAddFM" layoutX="452.0" layoutY="210.0" mnemonicParsing="false" onAction="#addFamilyMember" text="%Btn_Add_Family_Member" />
+      </children>
+      <stylesheets>
+        <URL value="@../styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="357.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen4" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="359.0" prefHeight="43.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen6" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfx/src/main/resources/styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>

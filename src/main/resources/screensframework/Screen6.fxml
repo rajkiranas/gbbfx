@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen6Controller">
+  <children>
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <AnchorPane layoutX="1.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="25.0" layoutY="8.0" styleClass="screenHeading" text="%Friends_Heading" textFill="#2e7c95" />
+      </children>
+      <stylesheets>
+        <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <AnchorPane layoutX="26.0" layoutY="100.0" prefHeight="257.0" prefWidth="749.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="25.0" layoutY="26.0" prefHeight="168.0" prefWidth="699.0">
+          <children>
+            <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtFrnd2" maxWidth="-Infinity" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtFrnd3" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbQualFrnd1" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbQualFrnd2" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbQualFrnd3" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbOccupationFrnd1" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbOccupationFrnd2" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbOccupationFrnd3" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbProfessionFrnd1" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbProfessionFrnd2" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbProfessionFrnd3" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbIncomeFrnd1" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbIncomeFrnd2" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbIncomeFrnd3" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="255.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="132.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="109.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="109.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="94.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <Button layoutX="605.0" layoutY="208.0" mnemonicParsing="false" onAction="#addFriendsToList" text="%Btn_Add_More_Friends" />
+      </children>
+    </AnchorPane>
+    <HBox alignment="CENTER_RIGHT" layoutX="270.0" layoutY="357.0" prefHeight="43.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen7" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="357.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen5" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>

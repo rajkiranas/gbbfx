@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen1Controller">
+  <children>
+    <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <Label layoutX="14.0" layoutY="10.0" styleClass="screenHeading" text="%First_Screen_Heading">
+          <textFill>
+            <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label layoutX="432.0" layoutY="10.0" styleClass="screenHeading" text="%Second_Screen_Heading" textFill="$x1" />
+      </children>
+      <stylesheets>
+        <URL value="@../styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="42.00000011920929" prefWidth="268.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="267.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen0" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="268.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen2" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+    <AnchorPane layoutX="10.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="257.0" prefWidth="408.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="34.0" layoutY="7.0" prefHeight="243.0" prefWidth="360.0">
+          <children>
+            <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Age" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Gender" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Religion" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Mobile" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label text="%Lbl_Email" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="txtName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtAge" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#setAgeLimit" prefWidth="71.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtMobile" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtEmail" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cmbReligionList" onShowing="#getReligionsFromProperty" prefHeight="21.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+                <!--                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>-->
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbGenderList" onShowing="#getGendersFromProperty" prefHeight="21.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+                <!--                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>-->
+              </items>
+            </ComboBox>
+            <Label text="%Lbl_Org" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <TextField fx:id="txtOrganization" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="%Lbl_Occupation" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Label text="%Lbl_Income" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <ComboBox fx:id="cmbOccupation" onShowing="#populateOccupation" prefHeight="21.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+              <children>
+                <ComboBox fx:id="cmbIncome" onShowing="#populateIncome">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="72.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="288.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="433.0" layoutY="82.0" prefHeight="257.0" prefWidth="357.0" styleClass="roundEdge" />
+    <GridPane id="GridPane" layoutX="451.0" layoutY="120.0" prefHeight="178.0" prefWidth="333.0">
+      <children>
+        <Label text="%Lbl_Height" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="%Lbl_Weight" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label text="%Lbl_Loose_Motions" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="%Lbl_Constipations" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField id="txtAge" fx:id="txtWeight" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label prefWidth="29.0" text="%Lbl_Weight_Param" textAlignment="LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Label text="%Lbl_Loose_Motions_Param" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Label text="%Lbl_Constipations_Param" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Label text="%Lbl_Height_Param1" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Label text="%Lbl_Height_Param2" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+        <ComboBox fx:id="cmbHeightFeets" minWidth="49.0" onShowing="#populateHeightFeets" prefHeight="21.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <items>
+            <FXCollections fx:factory="observableArrayList" />
+            <!--              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>-->
+          </items>
+        </ComboBox>
+        <ComboBox fx:id="cmbHeightInches" onShowing="#populateHeightInches" prefHeight="21.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+          <items>
+            <FXCollections fx:factory="observableArrayList" />
+          </items>
+        </ComboBox>
+        <ComboBox fx:id="cmbLooseMotions" minWidth="49.0" onShowing="#populateLooseMotionsCombo" prefHeight="21.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <items>
+            <FXCollections fx:factory="observableArrayList" />
+          </items>
+        </ComboBox>
+        <ComboBox fx:id="cmbConstipations" onShowing="#populateConstipationsCombo" prefHeight="21.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+          <items>
+            <FXCollections fx:factory="observableArrayList" />
+          </items>
+        </ComboBox>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="86.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="60.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="46.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="60.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="81.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>

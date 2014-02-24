@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen8Controller">
+  <children>
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="21.0" layoutY="11.0" styleClass="screenHeading" text="%Traveling_Hobby_Heading">
+          <textFill>
+            <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label layoutX="420.0" layoutY="11.0" styleClass="screenHeading" text="%Hobby_Entertainment_Heading" textFill="$x1" />
+      </children>
+      <stylesheets>
+        <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="257.0" prefWidth="386.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="10.0" layoutY="15.0" prefHeight="163.0" prefWidth="376.0">
+          <children>
+            <Label text="%Lbl_Individual_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Family_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Friends_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Traveling_Params" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Traveling_Params" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Traveling_Params" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <ComboBox id="cmbIndLocal" fx:id="cmbLocalInd" maxWidth="-Infinity" prefHeight="21.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox id="cmbIndNational" fx:id="cmbNationalInd" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbInternationalInd" prefHeight="21.0" prefWidth="110.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox id="cmbIndFamily" fx:id="cmbLocalFamily" maxWidth="-Infinity" prefHeight="21.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbNationalFamily" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbInternationalFamily" prefHeight="21.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox id="cmbIndFriends" fx:id="cmbLocalFriends" maxWidth="-Infinity" prefHeight="21.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbNationalFriends" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="21.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbInternationalFriends" prefHeight="21.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <Label prefWidth="52.0" styleClass="previousNextButtons" text="%Lbl_Travel" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="81.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="91.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="108.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="36.0" minWidth="10.0" prefWidth="36.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="420.0" layoutY="100.0" prefHeight="257.0" prefWidth="365.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="12.0" layoutY="21.0" prefHeight="183.0" prefWidth="142.0">
+          <children>
+            <ComboBox fx:id="cmbHobby" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="128.0" promptText="%Input_Prompt_Hobby" GridPane.columnIndex="0" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <Label prefWidth="52.0" styleClass="previousNextButtons" text="%Lbl_Hobby" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cmbHobbyHoursPerWeek" prefHeight="21.0" prefWidth="110.0" promptText="%Input_Prompt_Hobby_Params" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <Button fx:id="btnAddHobby" mnemonicParsing="false" onAction="#addHobbyToList" text="%Btn_Add_More_Hobbies" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="137.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <Label layoutX="193.0" layoutY="33.0" styleClass="previousNextButtons" text="%Lbl_Entertainment" />
+        <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="193.0" layoutY="67.0" prefHeight="163.0" prefWidth="150.0" />
+        <Separator layoutX="169.0" layoutY="29.0" orientation="VERTICAL" prefHeight="200.0" />
+      </children>
+    </AnchorPane>
+    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="357.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen7" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" layoutX="266.0" layoutY="357.0" prefHeight="43.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen9" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>

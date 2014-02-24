@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen7Controller">
+  <children>
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="35.0" layoutY="8.0" styleClass="screenHeading" text="%Regular_Prayers_Heading">
+          <textFill>
+            <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label layoutX="420.0" layoutY="11.0" styleClass="screenHeading" text="%Social_Service_Heading" textFill="$x1" />
+      </children>
+      <stylesheets>
+        <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <AnchorPane layoutX="24.0" layoutY="93.0" prefHeight="244.0" prefWidth="349.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="46.0" layoutY="34.0" prefHeight="177.0" prefWidth="265.0">
+          <children>
+            <Label text="%Lbl_Regular" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Individual" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Family" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <CheckBox fx:id="chkIsRegularPray" mnemonicParsing="false" text="%Lbl_Regular_Checkbox_Text" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cmbPrayIndividual" prefHeight="21.0" prefWidth="91.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbPrayFamily" prefHeight="21.0" prefWidth="91.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <Label text="%Lbl_Prayers_Param" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Prayers_Param" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Prayers_Param" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Community" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbPrayCommunity" prefHeight="21.0" prefWidth="91.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="76.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="129.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="60.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="414.0" layoutY="93.0" prefHeight="244.0" prefWidth="362.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="25.0" layoutY="34.0" prefHeight="156.0" prefWidth="323.0">
+          <children>
+            <Label text="%Lbl_Cash" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Kind" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Service" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbTimesPerWeekCash" prefHeight="21.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="0">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbTimesPerWeekKind" prefHeight="21.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbTimesPerWeekService" prefHeight="21.0" prefWidth="82.0" promptText="%Input_Prompt_Hours" GridPane.columnIndex="2" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <TextField fx:id="txtAmtCash" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtAmtKind" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAmtService" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="107.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="61.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <Label layoutX="25.0" layoutY="190.0" prefHeight="32.0" prefWidth="39.0" text="%Lbl_Area_Of_Work" wrapText="true" />
+        <TextField fx:id="txtAreaOfWork" layoutX="80.0" layoutY="195.0" prefWidth="242.0" />
+      </children>
+    </AnchorPane>
+    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="357.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen6" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="358.0" prefHeight="43.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen8" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="false" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen0Controller">
+  <children>
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0">
+      <padding>
+        <Insets fx:id="x1" />
+      </padding>
+    </fx:include>
+    <HBox alignment="CENTER" layoutX="0.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x1" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label alignment="CENTER" prefWidth="268.0" styleClass="screenHeading" text="%WelcomeMsg" textFill="#2e7c95" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="268.0" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="-1.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen1" styleClass="previousNextButtons" text="%Btn_Enter">
+          <HBox.margin>
+            <Insets fx:id="x1" />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+    <VBox alignment="CENTER" layoutX="0.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="201.0" prefWidth="802.000244140625">
+      <children>
+        <Label prefWidth="535.0000999999975" styleClass="answersStyle" text="%IntroMsg" textAlignment="CENTER" wrapText="true">
+          <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+          </VBox.margin>
+        </Label>
+      </children>
+    </VBox>
+  </children>
+  <rotationAxis>
+    <Point3D />
+  </rotationAxis>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>
