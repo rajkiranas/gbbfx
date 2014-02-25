@@ -15,6 +15,7 @@ import java.util.List;
 public class UserInfo 
 {
      private PersonalInformationBean pi;
+     private AddressBean address;
      private PhysicalParameters physicalParams;
      private MealTypeBean meal;
      private ExerciseBean exercise;
@@ -220,6 +221,20 @@ public class UserInfo
      */
     public void setEntertainmentList(List<EntertainmentBean> entertainmentList) {
         this.entertainmentList = entertainmentList;
+    }
+
+    /**
+     * @return the address
+     */
+    public AddressBean getAddress() {
+        return address;
+    }
+
+    /**
+     * @param address the address to set
+     */
+    public void setAddress(AddressBean address) {
+        this.address = address;
     }
 
     

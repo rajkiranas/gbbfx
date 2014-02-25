@@ -106,7 +106,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
          {
              setPersonalInformation();
              setPhysicalParameters();
-            navigator.navigateTo(ScreensFramework.screen2ID);
+            navigator.navigateTo(ScreensFramework.screen12ID);
          }
          
          //ValidationUtils.forceValidate(txtName, ValidationMode.ON_FOCUS_LOST);

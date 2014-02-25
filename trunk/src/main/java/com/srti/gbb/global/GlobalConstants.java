@@ -83,4 +83,6 @@ public class GlobalConstants {
     public static final String ONE="1";
     public static final String TWO="2";
     public static final String THREE="3";
+    public static final String Country_List_Options="Country_List_Options";
+    public static final String India_States="India_States";
 }
