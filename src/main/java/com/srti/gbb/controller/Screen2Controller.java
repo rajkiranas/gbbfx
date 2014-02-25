@@ -63,7 +63,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
 
     @FXML
     private void goToScreen1(ActionEvent event){
-       navigator.navigateTo(ScreensFramework.screen1ID);
+       navigator.navigateTo(ScreensFramework.screen12ID);
     }
     
     @FXML
