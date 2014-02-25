@@ -72,3 +72,12 @@
     -fx-font-weight: bold;
     -fx-font-size: 16px;
 }
+
+.grid {
+    -fx-background-color: white;
+/*    -fx-background-radius: 0.5;    */
+    -fx-grid-lines-visible: true;
+/*    -fx-hgap: 0.5;
+    -fx-vgap: 0.5;*/
+    
+}
