@@ -50,10 +50,10 @@
       <children>
         <GridPane id="GridPane" layoutX="28.0" layoutY="22.0" prefHeight="190.0" prefWidth="309.0">
           <children>
-            <Label styleClass="boldFont" text="%Lbl_House" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="lblHouse" styleClass="boldFont" text="%Lbl_House" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <CheckBox fx:id="chkHouseOwned" mnemonicParsing="false" text="%Lbl_Chk_Owned" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <CheckBox fx:id="chkHouseRented" mnemonicParsing="false" text="%Lbl_Chk_Rented" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label styleClass="boldFont" text="%Lbl_Land" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label fx:id="lblLand" styleClass="boldFont" text="%Lbl_Land" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             <CheckBox fx:id="chkLandOwned" mnemonicParsing="false" text="%Lbl_Chk_Owned" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <CheckBox fx:id="chkLandRented" mnemonicParsing="false" text="%Lbl_Chk_Rented" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtLandApproxArea" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="111.0" promptText="%Input_Prompt_Approx_Area" GridPane.columnIndex="1" GridPane.rowIndex="3" />
