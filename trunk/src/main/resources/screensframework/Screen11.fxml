@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen11Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen11Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
@@ -24,9 +24,9 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <GridPane id="GridPane" layoutX="19.0" layoutY="105.0" prefHeight="180.0" prefWidth="220.0">
+    <GridPane id="GridPane" layoutX="19.0" layoutY="105.0" prefHeight="337.0" prefWidth="220.0">
       <children>
-        <Label fx:id="q1" styleClass="questionsStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="q1" prefHeight="65.0" prefWidth="212.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <CheckBox id="chkQ1" fx:id="q1o1" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
         <CheckBox fx:id="q1o2" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
         <CheckBox fx:id="q1o3" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
@@ -43,10 +43,10 @@
         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Separator layoutX="256.0" layoutY="90.0" orientation="VERTICAL" prefHeight="200.0" />
-    <GridPane id="GridPane" layoutX="286.0" layoutY="105.0" prefHeight="180.0" prefWidth="245.0">
+    <Separator layoutX="256.0" layoutY="90.0" orientation="VERTICAL" prefHeight="338.0" />
+    <GridPane id="GridPane" layoutX="286.0" layoutY="98.0" prefHeight="352.0" prefWidth="245.0">
       <children>
-        <Label fx:id="q2" styleClass="questionsStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="q2" prefHeight="69.0" prefWidth="212.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <CheckBox fx:id="q2o1" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
         <CheckBox fx:id="q2o2" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
         <CheckBox fx:id="q2o3" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
@@ -63,10 +63,10 @@
         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <Separator layoutX="545.0" layoutY="87.0" orientation="VERTICAL" prefHeight="200.0" />
-    <GridPane id="GridPane" layoutX="571.0" layoutY="105.0" prefHeight="180.0" prefWidth="212.0">
+    <Separator layoutX="545.0" layoutY="87.0" orientation="VERTICAL" prefHeight="338.0" />
+    <GridPane id="GridPane" layoutX="571.0" layoutY="105.0" prefHeight="338.0" prefWidth="212.0">
       <children>
-        <Label fx:id="q3" styleClass="questionsStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="q3" prefHeight="69.0" prefWidth="212.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <CheckBox fx:id="q3o1" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
         <CheckBox fx:id="q3o2" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
         <CheckBox fx:id="q3o3" mnemonicParsing="false" styleClass="answersStyle" text="" GridPane.columnIndex="0" GridPane.rowIndex="4" />
@@ -83,7 +83,7 @@
         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="357.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="268.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen10" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -91,7 +91,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" layoutX="266.0" layoutY="357.0" prefHeight="43.0" prefWidth="531.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen12" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>

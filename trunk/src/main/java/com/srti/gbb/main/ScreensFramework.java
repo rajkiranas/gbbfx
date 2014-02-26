@@ -68,11 +68,11 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen11ID, ScreensFramework.screen11File);
         
         
-        nav.navigateTo(ScreensFramework.screen9ID);
+        nav.navigateTo(ScreensFramework.screen11ID);
         
         Group root = new Group();
         root.getChildren().addAll(nav);
-        Scene scene = new Scene(root,800,400);
+        Scene scene = new Scene(root,800,500);
         //root.setLayoutX(800);
         scene.getStylesheets().add("/styles/Styles.css");
         primaryStage.initStyle(StageStyle.TRANSPARENT);
