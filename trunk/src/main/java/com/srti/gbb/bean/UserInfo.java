@@ -6,6 +6,7 @@
 
 package com.srti.gbb.bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +32,8 @@ public class UserInfo
      private TravelingBean traveling;
      private List<HobbyBean> hobbyList;
      private List<EntertainmentBean> entertainmentList;
+     private List<VehicleBean> vehicleList;
+     private List<PropertyBean> propertyList;
      
      
      
@@ -235,6 +238,34 @@ public class UserInfo
      */
     public void setAddress(AddressBean address) {
         this.address = address;
+    }
+
+    /**
+     * @return the vehicleList
+     */
+    public List<VehicleBean> getVehicleList() {
+        return vehicleList;
+    }
+
+    /**
+     * @param vehicleList the vehicleList to set
+     */
+    public void setVehicleList(List<VehicleBean> vehicleList) {
+        this.vehicleList = vehicleList;
+    }
+
+    /**
+     * @return the propertyList
+     */
+    public List<PropertyBean> getPropertyList() {
+        return propertyList;
+    }
+
+    /**
+     * @param propertyList the propertyList to set
+     */
+    public void setPropertyList(List<PropertyBean> propertyList) {
+        this.propertyList = propertyList;
     }
 
     

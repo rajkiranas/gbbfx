@@ -22,7 +22,9 @@ public class UIUtils
     {
         Stage secondaryStage = new Stage(StageStyle.UTILITY);
         StackPane secondaryLayout = new StackPane();
-        secondaryLayout.getChildren().add(new Label(msg));
+        Label l = new Label(msg);
+        l.setWrapText(true);
+        secondaryLayout.getChildren().add(l);
         secondaryLayout.setStyle("-fx-background-color: cornsilk; -fx-padding: 10;");
         secondaryStage.setScene(new Scene(secondaryLayout, 300, 80));
         secondaryStage.setTitle(title);
