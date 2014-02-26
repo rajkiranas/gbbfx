@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#setInputPrompt" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen4Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#setInputPrompt" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen4Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
@@ -26,9 +26,9 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="14.0" layoutY="91.0" prefHeight="260.0" prefWidth="366.0" styleClass="roundEdge">
+    <AnchorPane layoutX="14.0" layoutY="91.0" prefHeight="353.0" prefWidth="366.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="14.0" layoutY="24.0" prefHeight="187.0" prefWidth="331.0">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="24.0" prefHeight="289.0" prefWidth="331.0">
           <children>
             <Label text="%Lbl_School_College_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Class_Degree" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -36,16 +36,16 @@
             <Label text="%Lbl_Faculty_Stream" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_Board_University" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <Label text="%Lbl_Subjects" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <TextField fx:id="txtSchool" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtClassDegree" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtBoardUni" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField id="txtSub" fx:id="txtSubjects" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox fx:id="cmbFacultyStream" onShowing="#populateFacultyStreams" prefHeight="21.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="txtSchool" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtClassDegree" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtBoardUni" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField id="txtSub" fx:id="txtSubjects" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cmbFacultyStream" onShowing="#populateFacultyStreams" prefHeight="35.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <TextField fx:id="txtMedium" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtMedium" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="120.0" />
@@ -60,12 +60,12 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button fx:id="btnAddSchool" layoutX="134.0" layoutY="224.0" mnemonicParsing="false" onAction="#addSchoolAndClearForm" prefHeight="26.0" prefWidth="210.0" text="%Btn_Add_More_Schools" />
+        <Button fx:id="btnAddSchool" layoutX="135.0" layoutY="317.0" mnemonicParsing="false" onAction="#addSchoolAndClearForm" prefHeight="26.0" prefWidth="210.0" text="%Btn_Add_More_Schools" />
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="415.0" layoutY="91.0" prefHeight="260.0" prefWidth="366.0" styleClass="roundEdge">
+    <AnchorPane layoutX="415.0" layoutY="91.0" prefHeight="353.0" prefWidth="366.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="32.0" layoutY="22.0" prefHeight="204.0" prefWidth="289.0">
+        <GridPane id="GridPane" layoutX="32.0" layoutY="22.0" prefHeight="317.0" prefWidth="289.0">
           <children>
             <Label text="%Lbl_Avg_School_Per" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_School_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -73,12 +73,12 @@
             <Label text="%Lbl_College_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_Avg_Post_Grad_Per" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <Label text="%Lbl_Post_Grad_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <TextField fx:id="txtAvgSchoolPer" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtNoOfSchoolRepeats" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtAvgCollegePer" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtNoOfCollegeRepeats" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="txtAvgPgPer" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="txtNoOfPgRepeats" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtAvgSchoolPer" prefHeight="35.000099999997474" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNoOfSchoolRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAvgCollegePer" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtNoOfCollegeRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtAvgPgPer" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtNoOfPgRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="243.0" />
@@ -95,7 +95,7 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="357.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="269.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen3" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -103,7 +103,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="357.0" prefHeight="43.0" prefWidth="531.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen5" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
