@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen6Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen6Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="1.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
@@ -21,9 +21,9 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="26.0" layoutY="100.0" prefHeight="346.0" prefWidth="749.0" styleClass="roundEdge">
+    <AnchorPane layoutX="26.0" layoutY="100.0" minHeight="307.0" prefHeight="307.0" prefWidth="749.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="25.0" layoutY="26.0" prefHeight="280.0" prefWidth="699.0">
+        <GridPane id="GridPane" layoutX="25.0" layoutY="20.0" prefHeight="247.0" prefWidth="699.0">
           <children>
             <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefHeight="39.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField fx:id="txtFrnd2" maxWidth="-Infinity" prefHeight="39.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -102,7 +102,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button layoutX="574.0" layoutY="301.0" mnemonicParsing="false" onAction="#addFriendsToList" prefHeight="35.0" text="%Btn_Add_More_Friends" />
+        <Button layoutX="591.0" layoutY="267.0" mnemonicParsing="false" onAction="#addFriendsToList" prefHeight="26.0" text="%Btn_Add_More_Friends" />
       </children>
     </AnchorPane>
     <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">

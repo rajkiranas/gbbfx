@@ -12,7 +12,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen2Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen2Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -48,9 +48,9 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="32.0" layoutY="90.0" prefHeight="345.0" prefWidth="353.0" styleClass="roundEdge">
+    <AnchorPane layoutX="32.0" layoutY="90.0" prefHeight="304.0" prefWidth="353.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="38.0" layoutY="21.0" prefHeight="310.0" prefWidth="283.0">
+        <GridPane id="GridPane" prefHeight="293.0" prefWidth="324.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="4.0">
           <children>
             <Label text="%Lbl_Diet" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_NonVeg_Per_Week" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -101,9 +101,9 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="408.0" layoutY="87.0" prefHeight="348.0" prefWidth="353.0" styleClass="roundEdge">
+    <AnchorPane layoutX="407.0" layoutY="91.0" prefHeight="303.9999000000025" prefWidth="353.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="14.0" layoutY="43.0" prefHeight="264.0" prefWidth="319.0">
+        <GridPane id="GridPane" prefHeight="293.0" prefWidth="329.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="4.0">
           <children>
             <Label text="%Lbl_Exercise_Schedule" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Exercise_Type" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -127,9 +127,9 @@
             <Label text="%Lbl_Duration_Params" GridPane.columnIndex="2" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="131.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="125.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="2.0" prefWidth="63.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="133.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="108.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="2.0" prefWidth="74.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

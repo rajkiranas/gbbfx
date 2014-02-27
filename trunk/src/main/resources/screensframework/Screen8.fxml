@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen8Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen8Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
@@ -20,15 +20,15 @@
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="420.0" layoutY="11.0" styleClass="screenHeading" text="%Hobby_Entertainment_Heading" textFill="$x1" />
+        <Label layoutX="441.0" layoutY="11.0" styleClass="screenHeading" text="%Hobby_Entertainment_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="357.0" prefWidth="386.0" styleClass="roundEdge">
+    <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="305.0" prefWidth="413.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="10.0" layoutY="22.0" prefHeight="235.0" prefWidth="376.0">
+        <GridPane id="GridPane" layoutX="10.0" layoutY="22.0" prefHeight="235.0" prefWidth="396.0">
           <children>
             <Label text="%Lbl_Individual_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Family_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="2" />
@@ -99,7 +99,7 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="420.0" layoutY="100.0" prefHeight="357.0" prefWidth="365.0" styleClass="roundEdge">
+    <AnchorPane layoutX="441.0" layoutY="100.0" prefHeight="305.0" prefWidth="344.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
         <GridPane id="GridPane" layoutX="12.0" layoutY="0.0" prefHeight="288.0" prefWidth="142.0">
           <children>
@@ -126,9 +126,9 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Label layoutX="193.0" layoutY="33.0" styleClass="previousNextButtons" text="%Lbl_Entertainment" />
-        <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="193.0" layoutY="67.0" prefHeight="221.0" prefWidth="150.0" />
-        <Separator layoutX="169.0" layoutY="29.0" orientation="VERTICAL" prefHeight="259.0" />
+        <Label layoutX="180.0" layoutY="20.0" styleClass="previousNextButtons" text="%Lbl_Entertainment" />
+        <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="180.0" layoutY="66.0" prefHeight="221.0" prefWidth="150.0" />
+        <Separator layoutX="161.0" layoutY="29.0" orientation="VERTICAL" prefHeight="259.0" />
       </children>
     </AnchorPane>
     <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="269.0">

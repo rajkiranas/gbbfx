@@ -72,7 +72,7 @@ public class ScreensFramework extends Application {
         
         Group root = new Group();
         root.getChildren().addAll(nav);
-        Scene scene = new Scene(root,800,500);
+        Scene scene = new Scene(root,800,450);
         //root.setLayoutX(800);
         scene.getStylesheets().add("/styles/Styles.css");
         primaryStage.initStyle(StageStyle.TRANSPARENT);
