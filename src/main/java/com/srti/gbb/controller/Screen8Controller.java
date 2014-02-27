@@ -83,7 +83,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
                 setTravelingData();
                 setHobyData();
                 setEntertainmentData();
-                navigator.navigateTo(ScreensFramework.screen8ID);
+                navigator.navigateTo(ScreensFramework.screen9ID);
             }
         }
         else if(validateTravelsForm() && !isEntertainmentListEmpty())
@@ -93,7 +93,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
                 setTravelingData();
                 setHobyData();
                 setEntertainmentData();
-                navigator.navigateTo(ScreensFramework.screen8ID);
+                navigator.navigateTo(ScreensFramework.screen9ID);
             }
             else
             {
