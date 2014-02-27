@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen7Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen7Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
@@ -26,9 +26,9 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="24.0" layoutY="93.0" prefHeight="347.0" prefWidth="349.0" styleClass="roundEdge">
+    <AnchorPane layoutX="24.0" layoutY="93.0" prefHeight="305.0" prefWidth="349.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="46.0" layoutY="24.0" prefHeight="299.0" prefWidth="289.0">
+        <GridPane id="GridPane" layoutX="46.0" layoutY="18.0" prefHeight="270.0" prefWidth="289.0">
           <children>
             <Label text="%Lbl_Regular" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Individual" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -68,9 +68,9 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="414.0" layoutY="93.0" prefHeight="347.0" prefWidth="362.0" styleClass="roundEdge">
+    <AnchorPane layoutX="414.0" layoutY="93.0" minHeight="305.0" prefHeight="305.0" prefWidth="362.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="25.0" layoutY="34.0" prefHeight="226.0" prefWidth="323.0">
+        <GridPane id="GridPane" layoutX="25.0" layoutY="27.0" prefHeight="207.0" prefWidth="323.0">
           <children>
             <Label text="%Lbl_Cash" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Kind" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -109,8 +109,8 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Label layoutX="14.0" layoutY="280.0" prefHeight="32.0" prefWidth="57.0" text="%Lbl_Area_Of_Work" wrapText="true" />
-        <TextField fx:id="txtAreaOfWork" layoutX="80.0" layoutY="273.0" prefHeight="39.0" prefWidth="242.0" />
+        <Label layoutX="25.0" layoutY="235.0" prefHeight="43.0" prefWidth="51.0" text="%Lbl_Area_Of_Work" wrapText="true" />
+        <TextField fx:id="txtAreaOfWork" layoutX="80.0" layoutY="237.0" prefHeight="39.0" prefWidth="242.0" />
       </children>
     </AnchorPane>
     <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="270.0">
