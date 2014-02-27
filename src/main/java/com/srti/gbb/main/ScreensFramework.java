@@ -46,6 +46,8 @@ public class ScreensFramework extends Application {
     
     public static String screen11ID = "screen11";
     public static String screen11File = "/screensframework/Screen11.fxml";
+    public static String ThankyouSceneId = "ThankyouScene";
+    public static String ThankyouSceneFile = "/screensframework/ThankyouScene.fxml";
     
     
     
@@ -66,6 +68,8 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen9ID, ScreensFramework.screen9File);
         
         nav.loadScreen(ScreensFramework.screen11ID, ScreensFramework.screen11File);
+        
+        nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         
         
         nav.navigateTo(ScreensFramework.screen11ID);

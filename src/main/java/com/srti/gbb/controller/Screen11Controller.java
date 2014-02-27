@@ -74,8 +74,6 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         if(qC==0)
         {
             navigator.navigateTo(ScreensFramework.screen9ID);
-            
-            
         }
         else
         {
@@ -86,7 +84,14 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToScreen12(ActionEvent event) 
     {
-        setNextQuestionsAndAnswersToLabels();
+        if(qC==Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.Total_Prakruti_Questions)))
+        {
+            navigator.navigateTo(ScreensFramework.ThankyouSceneId);
+        }
+        else
+        {
+            setNextQuestionsAndAnswersToLabels();
+        }
     }
 
     private int qC=0;
@@ -113,11 +118,13 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             
             qC++;
                     
-            q3.setText(GlobalConstants.getProperty(Q+qC));
-            
+            q3.setText(GlobalConstants.getProperty(Q+qC));            
+         
             q3o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q3o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q3o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            
+           setLastQuestionOptionsVisibility();
     }
     
     private void setPreviousQuestionsAndAnswersToLabels() 
@@ -147,7 +154,29 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q1o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q1o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             qC--;
+            
+            setLastQuestionOptionsVisibility();
         
+    }
+
+    private void setLastQuestionOptionsVisibility() {
+        if (qC == Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.Total_Prakruti_Questions))) 
+           {
+               q3.setVisible(false);
+               
+               q3o1.setVisible(false);
+               q3o2.setVisible(false);
+               q3o3.setVisible(false);               
+           }
+           else
+           {
+               q3.setVisible(true);
+               
+               q3o1.setVisible(true);
+               q3o2.setVisible(true);
+               q3o3.setVisible(true);               
+               
+           }
     }
     
 }
