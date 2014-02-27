@@ -26,9 +26,9 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="14.0" layoutY="91.0" minHeight="310.0" prefHeight="317.0" prefWidth="366.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="14.0" layoutY="91.0" minHeight="310.0" prefHeight="317.0" prefWidth="386.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="14.0" layoutY="24.0" prefHeight="255.0" prefWidth="331.0">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="24.0" prefHeight="255.0" prefWidth="366.0">
           <children>
             <Label text="%Lbl_School_College_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Class_Degree" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -40,16 +40,22 @@
             <TextField fx:id="txtClassDegree" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtBoardUni" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField id="txtSub" fx:id="txtSubjects" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox fx:id="cmbFacultyStream" onShowing="#populateFacultyStreams" prefHeight="35.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <children>
+                <ComboBox fx:id="cmbFacultyStream" onShowing="#populateFacultyStreams" prefHeight="35.0" prefWidth="130.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Or" wrapText="true" />
+                <TextField id="txtReligion" fx:id="txtFacultyStream" prefHeight="35.0" prefWidth="81.0" />
+              </children>
+            </HBox>
             <TextField fx:id="txtMedium" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="120.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="211.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.0" minWidth="10.0" prefWidth="242.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

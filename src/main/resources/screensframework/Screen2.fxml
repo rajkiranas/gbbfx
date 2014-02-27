@@ -48,9 +48,9 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="32.0" layoutY="90.0" prefHeight="304.0" prefWidth="353.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="32.0" layoutY="90.0" prefHeight="304.0" prefWidth="380.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" prefHeight="293.0" prefWidth="324.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="4.0">
+        <GridPane id="GridPane" prefHeight="194.0" prefWidth="368.0" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
           <children>
             <Label text="%Lbl_Diet" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_NonVeg_Per_Week" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -62,46 +62,63 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbNonVeg" onShowing="#populateNonVegPerWeek" prefHeight="35.0" prefWidth="91.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbFoodType" onShowing="#populateFoodTypes" prefHeight="35.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbFruits" onShowing="#populateFruitsPerWeek" prefHeight="35.0" prefWidth="91.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbEatingOut" onShowing="#populateEatingOutPerWeek" prefHeight="35.0" prefWidth="91.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <Label text="%Lbl_NonVeg_Per_Week_Param" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="%Lbl_Fruits_Param" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label text="%Lbl_Eating_Out_Param" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <children>
+                <ComboBox fx:id="cmbNonVeg" onShowing="#populateNonVegPerWeek" prefHeight="35.0" prefWidth="91.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_NonVeg_Per_Week_Param" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="271.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <children>
+                <ComboBox fx:id="cmbFoodType" onShowing="#populateFoodTypes" prefHeight="35.0" prefWidth="145.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label prefHeight="34.0" prefWidth="23.0" text="%Lbl_Or" wrapText="true" />
+                <TextField id="txtReligion" fx:id="txtFoodType" prefHeight="35.0" prefWidth="91.0" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <children>
+                <ComboBox fx:id="cmbFruits" onShowing="#populateFruitsPerWeek" prefHeight="35.0" prefWidth="91.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Fruits_Param" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <children>
+                <ComboBox fx:id="cmbEatingOut" onShowing="#populateEatingOutPerWeek" prefHeight="35.0" prefWidth="91.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Eating_Out_Param" />
+              </children>
+            </HBox>
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.0" minWidth="10.0" prefWidth="77.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="145.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="2.0" prefWidth="61.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="98.0" minWidth="10.0" prefWidth="77.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="10.0" prefWidth="263.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="407.0" layoutY="91.0" prefHeight="303.9999000000025" prefWidth="353.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="437.0" layoutY="91.0" prefHeight="304.0" prefWidth="323.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
         <GridPane id="GridPane" prefHeight="293.0" prefWidth="329.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="4.0">
           <children>
@@ -127,9 +144,9 @@
             <Label text="%Lbl_Duration_Params" GridPane.columnIndex="2" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="133.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="108.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="2.0" prefWidth="74.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="2.0" prefWidth="55.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

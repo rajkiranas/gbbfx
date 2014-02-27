@@ -74,6 +74,9 @@ public class Screen4Controller implements Initializable, ControlledScreen {
     @FXML
     private TextField txtNoOfPgRepeats;
     
+    @FXML
+    private TextField txtFacultyStream;
+    
 
     /**
      * Initializes the controller class.
@@ -121,7 +124,15 @@ public class Screen4Controller implements Initializable, ControlledScreen {
         bean.setSchoolName(txtSchool.getText().trim());
         bean.setClassDegree(txtClassDegree.getText().trim());
         bean.setMedium(txtMedium.getText().trim());
-        bean.setFacultyStream(cmbFacultyStream.getValue().toString().trim());
+        if(cmbFacultyStream.getValue()!=null)
+        {
+            bean.setFacultyStream(cmbFacultyStream.getValue().toString().trim());
+        }
+        else
+        {
+            bean.setFacultyStream(txtFacultyStream.getText().trim());
+        }
+        
         bean.setBoardUniveristy(txtBoardUni.getText().trim());
         bean.setSubjects(txtSubjects.getText().trim());
         return bean;
@@ -131,6 +142,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
         txtSchool.setText(GlobalConstants.emptyString);
         txtClassDegree.setText(GlobalConstants.emptyString);
         cmbFacultyStream.setValue(GlobalConstants.emptyString);
+        txtFacultyStream.setText(GlobalConstants.emptyString);
         txtMedium.setText(GlobalConstants.emptyString);
         txtBoardUni.setText(GlobalConstants.emptyString);
         txtSubjects.setText(GlobalConstants.emptyString);
@@ -206,11 +218,17 @@ public class Screen4Controller implements Initializable, ControlledScreen {
                 UIUtils.showAlert("Invalid medium", "Alert"); 
                 isValid=false;
             }
-            else if(cmbFacultyStream.getValue() ==null || cmbFacultyStream.getValue().toString().trim().equals(GlobalConstants.emptyString))
+            else if((cmbFacultyStream.getValue() ==null || cmbFacultyStream.getValue().toString().trim().equals(GlobalConstants.emptyString)) && (txtFacultyStream.getText() ==null || txtFacultyStream.getText().trim().equals(GlobalConstants.emptyString)))
             {
-                UIUtils.showAlert("Please select faculty", "Alert"); 
+                UIUtils.showAlert("Please select or enter faculty", "Alert"); 
                 isValid=false;
-            }else if(txtBoardUni.getText()==null || txtBoardUni.getText().trim().equals(GlobalConstants.emptyString))
+            }
+            else if ((cmbFacultyStream.getValue() != null) && (!txtFacultyStream.getText().trim().equals(GlobalConstants.emptyString))) 
+            {
+             UIUtils.showAlert("Please either select or enter the faculty", "Alert");
+             isValid = false;
+            }
+            else if(txtBoardUni.getText()==null || txtBoardUni.getText().trim().equals(GlobalConstants.emptyString))
             {
                 UIUtils.showAlert("Please enter board/university", "Alert"); 
                 isValid=false;

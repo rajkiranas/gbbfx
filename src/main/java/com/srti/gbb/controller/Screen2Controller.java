@@ -49,6 +49,9 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         @FXML
         private ComboBox cmbDuration;
         
+        @FXML
+        private TextField txtFoodType;
+        
     /**
      * Initializes the controller class.
      */
@@ -90,9 +93,14 @@ public class Screen2Controller implements Initializable , ControlledScreen {
              UIUtils.showAlert("Please select non veg value", "Alert"); 
              isValid=false;
          }
-         else if(cmbFoodType.getValue() ==null || cmbFoodType.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         else if((cmbFoodType.getValue() ==null || cmbFoodType.getValue().toString().trim().equals(GlobalConstants.emptyString)) && (txtFoodType.getText() ==null || txtFoodType.getText().trim().equals(GlobalConstants.emptyString)))
          {
-             UIUtils.showAlert("Please select food type", "Alert"); 
+             UIUtils.showAlert("Please select or enter food type", "Alert"); 
+             isValid=false;
+         }
+         else if((cmbFoodType.getValue()!=null) && (!txtFoodType.getText().trim().equals(GlobalConstants.emptyString)))
+         {
+             UIUtils.showAlert("Please either select or enter the foodtype", "Alert"); 
              isValid=false;
          }
           else if(cmbFruits.getValue()==null || cmbFruits.getValue().toString().trim().equals(GlobalConstants.emptyString))
@@ -128,7 +136,15 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         MealTypeBean meal = new MealTypeBean();
         meal.setDiet(cmbDiet.getValue().toString());
         meal.setNonVegPerWeek(Integer.valueOf(cmbNonVeg.getValue().toString()));
-        meal.setFoodType(cmbFoodType.getValue().toString());
+        if(cmbFoodType.getValue()!=null)
+        {
+            meal.setFoodType(cmbFoodType.getValue().toString());
+        }
+        else
+        {
+            meal.setFoodType(txtFoodType.getText().trim());
+        }
+        
         meal.setFruitsPerWeek(Integer.valueOf(cmbFruits.getValue().toString()));
         meal.setEatingOutPerWeek(Integer.valueOf(cmbEatingOut.getValue().toString()));
         
@@ -260,8 +276,5 @@ public class Screen2Controller implements Initializable , ControlledScreen {
             }
         }
     }
-
-
-    
-    
+   
 }

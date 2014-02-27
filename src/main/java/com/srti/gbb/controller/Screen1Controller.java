@@ -73,6 +73,9 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         
         @FXML
         private ComboBox cmbConstipations;
+        
+        @FXML
+        private TextField txtReligion;
     /**
      * Initializes the controller class.
      */
@@ -160,9 +163,14 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("Please select gender", "Alert"); 
              isValid=false;
          }
-         else if(cmbReligionList.getValue()==null || cmbReligionList.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         else if((cmbReligionList.getValue()==null || cmbReligionList.getValue().toString().trim().equals(GlobalConstants.emptyString))&& (txtReligion.getText() ==null || txtReligion.getText().trim().equals(GlobalConstants.emptyString)))
          {
-             UIUtils.showAlert("Please select religion", "Alert"); 
+             UIUtils.showAlert("Please select or enter religion", "Alert"); 
+             isValid=false;
+         }
+         else if((cmbReligionList.getValue()!=null) && (!txtReligion.getText().trim().equals(GlobalConstants.emptyString)))
+         {
+             UIUtils.showAlert("Please either select or enter the religion", "Alert"); 
              isValid=false;
          }
          else if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
@@ -267,7 +275,14 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         pi.setName(txtName.getText());
         pi.setAge(Integer.parseInt(txtAge.getText()));
         pi.setGender(cmbGenderList.getValue().toString());
-        pi.setReligion(cmbReligionList.getValue().toString());
+        if(cmbReligionList.getValue()!=null)
+        {
+            pi.setReligion(cmbReligionList.getValue().toString());
+        }
+        else
+        {
+            pi.setReligion(txtReligion.getText().trim());
+        }
         pi.setMobile(Long.parseLong(txtMobile.getText()));
         pi.setEmail(txtEmail.getText());
         pi.setOrganization(txtOrganization.getText());
