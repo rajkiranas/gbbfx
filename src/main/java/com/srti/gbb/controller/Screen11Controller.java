@@ -168,7 +168,9 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             qC--;
             
             setLastQuestionOptionsVisibility();
+            removeUserQueAnsResponse();
             clearUserSelection();
+            
     }
 
     private void setLastQuestionOptionsVisibility() {
@@ -308,5 +310,22 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         q3o1.setSelected(false);
         q3o2.setSelected(false);
         q3o3.setSelected(false);
+    }
+
+    private void removeUserQueAnsResponse() 
+    {
+        PrakrutiQuestionAnsBean res = new PrakrutiQuestionAnsBean();
+        res.setQuestion(q1.getText());
+        prakrutiQuestionAnsList.remove(res);
+        
+        res = new PrakrutiQuestionAnsBean();
+        res.setQuestion(q2.getText());
+        prakrutiQuestionAnsList.remove(res);
+        
+        res = new PrakrutiQuestionAnsBean();
+        res.setQuestion(q3.getText());
+        prakrutiQuestionAnsList.remove(res);
+        
+        System.out.println("prakrutiQuestionAnsList="+prakrutiQuestionAnsList.size());
     }
 }
