@@ -9,113 +9,9 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen10Controller">
   <children>
-    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <ScrollPane id="ScrollPane" layoutX="18.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefViewportHeight="415.0" prefViewportWidth="775.0" styleClass="throughoutLabelsStyle">
-      <content>
-        <GridPane id="GridPane" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="772.0" styleClass="grid">
-          <children>
-            <Label text="%Lbl_Hypertension" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label text="%Lbl_Cardiac_Diseases_Asthma" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <Label text="%Lbl_Chest_Disease" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <Label text="%Lbl_Digestive_Disorders" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <Label text="%Lbl_Urinary_Tract_Disease" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <Label text="%Lbl_Joint_Disorders" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <Label text="%Lbl_Spine_Problems" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-            <Label text="%Lbl_Pyschological_Problems" GridPane.columnIndex="0" GridPane.rowIndex="9" />
-            <Label text="%Lbl_Psychiatric_Disorders" GridPane.columnIndex="0" GridPane.rowIndex="10" />
-            <Label prefHeight="35.0" prefWidth="211.0" text="%Lbl_Brain_Nerve_Related" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="11" />
-            <Label text="%Lbl_Cough_Cold" GridPane.columnIndex="0" GridPane.rowIndex="12" />
-            <Label text="%Lbl_Acidity" GridPane.columnIndex="0" GridPane.rowIndex="13" />
-            <Label text="%Lbl_Muscular_Pain" GridPane.columnIndex="0" GridPane.rowIndex="14" />
-            <Label text="%Lbl_Nausea_Vomiting" GridPane.columnIndex="0" GridPane.rowIndex="15" />
-            <Label text="%Lbl_Giddiness_Vertigo" GridPane.columnIndex="0" GridPane.rowIndex="16" />
-            <Label text="%Lbl_Self" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Label text="%Lbl_is_Hospitalized" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Parents" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Label text="%Lbl_is_Hospitalized" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Grand_Parents" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <Label text="%Lbl_is_Hospitalized" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Siblings" GridPane.columnIndex="7" GridPane.rowIndex="0" />
-            <Label text="%Lbl_is_Hospitalized" GridPane.columnIndex="8" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Disease" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Fatigue" GridPane.columnIndex="0" GridPane.rowIndex="17" />
-            <Label text="%Lbl_Leg_Cramps_Pain" GridPane.columnIndex="0" GridPane.rowIndex="18" />
-            <Label text="%Lbl_Headaches" GridPane.columnIndex="0" GridPane.rowIndex="19" />
-            <Label text="%Lbl_Neck_Pain" GridPane.columnIndex="0" GridPane.rowIndex="20" />
-            <Label text="%Lbl_Backache" GridPane.columnIndex="0" GridPane.rowIndex="21" />
-            <Label text="%Lbl_Diabetes" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <CheckBox contentDisplay="CENTER" mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="17" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="18" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="19" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="20" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="21" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <CheckBox contentDisplay="CENTER" mnemonicParsing="false" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <CheckBox contentDisplay="CENTER" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <CheckBox contentDisplay="CENTER" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <CheckBox contentDisplay="CENTER" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <CheckBox mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <CheckBox contentDisplay="CENTER" mnemonicParsing="false" text="" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-          </children>
-          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="169.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="61.0" minWidth="10.0" prefWidth="30.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="87.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="52.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="94.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="96.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="93.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="61.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="90.0" />
-          </columnConstraints>
-          <padding>
-            <Insets left="10.0" />
-          </padding>
-          <rowConstraints>
-            <RowConstraints maxHeight="20.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="9.0" prefHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          </rowConstraints>
-        </GridPane>
-      </content>
-    </ScrollPane>
+    <fx:include source="ProductBannerScene.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
       <children>
         <Label layoutX="14.0" layoutY="8.0" styleClass="screenHeading" text="%Illness_Heading" textFill="#2e7c95" />
@@ -124,7 +20,7 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="269.0">
+    <HBox alignment="CENTER_LEFT" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="269.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen10" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -132,7 +28,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="531.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="268.0" AnchorPane.rightAnchor="1.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen12" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -143,6 +39,17 @@
       <padding>
         <Insets right="10.0" />
       </padding>
+    </HBox>
+    <HBox id="HBox" alignment="CENTER" layoutX="14.0" layoutY="109.0" spacing="5.0" styleClass="diseaseStyle">
+      <children>
+        <ListView fx:id="listSelfDiseases" onContextMenuRequested="#listSelfDiseases" prefHeight="299.0" prefWidth="164.0" />
+      </children>
+    </HBox>
+    <HBox id="HBox" alignment="CENTER" layoutX="14.0" layoutY="84.0" spacing="5.0">
+      <children>
+        <Label text="%Lbl_Disease" />
+        <Label text="%Lbl_Self" />
+      </children>
     </HBox>
   </children>
   <stylesheets>
