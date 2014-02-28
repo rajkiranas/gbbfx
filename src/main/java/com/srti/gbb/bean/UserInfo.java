@@ -34,6 +34,7 @@ public class UserInfo
      private List<EntertainmentBean> entertainmentList;
      private List<VehicleBean> vehicleList;
      private List<PropertyBean> propertyList;
+     private List<PrakrutiQuestionAnsBean> prakrutiQuestionAnsList;
      
      
      
@@ -266,6 +267,20 @@ public class UserInfo
      */
     public void setPropertyList(List<PropertyBean> propertyList) {
         this.propertyList = propertyList;
+    }
+
+    /**
+     * @return the prakrutiQuestionAnsList
+     */
+    public List<PrakrutiQuestionAnsBean> getPrakrutiQuestionAnsList() {
+        return prakrutiQuestionAnsList;
+    }
+
+    /**
+     * @param prakrutiQuestionAnsList the prakrutiQuestionAnsList to set
+     */
+    public void setPrakrutiQuestionAnsList(List<PrakrutiQuestionAnsBean> prakrutiQuestionAnsList) {
+        this.prakrutiQuestionAnsList = prakrutiQuestionAnsList;
     }
 
     
