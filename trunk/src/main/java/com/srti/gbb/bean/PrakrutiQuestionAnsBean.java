@@ -4,6 +4,8 @@
  */
 package com.srti.gbb.bean;
 
+import java.util.Objects;
+
 /**
  *
  * @author rajkirans
@@ -46,6 +48,25 @@ public class PrakrutiQuestionAnsBean
     public void setAns3(String ans3) {
         this.ans3 = ans3;
     }
-    
-        
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PrakrutiQuestionAnsBean other = (PrakrutiQuestionAnsBean) obj;
+        if (!Objects.equals(this.question, other.question)) {
+            return false;
+        }
+        return true;
+    }
 }
