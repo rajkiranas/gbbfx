@@ -77,7 +77,7 @@
 
 .throughoutLabelsStyle
 {
-    -fx-font-family: "Arial Black";    
+/*    -fx-font-family: "Arial Black";    */
 /*    -fx-font-weight: bold;*/
     -fx-font-size: 12px;
 /*    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.2) , 0,0,0,1 );*/
