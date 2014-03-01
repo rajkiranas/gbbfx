@@ -22,7 +22,7 @@
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="412.0" layoutY="8.0" styleClass="screenHeading" text="%Exercise_Heading" textFill="$x1" />
+        <Label layoutX="437.0" layoutY="8.0" styleClass="screenHeading" text="%Exercise_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
