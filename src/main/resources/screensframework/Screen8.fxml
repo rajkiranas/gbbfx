@@ -81,7 +81,7 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <Label prefWidth="52.0" styleClass="previousNextButtons" text="%Lbl_Travel" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label prefWidth="52.0" styleClass="answersStyle" text="%Lbl_Travel" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.0" minWidth="10.0" prefWidth="71.0" />
@@ -101,7 +101,7 @@
     </AnchorPane>
     <AnchorPane layoutX="441.0" layoutY="100.0" prefHeight="305.0" prefWidth="344.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <Label layoutX="180.0" layoutY="20.0" styleClass="previousNextButtons" text="%Lbl_Entertainment" />
+        <Label layoutX="180.0" layoutY="20.0" styleClass="answersStyle" text="%Lbl_Entertainment" />
         <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="180.0" layoutY="66.0" prefHeight="221.0" prefWidth="150.0" />
         <Separator layoutX="161.0" layoutY="29.0" orientation="VERTICAL" prefHeight="259.0" />
       </children>
@@ -139,7 +139,7 @@
             <TextField id="txtReligion" fx:id="txtHobby" prefHeight="39.0" prefWidth="128.0" />
           </children>
         </VBox>
-        <Label prefWidth="52.0" styleClass="previousNextButtons" text="%Lbl_Hobby" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label prefWidth="52.0" styleClass="answersStyle" text="%Lbl_Hobby" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <ComboBox fx:id="cmbHobbyHoursPerWeek" prefHeight="39.0" prefWidth="110.0" promptText="%Input_Prompt_Hobby_Params" GridPane.columnIndex="0" GridPane.rowIndex="2">
           <items>
             <FXCollections fx:factory="observableArrayList" />
