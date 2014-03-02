@@ -4,10 +4,15 @@
  */
 package com.srti.gbb.controller;
 
+import com.srti.gbb.bean.EntertainmentBean;
 import com.srti.gbb.global.GlobalConstants;
+import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,6 +39,17 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     @FXML
     private ListView listSelfDiseases;
     
+    @FXML
+    private ListView listParentsDiseases;
+    
+    @FXML
+    private ListView listGrandParentsDiseases;
+    
+    @FXML
+    private ListView listSiblingsDiseases;
+    
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -53,24 +69,50 @@ public class Screen10Controller implements Initializable, ControlledScreen {
             for(String d : list)
             {
                 
-                GridPane gridpane = new GridPane();
-                ColumnConstraints column1 = new ColumnConstraints();
-                column1.setPercentWidth(80);
-                column1.setHgrow(Priority.ALWAYS);
-                
-                
-                ColumnConstraints column2 = new ColumnConstraints();
-                column2.setPercentWidth(20);
-                gridpane.getColumnConstraints().addAll(column1,column2);
-     
-                gridpane.add(new Label(d),0,0);
-                gridpane.add(new CheckBox(),1,0);     
+//                GridPane gridpane = new GridPane();
+//                ColumnConstraints column1 = new ColumnConstraints();
+//                column1.setPercentWidth(80);
+//                column1.setHgrow(Priority.ALWAYS);
+//                
+//                
+//                ColumnConstraints column2 = new ColumnConstraints();
+//                column2.setPercentWidth(20);
+//                gridpane.getColumnConstraints().addAll(column1,column2);
+//     
+//                gridpane.add(new Label(d),0,0);
+//                gridpane.add(new CheckBox(),1,0);     
 
-                listSelfDiseases.getItems().addAll(gridpane);                    
+                listSelfDiseases.getItems().addAll(d);                    
             }
         }
-        
         listSelfDiseases.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        if(listParentsDiseases.getItems().size()==0)
+        {
+            for(String d : list)
+            {
+                listParentsDiseases.getItems().addAll(d);                    
+            }
+        }
+        listParentsDiseases.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        if(listGrandParentsDiseases.getItems().size()==0)
+        {
+            for(String d : list)
+            {
+                listGrandParentsDiseases.getItems().addAll(d);                    
+            }
+        }
+        listGrandParentsDiseases.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        if(listSiblingsDiseases.getItems().size()==0)
+        {
+            for(String d : list)
+            {
+                listSiblingsDiseases.getItems().addAll(d);                    
+            }
+        }
+        listSiblingsDiseases.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
     
     @Override
@@ -79,11 +121,24 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     }
 
     @FXML
-    private void goToScreen10(ActionEvent event) {
+    private void goToScreen10(ActionEvent event) 
+    {
+        navigator.navigateTo(ScreensFramework.screen9ID);
     }
 
     @FXML
-    private void goToScreen12(ActionEvent event) {
+    private void goToScreen12(ActionEvent event) 
+    {
+        ObservableList<String> list = listSelfDiseases.getSelectionModel().getSelectedItems();
+        List<EntertainmentBean> eList = new ArrayList<EntertainmentBean>();
+        for(String d : list)
+        {
+            EntertainmentBean e = new EntertainmentBean();
+            e.setEntertainement(d);
+            eList.add(e);
+        }
+        
+        navigator.navigateTo(ScreensFramework.screen11ID);
     }
 
     @FXML
