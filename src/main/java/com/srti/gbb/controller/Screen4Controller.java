@@ -169,7 +169,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
                 educationList.add(getEducationBeanForCurrentForm());
                 setEducationData();
                 setAvgPerformanceData();
-                //navigator.navigateTo(ScreensFramework.screen5ID);
+                navigator.navigateTo(ScreensFramework.screen5ID);
             }
         }
         else
@@ -183,7 +183,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
             {
                 setEducationData();
                 setAvgPerformanceData();
-                //navigator.navigateTo(ScreensFramework.screen5ID);                
+                navigator.navigateTo(ScreensFramework.screen5ID);                
             }
             
         }

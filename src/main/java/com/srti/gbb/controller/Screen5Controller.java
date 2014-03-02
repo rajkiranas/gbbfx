@@ -4,7 +4,6 @@
  */
 package com.srti.gbb.controller;
 
-import com.srti.gbb.bean.EducationBean;
 import com.srti.gbb.bean.FamilyEducation;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
@@ -19,7 +18,6 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import org.apache.commons.lang3.Range;
 
 /**
  * FXML Controller class
@@ -108,14 +106,16 @@ public class Screen5Controller implements Initializable, ControlledScreen {
                     familyMembersList.add(getFamilyEducationBeanForCurrentForm());
                     insertFatherMotherDataInList();
                     setFamilyEducationData();
+                    navigator.navigateTo(ScreensFramework.screen6ID);
                 }
             }
             else if(validateFatherMotherForm())
             {
                 insertFatherMotherDataInList();
                 setFamilyEducationData();
+                navigator.navigateTo(ScreensFramework.screen6ID);
             }
-        navigator.navigateTo(ScreensFramework.screen6ID);
+        
     }
 
     @FXML

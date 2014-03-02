@@ -5,7 +5,6 @@
 package com.srti.gbb.controller;
 
 import com.srti.gbb.bean.Friends;
-import com.srti.gbb.controller.ControlledScreen;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
@@ -51,50 +50,65 @@ public class Screen6Controller implements Initializable, ControlledScreen {
     private void goToScreen7(ActionEvent event) 
     {
         friendsList = new ArrayList<Friends>();
-        
+        boolean f1=true;
+        boolean f2=true;
+        boolean f3=true;
         if(!txtFrnd1.getText().equals(GlobalConstants.emptyString) ||
-             cmbQualFrnd1.getValue()==null ||
-                cmbOccupationFrnd1.getValue()==null ||
-                cmbProfessionFrnd1.getValue()==null ||
-                cmbIncomeFrnd1.getValue()==null)
+             cmbQualFrnd1.getValue()!=null ||
+                cmbOccupationFrnd1.getValue()!=null ||
+                cmbProfessionFrnd1.getValue()!=null ||
+                cmbIncomeFrnd1.getValue()!=null)
         {
             if(validateFriend1())
             {
                 addFriend1ToList();
-                
+                f1=true;
+            }
+            else
+            {
+                f1=false;
             }
             
         }
         
         if(!txtFrnd2.getText().equals(GlobalConstants.emptyString) ||
-             cmbQualFrnd2.getValue()==null ||
-                cmbOccupationFrnd2.getValue()==null ||
-                cmbProfessionFrnd2.getValue()==null ||
-                cmbIncomeFrnd2.getValue()==null)
+             cmbQualFrnd2.getValue()!=null ||
+                cmbOccupationFrnd2.getValue()!=null ||
+                cmbProfessionFrnd2.getValue()!=null ||
+                cmbIncomeFrnd2.getValue()!=null)
         {
             if(validateFriend2())
             {
                 addFriend2ToList();
-                
+                f2=true;
             }
-            
+            else
+            {
+                f2=false;
+            }
         }
         
         if(!txtFrnd3.getText().equals(GlobalConstants.emptyString) ||
-             cmbQualFrnd3.getValue()==null ||
-                cmbOccupationFrnd3.getValue()==null ||
-                cmbProfessionFrnd3.getValue()==null ||
-                cmbIncomeFrnd3.getValue()==null)
+             cmbQualFrnd3.getValue()!=null ||
+                cmbOccupationFrnd3.getValue()!=null ||
+                cmbProfessionFrnd3.getValue()!=null ||
+                cmbIncomeFrnd3.getValue()!=null)
         {
             if(validateFriend3())
             {
                 addFriend3ToList();
-                
+                f3=true;
             }
-            
+            else
+            {
+                f3=false;
+            }
         }
-        setFriendsData();
-        //navigator.navigateTo(ScreensFramework.screen7ID);
+        if(f1 && f2 && f3)
+        {
+            setFriendsData();
+            navigator.navigateTo(ScreensFramework.screen7ID);
+        }
     }
 
     @FXML
