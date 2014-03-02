@@ -78,7 +78,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     {
         if(qC==0)
         {
-            navigator.navigateTo(ScreensFramework.screen9ID);
+            navigator.navigateTo(ScreensFramework.screen10ID);
         }
         else
         {
