@@ -35,6 +35,10 @@ public class UserInfo
      private List<VehicleBean> vehicleList;
      private List<PropertyBean> propertyList;
      private List<PrakrutiQuestionAnsBean> prakrutiQuestionAnsList;
+     private List<IllnessBean> selfIllnessList;
+     private List<IllnessBean> parentsIllnessList;
+     private List<IllnessBean> grandParentsIllnessList;
+     private List<IllnessBean> siblingsIllnessList;
      
      
      
@@ -281,6 +285,62 @@ public class UserInfo
      */
     public void setPrakrutiQuestionAnsList(List<PrakrutiQuestionAnsBean> prakrutiQuestionAnsList) {
         this.prakrutiQuestionAnsList = prakrutiQuestionAnsList;
+    }
+
+    /**
+     * @return the selfIllnessList
+     */
+    public List<IllnessBean> getSelfIllnessList() {
+        return selfIllnessList;
+    }
+
+    /**
+     * @param selfIllnessList the selfIllnessList to set
+     */
+    public void setSelfIllnessList(List<IllnessBean> selfIllnessList) {
+        this.selfIllnessList = selfIllnessList;
+    }
+
+    /**
+     * @return the parentsIllnessList
+     */
+    public List<IllnessBean> getParentsIllnessList() {
+        return parentsIllnessList;
+    }
+
+    /**
+     * @param parentsIllnessList the parentsIllnessList to set
+     */
+    public void setParentsIllnessList(List<IllnessBean> parentsIllnessList) {
+        this.parentsIllnessList = parentsIllnessList;
+    }
+
+    /**
+     * @return the grandParentsIllnessList
+     */
+    public List<IllnessBean> getGrandParentsIllnessList() {
+        return grandParentsIllnessList;
+    }
+
+    /**
+     * @param grandParentsIllnessList the grandParentsIllnessList to set
+     */
+    public void setGrandParentsIllnessList(List<IllnessBean> grandParentsIllnessList) {
+        this.grandParentsIllnessList = grandParentsIllnessList;
+    }
+
+    /**
+     * @return the siblingsIllnessList
+     */
+    public List<IllnessBean> getSiblingsIllnessList() {
+        return siblingsIllnessList;
+    }
+
+    /**
+     * @param siblingsIllnessList the siblingsIllnessList to set
+     */
+    public void setSiblingsIllnessList(List<IllnessBean> siblingsIllnessList) {
+        this.siblingsIllnessList = siblingsIllnessList;
     }
 
     

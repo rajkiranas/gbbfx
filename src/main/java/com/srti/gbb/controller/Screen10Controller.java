@@ -4,7 +4,7 @@
  */
 package com.srti.gbb.controller;
 
-import com.srti.gbb.bean.EntertainmentBean;
+import com.srti.gbb.bean.IllnessBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
@@ -16,16 +16,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 
 /**
  * FXML Controller class
@@ -129,14 +122,7 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToScreen12(ActionEvent event) 
     {
-        ObservableList<String> list = listSelfDiseases.getSelectionModel().getSelectedItems();
-        List<EntertainmentBean> eList = new ArrayList<EntertainmentBean>();
-        for(String d : list)
-        {
-            EntertainmentBean e = new EntertainmentBean();
-            e.setEntertainement(d);
-            eList.add(e);
-        }
+        recordUserResponseForIllnessAndSetData();
         
         navigator.navigateTo(ScreensFramework.screen11ID);
     }
@@ -144,6 +130,63 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     @FXML
     private void listSelfDiseases(ContextMenuEvent event) {
     }
-    
-    
+
+    private void recordUserResponseForIllnessAndSetData() 
+    {
+        ObservableList<String> list = listSelfDiseases.getSelectionModel().getSelectedItems();
+        List<IllnessBean> selfIllnessList = new ArrayList<IllnessBean>();
+        for(String d : list)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            selfIllnessList.add(e);
+        }
+        
+        ObservableList<String> plist = listParentsDiseases.getSelectionModel().getSelectedItems();
+        List<IllnessBean> parentsIllnessList = new ArrayList<IllnessBean>();
+        for(String d : plist)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            parentsIllnessList.add(e);
+        }
+        
+        ObservableList<String> gplist = listGrandParentsDiseases.getSelectionModel().getSelectedItems();
+        List<IllnessBean> grandParentsIllnessList = new ArrayList<IllnessBean>();
+        for(String d : gplist)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            grandParentsIllnessList.add(e);
+        }
+        
+        ObservableList<String> siblist = listSiblingsDiseases.getSelectionModel().getSelectedItems();
+        List<IllnessBean> sibIllnessList = new ArrayList<IllnessBean>();
+        for(String d : siblist)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            sibIllnessList.add(e);
+        }
+        
+        if(navigator.getUserInfo().getSelfIllnessList()==null)
+        {
+            navigator.getUserInfo().setSelfIllnessList(selfIllnessList);
+        }
+        
+        if(navigator.getUserInfo().getParentsIllnessList()==null)
+        {
+            navigator.getUserInfo().setParentsIllnessList(parentsIllnessList);
+        }
+        
+        if(navigator.getUserInfo().getGrandParentsIllnessList()==null)
+        {
+            navigator.getUserInfo().setGrandParentsIllnessList(grandParentsIllnessList);
+        }
+        
+        if(navigator.getUserInfo().getSiblingsIllnessList()==null)
+        {
+            navigator.getUserInfo().setSiblingsIllnessList(sibIllnessList);
+        }        
+    }
 }
