@@ -2,19 +2,16 @@
 
 <?import java.lang.*?>
 <?import java.net.*?>
-<?import java.util.*?>
 <?import javafx.collections.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen1Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srti.gbb.controller.Screen1Controller">
   <children>
-    <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    <fx:include layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" source="ProductBannerScene.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
         <Label layoutX="14.0" layoutY="10.0" styleClass="screenHeading" text="%First_Screen_Heading">
@@ -50,7 +47,7 @@
     </HBox>
     <AnchorPane layoutX="10.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="325.0" prefWidth="408.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" prefHeight="260.0" prefWidth="354.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="30.0">
+        <GridPane id="GridPane" prefHeight="305.0" prefWidth="326.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="11.0">
           <children>
             <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Age" GridPane.columnIndex="0" GridPane.rowIndex="1" />
