@@ -124,7 +124,7 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     {
         recordUserResponseForIllnessAndSetData();
         
-        navigator.navigateTo(ScreensFramework.screen11ID);
+        navigator.navigateTo(ScreensFramework.screen13ID);
     }
 
     @FXML
