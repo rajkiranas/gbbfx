@@ -6,48 +6,67 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="diseaseStyle" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><HBox id="HBox" alignment="TOP_CENTER" layoutX="24.0" layoutY="110.0" prefHeight="249.0" prefWidth="753.0" spacing="5.0" styleClass="diseaseStyle">
-<children>
-<ListView fx:id="listSelfHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-<ListView fx:id="listParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-<ListView fx:id="listGrandParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-<ListView fx:id="listSiblingsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-</children>
-</HBox><AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
-<children>
-<Label layoutX="14.0" layoutY="8.0" styleClass="screenHeading" text="%Hosipitalization_Heading" textFill="#2e7c95" />
-</children>
-</AnchorPane><HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="409.0" prefHeight="35.0" prefWidth="531.0">
-<children>
-<Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen12" styleClass="previousNextButtons" text="%Btn_Next">
-<HBox.margin>
-<Insets />
-</HBox.margin>
-</Button>
-</children>
-<padding>
-<Insets right="10.0" />
-</padding>
-</HBox><HBox alignment="CENTER_LEFT" layoutX="-9.0" layoutY="409.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
-<children>
-<Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen10" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
-</children>
-<padding>
-<Insets left="10.0" />
-</padding>
-</HBox><Label layoutX="34.0" layoutY="84.0" text="%Lbl_Self" /><Label layoutX="220.0" layoutY="84.0" text="%Lbl_Parents" /><Label layoutX="408.0" layoutY="84.0" text="%Lbl_Grand_Parents" /><Label layoutX="585.0" layoutY="84.0" text="%Lbl_Siblings" /><AnchorPane id="AnchorPane" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="38.3828125" prefWidth="800.0" styleClass="root, bannerBg">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="diseaseStyle" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen13Controller">
   <children>
-    <Label fx:id="productLabel" graphicTextGap="4.0" prefHeight="55.00007792968245" prefWidth="456.9999000000025" style="" styleClass="banner-text" text="%ProductLabel" textAlignment="LEFT" textFill="WHITE" wrapText="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
-      <font>
-        <Font size="22.0" />
-      </font>
-    </Label>
-    <Label onMouseClicked="#closeApplication" prefHeight="25.3828125" prefWidth="55.0" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="4.14" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.86" />
+    <HBox id="HBox" alignment="TOP_CENTER" layoutX="24.0" layoutY="110.0" prefHeight="249.0" prefWidth="753.0" spacing="5.0" styleClass="diseaseStyle">
+      <children>
+        <ListView fx:id="listSelfHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listGrandParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listSiblingsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
+      </children>
+    </HBox>
+    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="14.0" layoutY="8.0" styleClass="screenHeading" text="%Hosipitalization_Heading" textFill="#2e7c95" />
+      </children>
+    </AnchorPane>
+    <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="409.0" prefHeight="35.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" layoutX="-9.0" layoutY="409.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <Label layoutX="34.0" layoutY="84.0" text="%Lbl_Self" />
+    <Label layoutX="220.0" layoutY="84.0" text="%Lbl_Parents" />
+    <Label layoutX="408.0" layoutY="84.0" text="%Lbl_Grand_Parents" />
+    <Label layoutX="585.0" layoutY="84.0" text="%Lbl_Siblings" />
+    <AnchorPane id="AnchorPane" disable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="38.3828125" prefWidth="800.0" styleClass="root, bannerBg">
+      <children>
+        <Label fx:id="productLabel" graphicTextGap="4.0" prefHeight="55.00007792968245" prefWidth="456.9999000000025" style="" styleClass="banner-text" text="%ProductLabel" textAlignment="LEFT" textFill="WHITE" wrapText="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+          <font>
+            <Font size="22.0" />
+          </font>
+        </Label>
+        <Label onMouseClicked="#closeApplication" prefHeight="25.3828125" prefWidth="55.0" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="4.14" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.86" />
+      </children>
+      <stylesheets>
+        <URL value="@../styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <TextField fx:id="txtHospAddSelf" layoutX="34.0" layoutY="359.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
+    <TextField fx:id="txtHospAddParents" layoutX="220.0" layoutY="359.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
+    <TextField fx:id="txtHospAddGrandParents" layoutX="401.0" layoutY="359.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
+    <TextField fx:id="txtHospAddSiblings" layoutX="585.4775390625" layoutY="359.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
+    <Button fx:id="btnHospAddSelf" layoutX="166.459228515625" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" />
+    <Button fx:id="btnHospAddParents" layoutX="352.0" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" />
+    <Button fx:id="btnHospAddGrandParents" layoutX="533.0" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" />
+    <Button fx:id="btnHospAddSiblings" layoutX="717.0" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" />
   </children>
-  <stylesheets>
-    <URL value="@../styles/Styles.css" />
-  </stylesheets>
-</AnchorPane><TextField layoutX="34.0" layoutY="359.0" /><TextField layoutX="220.0" layoutY="359.0" /><TextField layoutX="401.0" layoutY="359.0" /><TextField layoutX="585.4775390625" layoutY="359.0" /><Button layoutX="166.459228515625" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" /><Button layoutX="352.0" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" /><Button layoutX="533.0" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" /><Button layoutX="717.0" layoutY="359.0" mnemonicParsing="false" text="%Btn_Add_Addiction" />
-</children></AnchorPane>
+</AnchorPane>

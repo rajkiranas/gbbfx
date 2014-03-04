@@ -87,4 +87,5 @@ public class GlobalConstants {
     public static final String India_States="India_States";
     public static final String Total_Prakruti_Questions="Total_Prakruti_Questions";
     public static final String Lbl_Disease_Options="Lbl_Disease_Options";
+    public static final String Lbl_Alert="Lbl_Alert";
 }
