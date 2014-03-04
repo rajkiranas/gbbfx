@@ -8,6 +8,7 @@ import com.srti.gbb.bean.IllnessBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextField;
 import javafx.scene.input.ContextMenuEvent;
 
 /**
@@ -40,6 +42,11 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     
     @FXML
     private ListView listSiblingsDiseases;
+    
+    private List<String> arrayListSelfDiseases = new ArrayList<String>();
+    private List<String> arrayListParentsDiseases = new ArrayList<String>();
+    private List<String> arrayListGrandParentsDiseases = new ArrayList<String>();
+    private List<String> arrayListSiblingsDiseases = new ArrayList<String>();
     
     
     
@@ -122,9 +129,21 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToScreen12(ActionEvent event) 
     {
-        recordUserResponseForIllnessAndSetData();
+        if(!txtDiseaseAddSelf.getText().trim().equals(GlobalConstants.emptyString)
+                || !txtDiseaseAddParents.getText().trim().equals(GlobalConstants.emptyString)
+                || !txtDiseaseAddGrandParents.getText().trim().equals(GlobalConstants.emptyString)
+                || !txtDiseaseAddSiblings.getText().trim().equals(GlobalConstants.emptyString))
+        {
+            UIUtils.showAlert("Please click on add button to add the disease","Info");
+            
+        }
+        else
+        {
         
-        navigator.navigateTo(ScreensFramework.screen13ID);
+            recordUserResponseForIllnessAndSetData();
+
+            navigator.navigateTo(ScreensFramework.screen13ID);
+        }
     }
 
     @FXML
@@ -142,6 +161,15 @@ public class Screen10Controller implements Initializable, ControlledScreen {
             selfIllnessList.add(e);
         }
         
+        for(String d : arrayListSelfDiseases)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            selfIllnessList.add(e);
+        }
+        
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
         ObservableList<String> plist = listParentsDiseases.getSelectionModel().getSelectedItems();
         List<IllnessBean> parentsIllnessList = new ArrayList<IllnessBean>();
         for(String d : plist)
@@ -150,6 +178,14 @@ public class Screen10Controller implements Initializable, ControlledScreen {
             e.setIllness(d);
             parentsIllnessList.add(e);
         }
+        for(String d : arrayListParentsDiseases)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            parentsIllnessList.add(e);
+        }
+        
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         ObservableList<String> gplist = listGrandParentsDiseases.getSelectionModel().getSelectedItems();
         List<IllnessBean> grandParentsIllnessList = new ArrayList<IllnessBean>();
@@ -159,6 +195,13 @@ public class Screen10Controller implements Initializable, ControlledScreen {
             e.setIllness(d);
             grandParentsIllnessList.add(e);
         }
+        for(String d : arrayListGrandParentsDiseases)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            grandParentsIllnessList.add(e);
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         ObservableList<String> siblist = listSiblingsDiseases.getSelectionModel().getSelectedItems();
         List<IllnessBean> sibIllnessList = new ArrayList<IllnessBean>();
@@ -169,13 +212,23 @@ public class Screen10Controller implements Initializable, ControlledScreen {
             sibIllnessList.add(e);
         }
         
+        for(String d : arrayListSiblingsDiseases)
+        {
+            IllnessBean e = new IllnessBean();
+            e.setIllness(d);
+            sibIllnessList.add(e);
+        }
+        
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if(navigator.getUserInfo().getSelfIllnessList()==null)
         {
+            System.out.println("selfIllnessList="+selfIllnessList.size());
             navigator.getUserInfo().setSelfIllnessList(selfIllnessList);
         }
         
         if(navigator.getUserInfo().getParentsIllnessList()==null)
         {
+            System.out.println("parentsIllnessList="+parentsIllnessList.size());
             navigator.getUserInfo().setParentsIllnessList(parentsIllnessList);
         }
         
@@ -187,6 +240,74 @@ public class Screen10Controller implements Initializable, ControlledScreen {
         if(navigator.getUserInfo().getSiblingsIllnessList()==null)
         {
             navigator.getUserInfo().setSiblingsIllnessList(sibIllnessList);
-        }        
+        }
+    }
+    
+    @FXML
+    private TextField txtDiseaseAddSelf;
+    @FXML
+    private TextField txtDiseaseAddParents;
+    @FXML
+    private TextField txtDiseaseAddGrandParents;
+    @FXML
+    private TextField txtDiseaseAddSiblings;
+    
+    @FXML
+    private void addSelfDiseaseToList()
+    {
+        if(txtDiseaseAddSelf.getText()==null || txtDiseaseAddSelf.getText().trim().equals(GlobalConstants.emptyString))
+        {
+            UIUtils.showAlert("Please write something in self disease textbox","Alert");
+        }
+        else
+        {
+            arrayListSelfDiseases.add(txtDiseaseAddSelf.getText().trim());
+            txtDiseaseAddSelf.setText(GlobalConstants.emptyString);
+        }
+    }
+    
+    @FXML
+    private void addParentsDiseaseToList()
+    {
+        if(txtDiseaseAddParents.getText()==null || txtDiseaseAddParents.getText().trim().equals(GlobalConstants.emptyString))
+        {
+            UIUtils.showAlert("Please write something in parents disease textbox","Alert");
+        }
+        else
+        {
+            arrayListParentsDiseases.add(txtDiseaseAddParents.getText().trim());
+            txtDiseaseAddParents.setText(GlobalConstants.emptyString);
+        }
+        
+    }
+    
+    @FXML
+    private void addGrandParentsDiseaseToList()
+    {
+        if(txtDiseaseAddGrandParents.getText()==null || txtDiseaseAddGrandParents.getText().trim().equals(GlobalConstants.emptyString))
+        {
+            UIUtils.showAlert("Please write something in grand parents disease textbox","Alert");
+        }
+        else
+        {
+            arrayListGrandParentsDiseases.add(txtDiseaseAddGrandParents.getText().trim());
+            txtDiseaseAddGrandParents.setText(GlobalConstants.emptyString);
+        }
+        
+    }
+    
+    @FXML
+    private void addSiblingsDiseaseToList()
+    {
+        if(txtDiseaseAddSiblings.getText()==null || txtDiseaseAddSiblings.getText().trim().equals(GlobalConstants.emptyString))
+        {
+            UIUtils.showAlert("Please write something in siblings disease textbox","Alert");
+        }
+        else
+        {
+            arrayListSiblingsDiseases.add(txtDiseaseAddSiblings.getText().trim());
+            txtDiseaseAddSiblings.setText(GlobalConstants.emptyString);
+        }
+        
     }
 }

@@ -28,8 +28,8 @@ public class UIUtils
     {
         final Stage secondaryStage = new Stage(StageStyle.UTILITY);
         VBox secondaryLayout = new VBox();
-//        secondaryLayout.setPrefWidth(300);
-//        secondaryLayout.setPrefHeight(10);
+        secondaryLayout.setPrefWidth(300);
+        secondaryLayout.setPrefHeight(90);
         
 //        HBox header= new HBox();
 //        header.setPrefWidth(300);
@@ -51,7 +51,8 @@ public class UIUtils
         secondaryLayout.getChildren().add(ok);
         secondaryLayout.setAlignment(Pos.CENTER);
         secondaryLayout.setSpacing(5);
-        secondaryLayout.setStyle("-fx-background-color: white; -fx-padding: 10; -fx-border-color: #105675; -fx-font-size: 12px; -fx-text-fill: #BF232B;");
+        //-fx-border-color: #105675;
+        secondaryLayout.setStyle("-fx-background-color: white; -fx-padding: 10;  -fx-font-size: 12px; -fx-text-fill: #BF232B;");
         secondaryStage.setScene(new Scene(secondaryLayout, 300, 90));
         //scene.getStylesheets().add("/styles/Styles.css");
         secondaryStage.setTitle(title);
