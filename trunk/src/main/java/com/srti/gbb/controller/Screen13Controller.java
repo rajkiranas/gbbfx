@@ -149,6 +149,8 @@ public class Screen13Controller implements Initializable, ControlledScreen {
         
             recordUserResponseForIllnessAndSetData();
 
+            //System.out.println("***"+navigator.getUserInfo().getSelfIllnessList().get(0).isIsHospitalized());
+            System.out.println("***"+navigator.getUserInfo().getSelfIllnessList().size());
             navigator.navigateTo(ScreensFramework.screen11ID);
         }
         
@@ -336,16 +338,17 @@ public class Screen13Controller implements Initializable, ControlledScreen {
             {
                 System.out.println("contains****="+b.getIllness());
                 b.setIsHospitalized(true);
+                selfIllList.remove(b);
+                selfIllList.add(b);
             }
             else
             {
                 IllnessBean illness = new IllnessBean();
                 illness.setIllness(b.getIllness());
                 illness.setIsHospitalized(true);
-                selfIllList.add(illness);
+                selfIllList.add(illness);                
             }
-        }
-        
+        }        
     }
     
     private void mergeParentsDiseaseAndHospInfo(List<IllnessBean> parentsHospList) 
@@ -357,6 +360,9 @@ public class Screen13Controller implements Initializable, ControlledScreen {
             {
                 System.out.println("contains****="+b.getIllness());
                 b.setIsHospitalized(true);
+                
+                 parentsIllList.remove(b);
+                parentsIllList.add(b);
             }
             else
             {
@@ -378,6 +384,10 @@ public class Screen13Controller implements Initializable, ControlledScreen {
             {
                 System.out.println("contains****="+b.getIllness());
                 b.setIsHospitalized(true);
+                
+                grandParentsIllList.remove(b);
+                grandParentsIllList.add(b);
+                
             }
             else
             {
@@ -399,6 +409,9 @@ public class Screen13Controller implements Initializable, ControlledScreen {
             {
                 System.out.println("contains****="+b.getIllness());
                 b.setIsHospitalized(true);
+                
+                siblingsIllList.remove(b);
+                siblingsIllList.add(b);
             }
             else
             {
