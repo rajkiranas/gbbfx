@@ -240,6 +240,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
+                if(!gen.equals("Housewife"))
                     cmbFatherProfession.getItems().addAll(gen);                    
             }
         }
