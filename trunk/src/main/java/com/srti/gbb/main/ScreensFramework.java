@@ -2,8 +2,10 @@ package com.srti.gbb.main;
 
 import com.srti.gbb.navigator.ScreensNavigator;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -56,10 +58,12 @@ public class ScreensFramework extends Application {
     public static String ThankyouSceneId = "ThankyouScene";
     public static String ThankyouSceneFile = "/screensframework/ThankyouScene.fxml";
     
+    private double xOffset;
+    private double yOffset;
     
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(final Stage primaryStage) {
         
         ScreensNavigator nav = new ScreensNavigator();
         nav.loadScreen(ScreensFramework.screen0ID, ScreensFramework.screen0File);
@@ -85,12 +89,30 @@ public class ScreensFramework extends Application {
         
         Group root = new Group();
         root.getChildren().addAll(nav);
+        
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                primaryStage.setX(event.getScreenX() - xOffset);
+                primaryStage.setY(event.getScreenY() - yOffset);
+            }
+        });
+        
+        
         Scene scene = new Scene(root,800,450);
         //root.setLayoutX(800);
         scene.getStylesheets().add("/styles/Styles.css");
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setScene(scene);
-        //primaryStage.setResizable(false);
+//        scene.setm(false);
+//        scene.setResizable(true);
         primaryStage.show();
     }
 
