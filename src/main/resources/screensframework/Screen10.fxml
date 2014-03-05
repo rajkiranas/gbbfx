@@ -47,7 +47,7 @@
     <Label layoutX="219.0" layoutY="84.0" text="%Lbl_Parents" />
     <Label layoutX="593.0" layoutY="84.0" text="%Lbl_Siblings" />
     <Label layoutX="407.0" layoutY="84.0" text="%Lbl_Grand_Parents" />
-    <VBox id="VBox" alignment="CENTER" layoutX="34.0" layoutY="359.0" spacing="5.0">
+    <VBox id="VBox" alignment="CENTER" layoutX="33.0" layoutY="360.0" spacing="5.0">
       <children>
         <Label text="%Lbl_Add_Other_Disease_Msg" />
         <HBox id="HBox" alignment="CENTER_LEFT" fillHeight="true" spacing="2.0">

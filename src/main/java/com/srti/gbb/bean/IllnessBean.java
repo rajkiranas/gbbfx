@@ -4,6 +4,8 @@
  */
 package com.srti.gbb.bean;
 
+import java.util.Objects;
+
 /**
  *
  * @author rajkirans
@@ -27,6 +29,28 @@ public class IllnessBean
 
     public void setIsHospitalized(boolean isHospitalized) {
         this.isHospitalized = isHospitalized;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.illness);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final IllnessBean other = (IllnessBean) obj;
+        if (!Objects.equals(this.illness, other.illness)) {
+            return false;
+        }
+        return true;
     }
     
     
