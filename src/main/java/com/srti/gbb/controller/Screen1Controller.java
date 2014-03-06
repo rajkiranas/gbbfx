@@ -330,7 +330,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     
     @FXML
     private void populateLooseMotionsCombo(Event event) {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbLooseMotions.getItems().size()==0)
@@ -348,7 +348,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     @FXML
     private void populateConstipationsCombo(Event event) 
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbConstipations.getItems().size()==0)
