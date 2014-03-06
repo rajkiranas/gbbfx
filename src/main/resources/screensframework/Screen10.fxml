@@ -37,10 +37,10 @@
     </HBox>
     <HBox id="HBox" alignment="TOP_CENTER" layoutX="24.0" layoutY="111.0" prefHeight="248.0" prefWidth="753.0" spacing="5.0" styleClass="diseaseStyle">
       <children>
-        <ListView fx:id="listSelfDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listGrandParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listSiblingsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listSelfDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSelf" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsParents" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listGrandParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsGrandParents" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listSiblingsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSiblings" prefHeight="243.0" prefWidth="180.0" />
       </children>
     </HBox>
     <Label layoutX="33.0" layoutY="84.0" text="%Lbl_Self" />

@@ -11,10 +11,15 @@ import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -423,6 +428,106 @@ public class Screen13Controller implements Initializable, ControlledScreen {
         }
         
     }
-
     
+    
+    
+    private Map<String,String> entertainmentMapSelf=new HashMap<String,String>();
+    @FXML
+    private void manageMultipleSelectionsSelf(Event event) {
+        //System.out.println("****="+listSelfDiseases.getSelectionModel().getSelectedItem().toString());
+        String e = listSelfHostpitalization.getSelectionModel().getSelectedItem().toString();
+        if (entertainmentMapSelf.containsKey(e)) 
+        {
+            entertainmentMapSelf.remove(e);
+        }
+        else
+        {
+            entertainmentMapSelf.put(e, e);
+        }
+        
+        listSelfHostpitalization.getSelectionModel().clearSelection();
+        Set <String> ks = entertainmentMapSelf.keySet();
+        Iterator<String> itr = ks.iterator();
+        String key = GlobalConstants.emptyString;
+        while(itr.hasNext())
+        {
+            key = itr.next();
+            listSelfHostpitalization.getSelectionModel().select(key);
+        }
+    }
+    
+    private Map<String,String> entertainmentMapParents=new HashMap<String,String>();
+    @FXML
+    private void manageMultipleSelectionsParents(Event event) {
+        //System.out.println("****="+listSelfDiseases.getSelectionModel().getSelectedItem().toString());
+        String e = listParentsHostpitalization.getSelectionModel().getSelectedItem().toString();
+        if (entertainmentMapParents.containsKey(e)) 
+        {
+            entertainmentMapParents.remove(e);
+        }
+        else
+        {
+            entertainmentMapParents.put(e, e);
+        }
+        
+        listParentsHostpitalization.getSelectionModel().clearSelection();
+        Set <String> ks = entertainmentMapParents.keySet();
+        Iterator<String> itr = ks.iterator();
+        String key = GlobalConstants.emptyString;
+        while(itr.hasNext())
+        {
+            key = itr.next();
+            listParentsHostpitalization.getSelectionModel().select(key);
+        }
+    }
+    
+    private Map<String,String> entertainmentMapGrandParents=new HashMap<String,String>();
+    @FXML
+    private void manageMultipleSelectionsGrandParents(Event event) {
+        //System.out.println("****="+listSelfDiseases.getSelectionModel().getSelectedItem().toString());
+        String e = listGrandParentsHostpitalization.getSelectionModel().getSelectedItem().toString();
+        if (entertainmentMapGrandParents.containsKey(e)) 
+        {
+            entertainmentMapGrandParents.remove(e);
+        }
+        else
+        {
+            entertainmentMapGrandParents.put(e, e);
+        }
+        
+        listGrandParentsHostpitalization.getSelectionModel().clearSelection();
+        Set <String> ks = entertainmentMapGrandParents.keySet();
+        Iterator<String> itr = ks.iterator();
+        String key = GlobalConstants.emptyString;
+        while(itr.hasNext())
+        {
+            key = itr.next();
+            listGrandParentsHostpitalization.getSelectionModel().select(key);
+        }
+    }
+    
+    private Map<String,String> entertainmentMapSiblings=new HashMap<String,String>();
+    @FXML
+    private void manageMultipleSelectionsSiblings(Event event) {
+        //System.out.println("****="+listSelfDiseases.getSelectionModel().getSelectedItem().toString());
+        String e = listSiblingsHostpitalization.getSelectionModel().getSelectedItem().toString();
+        if (entertainmentMapSiblings.containsKey(e)) 
+        {
+            entertainmentMapSiblings.remove(e);
+        }
+        else
+        {
+            entertainmentMapSiblings.put(e, e);
+        }
+        
+        listSiblingsHostpitalization.getSelectionModel().clearSelection();
+        Set <String> ks = entertainmentMapSiblings.keySet();
+        Iterator<String> itr = ks.iterator();
+        String key = GlobalConstants.emptyString;
+        while(itr.hasNext())
+        {
+            key = itr.next();
+            listSiblingsHostpitalization.getSelectionModel().select(key);
+        }
+    }
 }
