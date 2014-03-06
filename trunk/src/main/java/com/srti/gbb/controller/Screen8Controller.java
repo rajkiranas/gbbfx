@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -59,6 +60,11 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToScreen7(ActionEvent event) {
         navigator.navigateTo(ScreensFramework.screen7ID);
+    }
+    
+    @FXML
+    private void manageMultipleSelections(Event event) {
+        System.out.println("****="+entertainmentList.getSelectionModel().getSelectedItem().toString());
     }
 
     @FXML
