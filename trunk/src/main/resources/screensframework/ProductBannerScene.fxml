@@ -16,7 +16,7 @@
         <Font size="22.0" />
       </font>
     </Label>
-    <Label onMouseClicked="#closeApplication" prefHeight="25.3828125" prefWidth="55.0" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="4.14" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.86" />
+    <Label onMouseClicked="#closeApplication" prefHeight="25.3828125" prefWidth="55.0" text="%Lbl_Close" textFill="WHITE" AnchorPane.bottomAnchor="4.14" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.86" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />
