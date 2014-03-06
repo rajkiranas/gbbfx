@@ -233,7 +233,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private void populateAfternoonSleep(Event e)
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbAfternoonSleep.getItems().size()==0)
@@ -243,7 +243,6 @@ public class Screen3Controller implements Initializable, ControlledScreen {
                     cmbAfternoonSleep.getItems().addAll(gen);
             }
         }
-        
     }
     
     @FXML
@@ -252,7 +251,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private void populateLateNights(Event e)
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbLateNights.getItems().size()==0)

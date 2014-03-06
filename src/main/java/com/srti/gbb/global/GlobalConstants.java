@@ -58,6 +58,7 @@ public class GlobalConstants {
     public static final String emptyString = "";
     public static final String MaxAge="MaxAge";
     public static final String Loose_Motions_Constipations_Values="Loose_Motions_Constipations_Values";
+    public static final String Zero_To_Seven_WeekDays="Zero_To_Seven_WeekDays";
     public static final String Zero="0";
     public static final String TwentyFour="24";
     public static final String Diet_Options="Diet_Options";
