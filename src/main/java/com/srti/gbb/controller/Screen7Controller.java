@@ -55,6 +55,9 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     @FXML
     private CheckBox chkIsRegularPray;
     
+    @FXML
+    private CheckBox chkSocialService;
+    
 
     /**
      * Initializes the controller class.
@@ -95,7 +98,13 @@ public class Screen7Controller implements Initializable, ControlledScreen {
             }
         }
         
-        
+        cmbTimesPerWeekCash.setDisable(true);
+        cmbTimesPerWeekKind.setDisable(true);
+        cmbTimesPerWeekService.setDisable(true);
+        txtAmtCash.setDisable(true);
+        txtAmtKind.setDisable(true);
+        txtAmtService.setDisable(true);
+        txtAreaOfWork.setDisable(true);
     }
     
     private void populatePrayersPerWeekOptions() 
@@ -127,6 +136,52 @@ public class Screen7Controller implements Initializable, ControlledScreen {
             }
         }
         
+        
+        cmbPrayIndividual.setDisable(true);
+        cmbPrayFamily.setDisable(true);
+        cmbPrayCommunity.setDisable(true);
+    }
+    
+    @FXML
+    private void togglePrayerCombos(ActionEvent event) 
+    {
+         if(chkIsRegularPray.isSelected())
+         {
+             cmbPrayIndividual.setDisable(false);
+             cmbPrayFamily.setDisable(false);
+             cmbPrayCommunity.setDisable(false);
+         }
+         else
+         {
+             cmbPrayIndividual.setDisable(true);
+             cmbPrayFamily.setDisable(true);
+             cmbPrayCommunity.setDisable(true);
+         }
+    }
+    
+    @FXML
+    private void toggleSocialServiceCombos(ActionEvent event) 
+    {
+         if(chkSocialService.isSelected())
+         {
+             cmbTimesPerWeekCash.setDisable(false);
+            cmbTimesPerWeekKind.setDisable(false);
+            cmbTimesPerWeekService.setDisable(false);
+            txtAmtCash.setDisable(false);
+            txtAmtKind.setDisable(false);
+            txtAmtService.setDisable(false);
+            txtAreaOfWork.setDisable(false);
+         }
+         else
+         {
+            cmbTimesPerWeekCash.setDisable(true);
+            cmbTimesPerWeekKind.setDisable(true);
+            cmbTimesPerWeekService.setDisable(true);
+            txtAmtCash.setDisable(true);
+            txtAmtKind.setDisable(true);
+            txtAmtService.setDisable(true);
+            txtAreaOfWork.setDisable(true);
+         }
     }
 
     
@@ -147,26 +202,33 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     {
         if(validatePrayerForm() && validateSocialServiceForm())
         {
-            PrayersBean pray = new PrayersBean();
-            pray.setRegularPray(chkIsRegularPray.isSelected());
-            pray.setIndividualPrayerPerWeek(Integer.parseInt(cmbPrayIndividual.getValue().toString()));
-            pray.setFamilyPrayerPerWeek(Integer.parseInt(cmbPrayFamily.getValue().toString()));
-            pray.setCommunityPrayerPerWeek(Integer.parseInt(cmbPrayCommunity.getValue().toString()));
-            if(navigator.getUserInfo().getPrayers()==null)
+            if(chkIsRegularPray.isSelected())
             {
-                navigator.getUserInfo().setPrayers(pray);
+               PrayersBean pray = new PrayersBean();
+               pray.setRegularPray(chkIsRegularPray.isSelected());
+               pray.setIndividualPrayerPerWeek(Integer.parseInt(cmbPrayIndividual.getValue().toString()));
+               pray.setFamilyPrayerPerWeek(Integer.parseInt(cmbPrayFamily.getValue().toString()));
+               pray.setCommunityPrayerPerWeek(Integer.parseInt(cmbPrayCommunity.getValue().toString()));
+               if(navigator.getUserInfo().getPrayers()==null)
+               {
+                   navigator.getUserInfo().setPrayers(pray);
+               }
             }
-            SocialServiceBean ss = new SocialServiceBean();
-            ss.setApproxAmtCash(Float.parseFloat(txtAmtCash.getText()));
-            ss.setApproxAmtKind(Float.parseFloat(txtAmtKind.getText()));
-            ss.setApproxAmtService(Float.parseFloat(txtAmtService.getText()));
-            ss.setCashPerWeek(Integer.parseInt(cmbTimesPerWeekCash.getValue().toString()));
-            ss.setKindPerWeek(Integer.parseInt(cmbTimesPerWeekKind.getValue().toString()));
-            ss.setSocialServicePerWeek(Integer.parseInt(cmbTimesPerWeekService.getValue().toString()));
-            ss.setAreaOfWork(txtAreaOfWork.getText());
-            if(navigator.getUserInfo().getSocialService()==null)
+            
+            if(chkSocialService.isSelected())
             {
-                navigator.getUserInfo().setSocialService(ss);
+                   SocialServiceBean ss = new SocialServiceBean();
+                   ss.setApproxAmtCash(Float.parseFloat(txtAmtCash.getText()));
+                   ss.setApproxAmtKind(Float.parseFloat(txtAmtKind.getText()));
+                   ss.setApproxAmtService(Float.parseFloat(txtAmtService.getText()));
+                   ss.setCashPerWeek(Integer.parseInt(cmbTimesPerWeekCash.getValue().toString()));
+                   ss.setKindPerWeek(Integer.parseInt(cmbTimesPerWeekKind.getValue().toString()));
+                   ss.setSocialServicePerWeek(Integer.parseInt(cmbTimesPerWeekService.getValue().toString()));
+                   ss.setAreaOfWork(txtAreaOfWork.getText());
+                   if(navigator.getUserInfo().getSocialService()==null)
+                   {
+                       navigator.getUserInfo().setSocialService(ss);
+                   }
             }
             navigator.navigateTo(ScreensFramework.screen8ID);
         }
@@ -175,21 +237,22 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     private boolean validatePrayerForm() 
     {
         boolean isValid = true;
-         if(cmbPrayIndividual.getValue()==null || cmbPrayIndividual.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select individual prayer value", "Alert");
-        }
-         else if(cmbPrayFamily.getValue()==null || cmbPrayFamily.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select family prayer value", "Alert");
-        }
-         else if(cmbPrayCommunity.getValue()==null || cmbPrayCommunity.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select community prayer value", "Alert");
-        }
+        if(chkIsRegularPray.isSelected())
+         {
+             if (cmbPrayIndividual.getValue() == null || cmbPrayIndividual.getValue().toString().equals(GlobalConstants.emptyString)) 
+             {
+                 isValid = false;
+                 UIUtils.showAlert("Please select individual prayer value", "Alert");
+             } else if (cmbPrayFamily.getValue() == null || cmbPrayFamily.getValue().toString().equals(GlobalConstants.emptyString)) 
+             {
+                 isValid = false;
+                 UIUtils.showAlert("Please select family prayer value", "Alert");
+             } else if (cmbPrayCommunity.getValue() == null || cmbPrayCommunity.getValue().toString().equals(GlobalConstants.emptyString)) 
+             {
+                 isValid = false;
+                 UIUtils.showAlert("Please select community prayer value", "Alert");
+             }
+         }
          return isValid;
     }
     
@@ -208,57 +271,59 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     private boolean validateSocialServiceForm() 
     {
         boolean isValid = true;
-         if(txtAmtCash.getText()==null || txtAmtCash.getText().equals(GlobalConstants.emptyString))
+        if(chkSocialService.isSelected())
         {
-            isValid=false;
-            UIUtils.showAlert("Please enter approximate amount for cash service", "Alert");
-        }
-         else if(!GbbValidator.isValidNumber(txtAmtCash.getText()))
-        {
-            isValid=false;
-            UIUtils.showAlert("Invalid approximate amount for cash service", "Alert");
-        }
-         else if(cmbTimesPerWeekCash.getValue()==null || cmbTimesPerWeekCash.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select cash service per week", "Alert");
-        }
-         else if(txtAmtKind.getText()==null || txtAmtKind.getText().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please enter approximate amount for kind service", "Alert");
-        }
-         else if(!GbbValidator.isValidNumber(txtAmtKind.getText()))
-        {
-            isValid=false;
-            UIUtils.showAlert("Invalid approximate amount for kind service", "Alert");
-        }
-         else if(cmbTimesPerWeekKind.getValue()==null || cmbTimesPerWeekKind.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select kind service per week", "Alert");
-        }
-         else if(txtAmtService.getText()==null || txtAmtService.getText().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please enter approximate amount for social service", "Alert");
-        }
-         else if(!GbbValidator.isValidNumber(txtAmtService.getText()))
-        {
-            isValid=false;
-            UIUtils.showAlert("Invalid approximate amount for social service", "Alert");
-        }
-         else if(cmbTimesPerWeekService.getValue()==null || cmbTimesPerWeekService.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select social service per week", "Alert");
-        }
-         else if(txtAreaOfWork.getText()==null || txtAreaOfWork.getText().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please enter area of work", "Alert");
-        }
-         
+            if(txtAmtCash.getText()==null || txtAmtCash.getText().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please enter approximate amount for cash service", "Alert");
+           }
+            else if(!GbbValidator.isValidNumber(txtAmtCash.getText()))
+           {
+               isValid=false;
+               UIUtils.showAlert("Invalid approximate amount for cash service", "Alert");
+           }
+            else if(cmbTimesPerWeekCash.getValue()==null || cmbTimesPerWeekCash.getValue().toString().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please select cash service per week", "Alert");
+           }
+            else if(txtAmtKind.getText()==null || txtAmtKind.getText().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please enter approximate amount for kind service", "Alert");
+           }
+            else if(!GbbValidator.isValidNumber(txtAmtKind.getText()))
+           {
+               isValid=false;
+               UIUtils.showAlert("Invalid approximate amount for kind service", "Alert");
+           }
+            else if(cmbTimesPerWeekKind.getValue()==null || cmbTimesPerWeekKind.getValue().toString().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please select kind service per week", "Alert");
+           }
+            else if(txtAmtService.getText()==null || txtAmtService.getText().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please enter approximate amount for social service", "Alert");
+           }
+            else if(!GbbValidator.isValidNumber(txtAmtService.getText()))
+           {
+               isValid=false;
+               UIUtils.showAlert("Invalid approximate amount for social service", "Alert");
+           }
+            else if(cmbTimesPerWeekService.getValue()==null || cmbTimesPerWeekService.getValue().toString().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please select social service per week", "Alert");
+           }
+            else if(txtAreaOfWork.getText()==null || txtAreaOfWork.getText().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please enter area of work", "Alert");
+           }
+       }
          return isValid;
     }
     
