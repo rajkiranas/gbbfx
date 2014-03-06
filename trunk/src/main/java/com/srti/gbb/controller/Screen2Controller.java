@@ -175,7 +175,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
     
     @FXML
     private void populateNonVegPerWeek(Event event) {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbNonVeg.getItems().size()==0)
@@ -205,7 +205,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
     @FXML
     private void populateFruitsPerWeek(Event event) 
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbFruits.getItems().size()==0)
@@ -220,7 +220,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
     @FXML
     private void populateEatingOutPerWeek(Event event) 
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbEatingOut.getItems().size()==0)
@@ -235,7 +235,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
     @FXML
     private void populateExerciseSchedule(Event event) 
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbExerciseSchedule.getItems().size()==0)

@@ -63,12 +63,12 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         populatePrayersPerWeekOptions();
-        populateOccupation();
+        populateSocialServicePerWeek();
     }    
     
-    private void populateOccupation() 
+    private void populateSocialServicePerWeek() 
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         String[] list =  genderList.split(GlobalConstants.COMMA);
         
         if(cmbTimesPerWeekCash.getItems().size()==0)
@@ -100,7 +100,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     
     private void populatePrayersPerWeekOptions() 
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         String[] list =  genderList.split(GlobalConstants.COMMA);
         
         if(cmbPrayIndividual.getItems().size()==0)
