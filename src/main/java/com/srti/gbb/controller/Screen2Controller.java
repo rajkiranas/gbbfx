@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -52,12 +53,18 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         @FXML
         private TextField txtFoodType;
         
+        @FXML
+        private CheckBox chkRegularExercise;
+        
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cmbExerciseSchedule.setDisable(true);
+        cmbExerciseType.setDisable(true);
+        cmbDuration.setDisable(true);
     }
     
     public void setScreenParent(ScreensNavigator screenParent){
@@ -71,15 +78,31 @@ public class Screen2Controller implements Initializable , ControlledScreen {
     
     @FXML
     private void goToScreen3(ActionEvent event){
-        if(validateForm())
+        if(validateMealForm() && validateExerciseForm())
          {
              setMealType();
             navigator.navigateTo(ScreensFramework.screen3ID);
          }
-       
     }
     
-    private boolean validateForm()
+    @FXML
+    private void toggleExerciseCombos(ActionEvent event)
+    {
+        if(chkRegularExercise.isSelected())
+         {
+             cmbExerciseSchedule.setDisable(false);
+             cmbExerciseType.setDisable(false);
+             cmbDuration.setDisable(false);
+         }
+         else
+         {
+             cmbExerciseSchedule.setDisable(true);
+             cmbExerciseType.setDisable(true);
+             cmbDuration.setDisable(true);
+         }
+    }
+    
+    private boolean validateMealForm()
      {
          
          boolean isValid=true;
@@ -113,20 +136,26 @@ public class Screen2Controller implements Initializable , ControlledScreen {
              UIUtils.showAlert("Please select eating out value", "Alert"); 
              isValid=false;
          }
-          else if(cmbExerciseSchedule.getValue()==null || cmbExerciseSchedule.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         
+         return isValid;
+     }
+    
+    private boolean validateExerciseForm()
+     {
+         
+         boolean isValid=true;
+         if (chkRegularExercise.isSelected()) 
          {
-             UIUtils.showAlert("Please select exercise schedule value", "Alert"); 
-             isValid=false;
-         }
-          else if(cmbExerciseType.getValue()==null || cmbExerciseType.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("Please select exercise type value", "Alert"); 
-             isValid=false;
-         }
-          else if(cmbDuration.getValue()==null || cmbDuration.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("Please select hours value", "Alert"); 
-             isValid=false;
+             if (cmbExerciseSchedule.getValue() == null || cmbExerciseSchedule.getValue().toString().trim().equals(GlobalConstants.emptyString)) {
+                 UIUtils.showAlert("Please select exercise schedule value", "Alert");
+                 isValid = false;
+             } else if (cmbExerciseType.getValue() == null || cmbExerciseType.getValue().toString().trim().equals(GlobalConstants.emptyString)) {
+                 UIUtils.showAlert("Please select exercise type value", "Alert");
+                 isValid = false;
+             } else if (cmbDuration.getValue() == null || cmbDuration.getValue().toString().trim().equals(GlobalConstants.emptyString)) {
+                 UIUtils.showAlert("Please select hours value", "Alert");
+                 isValid = false;
+             }
          }
          
          return isValid;
@@ -150,12 +179,15 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         
         navigator.getUserInfo().setMeal(meal);
         
-        ExerciseBean exercise = new ExerciseBean();
-        exercise.setExercisePerWeek(Integer.valueOf(cmbExerciseSchedule.getValue().toString()));
-        exercise.setExerciseType(cmbExerciseType.getValue().toString());
-        exercise.setDurationPerDay(Integer.valueOf(cmbDuration.getValue().toString()));
-        
-        navigator.getUserInfo().setExercise(exercise);
+        if (chkRegularExercise.isSelected()) 
+        {
+            ExerciseBean exercise = new ExerciseBean();
+            exercise.setExercisePerWeek(Integer.valueOf(cmbExerciseSchedule.getValue().toString()));
+            exercise.setExerciseType(cmbExerciseType.getValue().toString());
+            exercise.setDurationPerDay(Integer.valueOf(cmbDuration.getValue().toString()));
+
+            navigator.getUserInfo().setExercise(exercise);
+        }
     }
     
      @FXML

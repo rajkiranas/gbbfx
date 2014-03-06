@@ -117,7 +117,7 @@
     </AnchorPane>
     <AnchorPane layoutX="437.0" layoutY="91.0" prefHeight="304.0" prefWidth="323.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" prefHeight="249.0" prefWidth="295.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="20.0">
+        <GridPane id="GridPane" prefHeight="249.0" prefWidth="295.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="41.0">
           <children>
             <Label text="%Lbl_Exercise_Schedule" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Exercise_Type" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -151,6 +151,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
+        <CheckBox fx:id="chkRegularExercise" layoutX="28.0" layoutY="16.0" mnemonicParsing="false" onAction="#toggleExerciseCombos" text="%Lbl_CheckBox_Regular_Exercise" />
       </children>
     </AnchorPane>
   </children>
