@@ -270,19 +270,32 @@ public class Screen11Controller implements Initializable, ControlledScreen {
          boolean isQ3Answered = false;
          boolean isValid;
          
-         if(q1o1.isSelected() || q1o2.isSelected() || q1o3.isSelected())
+         if (q1.getText() == null) 
+         {
+            isQ3Answered = true;
+
+        } else if (q1o1.isSelected() || q1o2.isSelected() || q1o3.isSelected()) 
         {
-            isQ1Answered=true;
+            isQ1Answered = true;
         }
-         
-         if(q2o1.isSelected() || q2o2.isSelected() || q2o3.isSelected())
+
+
+        if (q2.getText() == null) 
         {
-            isQ2Answered=true;
+            isQ3Answered = true;
+
+        } else if (q2o1.isSelected() || q2o2.isSelected() || q2o3.isSelected()) 
+        {
+            isQ2Answered = true;
         }
-         
-         if(q3o1.isSelected() || q3o2.isSelected() || q3o3.isSelected())
+
+
+        if (q3.getText() == null) {
+            isQ3Answered = true;
+
+        } else if (q3o1.isSelected() || q3o2.isSelected() || q3o3.isSelected()) 
         {
-            isQ3Answered=true;            
+            isQ3Answered = true;
         }
          
          if(isQ1Answered && isQ2Answered && isQ3Answered)
