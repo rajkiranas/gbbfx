@@ -28,60 +28,59 @@
     </AnchorPane>
     <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="305.0" prefWidth="413.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="10.0" layoutY="22.0" prefHeight="235.0" prefWidth="396.0">
+        <GridPane id="GridPane" layoutX="10.0" layoutY="46.0" prefHeight="211.0" prefWidth="396.0">
           <children>
-            <Label text="%Lbl_Individual_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Label text="%Lbl_Family_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label text="%Lbl_Friends_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Individual_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Family_Traveling" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Friends_Traveling" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Traveling_Params" GridPane.columnIndex="4" GridPane.rowIndex="0" />
             <Label text="%Lbl_Traveling_Params" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <Label text="%Lbl_Traveling_Params" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Label text="%Lbl_Traveling_Params" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <ComboBox id="cmbIndLocal" fx:id="cmbLocalInd" maxWidth="-Infinity" prefHeight="39.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox id="cmbIndLocal" fx:id="cmbLocalInd" maxWidth="-Infinity" prefHeight="39.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox id="cmbIndNational" fx:id="cmbNationalInd" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ComboBox id="cmbIndNational" fx:id="cmbNationalInd" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbInternationalInd" prefHeight="39.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbInternationalInd" prefHeight="39.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox id="cmbIndFamily" fx:id="cmbLocalFamily" maxWidth="-Infinity" prefHeight="39.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox id="cmbIndFamily" fx:id="cmbLocalFamily" maxWidth="-Infinity" prefHeight="39.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbNationalFamily" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbNationalFamily" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbInternationalFamily" prefHeight="39.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbInternationalFamily" prefHeight="39.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox id="cmbIndFriends" fx:id="cmbLocalFriends" maxWidth="-Infinity" prefHeight="39.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ComboBox id="cmbIndFriends" fx:id="cmbLocalFriends" maxWidth="-Infinity" prefHeight="39.0" prefWidth="72.0" promptText="%Lbl_Traveling_Type_Local" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbNationalFriends" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbNationalFriends" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="83.0" promptText="%Lbl_Traveling_Type_National" GridPane.columnIndex="2" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbInternationalFriends" prefHeight="39.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbInternationalFriends" prefHeight="39.0" prefWidth="108.0" promptText="%Lbl_Traveling_Type_International" GridPane.columnIndex="3" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <Label prefWidth="52.0" styleClass="answersStyle" text="%Lbl_Travel" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.0" minWidth="10.0" prefWidth="71.0" />
@@ -91,12 +90,12 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="36.0" minWidth="10.0" prefWidth="36.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="132.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="119.0" minHeight="1.0" prefHeight="65.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
+        <Label layoutX="14.0" layoutY="21.0" prefWidth="167.0" styleClass="answersStyle" text="%Lbl_Travel" wrapText="false" />
       </children>
     </AnchorPane>
     <AnchorPane layoutX="441.0" layoutY="100.0" prefHeight="305.0" prefWidth="344.0" styleClass="roundEdge, throughoutLabelsStyle">

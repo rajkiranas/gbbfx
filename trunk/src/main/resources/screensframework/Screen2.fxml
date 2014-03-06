@@ -9,9 +9,9 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srti.gbb.controller.Screen2Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen2Controller">
   <children>
-    <fx:include layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" source="ProductBannerScene.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
         <Label layoutX="37.0" layoutY="8.0" styleClass="screenHeading" text="%Meal_Type_Heading">
@@ -117,7 +117,7 @@
     </AnchorPane>
     <AnchorPane layoutX="437.0" layoutY="91.0" prefHeight="304.0" prefWidth="323.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" prefHeight="293.0" prefWidth="329.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="4.0">
+        <GridPane id="GridPane" prefHeight="249.0" prefWidth="295.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="20.0">
           <children>
             <Label text="%Lbl_Exercise_Schedule" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Exercise_Type" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -137,13 +137,13 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <Label text="%Lbl_Exercise_Schedule_Params" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Exercise_Schedule_Params" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             <Label text="%Lbl_Duration_Params" GridPane.columnIndex="2" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="130.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="2.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="121.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="115.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="2.0" prefWidth="45.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

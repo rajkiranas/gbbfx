@@ -52,12 +52,12 @@
             <Label text="%Lbl_City" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <TextField fx:id="txtHouse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             <TextField fx:id="txtArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cmbCountry" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#populateStatesList" prefHeight="43.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbCountry" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#populateStatesList" prefHeight="43.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbState" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbState" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
