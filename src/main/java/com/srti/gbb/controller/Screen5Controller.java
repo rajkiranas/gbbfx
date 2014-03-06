@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 
 /**
@@ -29,6 +30,13 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     private List<FamilyEducation> familyList;
     private List<FamilyEducation> familyMembersList = new ArrayList<FamilyEducation>();
     private ScreensNavigator navigator;
+    
+    @FXML
+    private CheckBox chkDeceasedFather;
+    
+    @FXML
+    private CheckBox chkDeceasedMother;
+    
     /**
      * Initializes the controller class.
      */
@@ -101,7 +109,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
                 cmbFMProfession.getValue()!=null || 
                 cmbFMIncome.getValue()!=null)
             {
-                if(validateEducationFormForFamilyMember() && validateFatherMotherForm())
+                if(validateEducationFormForFamilyMember() && validateFatherForm() && validateMotherForm())
                 {
                     familyMembersList.add(getFamilyEducationBeanForCurrentForm());
                     insertFatherMotherDataInList();
@@ -109,7 +117,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
                     navigator.navigateTo(ScreensFramework.screen6ID);
                 }
             }
-            else if(validateFatherMotherForm())
+            else if(validateFatherForm() && validateMotherForm())
             {
                 insertFatherMotherDataInList();
                 setFamilyEducationData();
@@ -336,69 +344,82 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         return isValid;
     }
 
-    private boolean validateFatherMotherForm() 
+    private boolean validateFatherForm() 
     {
         boolean isValid=true;
-        if(cmbFatherHQ.getValue()==null || cmbFatherHQ.getValue().toString().equals(GlobalConstants.emptyString))
+        if (!chkDeceasedFather.isSelected()) 
         {
-            isValid=false;
-            UIUtils.showAlert("Please select qualification for father", "Alert");
+            if (cmbFatherHQ.getValue() == null || cmbFatherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select qualification for father", "Alert");
+            } else if (cmbFatherOccupation.getValue() == null || cmbFatherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select occupation for father", "Alert");
+            } else if (cmbFatherProfession.getValue() == null || cmbFatherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select profession for father", "Alert");
+            } else if (cmbFatherIncome.getValue() == null || cmbFatherIncome.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select income for father", "Alert");
+            }
         }
-        else if(cmbFatherOccupation.getValue()==null || cmbFatherOccupation.getValue().toString().equals(GlobalConstants.emptyString))
+        return isValid;
+    }
+    
+    private boolean validateMotherForm() 
+    {
+        boolean isValid=true;
+        if (!chkDeceasedMother.isSelected()) 
         {
-            isValid=false;
-            UIUtils.showAlert("Please select occupation for father", "Alert");
-        }
-        else if(cmbFatherProfession.getValue()==null || cmbFatherProfession.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select profession for father", "Alert");
-        }
-        else if(cmbFatherIncome.getValue()==null || cmbFatherIncome.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select income for father", "Alert");
-        }
-        else if(cmbMotherHQ.getValue()==null || cmbMotherHQ.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select qualification for mother", "Alert");
-        }
-        else if(cmbMotherOccupation.getValue()==null || cmbMotherOccupation.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select occupation for mother", "Alert");
-        }
-        else if(cmbMotherProfession.getValue()==null || cmbMotherProfession.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select profession for mother", "Alert");
-        }
-        else if(cmbMotherIncome.getValue()==null || cmbMotherIncome.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select income for mother", "Alert");
+            if (cmbMotherHQ.getValue() == null || cmbMotherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select qualification for mother", "Alert");
+            } else if (cmbMotherOccupation.getValue() == null || cmbMotherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select occupation for mother", "Alert");
+            } else if (cmbMotherProfession.getValue() == null || cmbMotherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select profession for mother", "Alert");
+            } else if (cmbMotherIncome.getValue() == null || cmbMotherIncome.getValue().toString().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("Please select income for mother", "Alert");
+            }
         }
         return isValid;
     }
 
-    private void insertFatherMotherDataInList() {
+    private void insertFatherMotherDataInList() 
+    {
         FamilyEducation bean = new FamilyEducation();
-        bean.setFamilyMember("Father");
-        bean.setHighestQualification(cmbFatherHQ.getValue().toString());
-        bean.setOccupation(cmbFatherOccupation.getValue().toString());
-        bean.setProfession(cmbFatherProfession.getValue().toString());
-        bean.setIncome(cmbFatherIncome.getValue().toString());
+        if (!chkDeceasedFather.isSelected()) 
+        {
+            bean.setFamilyMember("Father");
+            bean.setHighestQualification(cmbFatherHQ.getValue().toString());
+            bean.setOccupation(cmbFatherOccupation.getValue().toString());
+            bean.setProfession(cmbFatherProfession.getValue().toString());
+            bean.setIncome(cmbFatherIncome.getValue().toString());
+
+            familyList.add(bean);
+        }
         
-        familyList.add(bean);
-        
-        bean.setFamilyMember("Mother");
-        bean.setHighestQualification(cmbMotherHQ.getValue().toString());
-        bean.setOccupation(cmbMotherOccupation.getValue().toString());
-        bean.setProfession(cmbMotherProfession.getValue().toString());
-        bean.setIncome(cmbMotherIncome.getValue().toString());
-        
-        familyList.add(bean);
+        if (!chkDeceasedMother.isSelected()) 
+        {
+            bean.setFamilyMember("Mother");
+            bean.setHighestQualification(cmbMotherHQ.getValue().toString());
+            bean.setOccupation(cmbMotherOccupation.getValue().toString());
+            bean.setProfession(cmbMotherProfession.getValue().toString());
+            bean.setIncome(cmbMotherIncome.getValue().toString());
+
+            familyList.add(bean);
+        }
     }
 
     private void setFamilyEducationData() 
@@ -415,5 +436,48 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         {
             navigator.getUserInfo().setFamilyEducationList(familyList);
         }
+    }
+    
+    @FXML
+    private void toggleFatherCombos(ActionEvent event) 
+    {
+        if(chkDeceasedFather.isSelected())
+         {
+             
+             cmbFatherHQ.setDisable(true);
+             cmbFatherOccupation.setDisable(true);
+             cmbFatherProfession.setDisable(true);
+             cmbFatherIncome.setDisable(true);
+         }
+         else
+         {
+             cmbFatherHQ.setDisable(false);
+             cmbFatherOccupation.setDisable(false);
+             cmbFatherProfession.setDisable(false);
+             cmbFatherIncome.setDisable(false);
+             
+         }
+        
+    }
+    
+    @FXML
+    private void toggleMotherCombos(ActionEvent event) 
+    {
+        if(chkDeceasedMother.isSelected())
+         {
+             
+             cmbMotherHQ.setDisable(true);
+             cmbMotherOccupation.setDisable(true);
+             cmbMotherProfession.setDisable(true);
+             cmbMotherIncome.setDisable(true);
+         }
+         else
+         {
+             cmbMotherHQ.setDisable(false);
+             cmbMotherOccupation.setDisable(false);
+             cmbMotherProfession.setDisable(false);
+             cmbMotherIncome.setDisable(false);
+             
+         }
     }
 }
