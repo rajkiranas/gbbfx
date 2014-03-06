@@ -8,14 +8,14 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="diseaseStyle" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen13Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen13Controller">
   <children>
     <HBox id="HBox" alignment="TOP_CENTER" layoutX="24.0" layoutY="110.0" prefHeight="249.0" prefWidth="753.0" spacing="5.0" styleClass="diseaseStyle">
       <children>
-        <ListView fx:id="listSelfHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listGrandParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listSiblingsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listSelfHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSelf" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsParents" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listGrandParentsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsGrandParents" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listSiblingsHostpitalization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSiblings" prefHeight="243.0" prefWidth="180.0" />
       </children>
     </HBox>
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">

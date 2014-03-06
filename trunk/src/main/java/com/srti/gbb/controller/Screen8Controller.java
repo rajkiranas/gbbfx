@@ -15,8 +15,12 @@ import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -36,6 +40,7 @@ import javafx.scene.paint.Color;
 public class Screen8Controller implements Initializable, ControlledScreen {
     private ScreensNavigator navigator;
     private List<HobbyBean> listForHobbyAddition=new ArrayList<HobbyBean>();
+    private Map<String,String> entertainmentMap=new HashMap<String,String>();
     
     @FXML
     private Color x1;
@@ -64,7 +69,26 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     
     @FXML
     private void manageMultipleSelections(Event event) {
-        System.out.println("****="+entertainmentList.getSelectionModel().getSelectedItem().toString());
+        //System.out.println("****="+entertainmentList.getSelectionModel().getSelectedItem().toString());
+        String e = entertainmentList.getSelectionModel().getSelectedItem().toString();
+        if (entertainmentMap.containsKey(e)) 
+        {
+            entertainmentMap.remove(e);
+        }
+        else
+        {
+            entertainmentMap.put(e, e);
+        }
+        
+        entertainmentList.getSelectionModel().clearSelection();
+        Set <String> ks = entertainmentMap.keySet();
+        Iterator<String> itr = ks.iterator();
+        String key = GlobalConstants.emptyString;
+        while(itr.hasNext())
+        {
+            key = itr.next();
+            entertainmentList.getSelectionModel().select(key);
+        }
     }
 
     @FXML
