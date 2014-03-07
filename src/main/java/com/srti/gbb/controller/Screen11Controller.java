@@ -6,6 +6,7 @@
 
 package com.srti.gbb.controller;
 
+import com.srti.gbb.bean.PersonalInformationBean;
 import com.srti.gbb.bean.PrakrutiQuestionAnsBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
@@ -64,12 +65,15 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        setNextQuestionsAndAnswersToLabels();
+        setNextQuestionsAndAnswersToLabels();        
     }
     
         @Override
     public void setScreenParent(ScreensNavigator screenPage) {
         this.navigator=screenPage;
+        PersonalInformationBean pi= new PersonalInformationBean();
+        pi.setGender(male);
+        navigator.getUserInfo().setPi(pi);
     }
     
 
@@ -108,9 +112,20 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     private int qC=0;
     
     private String Q="Q";   
+    private static String female="female";
+    private static String male="male";
 
     private void setNextQuestionsAndAnswersToLabels() 
     {
+//        if(GlobalConstants.getProperty(Q+qC).contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+//        {
+//            while(GlobalConstants.getProperty(Q+qC).contains(female))
+//            {
+//                qC++;
+//                
+//            }
+//            
+//        }
         
             qC++;
             q1.setText(GlobalConstants.getProperty(Q+qC));
@@ -119,21 +134,68 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q1o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q1o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             
+                    if(q1.getText()!=null && q1.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+                    {
+                        q1.setDisable(true);
+                        q1o1.setDisable(true);
+                        q1o2.setDisable(true);
+                        q1o3.setDisable(true);
+                    }
+                    else
+                    {
+                        q1.setDisable(false);
+                        q1o1.setDisable(false);
+                        q1o2.setDisable(false);
+                        q1o3.setDisable(false);
+
+                    }
+            
+            
             qC++;
-                    
             q2.setText(GlobalConstants.getProperty(Q+qC));
             
             q2o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q2o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q2o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             
+                    if(q2.getText()!=null && q2.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+                    {
+                        q2.setDisable(true);
+                        q2o1.setDisable(true);
+                        q2o2.setDisable(true);
+                        q2o3.setDisable(true);
+                    }
+                    else
+                    {
+                        q2.setDisable(false);
+                        q2o1.setDisable(false);
+                        q2o2.setDisable(false);
+                        q2o3.setDisable(false);
+
+                    }
+            
+            
             qC++;
-                    
             q3.setText(GlobalConstants.getProperty(Q+qC));            
          
             q3o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q3o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q3o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            
+                    if(q3.getText()!=null && q3.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+                    {
+                        q3.setDisable(true);
+                        q3o1.setDisable(true);
+                        q3o2.setDisable(true);
+                        q3o3.setDisable(true);
+                    }
+                    else
+                    {
+                        q3.setDisable(false);
+                        q3o1.setDisable(false);
+                        q3o2.setDisable(false);
+                        q3o3.setDisable(false);
+                    }
             
            setLastQuestionOptionsVisibility();
            clearUserSelection();
@@ -153,12 +215,45 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q3o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             qC--;
             
+             if(q3.getText()!=null && q3.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+                   {
+                       q3.setDisable(true);
+                       q3o1.setDisable(true);
+                       q3o2.setDisable(true);
+                       q3o3.setDisable(true);
+                   }
+                   else
+                   {
+                       q3.setDisable(false);
+                       q3o1.setDisable(false);
+                       q3o2.setDisable(false);
+                       q3o3.setDisable(false);
+                   }
+            
+                    
+            
             q2.setText(GlobalConstants.getProperty(Q+qC));
             
             q2o1.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q2o2.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q2o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             qC--;
+            
+                    if(q2.getText()!=null && q2.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+                    {
+                        q2.setDisable(true);
+                        q2o1.setDisable(true);
+                        q2o2.setDisable(true);
+                        q2o3.setDisable(true);
+                    }
+                    else
+                    {
+                        q2.setDisable(false);
+                        q2o1.setDisable(false);
+                        q2o2.setDisable(false);
+                        q2o3.setDisable(false);
+
+                    }
             
             q1.setText(GlobalConstants.getProperty(Q+qC));
             
@@ -167,13 +262,30 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q1o3.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             qC--;
             
+                   if(q1.getText()!=null && q1.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+                    {
+                        q1.setDisable(true);
+                        q1o1.setDisable(true);
+                        q1o2.setDisable(true);
+                        q1o3.setDisable(true);
+                    }
+                    else
+                    {
+                        q1.setDisable(false);
+                        q1o1.setDisable(false);
+                        q1o2.setDisable(false);
+                        q1o3.setDisable(false);
+
+                    }
+            
             setLastQuestionOptionsVisibility();
             removeUserQueAnsResponse();
             clearUserSelection();
             
     }
 
-    private void setLastQuestionOptionsVisibility() {
+    private void setLastQuestionOptionsVisibility() 
+    {
         if (qC == Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.Total_Prakruti_Questions))) 
            {
                q3.setVisible(false);
@@ -205,12 +317,12 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         
         if(q1o2.isSelected())
         {
-            res.setAns1(q1o2.getText());            
+            res.setAns2(q1o2.getText());            
         }
         
         if(q1o3.isSelected())
         {
-            res.setAns1(q1o3.getText());            
+            res.setAns3(q1o3.getText());            
         }        
         prakrutiQuestionAnsList.add(res);
         
@@ -225,12 +337,12 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         
         if(q2o2.isSelected())
         {
-            res.setAns1(q2o2.getText());            
+            res.setAns2(q2o2.getText());            
         }
         
         if(q2o3.isSelected())
         {
-            res.setAns1(q2o3.getText());            
+            res.setAns3(q2o3.getText());            
         }        
         prakrutiQuestionAnsList.add(res);
         
@@ -244,12 +356,12 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         
         if(q3o2.isSelected())
         {
-            res.setAns1(q3o2.getText());            
+            res.setAns2(q3o2.getText());            
         }
         
         if(q3o3.isSelected())
         {
-            res.setAns1(q3o3.getText());            
+            res.setAns3(q3o3.getText());            
         }        
         prakrutiQuestionAnsList.add(res);
     }
@@ -270,7 +382,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
          boolean isQ3Answered = false;
          boolean isValid;
          
-         if (q1.getText() == null) 
+         if (q1.getText() == null || q1.isDisabled()) 
          {
             isQ3Answered = true;
 
@@ -280,7 +392,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         }
 
 
-        if (q2.getText() == null) 
+        if (q2.getText() == null || q2.isDisabled()) 
         {
             isQ3Answered = true;
 
@@ -290,7 +402,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         }
 
 
-        if (q3.getText() == null) {
+        if (q3.getText() == null || q3.isDisabled()) {
             isQ3Answered = true;
 
         } else if (q3o1.isSelected() || q3o2.isSelected() || q3o3.isSelected()) 
