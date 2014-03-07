@@ -71,9 +71,9 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         @Override
     public void setScreenParent(ScreensNavigator screenPage) {
         this.navigator=screenPage;
-        PersonalInformationBean pi= new PersonalInformationBean();
-        pi.setGender(male);
-        navigator.getUserInfo().setPi(pi);
+//        PersonalInformationBean pi= new PersonalInformationBean();
+//        pi.setGender(male);
+//        navigator.getUserInfo().setPi(pi);
     }
     
 

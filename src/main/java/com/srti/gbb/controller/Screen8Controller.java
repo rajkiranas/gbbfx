@@ -281,7 +281,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     private void populateLocalTravels() 
     {
         
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Traveling_Options);
         String[] list =  genderList.split(GlobalConstants.COMMA);
         
         if(cmbLocalInd.getItems().size()==0)
@@ -323,7 +323,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     private void populateNationalTravels() 
     {
         
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Traveling_Options);
         String[] list =  genderList.split(GlobalConstants.COMMA);
         
         if(cmbNationalInd.getItems().size()==0)
@@ -365,7 +365,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     private void populateInternationalTravels() 
     {
         
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Traveling_Options);
         String[] list =  genderList.split(GlobalConstants.COMMA);
         
         if(cmbInternationalInd.getItems().size()==0)
