@@ -80,7 +80,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        hidePreviousButton();
+        hideShowPreviousLink();
         populateVehicleTypes();
     }
     
@@ -315,7 +315,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
             vehicleList.add(v);
         }
         clearVehicleForm();
-        showPreviousButton();
+        showPreviousLink();
     }
 
     private void addHouseToList() {
@@ -449,11 +449,11 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
     @FXML
     Hyperlink linkShowPrevious;
     
-    private void hidePreviousButton() {
+    private void hideShowPreviousLink() {
         linkShowPrevious.setVisible(false);
     }
     
-    private void showPreviousButton() {
+    private void showPreviousLink() {
         linkShowPrevious.setVisible(true);
     }
     
