@@ -27,6 +27,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
@@ -55,6 +56,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        hideShowPreviousLink();
         populateLocalTravels();
         populateNationalTravels();
         populateInternationalTravels();
@@ -98,18 +100,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         {
             if(validateTravelsForm() && validateHobby() && !isEntertainmentListEmpty())
             {
-                HobbyBean h = new HobbyBean();
-                if(cmbHobby.getValue()!=null)
-                {
-                    h.setHobby(cmbHobby.getValue().toString());
-                }
-                else
-                {
-                    h.setHobby(txtHobby.getText().trim());
-                }
-                h.setHobbyHoursPerWeek(Integer.parseInt(cmbHobbyHoursPerWeek.getValue().toString()));
-                listForHobbyAddition.add(h);
-                clearHobbySelection();
+                addHobbyToList();
                 setTravelingData();
                 setHobyData();
                 setEntertainmentData();
@@ -225,10 +216,20 @@ public class Screen8Controller implements Initializable, ControlledScreen {
              {
                  h.setHobby(txtHobby.getText().trim());
              }
-             h.setHobby(cmbHobby.getValue().toString());
+             //h.setHobby(cmbHobby.getValue().toString());
              h.setHobbyHoursPerWeek(Integer.parseInt(cmbHobbyHoursPerWeek.getValue().toString()));
-             listForHobbyAddition.add(h);
+             
+             if(listForHobbyAddition.contains(h))
+             {
+                 listForHobbyAddition.remove(h);
+                listForHobbyAddition.add(h);
+             }
+             else
+             {
+                 listForHobbyAddition.add(h);
+             }
              clearHobbySelection();
+             showPreviousLink();
          }
      }
      private void clearHobbySelection()
@@ -401,6 +402,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     private ComboBox cmbHobbyHoursPerWeek;
     
    
+    private List<String> listOfHobbiesForShowPrevious=new ArrayList<String>();
     
     
     private void populateHobbyAndParams() 
@@ -413,7 +415,17 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         {
             for(String hobby : list)
             {
-                    cmbHobby.getItems().addAll(hobby);                    
+                    cmbHobby.getItems().addAll(hobby); 
+                    
+                   
+            }
+        }
+        
+        if(listOfHobbiesForShowPrevious.isEmpty())
+        {
+            for(String hobby : list)
+            {
+                    listOfHobbiesForShowPrevious.add(hobby); 
             }
         }
         
@@ -444,18 +456,19 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         tra.setInternationalFamily(Integer.parseInt(cmbInternationalFamily.getValue().toString()));
         tra.setInternationalFriends(Integer.parseInt(cmbInternationalFriends.getValue().toString()));
         
-        if(navigator.getUserInfo().getTraveling()==null)
-        {
+//        if(navigator.getUserInfo().getTraveling()==null)
+//        {
             navigator.getUserInfo().setTraveling(tra);
-        }
+//        }
         
     }
 
     private void setHobyData() {
-        if(navigator.getUserInfo().getHobbyList()==null)
-        {
+//        if(navigator.getUserInfo().getHobbyList()==null)
+//        {
+            System.out.println("listForHobbyAddition="+listForHobbyAddition);
             navigator.getUserInfo().setHobbyList(listForHobbyAddition);            
-        }
+        //}
     }
 
     private void setEntertainmentData() {
@@ -467,11 +480,54 @@ public class Screen8Controller implements Initializable, ControlledScreen {
             e.setEntertainement(s);
             eList.add(e);
         }
-        if(navigator.getUserInfo().getEducationList()==null)
-        {
-            System.out.println("eList="+eList.size());
+//        if(navigator.getUserInfo().getEducationList()==null)
+//        {
+            System.out.println("entmt List="+eList.size());
             navigator.getUserInfo().setEntertainmentList(eList);
+        //}
+    }
+  
+
+    
+    private int previousCounter=0;
+    
+    @FXML
+    private void showPrevious()
+    {
+        
+        if(previousCounter==0)
+        {
+            previousCounter=listForHobbyAddition.size()-1;
         }
+        else
+        {
+            previousCounter--;
+        }
+            HobbyBean v = listForHobbyAddition.get(previousCounter);
+            String hobby = v.getHobby();
+            int hoursPerWeek = v.getHobbyHoursPerWeek();
+            if(listOfHobbiesForShowPrevious.contains(hobby))
+            {
+                cmbHobby.getSelectionModel().select(hobby);
+                txtHobby.setText(GlobalConstants.emptyString);
+            }
+            else
+            {
+                txtHobby.setText(hobby);
+                cmbHobby.getSelectionModel().clearSelection();
+            }
+            cmbHobbyHoursPerWeek.getSelectionModel().select(String.valueOf(hoursPerWeek));
     }
     
+    
+    @FXML
+    Hyperlink linkShowPrevious;
+    
+    private void hideShowPreviousLink() {
+        linkShowPrevious.setVisible(false);
+    }
+    
+    private void showPreviousLink() {
+        linkShowPrevious.setVisible(true);
+    }
 }

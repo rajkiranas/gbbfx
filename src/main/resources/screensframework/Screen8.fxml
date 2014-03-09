@@ -144,16 +144,18 @@
             <FXCollections fx:factory="observableArrayList" />
           </items>
         </ComboBox>
-        <Button fx:id="btnAddHobby" mnemonicParsing="false" onAction="#addHobbyToList" prefHeight="35.0" text="%Btn_Add_More_Hobbies" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Button fx:id="btnAddHobby" mnemonicParsing="false" onAction="#addHobbyToList" prefHeight="35.0" text="%Btn_Add_More_Hobbies" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="91.0" text="%Link_View_Previous" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="137.0" />
       </columnConstraints>
       <rowConstraints>
-        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="113.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
       </rowConstraints>
     </GridPane>
   </children>
