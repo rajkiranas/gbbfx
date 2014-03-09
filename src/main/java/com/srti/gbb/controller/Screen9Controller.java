@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
@@ -79,6 +80,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        hidePreviousButton();
         populateVehicleTypes();
     }
     
@@ -303,8 +305,17 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         VehicleBean v = new VehicleBean();
         v.setVehicleType(cmbVehicleType.getValue().toString());
         v.setNumberOfVehicles(Integer.parseInt(txtVehicleNumbers.getText()));
-        vehicleList.add(v);
+        if(vehicleList.contains(v))
+        {
+            vehicleList.remove(v);
+            vehicleList.add(v);
+        }
+        else
+        {
+            vehicleList.add(v);
+        }
         clearVehicleForm();
+        showPreviousButton();
     }
 
     private void addHouseToList() {
@@ -331,21 +342,119 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
 
     private void setVehicleData() 
     {
-        if(navigator.getUserInfo().getVehicleList()==null)
-        {
+//        if(navigator.getUserInfo().getVehicleList()==null)
+//        {
+            System.out.println("***vehicleList="+vehicleList);
             navigator.getUserInfo().setVehicleList(vehicleList);
-        }
+        //}
     }
 
     private void setPropertyData() {
-        if(navigator.getUserInfo().getPropertyList()==null)
-        {
+//        if(navigator.getUserInfo().getPropertyList()==null)
+//        {
+            System.out.println("***propertyList="+propertyList);
             navigator.getUserInfo().setPropertyList(propertyList);
-        }
+        //}
     }
 
     private void navigateToNextScreen() {
          navigator.navigateTo(ScreensFramework.screen10ID);
+    }
+    
+//    @FXML
+//    private void showVehicleInfoInPopup()
+//    {
+//        TableView table = new TableView();
+//        //table.setEditable(true);
+// 
+//        TableColumn firstNameCol = new TableColumn("First Name");
+//        TableColumn lastNameCol = new TableColumn("Last Name");
+//        
+//        firstNameCol.setCellValueFactory(
+//                new PropertyValueFactory<VehicleBean, String>("vehicleType")
+//        );
+//        lastNameCol.setCellValueFactory(
+//                new PropertyValueFactory<VehicleBean, String>("numberOfVehicles")
+//        );
+//        
+//       
+//        table.getColumns().addAll(firstNameCol, lastNameCol);
+//        
+//        ObservableList oblist =FXCollections.observableList(vehicleList);
+//        
+//        table.setItems(oblist);
+//        
+//        
+//                
+//        final Label label = new Label("Address Book");
+//        label.setFont(new Font("Arial", 20));
+//        
+//        final VBox vbox = new VBox();
+//        vbox.setSpacing(5);
+//        //vbox.setPadding(new Insets(10, 0, 0, 10));
+//        vbox.getChildren().addAll(label, table);
+//        
+//        final Stage secondaryStage = new Stage(StageStyle.UTILITY);
+//        secondaryStage.setScene(new Scene(vbox, 300, 200));
+//        //scene.getStylesheets().add("/styles/Styles.css");
+//        secondaryStage.setTitle("edit/delete table");
+//        //secondaryStage.initStyle(StageStyle.TRANSPARENT);
+//        secondaryStage.setResizable(false);
+//        secondaryStage.show();
+//        
+//    }
+    
+    private int previousCounter=0;
+    private int nextCounter=0;
+    
+    @FXML
+    private void showPrevious()
+    {
+        
+        if(previousCounter==0)
+        {
+            previousCounter=vehicleList.size()-1;
+        }
+        else
+        {
+            previousCounter--;
+        }
+            VehicleBean v = vehicleList.get(previousCounter);
+            String type = v.getVehicleType();
+            int no = v.getNumberOfVehicles();
+            cmbVehicleType.getSelectionModel().select(type);
+            txtVehicleNumbers.setText(String.valueOf(no));
+        
+        
+    }
+    
+//    @FXML
+//    private void showNext()
+//    {
+//        if(nextCounter==vehicleList.size()-1)
+//        {
+//            nextCounter=0;
+//        }
+//        else
+//        {
+//            nextCounter++;
+//        }
+//            VehicleBean v = vehicleList.get(nextCounter);
+//            String type = v.getVehicleType();
+//            int no = v.getNumberOfVehicles();
+//            cmbVehicleType.getSelectionModel().select(type);
+//            txtVehicleNumbers.setText(String.valueOf(no));
+//    }
+
+    @FXML
+    Hyperlink linkShowPrevious;
+    
+    private void hidePreviousButton() {
+        linkShowPrevious.setVisible(false);
+    }
+    
+    private void showPreviousButton() {
+        linkShowPrevious.setVisible(true);
     }
     
 }

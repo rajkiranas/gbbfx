@@ -64,6 +64,6 @@
         </HBox>
       </children>
     </VBox>
-    <fx:include source="ProductBannerScene.fxml" layoutX="-1.0" layoutY="0.0" />
+    <fx:include source="ProductBannerScene.fxml" layoutX="-1.0" layoutY="0.0" prefHeight="39.0" prefWidth="800.0000999999975" />
   </children>
 </AnchorPane>
