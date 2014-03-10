@@ -85,7 +85,7 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         
         
-        nav.navigateTo(ScreensFramework.screen4ID);
+        nav.navigateTo(ScreensFramework.screen11ID);
         
         Group root = new Group();
         root.getChildren().addAll(nav);

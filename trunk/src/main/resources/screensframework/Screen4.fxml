@@ -80,7 +80,7 @@
             <Label text="%Lbl_College_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_Avg_Post_Grad_Per" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <Label text="%Lbl_Post_Grad_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <TextField fx:id="txtAvgSchoolPer" prefHeight="35.000099999997474" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtAvgSchoolPer" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             <TextField fx:id="txtNoOfSchoolRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtAvgCollegePer" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtNoOfCollegeRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />

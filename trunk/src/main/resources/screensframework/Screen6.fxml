@@ -25,65 +25,65 @@
       <children>
         <GridPane id="GridPane" layoutX="25.0" layoutY="20.0" prefHeight="247.0" prefWidth="699.0">
           <children>
-            <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefHeight="39.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="txtFrnd2" maxWidth="-Infinity" prefHeight="39.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <TextField fx:id="txtFrnd3" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cmbQualFrnd1" prefHeight="39.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtFrnd2" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtFrnd3" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbQualFrnd1" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbQualFrnd2" prefHeight="39.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbQualFrnd2" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbQualFrnd3" prefHeight="39.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbQualFrnd3" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbOccupationFrnd1" prefHeight="39.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbOccupationFrnd1" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbOccupationFrnd2" prefHeight="39.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbOccupationFrnd2" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbOccupationFrnd3" prefHeight="39.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbOccupationFrnd3" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Occupation" GridPane.columnIndex="2" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbProfessionFrnd1" prefHeight="39.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbProfessionFrnd1" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbProfessionFrnd2" prefHeight="39.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbProfessionFrnd2" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbProfessionFrnd3" prefHeight="39.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbProfessionFrnd3" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="3" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbIncomeFrnd1" prefHeight="39.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbIncomeFrnd1" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbIncomeFrnd2" prefHeight="39.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbIncomeFrnd2" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbIncomeFrnd3" prefHeight="39.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbIncomeFrnd3" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>

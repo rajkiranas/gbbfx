@@ -47,7 +47,7 @@
     </HBox>
     <AnchorPane layoutX="10.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="325.0" prefWidth="408.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" prefHeight="283.0" prefWidth="354.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="19.0">
+        <GridPane id="GridPane" layoutX="36.0" layoutY="7.0" prefHeight="311.0" prefWidth="340.0">
           <children>
             <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Age" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -72,7 +72,7 @@
                   </items>
                 </ComboBox>
                 <Label text="%Lbl_Or" wrapText="true" />
-                <TextField fx:id="txtReligion" prefHeight="27.0" prefWidth="118.0" />
+                <TextField fx:id="txtReligion" prefHeight="35.0" prefWidth="118.0" />
               </children>
             </HBox>
             <ComboBox fx:id="cmbGenderList" onShowing="#getGendersFromProperty" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">

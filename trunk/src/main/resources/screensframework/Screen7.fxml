@@ -36,7 +36,7 @@
             <CheckBox fx:id="chkIsRegularPray" mnemonicParsing="false" onAction="#togglePrayerCombos" prefHeight="39.0" text="%Lbl_Regular_Checkbox_Text" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <children>
-                <ComboBox fx:id="cmbPrayIndividual" prefHeight="39.0" prefWidth="91.0" promptText="%Input_Prompt_Times">
+                <ComboBox fx:id="cmbPrayIndividual" prefHeight="35.0" prefWidth="91.0" promptText="%Input_Prompt_Times">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -46,7 +46,7 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
-                <ComboBox fx:id="cmbPrayFamily" prefHeight="39.0" prefWidth="91.0" promptText="%Input_Prompt_Times">
+                <ComboBox fx:id="cmbPrayFamily" prefHeight="35.0" prefWidth="91.0" promptText="%Input_Prompt_Times">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -57,7 +57,7 @@
             <Label text="%Lbl_Community" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
-                <ComboBox fx:id="cmbPrayCommunity" prefHeight="39.0" prefWidth="91.0" promptText="%Input_Prompt_Times">
+                <ComboBox fx:id="cmbPrayCommunity" prefHeight="35.0" prefWidth="91.0" promptText="%Input_Prompt_Times">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -90,24 +90,24 @@
             <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="0" />
             <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cmbTimesPerWeekCash" prefHeight="39.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbTimesPerWeekCash" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbTimesPerWeekKind" prefHeight="39.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbTimesPerWeekKind" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbTimesPerWeekService" prefHeight="39.0" prefWidth="82.0" promptText="%Input_Prompt_Hours" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbTimesPerWeekService" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Hours" GridPane.columnIndex="2" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <TextField fx:id="txtAmtCash" alignment="CENTER_RIGHT" disable="false" editable="true" maxWidth="-Infinity" prefHeight="38.999900000002526" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtAmtKind" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="39.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtAmtService" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="39.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtAmtCash" alignment="CENTER_RIGHT" disable="false" editable="true" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtAmtKind" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAmtService" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="55.0" />
@@ -122,7 +122,7 @@
           </rowConstraints>
         </GridPane>
         <Label layoutX="25.0" layoutY="248.0" prefHeight="43.0" prefWidth="51.0" text="%Lbl_Area_Of_Work" wrapText="true" />
-        <TextField fx:id="txtAreaOfWork" layoutX="80.0" layoutY="250.0" prefHeight="39.0" prefWidth="242.0" />
+        <TextField fx:id="txtAreaOfWork" layoutX="80.0" layoutY="250.0" prefHeight="35.0" prefWidth="242.0" />
         <CheckBox id="chkIsRegularPray" fx:id="chkSocialService" layoutX="24.0" layoutY="3.0" mnemonicParsing="false" onAction="#toggleSocialServiceCombos" prefHeight="39.0" text="%Lbl_Social_Service_Checkbox_Text" />
       </children>
     </AnchorPane>

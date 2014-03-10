@@ -36,22 +36,22 @@
             <Label text="%Lbl_Sleeping_Time" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Afternoon_sleep" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_Late_Nights" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <ComboBox fx:id="cmbAfternoonSleep" minWidth="48.0" onShowing="#populateAfternoonSleep" prefHeight="36.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbAfternoonSleep" minWidth="48.0" onShowing="#populateAfternoonSleep" prefHeight="35.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbLateNights" minWidth="48.0" onShowing="#populateLateNights" prefHeight="36.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbLateNights" minWidth="48.0" onShowing="#populateLateNights" prefHeight="35.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox id="cmbWakeup" fx:id="cmbWakeupTime" minWidth="48.0" onShowing="#populateWakeupTime" prefHeight="35.000099999997474" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ComboBox id="cmbWakeup" fx:id="cmbWakeupTime" minWidth="48.0" onShowing="#populateWakeupTime" prefHeight="35.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox id="cmbSleep" fx:id="cmbSleepTime" minWidth="48.0" onShowing="#populateSleepTime" prefHeight="36.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox id="cmbSleep" fx:id="cmbSleepTime" minWidth="48.0" onShowing="#populateSleepTime" prefHeight="35.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
@@ -121,12 +121,12 @@
             <Label text="%Lbl_Addiction_Type1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Addiction_Frequency" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             <Label text="%Lbl_Addiction_Frequency_Params" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <ComboBox fx:id="cmbAddict1" onShowing="#populateAddiction1" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbAddict1" onShowing="#populateAddiction1" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbFreq1" onShowing="#populateFrequency1" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbFreq1" onShowing="#populateFrequency1" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
@@ -137,32 +137,32 @@
             <Label text="%Lbl_Addiction_Type2" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Addiction_Type3" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_Addiction_Type4" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <ComboBox fx:id="cmbAddict2" onShowing="#populateAddiction2" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbAddict2" onShowing="#populateAddiction2" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbAddict3" onShowing="#populateAddiction3" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbAddict3" onShowing="#populateAddiction3" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbAddict4" onShowing="#populateAddiction4" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbAddict4" onShowing="#populateAddiction4" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbFreq2" onShowing="#populateFrequency2" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbFreq2" onShowing="#populateFrequency2" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbFreq3" onShowing="#populateFrequency3" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbFreq3" onShowing="#populateFrequency3" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbFreq4" onShowing="#populateFrequency4" prefHeight="36.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbFreq4" onShowing="#populateFrequency4" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>

@@ -52,14 +52,14 @@
         <Label text="%Lbl_Add_Other_Disease_Msg" />
         <HBox id="HBox" alignment="CENTER_LEFT" fillHeight="true" spacing="2.0">
           <children>
-            <TextField fx:id="txtDiseaseAddSelf" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button mnemonicParsing="false" onAction="#addSelfDiseaseToList" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtDiseaseAddParents" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button mnemonicParsing="false" onAction="#addParentsDiseaseToList" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtDiseaseAddGrandParents" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button mnemonicParsing="false" onAction="#addGrandParentsDiseaseToList" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtDiseaseAddSiblings" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button mnemonicParsing="false" onAction="#addSiblingsDiseaseToList" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtDiseaseAddSelf" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button mnemonicParsing="false" onAction="#addSelfDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtDiseaseAddParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button mnemonicParsing="false" onAction="#addParentsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtDiseaseAddGrandParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button mnemonicParsing="false" onAction="#addGrandParentsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtDiseaseAddSiblings" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button mnemonicParsing="false" onAction="#addSiblingsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
           </children>
         </HBox>
       </children>

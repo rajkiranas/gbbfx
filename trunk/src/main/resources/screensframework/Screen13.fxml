@@ -52,14 +52,14 @@
         <Label text="%Lbl_Add_Other_Disease_Msg" />
         <HBox id="HBox" alignment="CENTER" spacing="2.0">
           <children>
-            <TextField fx:id="txtHospAddSelf" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button fx:id="btnHospAddSelf" mnemonicParsing="false" onAction="#addSelfDiseaseToList" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtHospAddParents" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button fx:id="btnHospAddParents" mnemonicParsing="false" onAction="#addParentsDiseaseToList" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtHospAddGrandParents" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button fx:id="btnHospAddGrandParents" mnemonicParsing="false" onAction="#addGrandParentsDiseaseToList" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtHospAddSiblings" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="132.0" />
-            <Button fx:id="btnHospAddSiblings" mnemonicParsing="false" onAction="#addSiblingsDiseaseToList" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtHospAddSelf" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button fx:id="btnHospAddSelf" mnemonicParsing="false" onAction="#addSelfDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtHospAddParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button fx:id="btnHospAddParents" mnemonicParsing="false" onAction="#addParentsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtHospAddGrandParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button fx:id="btnHospAddGrandParents" mnemonicParsing="false" onAction="#addGrandParentsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
+            <TextField fx:id="txtHospAddSiblings" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <Button fx:id="btnHospAddSiblings" mnemonicParsing="false" onAction="#addSiblingsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
           </children>
         </HBox>
       </children>
