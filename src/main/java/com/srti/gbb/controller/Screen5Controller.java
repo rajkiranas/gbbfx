@@ -5,6 +5,7 @@
 package com.srti.gbb.controller;
 
 import com.srti.gbb.bean.FamilyEducation;
+import com.srti.gbb.bean.Friends;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
@@ -19,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 
 /**
  * FXML Controller class
@@ -43,6 +45,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        hideShowPreviousLink();
         populateFamilyMembers();
         populateHighestQualification();
         populateOccupation();
@@ -68,6 +71,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         {
             familyMembersList.add(getFamilyEducationBeanForCurrentForm());
             clearFamilyForm();
+            showPreviousLink();
         }
     }
     
@@ -432,10 +436,10 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         }
         
         System.out.println("$$$$=familyList"+familyList.size());
-        if(navigator.getUserInfo().getFamilyEducationList()==null)
-        {
+//        if(navigator.getUserInfo().getFamilyEducationList()==null)
+//        {
             navigator.getUserInfo().setFamilyEducationList(familyList);
-        }
+        //}
     }
     
     @FXML
@@ -479,5 +483,46 @@ public class Screen5Controller implements Initializable, ControlledScreen {
              cmbMotherIncome.setDisable(false);
              
          }
+    }
+    
+    @FXML
+    Hyperlink linkShowPrevious;
+    
+    private void hideShowPreviousLink() {
+        linkShowPrevious.setVisible(false);
+    }
+    
+    private void showPreviousLink() {
+        linkShowPrevious.setVisible(true);
+    }
+    
+    private int previousCounter=0;
+    
+    @FXML
+    private void showPrevious()
+    {
+        if(previousCounter==0)
+        {
+            previousCounter=familyMembersList.size()-1;
+        }
+        else
+        {
+            previousCounter--;        
+        }
+            
+        FamilyEducation member = familyMembersList.get(previousCounter);
+        
+        String m = member.getFamilyMember();
+        String fQual = member.getHighestQualification();
+        String fOccu = member.getOccupation();
+        String fProfession = member.getProfession();
+        String fIncome = member.getIncome();            
+        
+        
+        cmbFM1.getSelectionModel().select(m);
+        cmbFMHQ.getSelectionModel().select(fQual);
+        cmbFMOccupation.getSelectionModel().select(fOccu);
+        cmbFMProfession.getSelectionModel().select(fProfession);
+        cmbFMIncome.getSelectionModel().select(fIncome);        
     }
 }

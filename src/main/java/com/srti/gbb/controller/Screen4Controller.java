@@ -15,6 +15,7 @@ import com.srti.gbb.utils.GbbValidator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -23,6 +24,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
@@ -34,6 +36,8 @@ import javafx.scene.paint.Color;
 public class Screen4Controller implements Initializable, ControlledScreen {
     private ScreensNavigator navigator;
     private List<EducationBean> educationList = new ArrayList<EducationBean>();
+    private List<String> listFacultyStream=new ArrayList<String>();
+    
     @FXML
     private Color x1;
     @FXML
@@ -84,6 +88,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        hideShowPreviousLink();
     }    
 
     @FXML
@@ -99,21 +104,27 @@ public class Screen4Controller implements Initializable, ControlledScreen {
                     cmbFacultyStream.getItems().addAll(gen);                    
             }
         }
+        
+        if(listFacultyStream.isEmpty())
+        {
+            listFacultyStream.addAll(Arrays.asList(list));
+        }
     }
     
-    @FXML
-    private void setInputPrompt(Event e)
-    {
-        cmbFacultyStream.setPromptText("Faculty");
-    }
+//    @FXML
+//    private void setInputPrompt(Event e)
+//    {
+//        cmbFacultyStream.setPromptText("Faculty");
+//    }
 
     @FXML
     private void addSchoolAndClearForm(ActionEvent event) 
     {
         if(validateEducationForm())
         {
-            educationList.add(getEducationBeanForCurrentForm());
+            addToEducationList(getEducationBeanForCurrentForm());
             clearEducationForm();
+            showPreviousLink();
         }
     }
     
@@ -124,7 +135,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
         bean.setSchoolName(txtSchool.getText().trim());
         bean.setClassDegree(txtClassDegree.getText().trim());
         bean.setMedium(txtMedium.getText().trim());
-        if(cmbFacultyStream.getValue()!=null)
+        if(cmbFacultyStream.getValue()!=null && !cmbFacultyStream.getValue().toString().equals(GlobalConstants.emptyString))
         {
             bean.setFacultyStream(cmbFacultyStream.getValue().toString().trim());
         }
@@ -141,7 +152,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
     {
         txtSchool.setText(GlobalConstants.emptyString);
         txtClassDegree.setText(GlobalConstants.emptyString);
-        cmbFacultyStream.setValue(GlobalConstants.emptyString);
+        cmbFacultyStream.getSelectionModel().clearSelection();
         txtFacultyStream.setText(GlobalConstants.emptyString);
         txtMedium.setText(GlobalConstants.emptyString);
         txtBoardUni.setText(GlobalConstants.emptyString);
@@ -160,13 +171,13 @@ public class Screen4Controller implements Initializable, ControlledScreen {
         if(!txtSchool.getText().trim().equals(GlobalConstants.emptyString) || 
                 !txtClassDegree.getText().trim().equals(GlobalConstants.emptyString) || 
                 !txtMedium.getText().trim().equals(GlobalConstants.emptyString) || 
-                !cmbFacultyStream.getValue().toString().trim().equals(GlobalConstants.emptyString) || 
+                cmbFacultyStream.getValue()!=null || 
                 !txtBoardUni.getText().trim().equals(GlobalConstants.emptyString) || 
                 !txtSubjects.getText().trim().equals(GlobalConstants.emptyString))
         {
             if(validateEducationForm() && validateAvgPerformanceForm())
             {
-                educationList.add(getEducationBeanForCurrentForm());
+                addToEducationList(getEducationBeanForCurrentForm());
                 setEducationData();
                 setAvgPerformanceData();
                 navigator.navigateTo(ScreensFramework.screen5ID);
@@ -223,7 +234,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
                 UIUtils.showAlert("Please select or enter faculty", "Alert"); 
                 isValid=false;
             }
-            else if ((cmbFacultyStream.getValue() != null) && (!txtFacultyStream.getText().trim().equals(GlobalConstants.emptyString))) 
+            else if ((cmbFacultyStream.getValue() != null && !cmbFacultyStream.getValue().toString().equals(GlobalConstants.emptyString)) && (!txtFacultyStream.getText().trim().equals(GlobalConstants.emptyString))) 
             {
              UIUtils.showAlert("Please either select or enter the faculty", "Alert");
              isValid = false;
@@ -307,4 +318,65 @@ public class Screen4Controller implements Initializable, ControlledScreen {
         navigator.getUserInfo().setAvgPerformanceBean(performance);
     }
     
+    @FXML
+    Hyperlink linkShowPrevious;
+    
+    private void hideShowPreviousLink() {
+        linkShowPrevious.setVisible(false);
+    }
+    
+    private void showPreviousLink() {
+        linkShowPrevious.setVisible(true);
+    }
+    
+    private int previousCounter=0;
+    
+    @FXML
+    private void showPrevious()
+    {
+        if(previousCounter==0)
+        {
+            previousCounter=educationList.size()-1;
+        }
+        else
+        {
+            previousCounter--;        
+        }
+            
+        EducationBean school = educationList.get(previousCounter);
+        
+        String name = school.getSchoolName();
+        String classDegree = school.getClassDegree();
+        String medium = school.getMedium();
+        String stream = school.getFacultyStream();
+        String boardUni = school.getBoardUniveristy();
+        String subjects = school.getSubjects();
+        
+        txtSchool.setText(name);
+        txtClassDegree.setText(classDegree);
+        txtMedium.setText(medium);
+        txtBoardUni.setText(boardUni);
+        txtSubjects.setText(subjects);
+        
+        if (listFacultyStream.contains(stream)) 
+        {
+            cmbFacultyStream.getSelectionModel().select(stream);
+            txtFacultyStream.setText(GlobalConstants.emptyString);
+        } else 
+        {
+            txtFacultyStream.setText(stream);
+            cmbFacultyStream.getSelectionModel().clearSelection();
+        }
+    }
+
+    private void addToEducationList(EducationBean h) {
+        if (educationList.contains(h)) 
+        {
+            educationList.remove(h);
+            educationList.add(h);
+        } else 
+        {
+            educationList.add(h);
+        }
+    }
 }
