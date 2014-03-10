@@ -5,6 +5,7 @@
 package com.srti.gbb.controller;
 
 import com.srti.gbb.bean.Friends;
+import com.srti.gbb.bean.HobbyBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
@@ -17,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 
 /**
@@ -35,6 +37,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        hideShowPreviousLink();
         populateHighestQualification();
         populateOccupation();
         populateProfession();
@@ -123,15 +126,16 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             bean.setOccupation(cmbOccupationFrnd1.getValue().toString());
             bean.setProfession(cmbProfessionFrnd1.getValue().toString());
             bean.setIncome(cmbIncomeFrnd1.getValue().toString());        
-            friendsListForAddition.add(bean);
+            addToFriendsListForAddition(bean);
             
             bean = new Friends();
             bean.setFriendName(txtFrnd2.getText());
             bean.setHighestQualification(cmbQualFrnd2.getValue().toString());
             bean.setOccupation(cmbOccupationFrnd2.getValue().toString());
             bean.setProfession(cmbProfessionFrnd2.getValue().toString());
-            bean.setIncome(cmbIncomeFrnd2.getValue().toString());        
-            friendsListForAddition.add(bean);
+            bean.setIncome(cmbIncomeFrnd2.getValue().toString());
+            
+            addToFriendsListForAddition(bean);
             
             bean = new Friends();
             bean.setFriendName(txtFrnd3.getText());
@@ -139,9 +143,11 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             bean.setOccupation(cmbOccupationFrnd3.getValue().toString());
             bean.setProfession(cmbProfessionFrnd3.getValue().toString());
             bean.setIncome(cmbIncomeFrnd3.getValue().toString());        
-            friendsListForAddition.add(bean);
+            
+            addToFriendsListForAddition(bean);
             
             clearFriendsForm();
+            showPreviousLink();
         }
     }
     
@@ -473,7 +479,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             bean.setOccupation(cmbOccupationFrnd1.getValue().toString());
             bean.setProfession(cmbProfessionFrnd1.getValue().toString());
             bean.setIncome(cmbIncomeFrnd1.getValue().toString());        
-            friendsList.add(bean);
+            addToFriendsList(bean);
     }
 
     private boolean validateFriend2() 
@@ -513,7 +519,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             bean.setOccupation(cmbOccupationFrnd2.getValue().toString());
             bean.setProfession(cmbProfessionFrnd2.getValue().toString());
             bean.setIncome(cmbIncomeFrnd2.getValue().toString());        
-            friendsList.add(bean);
+            addToFriendsList(bean);
     }
 
     private boolean validateFriend3() {
@@ -544,7 +550,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             UIUtils.showAlert("Please select income of friend3", "Alert");
         }
         return isValid;
-    }
+    }    
     private void addFriend3ToList() {
         Friends bean = new Friends();
             bean.setFriendName(txtFrnd3.getText());
@@ -552,7 +558,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             bean.setOccupation(cmbOccupationFrnd3.getValue().toString());
             bean.setProfession(cmbProfessionFrnd3.getValue().toString());
             bean.setIncome(cmbIncomeFrnd3.getValue().toString());        
-            friendsList.add(bean);
+            addToFriendsList(bean);
     }
 
     private void setFriendsData() 
@@ -561,13 +567,112 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         System.out.println("friendsList="+friendsList.size());
         for(Friends f : friendsListForAddition)
         {
-            friendsList.add(f);
+            addToFriendsList(f);
         }
         System.out.println("friendsList="+friendsList.size());
-        if(navigator.getUserInfo().getFriendsList()==null)
-        {
+//        if(navigator.getUserInfo().getFriendsList()==null)
+//        {
             navigator.getUserInfo().setFriendsList(friendsList);
+        //}
+    }
+    
+    @FXML
+    Hyperlink linkShowPrevious;
+    
+    private void hideShowPreviousLink() {
+        linkShowPrevious.setVisible(false);
+    }
+    
+    private void showPreviousLink() {
+        linkShowPrevious.setVisible(true);
+    }
+    
+    private int previousCounter=0;
+    
+    @FXML
+    private void showPrevious()
+    {
+        if(previousCounter==0)
+        {
+            previousCounter=friendsListForAddition.size();
         }
         
+        previousCounter--;        
+            
+        Friends frnd = friendsListForAddition.get(previousCounter);
+        
+        String fName = frnd.getFriendName();
+        String fQual = frnd.getHighestQualification();
+        String fOccu = frnd.getOccupation();
+        String fProfession = frnd.getProfession();
+        String fIncome = frnd.getIncome();            
+        
+        txtFrnd3.setText(fName);
+        cmbQualFrnd3.getSelectionModel().select(fQual);
+        cmbOccupationFrnd3.getSelectionModel().select(fOccu);
+        cmbProfessionFrnd3.getSelectionModel().select(fProfession);
+        cmbIncomeFrnd3.getSelectionModel().select(fIncome);
+        
+        ///////////////////////////////////////////////// frnd 2 begins///////////////////////////////////////////////
+        
+        previousCounter--;        
+            
+        frnd = friendsListForAddition.get(previousCounter);
+        
+        fName = frnd.getFriendName();
+        fQual = frnd.getHighestQualification();
+        fOccu = frnd.getOccupation();
+        fProfession = frnd.getProfession();
+        fIncome = frnd.getIncome();            
+        
+        txtFrnd2.setText(fName);
+        cmbQualFrnd2.getSelectionModel().select(fQual);
+        cmbOccupationFrnd2.getSelectionModel().select(fOccu);
+        cmbProfessionFrnd2.getSelectionModel().select(fProfession);
+        cmbIncomeFrnd2.getSelectionModel().select(fIncome);
+        
+        ///////////////////////////////////////////////// frnd 2 begins///////////////////////////////////////////////
+        
+        previousCounter--;        
+            
+        frnd = friendsListForAddition.get(previousCounter);
+        
+        fName = frnd.getFriendName();
+        fQual = frnd.getHighestQualification();
+        fOccu = frnd.getOccupation();
+        fProfession = frnd.getProfession();
+        fIncome = frnd.getIncome();            
+        
+        txtFrnd1.setText(fName);
+        cmbQualFrnd1.getSelectionModel().select(fQual);
+        cmbOccupationFrnd1.getSelectionModel().select(fOccu);
+        cmbProfessionFrnd1.getSelectionModel().select(fProfession);
+        cmbIncomeFrnd1.getSelectionModel().select(fIncome);        
+    }
+
+    private void addToFriendsListForAddition(Friends bean) {
+        
+        if(friendsListForAddition.contains(bean))
+            {
+                friendsListForAddition.remove(bean);
+                friendsListForAddition.add(bean);
+            }
+            else
+            {
+                friendsListForAddition.add(bean);
+            }
+    }
+    
+    private void addToFriendsList(Friends bean) {
+        
+        if(friendsList.contains(bean))
+            {
+                friendsList.remove(bean);
+                friendsList.add(bean);
+            }
+            else
+            {
+                friendsList.add(bean);
+            }
     }
 }

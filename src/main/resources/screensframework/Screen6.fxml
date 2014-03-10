@@ -103,6 +103,7 @@
           </rowConstraints>
         </GridPane>
         <Button layoutX="591.0" layoutY="267.0" mnemonicParsing="false" onAction="#addFriendsToList" prefHeight="26.0" text="%Btn_Add_More_Friends" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="445.0" layoutY="270.0" minHeight="20.0" onAction="#showPrevious" prefHeight="20.0" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
       </children>
     </AnchorPane>
     <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">
