@@ -4,6 +4,8 @@
  */
 package com.srti.gbb.bean;
 
+import java.util.Objects;
+
 /**
  *
  * @author rajkirans
@@ -54,6 +56,33 @@ public class Friends
 
     public void setIncome(String income) {
         this.income = income;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.friendName);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Friends other = (Friends) obj;
+        if (!Objects.equals(this.friendName, other.friendName)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Friends{" + "friendName=" + friendName + ", highestQualification=" + highestQualification + ", occupation=" + occupation + ", profession=" + profession + ", income=" + income + '}';
     }
     
     

@@ -145,7 +145,7 @@
           </items>
         </ComboBox>
         <Button fx:id="btnAddHobby" mnemonicParsing="false" onAction="#addHobbyToList" prefHeight="35.0" text="%Btn_Add_More_Hobbies" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="91.0" text="%Link_View_Previous" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="137.0" />
