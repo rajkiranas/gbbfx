@@ -15,6 +15,7 @@ import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -423,10 +424,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         
         if(listOfHobbiesForShowPrevious.isEmpty())
         {
-            for(String hobby : list)
-            {
-                    listOfHobbiesForShowPrevious.add(hobby); 
-            }
+            listOfHobbiesForShowPrevious.addAll(Arrays.asList(list));
         }
         
         

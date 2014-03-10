@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#setInputPrompt" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen4Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen4Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
@@ -42,7 +42,7 @@
             <TextField id="txtSub" fx:id="txtSubjects" prefHeight="35.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
-                <ComboBox fx:id="cmbFacultyStream" onShowing="#populateFacultyStreams" prefHeight="35.0" prefWidth="130.0">
+                <ComboBox fx:id="cmbFacultyStream" onShowing="#populateFacultyStreams" prefHeight="35.0" prefWidth="130.0" promptText="%Lbl_Input_Prompt_Faculty">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -66,7 +66,8 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button fx:id="btnAddSchool" layoutX="134.0" layoutY="281.0" mnemonicParsing="false" onAction="#addSchoolAndClearForm" prefHeight="26.0" prefWidth="210.0" text="%Btn_Add_More_Schools" />
+        <Button fx:id="btnAddSchool" layoutX="189.0" layoutY="281.0" mnemonicParsing="false" onAction="#addSchoolAndClearForm" prefHeight="26.0" prefWidth="186.0" text="%Btn_Add_More_Schools" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="88.0" layoutY="284.0" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
       </children>
     </AnchorPane>
     <AnchorPane layoutX="415.0" layoutY="91.0" prefHeight="317.0" prefWidth="366.0" styleClass="roundEdge, throughoutLabelsStyle">
