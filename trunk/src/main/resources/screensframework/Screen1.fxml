@@ -56,12 +56,12 @@
             <Label text="%Lbl_Mobile" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <Label text="%Lbl_Email" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <TextField fx:id="txtName" prefHeight="35.0" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtAge" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#setAgeLimit" prefHeight="35.0" prefWidth="71.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtMobile" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtAge" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#setAgeLimit" prefHeight="34.0" prefWidth="71.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtMobile" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="txtEmail" prefHeight="35.0" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
-                <ComboBox fx:id="cmbReligionList" onShowing="#getReligionsFromProperty" prefHeight="35.0" prefWidth="102.0">
+                <ComboBox fx:id="cmbReligionList" onShowing="#getReligionsFromProperty" prefHeight="34.0" prefWidth="102.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                     <!--                <FXCollections fx:factory="observableArrayList">
@@ -75,7 +75,7 @@
                 <TextField fx:id="txtReligion" prefHeight="35.0" prefWidth="118.0" />
               </children>
             </HBox>
-            <ComboBox fx:id="cmbGenderList" onShowing="#getGendersFromProperty" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbGenderList" onShowing="#getGendersFromProperty" prefHeight="34.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
                 <!--                <FXCollections fx:factory="observableArrayList">
