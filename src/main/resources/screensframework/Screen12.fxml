@@ -43,28 +43,28 @@
     </HBox>
     <AnchorPane layoutX="14.0" layoutY="86.0" prefHeight="327.0" prefWidth="772.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="189.0" layoutY="0.0" prefHeight="313.0" prefWidth="394.0">
+        <GridPane id="GridPane" layoutX="187.0" layoutY="7.0" prefHeight="313.0" prefWidth="394.0">
           <children>
             <Label text="%Lbl_House" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Area" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Country" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_State" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_City" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <TextField fx:id="txtHouse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cmbCountry" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#populateStatesList" prefHeight="43.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtHouse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbCountry" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#populateStatesList" prefHeight="40.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbState" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbState" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
             <Label text="%Lbl_Pin" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <TextField fx:id="txtPincode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField id="txtPincode" fx:id="txtCity" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtPincode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField id="txtPincode" fx:id="txtCity" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="115.0" />
