@@ -195,32 +195,35 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         txtVehicleNumbers.setText(GlobalConstants.emptyString);
     }
 
-    private boolean validateVehicleForm() {
+    private boolean validateVehicleForm() 
+    {
         boolean isValid=true;
-         if(cmbVehicleType.getValue()==null || cmbVehicleType.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("Please select vehicle type", "Alert"); 
-             isValid=false;
-         }
-         
-         else if(txtVehicleNumbers.getText() ==null || txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("Please enter number of vehicles", "Alert"); 
-             isValid=false;
-         }
-         else if(txtVehicleNumbers.getText() ==null || txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("Please enter number of vehicles", "Alert"); 
-             isValid=false;
-         }         
-         
-         else if(!GbbValidator.isValidNumber(txtVehicleNumbers.getText()))
-         {
-              UIUtils.showAlert("Please enter valid number of vehicles", "Alert");  
-    
-             isValid=false;
-         }
-         
+        if(!chkDntHaveVechicles.isSelected())
+        {
+            if(cmbVehicleType.getValue()==null || cmbVehicleType.getValue().toString().trim().equals(GlobalConstants.emptyString))
+            {
+                UIUtils.showAlert("Please select vehicle type", "Alert"); 
+                isValid=false;
+            }
+
+            else if(txtVehicleNumbers.getText() ==null || txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
+            {
+                UIUtils.showAlert("Please enter number of vehicles", "Alert"); 
+                isValid=false;
+            }
+            else if(txtVehicleNumbers.getText() ==null || txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
+            {
+                UIUtils.showAlert("Please enter number of vehicles", "Alert"); 
+                isValid=false;
+            }         
+
+            else if(!GbbValidator.isValidNumber(txtVehicleNumbers.getText()))
+            {
+                 UIUtils.showAlert("Please enter valid number of vehicles", "Alert");  
+
+                isValid=false;
+            }
+        }
          return isValid;
     }
 
@@ -301,21 +304,27 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
          return isValid;
     }
 
-    private void addVehicleToList() {
-        VehicleBean v = new VehicleBean();
-        v.setVehicleType(cmbVehicleType.getValue().toString());
-        v.setNumberOfVehicles(Integer.parseInt(txtVehicleNumbers.getText()));
-        if(vehicleList.contains(v))
+    private void addVehicleToList() 
+    {
+        if(!chkDntHaveVechicles.isSelected())
         {
-            vehicleList.remove(v);
-            vehicleList.add(v);
+            VehicleBean v = new VehicleBean();
+            v.setVehicleType(cmbVehicleType.getValue().toString());
+            v.setNumberOfVehicles(Integer.parseInt(txtVehicleNumbers.getText()));
+            if(vehicleList.contains(v))
+            {
+                vehicleList.remove(v);
+                vehicleList.add(v);
+            }
+            else
+            {
+                vehicleList.add(v);
+            }
+            clearVehicleForm();
+            showPreviousLink();
+            
         }
-        else
-        {
-            vehicleList.add(v);
-        }
-        clearVehicleForm();
-        showPreviousLink();
+        
     }
 
     private void addHouseToList() {
@@ -457,4 +466,24 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         linkShowPrevious.setVisible(true);
     }
     
+    @FXML
+    CheckBox chkDntHaveVechicles;
+    
+    @FXML
+    private void toggleVehicleOptions()
+    {
+        if(chkDntHaveVechicles.isSelected())
+         {
+             cmbVehicleType.setDisable(true);
+            txtVehicleNumbers.setDisable(true);
+            btnAddVehicle.setDisable(true);
+         }
+         else
+         {
+            cmbVehicleType.setDisable(false);
+            txtVehicleNumbers.setDisable(false);
+            btnAddVehicle.setDisable(false);
+         }
+        
+    }
 }

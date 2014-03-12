@@ -340,7 +340,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private void populateFrequency1(Event e)
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbFreq1.getItems().size()==0)
@@ -358,7 +358,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private void populateFrequency2(Event e)
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbFreq2.getItems().size()==0)
@@ -376,7 +376,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private void populateFrequency3(Event e)
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbFreq3.getItems().size()==0)
@@ -394,7 +394,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private void populateFrequency4(Event e)
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbFreq4.getItems().size()==0)
@@ -495,6 +495,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     }
     
     @FXML
+    private Label lblMenses;
+    @FXML
     private Label lblIrregular;
     @FXML
     private Label lblPainful;
@@ -509,6 +511,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         
         if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase("Male"))
         {
+            lblMenses.setVisible(false);
             lblIrregular.setVisible(false);
             lblPainful.setVisible(false);
             lblHeavy.setVisible(false);
@@ -521,6 +524,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         }
         else
         {
+            lblMenses.setVisible(true);
             lblIrregular.setVisible(true);
             lblPainful.setVisible(true);
             lblHeavy.setVisible(true);
