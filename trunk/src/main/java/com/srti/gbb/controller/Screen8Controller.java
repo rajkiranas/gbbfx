@@ -27,6 +27,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ListView;
@@ -185,28 +186,35 @@ public class Screen8Controller implements Initializable, ControlledScreen {
      private boolean validateHobby() 
     {
         boolean isValid = true;
-         if((cmbHobby.getValue()==null || cmbHobby.getValue().toString().equals(GlobalConstants.emptyString))  && (txtHobby.getText() ==null || txtHobby.getText().trim().equals(GlobalConstants.emptyString)) )
+        
+        if(cmbHobby.getValue()!=null && cmbHobby.getValue().toString().equals(GlobalConstants.None))
         {
-            isValid=false;
-            UIUtils.showAlert("Please select or enter hobby", "Alert");
+            isValid=true;
         }
-         else if ((cmbHobby.getValue() != null) && (!txtHobby.getText().trim().equals(GlobalConstants.emptyString))) 
-         {
-            UIUtils.showAlert("Please either select or enter the hobby", "Alert");
-            isValid = false;
-        }
-         else if(cmbHobbyHoursPerWeek.getValue()==null || cmbHobbyHoursPerWeek.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("Please select time for hobby", "Alert");
-        }
+        else if((cmbHobby.getValue()==null || cmbHobby.getValue().toString().equals(GlobalConstants.emptyString))  && (txtHobby.getText() ==null || txtHobby.getText().trim().equals(GlobalConstants.emptyString)) )
+           {
+               isValid=false;
+               UIUtils.showAlert("Please select or enter hobby", "Alert");
+           }
+            else if ((cmbHobby.getValue() != null) && (!txtHobby.getText().trim().equals(GlobalConstants.emptyString))) 
+            {
+               UIUtils.showAlert("Please either select or enter the hobby", "Alert");
+               isValid = false;
+           }
+            else if(cmbHobbyHoursPerWeek.getValue()==null || cmbHobbyHoursPerWeek.getValue().toString().equals(GlobalConstants.emptyString))
+           {
+               isValid=false;
+               UIUtils.showAlert("Please select time for hobby", "Alert");
+           }
+        
          return isValid;
     }
      
      @FXML
      private void addHobbyToList()
      {
-         if(validateHobby())
+         //!txtHobby.isDisabled() && !cmbHobbyHoursPerWeek.isDisabled() is for None hobby
+         if(validateHobby() && !txtHobby.isDisabled() && !cmbHobbyHoursPerWeek.isDisabled())
          {
              HobbyBean h = new HobbyBean();
              if(cmbHobby.getValue()!=null)
@@ -231,6 +239,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
              }
              clearHobbySelection();
              showPreviousLink();
+             removeNoneOptionFromList();
          }
      }
      private void clearHobbySelection()
@@ -428,14 +437,15 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         }
         
         
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Time_Params);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         String[] list1 =  genderList.split(GlobalConstants.COMMA);
         
         if(cmbHobbyHoursPerWeek.getItems().size()==0)
         {
             for(String gen : list1)
             {
-                    cmbHobbyHoursPerWeek.getItems().addAll(gen);                    
+                    cmbHobbyHoursPerWeek.getItems().addAll(gen); 
+                    cmbHobbyHoursPerWeek.getItems().addAll(gen+".30"); 
             }
         }
     }
@@ -474,14 +484,23 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         List<EntertainmentBean> eList = new ArrayList<EntertainmentBean>();
         for(String s : l)
         {
-            EntertainmentBean e = new EntertainmentBean();
-            e.setEntertainement(s);
-            eList.add(e);
+            if(!s.equals(GlobalConstants.None))
+            {
+                EntertainmentBean e = new EntertainmentBean();
+                e.setEntertainement(s);
+                if(!eList.contains(e))
+                {
+                    eList.add(e);
+                }
+            }
         }
 //        if(navigator.getUserInfo().getEducationList()==null)
 //        {
+        if(!eList.isEmpty())
+        {
             System.out.println("entmt List="+eList.size());
             navigator.getUserInfo().setEntertainmentList(eList);
+        }
         //}
     }
   
@@ -527,5 +546,42 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     
     private void showPreviousLink() {
         linkShowPrevious.setVisible(true);
+    }
+    
+    @FXML
+    private void chkForNoneHobby()
+    {
+        //below null check is necessary to block when selection is cleared
+        if(cmbHobby.getValue()!=null)
+        {
+            String hobbySelection = cmbHobby.getValue().toString();
+            if(hobbySelection.equalsIgnoreCase(GlobalConstants.None))
+            {
+                lockHobbyInputs();
+            }
+            else
+            {
+                enableHobbyInputs();
+            }
+        }
+    }
+
+    @FXML
+    private Button btnAddHobby;
+    
+    private void lockHobbyInputs() {
+        txtHobby.setDisable(true);
+        cmbHobbyHoursPerWeek.setDisable(true);
+        btnAddHobby.setDisable(true);
+    }
+
+    private void enableHobbyInputs() {
+        txtHobby.setDisable(false);
+        cmbHobbyHoursPerWeek.setDisable(false);
+        btnAddHobby.setDisable(false);
+    }
+
+    private void removeNoneOptionFromList() {
+        cmbHobby.getItems().remove(GlobalConstants.None);
     }
 }

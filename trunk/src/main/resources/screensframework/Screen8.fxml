@@ -129,7 +129,7 @@
       <children>
         <VBox id="VBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
           <children>
-            <ComboBox fx:id="cmbHobby" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="128.0" promptText="%Input_Prompt_Hobby">
+            <ComboBox fx:id="cmbHobby" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#chkForNoneHobby" prefHeight="35.0" prefWidth="128.0" promptText="%Input_Prompt_Hobby">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>

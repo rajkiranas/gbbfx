@@ -81,7 +81,7 @@
                 <CheckBox fx:id="chkIrregular" mnemonicParsing="false" text="" />
               </children>
             </HBox>
-            <Label text="%Lbl_Menses" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="lblMenses" text="%Lbl_Menses" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <children>
                 <Label fx:id="lblPainful" text="%Lbl_Painful_Menses" />
