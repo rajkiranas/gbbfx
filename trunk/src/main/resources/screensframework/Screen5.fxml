@@ -26,11 +26,11 @@
     </AnchorPane>
     <AnchorPane layoutX="24.0" layoutY="87.0" minHeight="311.0" prefHeight="311.0" prefWidth="751.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="51.0" layoutY="14.0" prefHeight="263.0" prefWidth="687.5">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="14.0" prefHeight="263.0" prefWidth="725.0">
           <children>
             <Label text="%Lbl_Father" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Mother" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <ComboBox id="cmbFamilyMember" fx:id="cmbFM1" prefHeight="35.0" prefWidth="91.0" promptText="%Lbl_Family_Member" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ComboBox id="cmbFamilyMember" fx:id="cmbFM1" onAction="#manageOccuAndProfForHouseWife" prefHeight="35.0" prefWidth="91.0" promptText="%Lbl_Family_Member" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
@@ -80,32 +80,47 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbFatherIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="0">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbMotherIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="1">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbFMIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="2">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="0">
+              <children>
+                <ComboBox fx:id="cmbFatherIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+              <children>
+                <ComboBox fx:id="cmbMotherIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+              <children>
+                <ComboBox fx:id="cmbFMIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
             <CheckBox fx:id="chkDeceasedFather" mnemonicParsing="false" onAction="#toggleFatherCombos" text="%Lbl_Deceased" GridPane.columnIndex="5" GridPane.rowIndex="0" />
             <CheckBox fx:id="chkDeceasedMother" mnemonicParsing="false" onAction="#toggleMotherCombos" text="%Lbl_Deceased" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="102.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="129.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="114.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="115.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="128.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="114.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="114.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="149.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="120.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

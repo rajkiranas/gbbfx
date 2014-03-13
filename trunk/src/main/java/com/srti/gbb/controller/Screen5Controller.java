@@ -149,6 +149,66 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     }
     
     
+    
+    @FXML
+    private void manageOccuAndProfForHouseWife()
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
+        String[] occuList =  genderList.split(GlobalConstants.COMMA);
+        
+        String profList = GlobalConstants.getProperty(GlobalConstants.Profession_Options);
+        String[] list =  profList.split(GlobalConstants.COMMA);
+        
+        if (cmbFM1.getValue().toString().equals("Brother")) 
+        {
+            cmbFMOccupation.getItems().clear();
+            if (cmbFMOccupation.getItems().size() == 0) {
+                for (String gen : occuList) {
+                    if (!gen.equals("Housewife")) {
+                        cmbFMOccupation.getItems().addAll(gen);
+                    }
+                }
+            }
+            
+            cmbFMProfession.getItems().clear();
+            if(cmbFMProfession.getItems().size()==0)
+            {
+                for(String gen : list)
+                {
+                    if (!gen.equals("Housewife")) {
+                        cmbFMProfession.getItems().addAll(gen);
+                    }
+                        
+                }
+            }
+
+        }
+        else
+        {
+            cmbFMOccupation.getItems().clear();
+            if (cmbFMOccupation.getItems().size() == 0) {
+                for (String gen : occuList) {
+                    
+                        cmbFMOccupation.getItems().addAll(gen);
+                    
+                }
+            }
+            
+            cmbFMProfession.getItems().clear();
+            if(cmbFMProfession.getItems().size()==0)
+            {
+                for(String gen : list)
+                {
+                        cmbFMProfession.getItems().addAll(gen);
+                }
+            }
+            
+        }
+        
+        
+    }
+    
+    
     @FXML
     private ComboBox cmbFatherHQ;
     
@@ -208,6 +268,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
+                if(!gen.equals("Housewife"))
                     cmbFatherOccupation.getItems().addAll(gen);                    
             }
         }
@@ -227,8 +288,6 @@ public class Screen5Controller implements Initializable, ControlledScreen {
                     cmbFMOccupation.getItems().addAll(gen);                    
             }
         }
-        
-        
     }
 
     
