@@ -23,7 +23,7 @@
     </AnchorPane>
     <AnchorPane layoutX="26.0" layoutY="100.0" minHeight="307.0" prefHeight="307.0" prefWidth="749.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="25.0" layoutY="20.0" prefHeight="247.0" prefWidth="699.0">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="20.0" prefHeight="247.0" prefWidth="721.0">
           <children>
             <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField fx:id="txtFrnd2" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -73,28 +73,43 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbIncomeFrnd1" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="0">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbIncomeFrnd2" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="1">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbIncomeFrnd3" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income" GridPane.columnIndex="4" GridPane.rowIndex="2">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="0">
+              <children>
+                <ComboBox fx:id="cmbIncomeFrnd1" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+              <children>
+                <ComboBox fx:id="cmbIncomeFrnd2" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+              <children>
+                <ComboBox fx:id="cmbIncomeFrnd3" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="255.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="132.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="109.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="109.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="94.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="240.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="125.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="113.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="113.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="130.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

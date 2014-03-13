@@ -137,7 +137,7 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <Label text="%Lbl_Exercise_Schedule_Params" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label prefWidth="39.0" text="%Lbl_Exercise_Schedule_Params" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             <Label text="%Lbl_Duration_Params" GridPane.columnIndex="2" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>

@@ -20,6 +20,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javax.xml.bind.Marshaller.Listener;
 
 /**
  * FXML Controller class
@@ -42,7 +43,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+       
+                }
     
     public void setScreenParent(ScreensNavigator screenParent){
         navigator = screenParent;
@@ -88,6 +90,11 @@ public class Screen3Controller implements Initializable, ControlledScreen {
              UIUtils.showAlert("Please select late nights value", "Alert"); 
              isValid=false;
          }
+          else if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase("Female") && txtAge.getText()!=null && !txtAge.getText().equals(GlobalConstants.emptyString) && navigator.getUserInfo().getPi().getAge()<=Integer.parseInt(txtAge.getText()))
+            {
+                UIUtils.showAlert("Hysterectomy age cannot be greater than person age", "Alert");
+                isValid=false;
+            }
          
          return isValid;
      }
@@ -426,12 +433,19 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     {
         if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase("Female"))
         {
-            GynecBean g = new GynecBean();
-            g.setIrregularMenses(chkIrregular.isSelected());
-            g.setPainfulMenses(chkPainful.isSelected());
-            g.setHeavyMenses(chkHeavy.isSelected());
+            
+            
+                GynecBean g = new GynecBean();
+                g.setIrregularMenses(chkIrregular.isSelected());
+                g.setPainfulMenses(chkPainful.isSelected());
+                g.setHeavyMenses(chkHeavy.isSelected());
+                
+                if(txtAge.getText()!=null && !txtAge.getText().equals(GlobalConstants.emptyString))
+                {
+                    g.setMenopauseHysterectomyAtAge(Integer.parseInt(txtAge.getText()));
+                }
 
-            navigator.getUserInfo().setGynecBean(g);
+                navigator.getUserInfo().setGynecBean(g);
         }
     }
 
@@ -537,6 +551,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
             
         }
     }    
-            
+
+    
             
 }

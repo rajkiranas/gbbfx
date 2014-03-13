@@ -112,7 +112,32 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
     @FXML
     private void goToScreen10(ActionEvent event) 
     {
-        if(cmbVehicleType.getValue()!=null || !txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
+        if(chkDntHaveVechicles.isSelected())
+        {
+            if(validateHouseForm())
+            {
+                if(!chkLandOwned.isSelected() && !chkLandRented.isSelected())
+                {
+                    addHouseToList();
+
+                    setPropertyData();
+                    navigateToNextScreen();
+                }
+                else
+                {
+                    if (validateLandForm()) 
+                    {
+                        addHouseToList();
+                        addLandToList();
+
+                        setPropertyData();
+                        navigateToNextScreen();
+                    }
+                }
+            }
+            
+        }
+        else if(cmbVehicleType.getValue()!=null || !txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
         {
             if(validateVehicleForm())
             {
@@ -177,7 +202,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         }        
         else
         {
-            UIUtils.showAlert("Please enter atleast one vehicle information", "Alert"); 
+            UIUtils.showAlert("Please enter complete house and vehicle information", "Alert"); 
         }
    }
 
