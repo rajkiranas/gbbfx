@@ -53,9 +53,9 @@ public class Screen6Controller implements Initializable, ControlledScreen {
     private void goToScreen7(ActionEvent event) 
     {
         friendsList = new ArrayList<Friends>();
-        boolean f1=true;
-        boolean f2=true;
-        boolean f3=true;
+        boolean f1=false;
+        boolean f2=false;
+        boolean f3=false;
         if(!txtFrnd1.getText().equals(GlobalConstants.emptyString) ||
              cmbQualFrnd1.getValue()!=null ||
                 cmbOccupationFrnd1.getValue()!=null ||
@@ -107,10 +107,16 @@ public class Screen6Controller implements Initializable, ControlledScreen {
                 f3=false;
             }
         }
-        if(f1 && f2 && f3)
+        
+        
+        if((f1 && f2 && f3) || !friendsListForAddition.isEmpty())
         {
             setFriendsData();
             navigator.navigateTo(ScreensFramework.screen7ID);
+        }
+        else
+        {
+            UIUtils.showAlert("Please enter information of atleast 3 close friends", null);
         }
     }
 
