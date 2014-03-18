@@ -107,7 +107,6 @@
             </ComboBox>
             <TextField fx:id="txtAmtCash" alignment="CENTER_RIGHT" disable="false" editable="true" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             <TextField fx:id="txtAmtKind" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtAmtService" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="55.0" />
