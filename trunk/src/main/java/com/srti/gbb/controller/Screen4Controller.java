@@ -73,10 +73,16 @@ public class Screen4Controller implements Initializable, ControlledScreen {
     private TextField txtNoOfCollegeRepeats;
     
     @FXML
+    private TextField txtSubRepeatsCollege;
+    
+    @FXML
     private TextField txtAvgPgPer;
     
     @FXML
     private TextField txtNoOfPgRepeats;
+    
+    @FXML
+    private TextField txtSubRepeatsPG;
     
     @FXML
     private TextField txtFacultyStream;
@@ -199,6 +205,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
             
         }
     }
+    
     private boolean validateEducationForm()
      {
          
@@ -283,6 +290,38 @@ public class Screen4Controller implements Initializable, ControlledScreen {
              UIUtils.showAlert("Invalid no. of repeats in school", "Alert"); 
              isValid=false;
          }
+         else if(!txtAvgCollegePer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgCollegePer.getText()))
+         {
+             UIUtils.showAlert("Invalid avg college percentage", "Alert"); 
+             isValid=false;
+         }
+         else if(!txtNoOfCollegeRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfCollegeRepeats.getText()))
+         {
+             UIUtils.showAlert("Invalid no. of college repeats", "Alert"); 
+             isValid=false;
+         }
+         else if(!txtSubRepeatsCollege.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsCollege.getText()))
+         {
+             UIUtils.showAlert("Invalid no. of subject repeats in college", "Alert"); 
+             isValid=false;
+         }
+         
+         else if(!txtAvgPgPer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgPgPer.getText()))
+         {
+             UIUtils.showAlert("Invalid avg percentage in pg", "Alert"); 
+             isValid=false;
+         }
+         
+         else if(!txtNoOfPgRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfPgRepeats.getText()))
+         {
+             UIUtils.showAlert("Invalid no. of repeats in post graduation", "Alert"); 
+             isValid=false;
+         }
+         else if(!txtSubRepeatsPG.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsPG.getText()))
+         {
+             UIUtils.showAlert("Invalid no. of subject repeats in post graduation", "Alert"); 
+             isValid=false;
+         }
          
          return isValid;
      }
@@ -309,11 +348,18 @@ public class Screen4Controller implements Initializable, ControlledScreen {
         if(!txtNoOfCollegeRepeats.getText().equals(GlobalConstants.emptyString))
             performance.setNoOfCollegeRepeats(Integer.parseInt(txtNoOfCollegeRepeats.getText()));
         
+        if(!txtSubRepeatsCollege.getText().equals(GlobalConstants.emptyString))
+            performance.setNoOfSubjectRepeatsInCollege(Integer.parseInt(txtSubRepeatsCollege.getText()));
+        
         if(!txtAvgPgPer.getText().equals(GlobalConstants.emptyString))
             performance.setAvgPGPercentage(Float.valueOf(txtAvgPgPer.getText()));
         
         if(!txtNoOfPgRepeats.getText().equals(GlobalConstants.emptyString))
             performance.setNoOfPGRepeats(Integer.parseInt(txtNoOfPgRepeats.getText()));
+        
+        if(!txtSubRepeatsPG.getText().equals(GlobalConstants.emptyString))
+            performance.setNoOfSubjectRepeatsInPG(Integer.parseInt(txtSubRepeatsPG.getText()));
+        
         
         navigator.getUserInfo().setAvgPerformanceBean(performance);
     }

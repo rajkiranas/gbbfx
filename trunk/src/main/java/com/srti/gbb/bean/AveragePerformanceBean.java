@@ -14,9 +14,12 @@ public class AveragePerformanceBean
     private int noOfSchoolRepeats;
     private float avgCollegePercentage;
     private int noOfCollegeRepeats;
+    private int noOfSubjectRepeatsInCollege;
     private float avgPGPercentage;
     private int noOfPGRepeats;
-
+    private int noOfSubjectRepeatsInPG;
+    
+    
     public float getAvgSchoolPercentage() {
         return avgSchoolPercentage;
     }
@@ -63,6 +66,22 @@ public class AveragePerformanceBean
 
     public void setNoOfPGRepeats(int noOfPGRepeats) {
         this.noOfPGRepeats = noOfPGRepeats;
+    }
+
+    public int getNoOfSubjectRepeatsInCollege() {
+        return noOfSubjectRepeatsInCollege;
+    }
+
+    public void setNoOfSubjectRepeatsInCollege(int noOfSubjectRepeatsInCollege) {
+        this.noOfSubjectRepeatsInCollege = noOfSubjectRepeatsInCollege;
+    }
+
+    public int getNoOfSubjectRepeatsInPG() {
+        return noOfSubjectRepeatsInPG;
+    }
+
+    public void setNoOfSubjectRepeatsInPG(int noOfSubjectRepeatsInPG) {
+        this.noOfSubjectRepeatsInPG = noOfSubjectRepeatsInPG;
     }
     
     

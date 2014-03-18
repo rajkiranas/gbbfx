@@ -103,7 +103,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
         cmbTimesPerWeekService.setDisable(true);
         txtAmtCash.setDisable(true);
         txtAmtKind.setDisable(true);
-        txtAmtService.setDisable(true);
+        //txtAmtService.setDisable(true);
         txtAreaOfWork.setDisable(true);
     }
     
@@ -169,7 +169,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
             cmbTimesPerWeekService.setDisable(false);
             txtAmtCash.setDisable(false);
             txtAmtKind.setDisable(false);
-            txtAmtService.setDisable(false);
+            //txtAmtService.setDisable(false);
             txtAreaOfWork.setDisable(false);
          }
          else
@@ -179,7 +179,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
             cmbTimesPerWeekService.setDisable(true);
             txtAmtCash.setDisable(true);
             txtAmtKind.setDisable(true);
-            txtAmtService.setDisable(true);
+            //txtAmtService.setDisable(true);
             txtAreaOfWork.setDisable(true);
          }
     }
@@ -220,7 +220,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
                    SocialServiceBean ss = new SocialServiceBean();
                    ss.setApproxAmtCash(Float.parseFloat(txtAmtCash.getText()));
                    ss.setApproxAmtKind(Float.parseFloat(txtAmtKind.getText()));
-                   ss.setApproxAmtService(Float.parseFloat(txtAmtService.getText()));
+                   //ss.setApproxAmtService(Float.parseFloat(txtAmtService.getText()));
                    ss.setCashPerWeek(Integer.parseInt(cmbTimesPerWeekCash.getValue().toString()));
                    ss.setKindPerWeek(Integer.parseInt(cmbTimesPerWeekKind.getValue().toString()));
                    ss.setSocialServicePerWeek(Integer.parseInt(cmbTimesPerWeekService.getValue().toString()));
@@ -262,8 +262,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     @FXML
     private TextField txtAmtKind;
     
-    @FXML
-    private TextField txtAmtService;
+    
     
     @FXML
     private TextField txtAreaOfWork;
@@ -303,16 +302,16 @@ public class Screen7Controller implements Initializable, ControlledScreen {
                isValid=false;
                UIUtils.showAlert("Please select kind service per week", "Alert");
            }
-            else if(txtAmtService.getText()==null || txtAmtService.getText().equals(GlobalConstants.emptyString))
-           {
-               isValid=false;
-               UIUtils.showAlert("Please enter approximate amount for social service", "Alert");
-           }
-            else if(!GbbValidator.isValidNumber(txtAmtService.getText()))
-           {
-               isValid=false;
-               UIUtils.showAlert("Invalid approximate amount for social service", "Alert");
-           }
+//            else if(txtAmtService.getText()==null || txtAmtService.getText().equals(GlobalConstants.emptyString))
+//           {
+//               isValid=false;
+//               UIUtils.showAlert("Please enter approximate amount for social service", "Alert");
+//           }
+//            else if(!GbbValidator.isValidNumber(txtAmtService.getText()))
+//           {
+//               isValid=false;
+//               UIUtils.showAlert("Invalid approximate amount for social service", "Alert");
+//           }
             else if(cmbTimesPerWeekService.getValue()==null || cmbTimesPerWeekService.getValue().toString().equals(GlobalConstants.emptyString))
            {
                isValid=false;

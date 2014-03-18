@@ -80,12 +80,12 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen10ID, ScreensFramework.screen10File);
         nav.loadScreen(ScreensFramework.screen13ID, ScreensFramework.screen13File);
         
-        nav.loadScreen(ScreensFramework.screen0ID, ScreensFramework.screen11File);
+        nav.loadScreen(ScreensFramework.screen11ID, ScreensFramework.screen11File);
         
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         
         
-        nav.navigateTo(ScreensFramework.screen0ID);
+        nav.navigateTo(ScreensFramework.screen11ID);
         
         Group root = new Group();
         root.getChildren().addAll(nav);
