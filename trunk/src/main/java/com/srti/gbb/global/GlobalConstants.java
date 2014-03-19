@@ -92,4 +92,6 @@ public class GlobalConstants {
     public static final String Traveling_Options="Traveling_Options";
     public static final String None="None";
     public static final String Addiction_Frequency_Options="Addiction_Frequency_Options";
+    public static final String hash="#";
+    public static final String dollar="$";
 }
