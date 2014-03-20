@@ -14,8 +14,14 @@ public class PrakrutiQuestionAnsBean
 {
     private String question;
     private String ans1;
+    private String ans1b;
+    private String ans1c;
     private String ans2;
+    private String ans2b;
+    private String ans2c;
     private String ans3;
+    private String ans3b;
+    private String ans3c;
 
     public String getQuestion() {
         return question;
@@ -48,6 +54,8 @@ public class PrakrutiQuestionAnsBean
     public void setAns3(String ans3) {
         this.ans3 = ans3;
     }
+    
+    
 
     @Override
     public int hashCode() {
@@ -69,4 +77,59 @@ public class PrakrutiQuestionAnsBean
         }
         return true;
     }
+
+    public String getAns1b() {
+        return ans1b;
+    }
+
+    public void setAns1b(String ans1b) {
+        this.ans1b = ans1b;
+    }
+
+    public String getAns1c() {
+        return ans1c;
+    }
+
+    public void setAns1c(String ans1c) {
+        this.ans1c = ans1c;
+    }
+
+    public String getAns2b() {
+        return ans2b;
+    }
+
+    public void setAns2b(String ans2b) {
+        this.ans2b = ans2b;
+    }
+
+    public String getAns2c() {
+        return ans2c;
+    }
+
+    public void setAns2c(String ans2c) {
+        this.ans2c = ans2c;
+    }
+
+    public String getAns3b() {
+        return ans3b;
+    }
+
+    public void setAns3b(String ans3b) {
+        this.ans3b = ans3b;
+    }
+
+    public String getAns3c() {
+        return ans3c;
+    }
+
+    public void setAns3c(String ans3c) {
+        this.ans3c = ans3c;
+    }
+
+    @Override
+    public String toString() {
+        return "PrakrutiQuestionAnsBean{" + "question=" + question + ", ans1=" + ans1 + ", ans1b=" + ans1b + ", ans1c=" + ans1c + ", ans2=" + ans2 + ", ans2b=" + ans2b + ", ans2c=" + ans2c + ", ans3=" + ans3 + ", ans3b=" + ans3b + ", ans3c=" + ans3c + '}';
+    }
+    
+    
 }
