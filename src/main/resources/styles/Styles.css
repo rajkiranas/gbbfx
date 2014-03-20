@@ -66,7 +66,7 @@
 
 .questionsStyle
 {
-    -fx-font-family: "Arial Black";
+/*    -fx-font-family: "Arial Black";*/
     -fx-text-fill: #105675;
 /*    -fx-font-weight: bold;*/
     -fx-font-size: 16px;
