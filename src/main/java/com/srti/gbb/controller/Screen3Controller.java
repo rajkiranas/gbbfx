@@ -72,27 +72,27 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          boolean isValid=true;
           if(cmbWakeupTime.getValue()==null || cmbWakeupTime.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select wakeup time", "Alert"); 
+             UIUtils.showAlert("sc3_msg_sel_wakeup", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(cmbSleepTime.getValue()==null || cmbSleepTime.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select sleeping time", "Alert"); 
+             UIUtils.showAlert("sc3_msg_sel_sleep", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(cmbAfternoonSleep.getValue() ==null || cmbAfternoonSleep.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select afternoon sleep value", "Alert"); 
+             UIUtils.showAlert("sc3_msg_sel_afternoon", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
           else if(cmbLateNights.getValue()==null || cmbLateNights.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select late nights value", "Alert"); 
+             UIUtils.showAlert("sc3_msg_sel_late_nights", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
           else if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase("Female") && txtAge.getText()!=null && !txtAge.getText().equals(GlobalConstants.emptyString) && navigator.getUserInfo().getPi().getAge()<=Integer.parseInt(txtAge.getText()))
             {
-                UIUtils.showAlert("Hysterectomy age cannot be greater than person age", "Alert");
+                UIUtils.showAlert("sc3_msg_greater_hyst_age", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
                 isValid=false;
             }
          
@@ -107,7 +107,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbFreq1.getValue()==null || cmbFreq1.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select frequency1", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_freq1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
 
              }
@@ -117,7 +117,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbAddict1.getValue()==null || cmbAddict1.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select addiction1", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_addiction1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
 
              }
@@ -127,7 +127,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbFreq2.getValue()==null || cmbFreq2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select frequency2", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_freq2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
              }
          }
@@ -135,7 +135,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbAddict2.getValue()==null ||cmbAddict2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select addiction2", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_addiction2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
              }
          }
@@ -143,7 +143,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbFreq3.getValue()==null || cmbFreq3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select frequency3", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_freq3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
              }
          }
@@ -151,7 +151,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbAddict3.getValue()==null || cmbAddict3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select addiction3", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_addiction3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
              }
          }
@@ -159,7 +159,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbFreq4.getValue()==null || cmbFreq4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select frequency4", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_freq4", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
              }
          }
@@ -167,7 +167,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
          {
              if((cmbAddict4.getValue()==null || cmbAddict4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
-                UIUtils.showAlert("Please select addiction4", "Alert"); 
+                UIUtils.showAlert("sc3_msg_sel_addiction4", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
              }
          }
@@ -551,7 +551,4 @@ public class Screen3Controller implements Initializable, ControlledScreen {
             
         }
     }    
-
-    
-            
 }

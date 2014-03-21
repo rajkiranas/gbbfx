@@ -280,7 +280,7 @@ public class Screen13Controller implements Initializable, ControlledScreen {
     {
         if(txtHospAddSelf.getText()==null || txtHospAddSelf.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in self disease textbox","Alert");
+            UIUtils.showAlert("Please write something in self disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
         else
         {
@@ -294,7 +294,7 @@ public class Screen13Controller implements Initializable, ControlledScreen {
     {
         if(txtHospAddParents.getText()==null || txtHospAddParents.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in parents disease textbox","Alert");
+            UIUtils.showAlert("Please write something in parents disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
         else
         {
@@ -309,7 +309,7 @@ public class Screen13Controller implements Initializable, ControlledScreen {
     {
         if(txtHospAddGrandParents.getText()==null || txtHospAddGrandParents.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in grand parents disease textbox","Alert");
+            UIUtils.showAlert("Please write something in grand parents disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
         else
         {
@@ -324,7 +324,7 @@ public class Screen13Controller implements Initializable, ControlledScreen {
     {
         if(txtHospAddSiblings.getText()==null || txtHospAddSiblings.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in siblings disease textbox","Alert");
+            UIUtils.showAlert("Please write something in siblings disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
         else
         {
