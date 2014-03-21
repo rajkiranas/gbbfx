@@ -120,7 +120,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
             }
             else
             {
-                UIUtils.showAlert("Please add atleast one hobby", "Alert");
+                UIUtils.showAlert("sc8_msg_enter_atleast_one_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
             }
         }
     }
@@ -128,7 +128,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     {
         boolean isEmpty=entertainmentList.getSelectionModel().isEmpty();
         if(isEmpty)
-            UIUtils.showAlert("Please select entertainment(s)", "Alert");
+            UIUtils.showAlert("sc8_msg_enter_ent", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         return isEmpty;
     }
     
@@ -138,47 +138,47 @@ public class Screen8Controller implements Initializable, ControlledScreen {
          if(cmbLocalInd.getValue()==null || cmbLocalInd.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select individual local travels", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_indv_local", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbNationalInd.getValue()==null || cmbNationalInd.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select individual national travels", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_indv_national", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbInternationalInd.getValue()==null || cmbInternationalInd.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select individual international travels", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_indv_international", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbLocalFamily.getValue()==null || cmbLocalFamily.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select local travels with family", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_family_local", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbNationalFamily.getValue()==null || cmbNationalFamily.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select national travels with family", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_family_national", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbInternationalFamily.getValue()==null || cmbInternationalFamily.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select international travels with family", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_family_international", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbLocalFriends.getValue()==null || cmbLocalFriends.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select local travels with friends", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_friends_local", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbNationalFriends.getValue()==null || cmbNationalFriends.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select national travels with friends", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_friends_national", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          else if(cmbInternationalFriends.getValue()==null || cmbInternationalFriends.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("Please select international travels with friends", "Alert");
+            UIUtils.showAlert("sc8_msg_sel_friends_international", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
         }
          return isValid;
     }
@@ -194,17 +194,17 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         else if((cmbHobby.getValue()==null || cmbHobby.getValue().toString().equals(GlobalConstants.emptyString))  && (txtHobby.getText() ==null || txtHobby.getText().trim().equals(GlobalConstants.emptyString)) )
            {
                isValid=false;
-               UIUtils.showAlert("Please select or enter hobby", "Alert");
+               UIUtils.showAlert("sc8_msg_sel_or_enter_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
             else if ((cmbHobby.getValue() != null) && (!txtHobby.getText().trim().equals(GlobalConstants.emptyString))) 
             {
-               UIUtils.showAlert("Please either select or enter the hobby", "Alert");
+               UIUtils.showAlert("sc8_msg_either_sel_or_enter_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
                isValid = false;
            }
             else if(cmbHobbyHoursPerWeek.getValue()==null || cmbHobbyHoursPerWeek.getValue().toString().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("Please select time for hobby", "Alert");
+               UIUtils.showAlert("sc8_msg_sel_time_for_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
         
          return isValid;

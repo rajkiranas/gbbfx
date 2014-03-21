@@ -194,7 +194,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
             //empty form
             if(educationList.isEmpty())
             {
-                UIUtils.showAlert("Please provide education details", "Alert");
+                UIUtils.showAlert("sc4_msg_enter_educational_dtls", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
             }
             else if(validateAvgPerformanceForm())
             {
@@ -213,52 +213,52 @@ public class Screen4Controller implements Initializable, ControlledScreen {
          
             if(txtSchool.getText()==null || txtSchool.getText().trim().equals(GlobalConstants.emptyString))
             {
-                UIUtils.showAlert("Please enter school/college name", "Alert"); 
+                UIUtils.showAlert("sc4_msg_enter_school_name", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if(!GbbValidator.isValidName(txtSchool.getText()))
             {
-                UIUtils.showAlert("Invalid school/college name", "Alert"); 
+                UIUtils.showAlert("sc4_msg_invalid_school_name", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if(txtClassDegree.getText()==null || txtClassDegree.getText().trim().equals(GlobalConstants.emptyString))
             {
-                UIUtils.showAlert("Please enter class/degree", "Alert"); 
+                UIUtils.showAlert("sc4_msg_enter_class", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if(txtMedium.getText()==null || txtMedium.getText().trim().equals(GlobalConstants.emptyString))
             {
-                UIUtils.showAlert("Please enter medium of learning", "Alert"); 
+                UIUtils.showAlert("sc4_msg_enter_medium", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if(!GbbValidator.isValidName(txtMedium.getText()))
             {
-                UIUtils.showAlert("Invalid medium", "Alert"); 
+                UIUtils.showAlert("sc4_msg_invalid_medium", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if((cmbFacultyStream.getValue() ==null || cmbFacultyStream.getValue().toString().trim().equals(GlobalConstants.emptyString)) && (txtFacultyStream.getText() ==null || txtFacultyStream.getText().trim().equals(GlobalConstants.emptyString)))
             {
-                UIUtils.showAlert("Please select or enter faculty", "Alert"); 
+                UIUtils.showAlert("sc4_msg_select_or_enter_faculty", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if ((cmbFacultyStream.getValue() != null && !cmbFacultyStream.getValue().toString().equals(GlobalConstants.emptyString)) && (!txtFacultyStream.getText().trim().equals(GlobalConstants.emptyString))) 
             {
-             UIUtils.showAlert("Please either select or enter the faculty", "Alert");
+             UIUtils.showAlert("sc4_msg_either_select_or_enter_faculty", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
              isValid = false;
             }
             else if(txtBoardUni.getText()==null || txtBoardUni.getText().trim().equals(GlobalConstants.emptyString))
             {
-                UIUtils.showAlert("Please enter board/university", "Alert"); 
+                UIUtils.showAlert("sc4_msg_enter_board_uni", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if(!GbbValidator.isValidName(txtBoardUni.getText()))
             {
-                UIUtils.showAlert("Invalid board/university", "Alert"); 
+                UIUtils.showAlert("sc4_msg_invalid_board_uni", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
             else if(txtSubjects.getText()==null || txtSubjects.getText().trim().equals(GlobalConstants.emptyString))
             {
-                UIUtils.showAlert("Please enter subject(s) learned", "Alert"); 
+                UIUtils.showAlert("sc4_msg_enter_subs", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
                 isValid=false;
             }
          
@@ -271,55 +271,55 @@ public class Screen4Controller implements Initializable, ControlledScreen {
          boolean isValid=true;
          if(txtAvgSchoolPer.getText()==null || txtAvgSchoolPer.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter average school percentage", "Alert"); 
+             UIUtils.showAlert("sc4_msg_enter_avg_school_per", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!GbbValidator.isValidNumber(txtAvgSchoolPer.getText()))
          {
-             UIUtils.showAlert("Invalid average school percentage", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_avg_school_per", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          
          else if(txtNoOfSchoolRepeats.getText()==null || txtNoOfSchoolRepeats.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter no. of repeats in school", "Alert"); 
+             UIUtils.showAlert("sc4_msg_enter_repeats_in_school", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!GbbValidator.isValidNumber(txtNoOfSchoolRepeats.getText()))
          {
-             UIUtils.showAlert("Invalid no. of repeats in school", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_repeats_in_school", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!txtAvgCollegePer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgCollegePer.getText()))
          {
-             UIUtils.showAlert("Invalid avg college percentage", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_avg_college_per", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!txtNoOfCollegeRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfCollegeRepeats.getText()))
          {
-             UIUtils.showAlert("Invalid no. of college repeats", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_repeats_in_college", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!txtSubRepeatsCollege.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsCollege.getText()))
          {
-             UIUtils.showAlert("Invalid no. of subject repeats in college", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_sub_repeats_in_college", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          
          else if(!txtAvgPgPer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgPgPer.getText()))
          {
-             UIUtils.showAlert("Invalid avg percentage in pg", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_avg_pg_per", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          
          else if(!txtNoOfPgRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfPgRepeats.getText()))
          {
-             UIUtils.showAlert("Invalid no. of repeats in post graduation", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_repeats_in_pg", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!txtSubRepeatsPG.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsPG.getText()))
          {
-             UIUtils.showAlert("Invalid no. of subject repeats in post graduation", "Alert"); 
+             UIUtils.showAlert("sc4_msg_invalid_sub_repeats_in_pg", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          

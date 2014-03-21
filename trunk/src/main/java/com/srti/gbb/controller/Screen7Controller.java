@@ -242,15 +242,15 @@ public class Screen7Controller implements Initializable, ControlledScreen {
              if (cmbPrayIndividual.getValue() == null || cmbPrayIndividual.getValue().toString().equals(GlobalConstants.emptyString)) 
              {
                  isValid = false;
-                 UIUtils.showAlert("Please select individual prayer value", "Alert");
+                 UIUtils.showAlert("sc7_msg_sel_individual_prayer", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
              } else if (cmbPrayFamily.getValue() == null || cmbPrayFamily.getValue().toString().equals(GlobalConstants.emptyString)) 
              {
                  isValid = false;
-                 UIUtils.showAlert("Please select family prayer value", "Alert");
+                 UIUtils.showAlert("sc7_msg_sel_family_prayer", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
              } else if (cmbPrayCommunity.getValue() == null || cmbPrayCommunity.getValue().toString().equals(GlobalConstants.emptyString)) 
              {
                  isValid = false;
-                 UIUtils.showAlert("Please select community prayer value", "Alert");
+                 UIUtils.showAlert("sc7_msg_sel_community_prayer", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
              }
          }
          return isValid;
@@ -275,52 +275,52 @@ public class Screen7Controller implements Initializable, ControlledScreen {
             if(txtAmtCash.getText()==null || txtAmtCash.getText().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("Please enter approximate amount for cash service", "Alert");
+               UIUtils.showAlert("sc7_msg_enter_approx_cash", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
             else if(!GbbValidator.isValidNumber(txtAmtCash.getText()))
            {
                isValid=false;
-               UIUtils.showAlert("Invalid approximate amount for cash service", "Alert");
+               UIUtils.showAlert("sc7_msg_invalid_approx_cash", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
             else if(cmbTimesPerWeekCash.getValue()==null || cmbTimesPerWeekCash.getValue().toString().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("Please select cash service per week", "Alert");
+               UIUtils.showAlert("sc7_msg_sel_cash_service_per_week", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
             else if(txtAmtKind.getText()==null || txtAmtKind.getText().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("Please enter approximate amount for kind service", "Alert");
+               UIUtils.showAlert("sc7_msg_enter_approx_kind", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
             else if(!GbbValidator.isValidNumber(txtAmtKind.getText()))
            {
                isValid=false;
-               UIUtils.showAlert("Invalid approximate amount for kind service", "Alert");
+               UIUtils.showAlert("sc7_msg_invalid_approx_kind", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
             else if(cmbTimesPerWeekKind.getValue()==null || cmbTimesPerWeekKind.getValue().toString().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("Please select kind service per week", "Alert");
+               UIUtils.showAlert("sc7_msg_sel_kind_service_per_week", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
 //            else if(txtAmtService.getText()==null || txtAmtService.getText().equals(GlobalConstants.emptyString))
 //           {
 //               isValid=false;
-//               UIUtils.showAlert("Please enter approximate amount for social service", "Alert");
+//               UIUtils.showAlert("Please enter approximate amount for social service", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
 //           }
 //            else if(!GbbValidator.isValidNumber(txtAmtService.getText()))
 //           {
 //               isValid=false;
-//               UIUtils.showAlert("Invalid approximate amount for social service", "Alert");
+//               UIUtils.showAlert("Invalid approximate amount for social service", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
 //           }
             else if(cmbTimesPerWeekService.getValue()==null || cmbTimesPerWeekService.getValue().toString().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("Please select social service per week", "Alert");
+               UIUtils.showAlert("sc7_msg_sel_social_service_per_week", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
             else if(txtAreaOfWork.getText()==null || txtAreaOfWork.getText().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("Please enter area of work", "Alert");
+               UIUtils.showAlert("sc7_msg_enter_area_of_work", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
            }
        }
          return isValid;

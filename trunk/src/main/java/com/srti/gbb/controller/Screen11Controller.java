@@ -513,7 +513,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
          else
          {
              isValid = false;
-             UIUtils.showAlert("Please answer all questions on the screen", "Alert");
+             UIUtils.showAlert("Please answer all questions on the screen", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
          }
          
          return isValid;         

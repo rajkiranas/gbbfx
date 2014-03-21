@@ -131,78 +131,78 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
          if(txtName.getText() ==null || txtName.getText().trim().equals(GlobalConstants.emptyString))
          {
              
-              UIUtils.showAlert("Please enter name", "Alert");  
+              UIUtils.showAlert("sc1_msg_enter_name", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
     
              isValid=false;
          }
          else if(!GbbValidator.isValidName(txtName.getText()))
          {
-              UIUtils.showAlert("Please enter valid name", "Alert");  
+              UIUtils.showAlert("sc1_msg_valid_name", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
     
              isValid=false;
          }
          else if(txtAge.getText() ==null || txtAge.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter age", "Alert"); 
+             UIUtils.showAlert("sc1_msg_enter_age", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!GbbValidator.isValidNumber(txtAge.getText()))
          {
-              UIUtils.showAlert("Please enter valid age", "Alert");  
+              UIUtils.showAlert("sc1_msg_valid_age", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
     
              isValid=false;
          }
          else if(Integer.parseInt(txtAge.getText())>Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.MaxAge)))
          {
-              UIUtils.showAlert("Age cannot be greater than "+GlobalConstants.getProperty(GlobalConstants.MaxAge), "Alert");  
+              UIUtils.showAlert("sc1_msg_greater_age"+GlobalConstants.getProperty(GlobalConstants.MaxAge), GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
     
              isValid=false;
          }
          else if(cmbGenderList.getValue()==null || cmbGenderList.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select gender", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_gender", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if((cmbReligionList.getValue()==null || cmbReligionList.getValue().toString().trim().equals(GlobalConstants.emptyString))&& (txtReligion.getText() ==null || txtReligion.getText().trim().equals(GlobalConstants.emptyString)))
          {
-             UIUtils.showAlert("Please select or enter religion", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_or_enter_religion", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if((cmbReligionList.getValue()!=null) && (!txtReligion.getText().trim().equals(GlobalConstants.emptyString)))
          {
-             UIUtils.showAlert("Please either select or enter the religion", "Alert"); 
+             UIUtils.showAlert("sc1_msg_either_sel_or_enter_religion", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter mobile", "Alert"); 
+             UIUtils.showAlert("sc1_msg_enter_mobile", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!GbbValidator.isValidPhoneNumber(txtMobile.getText()))
          {
-              UIUtils.showAlert("Please enter valid mobile", "Alert");  
+              UIUtils.showAlert("sc1_msg_valid_mobile", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
     
              isValid=false;
          }
          else if(txtEmail.getText() ==null || txtEmail.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter email", "Alert"); 
+             UIUtils.showAlert("sc1_msg_enter_email", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(!GbbValidator.isValidEmail(txtEmail.getText()))
          {
-              UIUtils.showAlert("Please enter valid email", "Alert");  
+              UIUtils.showAlert("sc1_msg_valid_email", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
     
              isValid=false;
          }
          else if(cmbOccupation.getValue()==null || cmbOccupation.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select occupation", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_occu", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(cmbIncome.getValue()==null || cmbIncome.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select income", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_income", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          
@@ -366,27 +366,27 @@ private boolean validatePhysicalParametersForm()
          boolean isValid=true;
           if(cmbHeightFeets.getValue()==null || cmbHeightFeets.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select feets", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_feet", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(cmbHeightInches.getValue()==null || cmbHeightInches.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select inches", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_inches", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          else if(txtWeight.getText() ==null || txtWeight.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter weight", "Alert"); 
+             UIUtils.showAlert("sc1_msg_enter_weight", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
           else if(cmbLooseMotions.getValue()==null || cmbLooseMotions.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select loose motions value", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_lm", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
           else if(cmbConstipations.getValue()==null || cmbConstipations.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select constipation value", "Alert"); 
+             UIUtils.showAlert("sc1_msg_sel_consti", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
              isValid=false;
          }
          
