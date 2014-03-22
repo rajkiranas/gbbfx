@@ -120,7 +120,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
             }
             else
             {
-                UIUtils.showAlert("sc8_msg_enter_atleast_one_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc8_msg_enter_atleast_one_hobby", GlobalConstants.Lbl_Alert);
             }
         }
     }
@@ -128,7 +128,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     {
         boolean isEmpty=entertainmentList.getSelectionModel().isEmpty();
         if(isEmpty)
-            UIUtils.showAlert("sc8_msg_enter_ent", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_enter_ent", GlobalConstants.Lbl_Alert);
         return isEmpty;
     }
     
@@ -138,47 +138,47 @@ public class Screen8Controller implements Initializable, ControlledScreen {
          if(cmbLocalInd.getValue()==null || cmbLocalInd.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_indv_local", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_indv_local", GlobalConstants.Lbl_Alert);
         }
          else if(cmbNationalInd.getValue()==null || cmbNationalInd.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_indv_national", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_indv_national", GlobalConstants.Lbl_Alert);
         }
          else if(cmbInternationalInd.getValue()==null || cmbInternationalInd.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_indv_international", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_indv_international", GlobalConstants.Lbl_Alert);
         }
          else if(cmbLocalFamily.getValue()==null || cmbLocalFamily.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_family_local", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_family_local", GlobalConstants.Lbl_Alert);
         }
          else if(cmbNationalFamily.getValue()==null || cmbNationalFamily.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_family_national", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_family_national", GlobalConstants.Lbl_Alert);
         }
          else if(cmbInternationalFamily.getValue()==null || cmbInternationalFamily.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_family_international", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_family_international", GlobalConstants.Lbl_Alert);
         }
          else if(cmbLocalFriends.getValue()==null || cmbLocalFriends.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_friends_local", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_friends_local", GlobalConstants.Lbl_Alert);
         }
          else if(cmbNationalFriends.getValue()==null || cmbNationalFriends.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_friends_national", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_friends_national", GlobalConstants.Lbl_Alert);
         }
          else if(cmbInternationalFriends.getValue()==null || cmbInternationalFriends.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc8_msg_sel_friends_international", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc8_msg_sel_friends_international", GlobalConstants.Lbl_Alert);
         }
          return isValid;
     }
@@ -194,17 +194,17 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         else if((cmbHobby.getValue()==null || cmbHobby.getValue().toString().equals(GlobalConstants.emptyString))  && (txtHobby.getText() ==null || txtHobby.getText().trim().equals(GlobalConstants.emptyString)) )
            {
                isValid=false;
-               UIUtils.showAlert("sc8_msg_sel_or_enter_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+               UIUtils.showAlert("sc8_msg_sel_or_enter_hobby", GlobalConstants.Lbl_Alert);
            }
             else if ((cmbHobby.getValue() != null) && (!txtHobby.getText().trim().equals(GlobalConstants.emptyString))) 
             {
-               UIUtils.showAlert("sc8_msg_either_sel_or_enter_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+               UIUtils.showAlert("sc8_msg_either_sel_or_enter_hobby", GlobalConstants.Lbl_Alert);
                isValid = false;
            }
             else if(cmbHobbyHoursPerWeek.getValue()==null || cmbHobbyHoursPerWeek.getValue().toString().equals(GlobalConstants.emptyString))
            {
                isValid=false;
-               UIUtils.showAlert("sc8_msg_sel_time_for_hobby", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+               UIUtils.showAlert("sc8_msg_sel_time_for_hobby", GlobalConstants.Lbl_Alert);
            }
         
          return isValid;

@@ -77,40 +77,40 @@ public class Screen12Controller implements Initializable, ControlledScreen {
          if(txtHouse.getText() ==null || txtHouse.getText().trim().equals(GlobalConstants.emptyString))
          {
              
-              UIUtils.showAlert("Please enter house information", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+              UIUtils.showAlert("sc12_msg_enter_house_info", GlobalConstants.Lbl_Alert);  
     
              isValid=false;
          }
          
          else if(txtArea.getText() ==null || txtArea.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter area information", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc12_msg_enter_area_info", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          
          else if(cmbCountry.getValue()==null || cmbCountry.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select country", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc12_msg_sel_country", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          else if(cmbState.getValue()==null || cmbState.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please select state", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc12_msg_sel_state", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          else if(txtCity.getText() ==null || txtCity.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter city information", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc12_msg_enter_city", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          else if(txtPincode.getText() ==null || txtPincode.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("Please enter pin code", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc12_msg_enter_pincode", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          else if(!GbbValidator.isValidNumber(txtPincode.getText()))
          {
-              UIUtils.showAlert("Please enter valid pincode", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+              UIUtils.showAlert("sc12_msg_invalid_pincode", GlobalConstants.Lbl_Alert);  
     
              isValid=false;
          }

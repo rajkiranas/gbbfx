@@ -202,7 +202,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         }        
         else
         {
-            UIUtils.showAlert("sc9_msg_enter_house_vehicle_info", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+            UIUtils.showAlert("sc9_msg_enter_house_vehicle_info", GlobalConstants.Lbl_Alert); 
         }
    }
 
@@ -227,24 +227,24 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         {
             if(cmbVehicleType.getValue()==null || cmbVehicleType.getValue().toString().trim().equals(GlobalConstants.emptyString))
             {
-                UIUtils.showAlert("sc9_msg_sel_vehicle_type", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+                UIUtils.showAlert("sc9_msg_sel_vehicle_type", GlobalConstants.Lbl_Alert); 
                 isValid=false;
             }
 
             else if(txtVehicleNumbers.getText() ==null || txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
             {
-                UIUtils.showAlert("sc9_msg_enter_vehicles_nos", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+                UIUtils.showAlert("sc9_msg_enter_vehicles_nos", GlobalConstants.Lbl_Alert); 
                 isValid=false;
             }
 //            else if(txtVehicleNumbers.getText() ==null || txtVehicleNumbers.getText().trim().equals(GlobalConstants.emptyString))
 //            {
-//                UIUtils.showAlert("Please enter number of vehicles", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+//                UIUtils.showAlert("Please enter number of vehicles", GlobalConstants.Lbl_Alert); 
 //                isValid=false;
 //            }         
 
             else if(!GbbValidator.isValidNumber(txtVehicleNumbers.getText()))
             {
-                 UIUtils.showAlert("sc9_msg_invalid_vehicles_nos", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+                 UIUtils.showAlert("sc9_msg_invalid_vehicles_nos", GlobalConstants.Lbl_Alert);  
 
                 isValid=false;
             }
@@ -256,37 +256,37 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         boolean isValid=true;
          if(!chkHouseOwned.isSelected() && !chkHouseRented.isSelected() )
          {
-             UIUtils.showAlert("sc9_msg_sel_house_type", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc9_msg_sel_house_type", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
          else if(txtHouseApproxArea.getText() ==null || txtHouseApproxArea.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc9_msg_enter_approx_house_area", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc9_msg_enter_approx_house_area", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
          else if(!GbbValidator.isValidNumber(txtHouseApproxArea.getText()))
          {
-              UIUtils.showAlert("sc9_msg_invalid_approx_house_area", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+              UIUtils.showAlert("sc9_msg_invalid_approx_house_area", GlobalConstants.Lbl_Alert);  
              isValid=false;
          }
          else if(txtHouseMembers.getText() ==null || txtHouseMembers.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc9_msg_enter_house_members", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc9_msg_enter_house_members", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
          else if(!GbbValidator.isValidNumber(txtHouseApproxArea.getText()))
          {
-              UIUtils.showAlert("sc9_msg_invalid_house_members", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+              UIUtils.showAlert("sc9_msg_invalid_house_members", GlobalConstants.Lbl_Alert);  
              isValid=false;
          }
          else if(txtHouseLoan.getText() ==null || txtHouseLoan.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc9_msg_enter_house_loan", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc9_msg_enter_house_loan", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
          else if(!GbbValidator.isValidNumber(txtHouseLoan.getText()))
          {
-             UIUtils.showAlert("sc9_msg_invalid_house_loan", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+             UIUtils.showAlert("sc9_msg_invalid_house_loan", GlobalConstants.Lbl_Alert);  
              isValid=false;
          }
          
@@ -297,32 +297,32 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         boolean isValid=true;
          if(txtLandApproxArea.getText() ==null || txtLandApproxArea.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc9_msg_enter_land_area", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc9_msg_enter_land_area", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
          else if(!GbbValidator.isValidNumber(txtLandApproxArea.getText()))
          {
-              UIUtils.showAlert("sc9_msg_invalid_land_area", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+              UIUtils.showAlert("sc9_msg_invalid_land_area", GlobalConstants.Lbl_Alert);  
              isValid=false;
          }
          else if(txtLandMembers.getText() ==null || txtLandMembers.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc9_msg_enter_land_dependants", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc9_msg_enter_land_dependants", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
          else if(!GbbValidator.isValidNumber(txtLandApproxArea.getText()))
          {
-              UIUtils.showAlert("sc9_msg_invalid_land_dependants", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+              UIUtils.showAlert("sc9_msg_invalid_land_dependants", GlobalConstants.Lbl_Alert);  
              isValid=false;
          }
          else if(txtLandLoan.getText() ==null || txtLandLoan.getText().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc9_msg_enter_land_loan", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc9_msg_enter_land_loan", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
          else if(!GbbValidator.isValidNumber(txtLandLoan.getText()))
          {
-             UIUtils.showAlert("sc9_msg_invalid_land_loan", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));  
+             UIUtils.showAlert("sc9_msg_invalid_land_loan", GlobalConstants.Lbl_Alert);  
              isValid=false;
          }
          

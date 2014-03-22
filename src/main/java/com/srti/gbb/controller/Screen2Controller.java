@@ -108,32 +108,32 @@ public class Screen2Controller implements Initializable , ControlledScreen {
          boolean isValid=true;
           if(cmbDiet.getValue()==null || cmbDiet.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc2_msg_sel_diet", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc2_msg_sel_diet", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          else if(cmbNonVeg.getValue()==null || cmbNonVeg.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc2_msg_sel_nonveg", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc2_msg_sel_nonveg", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          else if((cmbFoodType.getValue() ==null || cmbFoodType.getValue().toString().trim().equals(GlobalConstants.emptyString)) && (txtFoodType.getText() ==null || txtFoodType.getText().trim().equals(GlobalConstants.emptyString)))
          {
-             UIUtils.showAlert("sc2_msg_sel_or_enter_foodtype", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc2_msg_sel_or_enter_foodtype", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          else if((cmbFoodType.getValue()!=null) && (!txtFoodType.getText().trim().equals(GlobalConstants.emptyString)))
          {
-             UIUtils.showAlert("sc2_msg_either_sel_or_enter_foodtype", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc2_msg_either_sel_or_enter_foodtype", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
           else if(cmbFruits.getValue()==null || cmbFruits.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc2_msg_sel_fruits", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc2_msg_sel_fruits", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
           else if(cmbEatingOut.getValue()==null || cmbEatingOut.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
-             UIUtils.showAlert("sc2_msg_sel_eating_out", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert)); 
+             UIUtils.showAlert("sc2_msg_sel_eating_out", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          
@@ -147,13 +147,13 @@ public class Screen2Controller implements Initializable , ControlledScreen {
          if (chkRegularExercise.isSelected()) 
          {
              if (cmbExerciseSchedule.getValue() == null || cmbExerciseSchedule.getValue().toString().trim().equals(GlobalConstants.emptyString)) {
-                 UIUtils.showAlert("sc2_msg_sel_exercise", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                 UIUtils.showAlert("sc2_msg_sel_exercise", GlobalConstants.Lbl_Alert);
                  isValid = false;
              } else if (cmbExerciseType.getValue() == null || cmbExerciseType.getValue().toString().trim().equals(GlobalConstants.emptyString)) {
-                 UIUtils.showAlert("sc2_msg_sel_exercise_type", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                 UIUtils.showAlert("sc2_msg_sel_exercise_type", GlobalConstants.Lbl_Alert);
                  isValid = false;
              } else if (cmbDuration.getValue() == null || cmbDuration.getValue().toString().trim().equals(GlobalConstants.emptyString)) {
-                 UIUtils.showAlert("sc2_msg_sel_exercise_hours", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                 UIUtils.showAlert("sc2_msg_sel_exercise_hours", GlobalConstants.Lbl_Alert);
                  isValid = false;
              }
          }

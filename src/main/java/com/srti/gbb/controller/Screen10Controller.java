@@ -139,7 +139,7 @@ public class Screen10Controller implements Initializable, ControlledScreen {
                 || !txtDiseaseAddGrandParents.getText().trim().equals(GlobalConstants.emptyString)
                 || !txtDiseaseAddSiblings.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please click on add button to add the disease","Info");
+            UIUtils.showAlert("sc10_msg_click_on_add_btn",GlobalConstants.Lbl_Alert);
             
         }
         else
@@ -262,7 +262,7 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     {
         if(txtDiseaseAddSelf.getText()==null || txtDiseaseAddSelf.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in self disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc10_msg_enter_self_textbox",GlobalConstants.Lbl_Alert);
         }
         else
         {
@@ -276,7 +276,7 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     {
         if(txtDiseaseAddParents.getText()==null || txtDiseaseAddParents.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in parents disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc10_msg_enter_self_textbox",GlobalConstants.Lbl_Alert);
         }
         else
         {
@@ -291,7 +291,7 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     {
         if(txtDiseaseAddGrandParents.getText()==null || txtDiseaseAddGrandParents.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in grand parents disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc10_msg_enter_grand_parents_textbox",GlobalConstants.Lbl_Alert);
         }
         else
         {
@@ -306,7 +306,7 @@ public class Screen10Controller implements Initializable, ControlledScreen {
     {
         if(txtDiseaseAddSiblings.getText()==null || txtDiseaseAddSiblings.getText().trim().equals(GlobalConstants.emptyString))
         {
-            UIUtils.showAlert("Please write something in siblings disease textbox",GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc10_msg_enter_siblings_textbox",GlobalConstants.Lbl_Alert);
         }
         else
         {
