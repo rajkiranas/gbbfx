@@ -12,6 +12,7 @@ import com.srti.gbb.bean.TravelingBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
@@ -187,7 +188,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     {
         boolean isValid = true;
         
-        if(cmbHobby.getValue()!=null && cmbHobby.getValue().toString().equals(GlobalConstants.None))
+        if(cmbHobby.getValue()!=null && cmbHobby.getValue().toString().equals(MU.getMsg(GlobalConstants.None)))
         {
             isValid=true;
         }
@@ -484,7 +485,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         List<EntertainmentBean> eList = new ArrayList<EntertainmentBean>();
         for(String s : l)
         {
-            if(!s.equals(GlobalConstants.None))
+            if(!s.equals(MU.getMsg(GlobalConstants.None)))
             {
                 EntertainmentBean e = new EntertainmentBean();
                 e.setEntertainement(s);
@@ -555,7 +556,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         if(cmbHobby.getValue()!=null)
         {
             String hobbySelection = cmbHobby.getValue().toString();
-            if(hobbySelection.equalsIgnoreCase(GlobalConstants.None))
+            if(hobbySelection.equalsIgnoreCase(MU.getMsg(GlobalConstants.None)))
             {
                 lockHobbyInputs();
             }
@@ -582,6 +583,6 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     }
 
     private void removeNoneOptionFromList() {
-        cmbHobby.getItems().remove(GlobalConstants.None);
+        cmbHobby.getItems().remove(MU.getMsg(GlobalConstants.None));
     }
 }
