@@ -381,27 +381,27 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         if(cmbFM1.getValue()==null || cmbFM1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc5_msg_sel_family_member", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc5_msg_sel_family_member", GlobalConstants.Lbl_Alert);
         }
         else if(cmbFMHQ.getValue()==null || cmbFMHQ.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc5_msg_sel_fm_qual", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc5_msg_sel_fm_qual", GlobalConstants.Lbl_Alert);
         }
         else if(cmbFMOccupation.getValue()==null || cmbFMOccupation.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc5_msg_sel_fm_occu", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc5_msg_sel_fm_occu", GlobalConstants.Lbl_Alert);
         }
         else if(cmbFMProfession.getValue()==null || cmbFMProfession.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc5_msg_sel_fm_prof", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc5_msg_sel_fm_prof", GlobalConstants.Lbl_Alert);
         }
         else if(cmbFMIncome.getValue()==null || cmbFMIncome.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc5_msg_sel_fm_income", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc5_msg_sel_fm_income", GlobalConstants.Lbl_Alert);
         }
         return isValid;
     }
@@ -414,19 +414,19 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             if (cmbFatherHQ.getValue() == null || cmbFatherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_father_qual", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_father_qual", GlobalConstants.Lbl_Alert);
             } else if (cmbFatherOccupation.getValue() == null || cmbFatherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_father_occu", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_father_occu", GlobalConstants.Lbl_Alert);
             } else if (cmbFatherProfession.getValue() == null || cmbFatherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_father_prof", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_father_prof", GlobalConstants.Lbl_Alert);
             } else if (cmbFatherIncome.getValue() == null || cmbFatherIncome.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_father_income", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_father_income", GlobalConstants.Lbl_Alert);
             }
         }
         return isValid;
@@ -440,19 +440,19 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             if (cmbMotherHQ.getValue() == null || cmbMotherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_mother_qual", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_mother_qual", GlobalConstants.Lbl_Alert);
             } else if (cmbMotherOccupation.getValue() == null || cmbMotherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_mother_occu", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_mother_occu", GlobalConstants.Lbl_Alert);
             } else if (cmbMotherProfession.getValue() == null || cmbMotherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_mother_prof", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_mother_prof", GlobalConstants.Lbl_Alert);
             } else if (cmbMotherIncome.getValue() == null || cmbMotherIncome.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_mother_income", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+                UIUtils.showAlert("sc5_msg_sel_mother_income", GlobalConstants.Lbl_Alert);
             }
         }
         return isValid;

@@ -204,77 +204,77 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         if(txtFrnd1.getText()==null || txtFrnd1.getText().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_name_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_name_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbQualFrnd1.getValue()==null || cmbQualFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_qual_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_qual_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbOccupationFrnd1.getValue()==null || cmbOccupationFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbProfessionFrnd1.getValue()==null || cmbProfessionFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_prof_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_prof_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbIncomeFrnd1.getValue()==null || cmbIncomeFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_income_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_income_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(txtFrnd2.getText()==null || txtFrnd2.getText().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_name_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_name_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbQualFrnd2.getValue()==null || cmbQualFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_qual_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_qual_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbOccupationFrnd2.getValue()==null || cmbOccupationFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbProfessionFrnd2.getValue()==null || cmbProfessionFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_prof_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_prof_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbIncomeFrnd2.getValue()==null || cmbIncomeFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_income_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_income_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(txtFrnd3.getText()==null || txtFrnd3.getText().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_name_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_name_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbQualFrnd3.getValue()==null || cmbQualFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_qual_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_qual_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbOccupationFrnd3.getValue()==null || cmbOccupationFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbProfessionFrnd3.getValue()==null || cmbProfessionFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_prof_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_prof_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbIncomeFrnd3.getValue()==null || cmbIncomeFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_income_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_income_friend3", GlobalConstants.Lbl_Alert);
         }
         return isValid;
     }
@@ -452,27 +452,27 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         if(txtFrnd1.getText()==null || txtFrnd1.getText().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_name_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_name_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbQualFrnd1.getValue()==null || cmbQualFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_qual_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_qual_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbOccupationFrnd1.getValue()==null || cmbOccupationFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbProfessionFrnd1.getValue()==null || cmbProfessionFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_prof_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_prof_friend1", GlobalConstants.Lbl_Alert);
         }
         else if(cmbIncomeFrnd1.getValue()==null || cmbIncomeFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_income_friend1", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_income_friend1", GlobalConstants.Lbl_Alert);
         }
         return isValid;
     }
@@ -493,27 +493,27 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         if(txtFrnd2.getText()==null || txtFrnd2.getText().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_name_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_name_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbQualFrnd2.getValue()==null || cmbQualFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_qual_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_qual_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbOccupationFrnd2.getValue()==null || cmbOccupationFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbProfessionFrnd2.getValue()==null || cmbProfessionFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_prof_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_prof_friend2", GlobalConstants.Lbl_Alert);
         }
         else if(cmbIncomeFrnd2.getValue()==null || cmbIncomeFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_income_friend2", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_income_friend2", GlobalConstants.Lbl_Alert);
         }
         return isValid;
     }
@@ -532,27 +532,27 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         if(txtFrnd3.getText()==null || txtFrnd3.getText().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_name_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_name_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbQualFrnd3.getValue()==null || cmbQualFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_qual_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_qual_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbOccupationFrnd3.getValue()==null || cmbOccupationFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbProfessionFrnd3.getValue()==null || cmbProfessionFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_prof_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_prof_friend3", GlobalConstants.Lbl_Alert);
         }
         else if(cmbIncomeFrnd3.getValue()==null || cmbIncomeFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_income_friend3", GlobalConstants.getProperty(GlobalConstants.Lbl_Alert));
+            UIUtils.showAlert("sc6_msg_enter_income_friend3", GlobalConstants.Lbl_Alert);
         }
         return isValid;
     }    
