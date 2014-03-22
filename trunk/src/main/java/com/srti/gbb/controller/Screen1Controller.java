@@ -154,7 +154,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
          }
          else if(Integer.parseInt(txtAge.getText())>Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.MaxAge)))
          {
-              UIUtils.showAlert("sc1_msg_greater_age"+GlobalConstants.getProperty(GlobalConstants.MaxAge), GlobalConstants.Lbl_Alert);  
+              UIUtils.showAlert("sc1_msg_greater_age", GlobalConstants.Lbl_Alert);  
     
              isValid=false;
          }

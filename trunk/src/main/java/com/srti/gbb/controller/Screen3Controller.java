@@ -6,6 +6,8 @@ import com.srti.gbb.bean.LifestyleBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.GbbValidator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
@@ -90,7 +92,12 @@ public class Screen3Controller implements Initializable, ControlledScreen {
              UIUtils.showAlert("sc3_msg_sel_late_nights", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-          else if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase("Female") && txtAge.getText()!=null && !txtAge.getText().equals(GlobalConstants.emptyString) && navigator.getUserInfo().getPi().getAge()<=Integer.parseInt(txtAge.getText()))
+          else if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(MU.getMsg("Lbl_Female")) && txtAge.getText()!=null && !txtAge.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAge.getText()))
+            {
+                UIUtils.showAlert("sc3_msg_invalid_hyst_age", GlobalConstants.Lbl_Alert);
+                isValid=false;
+            }
+          else if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(MU.getMsg("Lbl_Female")) && txtAge.getText()!=null && !txtAge.getText().equals(GlobalConstants.emptyString) && navigator.getUserInfo().getPi().getAge()<=Integer.parseInt(txtAge.getText()))
             {
                 UIUtils.showAlert("sc3_msg_greater_hyst_age", GlobalConstants.Lbl_Alert);
                 isValid=false;
@@ -198,7 +205,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
             for(String gen : list)
             {
                     cmbWakeupTime.getItems().addAll(gen);
-                    if(!gen.equals(GlobalConstants.TwentyFour))
+                    if(!gen.equals(MU.getMsg(GlobalConstants.TwentyFour)))
                     {
                         cmbWakeupTime.getItems().addAll(gen+".15");
                         cmbWakeupTime.getItems().addAll(gen+".30");
@@ -223,7 +230,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
             for(String gen : list)
             {
                     cmbSleepTime.getItems().addAll(gen);
-                    if(!gen.equals(GlobalConstants.TwentyFour))
+                    if(!gen.equals(MU.getMsg(GlobalConstants.TwentyFour)))
                     {
                         cmbSleepTime.getItems().addAll(gen+".15");
                         cmbSleepTime.getItems().addAll(gen+".30");
@@ -431,7 +438,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     private void setGynecData() 
     {
-        if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase("Female"))
+        if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(MU.getMsg(GlobalConstants.Lbl_Female)))
         {
             
             
@@ -523,7 +530,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     private void setVisibilityOfGynecInputs() {
         
-        if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase("Male"))
+        if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(MU.getMsg("Lbl_Male")))
         {
             lblMenses.setVisible(false);
             lblIrregular.setVisible(false);

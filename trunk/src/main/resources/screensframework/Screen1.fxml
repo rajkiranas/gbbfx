@@ -130,9 +130,9 @@
             <Label text="%Lbl_Height" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Weight" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Loose_Motions" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label text="%Lbl_Constipations" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Constipations" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <TextField id="txtAge" fx:id="txtWeight" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label prefWidth="29.0" text="%Lbl_Weight_Param" textAlignment="LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label prefHeight="29.0" prefWidth="50.0" text="%Lbl_Weight_Param" textAlignment="LEFT" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label prefWidth="42.0" text="%Lbl_Loose_Motions_Param" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label prefWidth="39.0" text="%Lbl_Constipations_Param" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Label text="%Lbl_Height_Param1" GridPane.columnIndex="2" GridPane.rowIndex="0" />

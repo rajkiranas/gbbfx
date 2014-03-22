@@ -60,7 +60,7 @@ public class GlobalConstants {
     public static final String Loose_Motions_Constipations_Values="Loose_Motions_Constipations_Values";
     public static final String Zero_To_Seven_WeekDays="Zero_To_Seven_WeekDays";
     public static final String Zero="0";
-    public static final String TwentyFour="24";
+    public static final String TwentyFour="TwentyFour";
     public static final String Diet_Options="Diet_Options";
     public static final String Food_Type_Options="Food_Type_Options";
     public static final String Exercise_Type_Options="Exercise_Type_Options";
@@ -90,9 +90,15 @@ public class GlobalConstants {
     public static final String Lbl_Disease_Options="Lbl_Disease_Options";
     public static final String Lbl_Alert="Lbl_Alert";
     public static final String Traveling_Options="Traveling_Options";
-    public static final String None="None";
+    public static final String None="Lbl_None";
     public static final String Addiction_Frequency_Options="Addiction_Frequency_Options";
     public static final String hash="#";
     public static final String dollar="$";
+    public static final String Lbl_Father="Lbl_Father";
+    public static final String Lbl_Mother="Lbl_Mother";
+    public static final String Lbl_Brother="Lbl_Brother";
+    public static final String Lbl_Housewife="Lbl_Housewife";
+    public static final String Lbl_Female="Lbl_Female";
+    public static final String Lbl_Male="Lbl_Male";
     //public static final String Lbl_Alert="Lbl_Alert";
 }

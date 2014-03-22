@@ -115,7 +115,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         }
         else
         {
-            UIUtils.showAlert("Please enter information of atleast 3 close friends", null);
+            UIUtils.showAlert("sc6_msg_enter_three_friends", GlobalConstants.Lbl_Alert);
         }
     }
 

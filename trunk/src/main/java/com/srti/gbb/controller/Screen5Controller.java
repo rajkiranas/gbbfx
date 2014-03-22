@@ -8,6 +8,7 @@ import com.srti.gbb.bean.FamilyEducation;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
@@ -158,12 +159,12 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         String profList = GlobalConstants.getProperty(GlobalConstants.Profession_Options);
         String[] list =  profList.split(GlobalConstants.COMMA);
         
-        if (cmbFM1.getValue().toString().equals("Brother")) 
+        if (cmbFM1.getValue().toString().equals(MU.getMsg("Lbl_Brother"))) 
         {
             cmbFMOccupation.getItems().clear();
             if (cmbFMOccupation.getItems().size() == 0) {
                 for (String gen : occuList) {
-                    if (!gen.equals("Housewife")) {
+                    if (!gen.equals(MU.getMsg("Lbl_Housewife"))) {
                         cmbFMOccupation.getItems().addAll(gen);
                     }
                 }
@@ -174,7 +175,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             {
                 for(String gen : list)
                 {
-                    if (!gen.equals("Housewife")) {
+                    if (!gen.equals(MU.getMsg("Lbl_Housewife"))) {
                         cmbFMProfession.getItems().addAll(gen);
                     }
                         
@@ -267,7 +268,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
-                if(!gen.equals("Housewife"))
+                if(!gen.equals(MU.getMsg("Lbl_Housewife")))
                     cmbFatherOccupation.getItems().addAll(gen);                    
             }
         }
@@ -310,7 +311,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
-                if(!gen.equals("Housewife"))
+                if(!gen.equals(MU.getMsg("Lbl_Housewife")))
                     cmbFatherProfession.getItems().addAll(gen);                    
             }
         }
@@ -463,7 +464,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         FamilyEducation bean = new FamilyEducation();
         if (!chkDeceasedFather.isSelected()) 
         {
-            bean.setFamilyMember("Father");
+            bean.setFamilyMember(MU.getMsg("Lbl_Father"));
             bean.setHighestQualification(cmbFatherHQ.getValue().toString());
             bean.setOccupation(cmbFatherOccupation.getValue().toString());
             bean.setProfession(cmbFatherProfession.getValue().toString());
@@ -474,7 +475,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         
         if (!chkDeceasedMother.isSelected()) 
         {
-            bean.setFamilyMember("Mother");
+            bean.setFamilyMember(MU.getMsg("Lbl_Mother"));
             bean.setHighestQualification(cmbMotherHQ.getValue().toString());
             bean.setOccupation(cmbMotherOccupation.getValue().toString());
             bean.setProfession(cmbMotherProfession.getValue().toString());
