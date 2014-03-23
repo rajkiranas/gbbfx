@@ -159,7 +159,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         String profList = GlobalConstants.getProperty(GlobalConstants.Profession_Options);
         String[] list =  profList.split(GlobalConstants.COMMA);
         
-        if (cmbFM1.getValue().toString().equals(MU.getMsg("Lbl_Brother"))) 
+        if (cmbFM1.getValue()!=null && cmbFM1.getValue().toString().equals(MU.getMsg("Lbl_Brother"))) 
         {
             cmbFMOccupation.getItems().clear();
             if (cmbFMOccupation.getItems().size() == 0) {

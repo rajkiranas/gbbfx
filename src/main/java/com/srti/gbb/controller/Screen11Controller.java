@@ -749,107 +749,116 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
     private void recordAdditionalOptionsQ1(PrakrutiQuestionAnsBean res) 
     {
-        //additional options recording
-        if(q1.getText().contains(GlobalConstants.hash))
+        if(q1.getText()!=null)
         {
-            if(q1o1b.isSelected())
-                res.setAns1b(q1o1b.getText());
-            
-            if(q1o1c.isSelected())
-                res.setAns1c(q1o1c.getText());
-            
-            if(q1o2b.isSelected())
-                res.setAns2b(q1o2b.getText());
-            
-            if(q1o2c.isSelected())
-                res.setAns2c(q1o2c.getText());
-            
-            if(q1o3b.isSelected())
-                res.setAns3b(q1o3b.getText());
-            
-            if(q1o3c.isSelected())
-                res.setAns3c(q1o3c.getText());
+            //additional options recording
+            if(q1.getText().contains(GlobalConstants.hash))
+            {
+                if(q1o1b.isSelected())
+                    res.setAns1b(q1o1b.getText());
+
+                if(q1o1c.isSelected())
+                    res.setAns1c(q1o1c.getText());
+
+                if(q1o2b.isSelected())
+                    res.setAns2b(q1o2b.getText());
+
+                if(q1o2c.isSelected())
+                    res.setAns2c(q1o2c.getText());
+
+                if(q1o3b.isSelected())
+                    res.setAns3b(q1o3b.getText());
+
+                if(q1o3c.isSelected())
+                    res.setAns3c(q1o3c.getText());
+            }
+            else if(q1.getText().contains(GlobalConstants.dollar))
+            {
+                if(q1o1b.isSelected())
+                    res.setAns1b(q1o1b.getText());
+
+                if(q1o2b.isSelected())
+                    res.setAns2b(q1o2b.getText());
+
+                if(q1o3b.isSelected())
+                    res.setAns3b(q1o3b.getText());            
+            }
         }
-        else if(q1.getText().contains(GlobalConstants.dollar))
-        {
-            if(q1o1b.isSelected())
-                res.setAns1b(q1o1b.getText());
-            
-            if(q1o2b.isSelected())
-                res.setAns2b(q1o2b.getText());
-            
-            if(q1o3b.isSelected())
-                res.setAns3b(q1o3b.getText());            
-        }    
     }
 
     private void recordAdditionalOptionsQ2(PrakrutiQuestionAnsBean res) {
-        //additional options recording
-        if(q2.getText().contains(GlobalConstants.hash))
+        if(q2.getText()!=null)
         {
-            if(q2o1b.isSelected())
-                res.setAns1b(q2o1b.getText());
-            
-            if(q2o1c.isSelected())
-                res.setAns1c(q2o1c.getText());
-            
-            if(q2o2b.isSelected())
-                res.setAns2b(q2o2b.getText());
-            
-            if(q2o2c.isSelected())
-                res.setAns2c(q2o2c.getText());
-            
-            if(q2o3b.isSelected())
-                res.setAns3b(q2o3b.getText());
-            
-            if(q2o3c.isSelected())
-                res.setAns3c(q2o3c.getText());
+            //additional options recording
+            if(q2.getText().contains(GlobalConstants.hash))
+            {
+                if(q2o1b.isSelected())
+                    res.setAns1b(q2o1b.getText());
+
+                if(q2o1c.isSelected())
+                    res.setAns1c(q2o1c.getText());
+
+                if(q2o2b.isSelected())
+                    res.setAns2b(q2o2b.getText());
+
+                if(q2o2c.isSelected())
+                    res.setAns2c(q2o2c.getText());
+
+                if(q2o3b.isSelected())
+                    res.setAns3b(q2o3b.getText());
+
+                if(q2o3c.isSelected())
+                    res.setAns3c(q2o3c.getText());
+            }
+            else if(q2.getText().contains(GlobalConstants.dollar))
+            {
+                if(q2o1b.isSelected())
+                    res.setAns1b(q2o1b.getText());            
+
+                if(q2o2b.isSelected())
+                    res.setAns2b(q2o2b.getText());            
+
+                if(q2o3b.isSelected())
+                    res.setAns3b(q2o3b.getText());
+            }
         }
-        else if(q2.getText().contains(GlobalConstants.dollar))
-        {
-            if(q2o1b.isSelected())
-                res.setAns1b(q2o1b.getText());            
-            
-            if(q2o2b.isSelected())
-                res.setAns2b(q2o2b.getText());            
-            
-            if(q2o3b.isSelected())
-                res.setAns3b(q2o3b.getText());
-        }    
     }
 
     private void recordAdditionalOptionsQ3(PrakrutiQuestionAnsBean res) {
-        //additional options recording
-        if(q3.getText().contains(GlobalConstants.hash))
+        if(q3.getText()!=null)
         {
-            if(q3o1b.isSelected())
-                res.setAns1b(q3o1b.getText());
-            
-            if(q3o1c.isSelected())
-                res.setAns1c(q3o1c.getText());
-            
-            if(q3o2b.isSelected())
-                res.setAns2b(q3o2b.getText());
-            
-            if(q3o2c.isSelected())
-                res.setAns2c(q3o2c.getText());
-            
-            if(q3o3b.isSelected())
-                res.setAns3b(q3o3b.getText());
-            
-            if(q3o3c.isSelected())
-                res.setAns3c(q3o3c.getText());
-        }
-        else if(q3.getText().contains(GlobalConstants.dollar))
-        {
-            if(q3o1b.isSelected())
-                res.setAns1b(q3o1b.getText());            
-            
-            if(q3o2b.isSelected())
-                res.setAns2b(q3o2b.getText());            
-            
-            if(q3o3b.isSelected())
-                res.setAns3b(q3o3b.getText());
+            //additional options recording
+            if(q3.getText().contains(GlobalConstants.hash))
+            {
+                if(q3o1b.isSelected())
+                    res.setAns1b(q3o1b.getText());
+
+                if(q3o1c.isSelected())
+                    res.setAns1c(q3o1c.getText());
+
+                if(q3o2b.isSelected())
+                    res.setAns2b(q3o2b.getText());
+
+                if(q3o2c.isSelected())
+                    res.setAns2c(q3o2c.getText());
+
+                if(q3o3b.isSelected())
+                    res.setAns3b(q3o3b.getText());
+
+                if(q3o3c.isSelected())
+                    res.setAns3c(q3o3c.getText());
+            }
+            else if(q3.getText().contains(GlobalConstants.dollar))
+            {
+                if(q3o1b.isSelected())
+                    res.setAns1b(q3o1b.getText());            
+
+                if(q3o2b.isSelected())
+                    res.setAns2b(q3o2b.getText());            
+
+                if(q3o3b.isSelected())
+                    res.setAns3b(q3o3b.getText());
+            }
         }
     }
 }
