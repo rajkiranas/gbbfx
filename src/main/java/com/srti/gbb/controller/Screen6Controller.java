@@ -569,12 +569,12 @@ public class Screen6Controller implements Initializable, ControlledScreen {
     private void setFriendsData() 
     {
         System.out.println("friendsListForAddition="+friendsListForAddition.size());
-        System.out.println("friendsList="+friendsList.size());
+        System.out.println("****previous friendsList="+friendsList.size());
         for(Friends f : friendsListForAddition)
         {
             addToFriendsList(f);
         }
-        System.out.println("friendsList="+friendsList.size());
+        System.out.println("***** after friendsList="+friendsList.size());
 //        if(navigator.getUserInfo().getFriendsList()==null)
 //        {
             navigator.getUserInfo().setFriendsList(friendsList);

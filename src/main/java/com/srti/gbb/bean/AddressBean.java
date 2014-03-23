@@ -100,6 +100,11 @@ public class AddressBean
     public void setPincode(int pincode) {
         this.pincode = pincode;
     }
+
+    @Override
+    public String toString() {
+        return "AddressBean{" + "house=" + house + ", area=" + area + ", country=" + country + ", state=" + state + ", city=" + city + ", pincode=" + pincode + '}';
+    }
     
     
     

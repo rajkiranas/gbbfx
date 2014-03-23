@@ -57,6 +57,11 @@ public class PhysicalParameters
     public void setConstipationsPerWeek(int constipationsPerWeek) {
         this.constipationsPerWeek = constipationsPerWeek;
     }
+
+    @Override
+    public String toString() {
+        return "PhysicalParameters{" + "feets=" + feets + ", inches=" + inches + ", weight=" + weight + ", looseMotionsPerWeek=" + looseMotionsPerWeek + ", constipationsPerWeek=" + constipationsPerWeek + '}';
+    }
     
     
     

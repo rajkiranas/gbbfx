@@ -161,10 +161,11 @@ public class Screen12Controller implements Initializable, ControlledScreen {
         address.setState(cmbState.getValue().toString().trim());
         address.setCity(txtCity.getText().trim());
         address.setPincode(Integer.parseInt(txtPincode.getText().trim()));
-        if(navigator.getUserInfo().getAddress()==null)
-        {
+//        if(navigator.getUserInfo().getAddress()==null)
+//        {
+        System.out.println("***address="+address);
             navigator.getUserInfo().setAddress(address);
-        }
+        //}
         //System.out.println("address***="+navigator.getUserInfo().getAddress());
     }
     

@@ -333,6 +333,7 @@ public class Screen4Controller implements Initializable, ControlledScreen {
 
     private void setEducationData() 
     {
+        System.out.println("8*****educationList="+educationList);
         navigator.getUserInfo().setEducationList(educationList);        
     }
 
@@ -360,7 +361,8 @@ public class Screen4Controller implements Initializable, ControlledScreen {
         if(!txtSubRepeatsPG.getText().equals(GlobalConstants.emptyString))
             performance.setNoOfSubjectRepeatsInPG(Integer.parseInt(txtSubRepeatsPG.getText()));
         
-        
+     
+        System.out.println("9*****performance="+performance);
         navigator.getUserInfo().setAvgPerformanceBean(performance);
     }
     

@@ -225,27 +225,29 @@ public class Screen10Controller implements Initializable, ControlledScreen {
         }
         
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if(navigator.getUserInfo().getSelfIllnessList()==null)
-        {
-            System.out.println("selfIllnessList="+selfIllnessList.size());
+//        if(navigator.getUserInfo().getSelfIllnessList()==null)
+//        {
+            System.out.println("******selfIllnessList="+selfIllnessList.size());
             navigator.getUserInfo().setSelfIllnessList(selfIllnessList);
-        }
+        //}
         
-        if(navigator.getUserInfo().getParentsIllnessList()==null)
-        {
-            System.out.println("parentsIllnessList="+parentsIllnessList.size());
+//        if(navigator.getUserInfo().getParentsIllnessList()==null)
+//        {
+            System.out.println("******parentsIllnessList="+parentsIllnessList.size());
             navigator.getUserInfo().setParentsIllnessList(parentsIllnessList);
-        }
+        //}
         
-        if(navigator.getUserInfo().getGrandParentsIllnessList()==null)
-        {
+//        if(navigator.getUserInfo().getGrandParentsIllnessList()==null)
+//        {
+            System.out.println("******grandParentsIllnessList="+grandParentsIllnessList.size());
             navigator.getUserInfo().setGrandParentsIllnessList(grandParentsIllnessList);
-        }
+        //}
         
-        if(navigator.getUserInfo().getSiblingsIllnessList()==null)
-        {
+//        if(navigator.getUserInfo().getSiblingsIllnessList()==null)
+//        {
+            System.out.println("******sibIllnessList="+sibIllnessList.size());
             navigator.getUserInfo().setSiblingsIllnessList(sibIllnessList);
-        }
+        //}
     }
     
     @FXML

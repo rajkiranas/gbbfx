@@ -177,6 +177,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         meal.setFruitsPerWeek(Integer.valueOf(cmbFruits.getValue().toString()));
         meal.setEatingOutPerWeek(Integer.valueOf(cmbEatingOut.getValue().toString()));
         
+        System.out.println("3*****meal="+meal);
         navigator.getUserInfo().setMeal(meal);
         
         if (chkRegularExercise.isSelected()) 
@@ -186,6 +187,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
             exercise.setExerciseType(cmbExerciseType.getValue().toString());
             exercise.setDurationPerDay(Integer.valueOf(cmbDuration.getValue().toString()));
 
+            System.out.println("4****exercise="+exercise);
             navigator.getUserInfo().setExercise(exercise);
         }
     }

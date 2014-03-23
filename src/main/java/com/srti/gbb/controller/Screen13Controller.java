@@ -155,7 +155,7 @@ public class Screen13Controller implements Initializable, ControlledScreen {
             recordUserResponseForIllnessAndSetData();
 
             //System.out.println("***"+navigator.getUserInfo().getSelfIllnessList().get(0).isIsHospitalized());
-            System.out.println("***"+navigator.getUserInfo().getSelfIllnessList().size());
+            System.out.println("***getSelfIllnessList="+navigator.getUserInfo().getSelfIllnessList().size());
             navigator.navigateTo(ScreensFramework.screen11ID);
         }
         

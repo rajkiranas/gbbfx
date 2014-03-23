@@ -28,6 +28,11 @@ public class AddictionBean
     public void setFrequencyPerWeek(int frequencyPerWeek) {
         this.frequencyPerWeek = frequencyPerWeek;
     }
+
+    @Override
+    public String toString() {
+        return "AddictionBean{" + "addiction=" + addiction + ", frequencyPerWeek=" + frequencyPerWeek + '}';
+    }
     
     
 }

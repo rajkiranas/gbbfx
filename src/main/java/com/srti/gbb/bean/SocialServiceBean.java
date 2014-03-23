@@ -81,6 +81,11 @@ public class SocialServiceBean
     public void setAreaOfWork(String areaOfWork) {
         this.areaOfWork = areaOfWork;
     }
+
+    @Override
+    public String toString() {
+        return "SocialServiceBean{" + "approxAmtCash=" + approxAmtCash + ", approxAmtKind=" + approxAmtKind + ", approxAmtService=" + approxAmtService + ", cashPerWeek=" + cashPerWeek + ", kindPerWeek=" + kindPerWeek + ", socialServicePerWeek=" + socialServicePerWeek + ", areaOfWork=" + areaOfWork + '}';
+    }
     
     
     

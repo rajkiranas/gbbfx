@@ -55,6 +55,11 @@ public class FamilyEducation
     public void setIncome(String income) {
         this.income = income;
     }
+
+    @Override
+    public String toString() {
+        return "FamilyEducation{" + "familyMember=" + familyMember + ", highestQualification=" + highestQualification + ", occupation=" + occupation + ", profession=" + profession + ", income=" + income + '}';
+    }
     
     
 }

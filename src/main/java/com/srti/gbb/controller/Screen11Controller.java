@@ -425,10 +425,11 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
     private void setPrakrutiQuestionAnsData() 
     {
-        if(navigator.getUserInfo().getPrakrutiQuestionAnsList()==null)
-        {
+//        if(navigator.getUserInfo().getPrakrutiQuestionAnsList()==null)
+//        {
+        System.out.println("****prakrutiQuestionAnsList="+prakrutiQuestionAnsList);
             navigator.getUserInfo().setPrakrutiQuestionAnsList(prakrutiQuestionAnsList);
-        }
+        //}
         
     }
 

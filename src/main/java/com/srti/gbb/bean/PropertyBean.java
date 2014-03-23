@@ -64,6 +64,11 @@ public class PropertyBean
     public void setOutstandingLoan(int outstandingLoan) {
         this.outstandingLoan = outstandingLoan;
     }
+
+    @Override
+    public String toString() {
+        return "PropertyBean{" + "propertyType=" + propertyType + ", isOwned=" + isOwned + ", isRented=" + isRented + ", approxArea=" + approxArea + ", membersInHouse=" + membersInHouse + ", outstandingLoan=" + outstandingLoan + '}';
+    }
     
     
     

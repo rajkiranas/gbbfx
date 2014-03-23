@@ -467,6 +467,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         
 //        if(navigator.getUserInfo().getTraveling()==null)
 //        {
+        System.out.println("****tra="+tra);
             navigator.getUserInfo().setTraveling(tra);
 //        }
         
@@ -475,7 +476,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     private void setHobyData() {
 //        if(navigator.getUserInfo().getHobbyList()==null)
 //        {
-            System.out.println("listForHobbyAddition="+listForHobbyAddition);
+            System.out.println("****listForHobbyAddition="+listForHobbyAddition);
             navigator.getUserInfo().setHobbyList(listForHobbyAddition);            
         //}
     }

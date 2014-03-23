@@ -68,6 +68,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         }
        
     }
+    
     private boolean validateLifestyleForm()
      {
          
@@ -426,6 +427,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         life.setSleepTime(Float.valueOf(cmbSleepTime.getValue().toString()));
         life.setAfternoonSleepPerWeek(Integer.parseInt(cmbAfternoonSleep.getValue().toString()));
         life.setLateNightsPerWeek(Integer.parseInt(cmbLateNights.getValue().toString()));
+        System.out.println("5****life="+life);
         navigator.getUserInfo().setLife(life);
     }
     
@@ -451,6 +453,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
                 {
                     g.setMenopauseHysterectomyAtAge(Integer.parseInt(txtAge.getText()));
                 }
+                System.out.println("6****gynec="+g);
 
                 navigator.getUserInfo().setGynecBean(g);
         }
@@ -511,7 +514,7 @@ public class Screen3Controller implements Initializable, ControlledScreen {
              }
              
          }
-        
+        System.out.println("7****addictionList="+addictionList);
         navigator.getUserInfo().setAddictionsList(addictionList);
     }
     

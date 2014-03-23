@@ -39,6 +39,11 @@ public class ExerciseBean
     public void setDurationPerDay(int durationPerWeek) {
         this.durationPerDay = durationPerWeek;
     }
+
+    @Override
+    public String toString() {
+        return "ExerciseBean{" + "exercisePerWeek=" + exercisePerWeek + ", exerciseType=" + exerciseType + ", durationPerDay=" + durationPerDay + '}';
+    }
     
     
     
