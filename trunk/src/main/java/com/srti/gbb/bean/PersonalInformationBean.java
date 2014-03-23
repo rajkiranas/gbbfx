@@ -111,6 +111,11 @@ public class PersonalInformationBean
     public void setIncome(String income) {
         this.income = income;
     }
+
+    @Override
+    public String toString() {
+        return "PersonalInformationBean{" + "name=" + name + ", age=" + age + ", gender=" + gender + ", religion=" + religion + ", mobile=" + mobile + ", email=" + email + ", organization=" + organization + ", occupation=" + occupation + ", income=" + income + '}';
+    }
     
     
     

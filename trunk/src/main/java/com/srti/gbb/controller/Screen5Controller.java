@@ -488,13 +488,13 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     private void setFamilyEducationData() 
     {
         System.out.println("$$$$familyMembersList="+familyMembersList.size());
-        System.out.println("$$$$=familyList"+familyList.size());
+        System.out.println("previouse$$$$=familyList"+familyList.size());
         for(FamilyEducation member : familyMembersList)
         {
             familyList.add(member);
         }
         
-        System.out.println("$$$$=familyList"+familyList.size());
+        System.out.println("after$$$$=familyList"+familyList.size());
 //        if(navigator.getUserInfo().getFamilyEducationList()==null)
 //        {
             navigator.getUserInfo().setFamilyEducationList(familyList);

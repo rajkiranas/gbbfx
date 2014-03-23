@@ -48,6 +48,11 @@ public class PrayersBean
     public void setCommunityPrayerPerWeek(int communityPrayerPerWeek) {
         this.communityPrayerPerWeek = communityPrayerPerWeek;
     }
+
+    @Override
+    public String toString() {
+        return "PrayersBean{" + "regularPray=" + regularPray + ", individualPrayerPerWeek=" + individualPrayerPerWeek + ", familyPrayerPerWeek=" + familyPrayerPerWeek + ", communityPrayerPerWeek=" + communityPrayerPerWeek + '}';
+    }
     
     
     

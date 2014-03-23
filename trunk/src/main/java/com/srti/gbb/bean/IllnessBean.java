@@ -52,6 +52,11 @@ public class IllnessBean
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "IllnessBean{" + "illness=" + illness + ", isHospitalized=" + isHospitalized + '}';
+    }
     
     
 }

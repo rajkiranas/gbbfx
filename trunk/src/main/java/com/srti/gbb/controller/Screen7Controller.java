@@ -209,10 +209,11 @@ public class Screen7Controller implements Initializable, ControlledScreen {
                pray.setIndividualPrayerPerWeek(Integer.parseInt(cmbPrayIndividual.getValue().toString()));
                pray.setFamilyPrayerPerWeek(Integer.parseInt(cmbPrayFamily.getValue().toString()));
                pray.setCommunityPrayerPerWeek(Integer.parseInt(cmbPrayCommunity.getValue().toString()));
-               if(navigator.getUserInfo().getPrayers()==null)
-               {
+//               if(navigator.getUserInfo().getPrayers()==null)
+//               {
+                System.out.println("**** pray="+pray);
                    navigator.getUserInfo().setPrayers(pray);
-               }
+               //}
             }
             
             if(chkSocialService.isSelected())
@@ -225,10 +226,11 @@ public class Screen7Controller implements Initializable, ControlledScreen {
                    ss.setKindPerWeek(Integer.parseInt(cmbTimesPerWeekKind.getValue().toString()));
                    ss.setSocialServicePerWeek(Integer.parseInt(cmbTimesPerWeekService.getValue().toString()));
                    ss.setAreaOfWork(txtAreaOfWork.getText());
-                   if(navigator.getUserInfo().getSocialService()==null)
-                   {
+//                   if(navigator.getUserInfo().getSocialService()==null)
+//                   {
+                   System.out.println("**** socialservice="+ss);
                        navigator.getUserInfo().setSocialService(ss);
-                   }
+                   //}
             }
             navigator.navigateTo(ScreensFramework.screen8ID);
         }

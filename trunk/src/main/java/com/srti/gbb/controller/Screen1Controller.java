@@ -288,6 +288,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         pi.setOrganization(txtOrganization.getText());
         pi.setOccupation(cmbOccupation.getValue().toString());
         pi.setIncome(cmbIncome.getValue().toString());
+        System.out.println("1****pi="+pi);
         navigator.getUserInfo().setPi(pi);
     }
     
@@ -399,6 +400,7 @@ private boolean validatePhysicalParametersForm()
         phy.setWeight(Integer.parseInt(txtWeight.getText()));
         phy.setLooseMotionsPerWeek(Integer.valueOf(cmbLooseMotions.getValue().toString()));
         phy.setConstipationsPerWeek(Integer.valueOf(cmbConstipations.getValue().toString()));
+        System.out.println("2****phy="+phy);
         navigator.getUserInfo().setPhysicalParams(phy);
     }        
         

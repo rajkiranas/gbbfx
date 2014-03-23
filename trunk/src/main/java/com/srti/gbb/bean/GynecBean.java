@@ -46,6 +46,11 @@ public class GynecBean
     public void setMenopauseHysterectomyAtAge(int menopauseHysterectomyAtAge) {
         this.menopauseHysterectomyAtAge = menopauseHysterectomyAtAge;
     }
+
+    @Override
+    public String toString() {
+        return "GynecBean{" + "irregularMenses=" + irregularMenses + ", painfulMenses=" + painfulMenses + ", heavyMenses=" + heavyMenses + ", menopauseHysterectomyAtAge=" + menopauseHysterectomyAtAge + '}';
+    }
     
     
     

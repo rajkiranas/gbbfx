@@ -56,6 +56,11 @@ public class MealTypeBean {
     public void setEatingOutPerWeek(int eatingOutPerWeek) {
         this.eatingOutPerWeek = eatingOutPerWeek;
     }
+
+    @Override
+    public String toString() {
+        return "MealTypeBean{" + "diet=" + diet + ", nonVegPerWeek=" + nonVegPerWeek + ", foodType=" + foodType + ", fruitsPerWeek=" + fruitsPerWeek + ", eatingOutPerWeek=" + eatingOutPerWeek + '}';
+    }
  
  
 }

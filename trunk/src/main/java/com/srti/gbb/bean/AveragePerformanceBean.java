@@ -83,6 +83,11 @@ public class AveragePerformanceBean
     public void setNoOfSubjectRepeatsInPG(int noOfSubjectRepeatsInPG) {
         this.noOfSubjectRepeatsInPG = noOfSubjectRepeatsInPG;
     }
+
+    @Override
+    public String toString() {
+        return "AveragePerformanceBean{" + "avgSchoolPercentage=" + avgSchoolPercentage + ", noOfSchoolRepeats=" + noOfSchoolRepeats + ", avgCollegePercentage=" + avgCollegePercentage + ", noOfCollegeRepeats=" + noOfCollegeRepeats + ", noOfSubjectRepeatsInCollege=" + noOfSubjectRepeatsInCollege + ", avgPGPercentage=" + avgPGPercentage + ", noOfPGRepeats=" + noOfPGRepeats + ", noOfSubjectRepeatsInPG=" + noOfSubjectRepeatsInPG + '}';
+    }
     
     
     

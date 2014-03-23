@@ -46,6 +46,11 @@ public class LifestyleBean
     public void setLateNightsPerWeek(int lateNightsPerWeek) {
         this.lateNightsPerWeek = lateNightsPerWeek;
     }
+
+    @Override
+    public String toString() {
+        return "LifestyleBean{" + "wakeupTime=" + wakeupTime + ", sleepTime=" + sleepTime + ", afternoonSleepPerWeek=" + afternoonSleepPerWeek + ", lateNightsPerWeek=" + lateNightsPerWeek + '}';
+    }
     
     
     

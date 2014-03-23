@@ -95,6 +95,11 @@ public class TravelingBean
     public void setInternationalFriends(int internationalFriends) {
         this.internationalFriends = internationalFriends;
     }
+
+    @Override
+    public String toString() {
+        return "TravelingBean{" + "localIndividual=" + localIndividual + ", localFamily=" + localFamily + ", localFriends=" + localFriends + ", nationalIndividual=" + nationalIndividual + ", nationalFamily=" + nationalFamily + ", nationalFriends=" + nationalFriends + ", internationalIndividual=" + internationalIndividual + ", internationalFamily=" + internationalFamily + ", internationalFriends=" + internationalFriends + '}';
+    }
     
     
     
