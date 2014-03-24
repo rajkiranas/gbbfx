@@ -38,7 +38,7 @@
             </VBox>
             <VBox id="VBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <children>
-                <CheckBox id="q1o2" fx:id="q1o2a" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
+                <CheckBox id="q1o2" fx:id="q1o2a" mnemonicParsing="false" prefHeight="35.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox fx:id="q1o2b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox fx:id="q1o2c" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
               </children>
@@ -107,7 +107,7 @@
             <Label fx:id="q3" prefHeight="114.0" prefWidth="212.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <VBox id="VBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <children>
-                <CheckBox id="q3o1" fx:id="q3o1a" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
+                <CheckBox id="q3o1" fx:id="q3o1a" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox id="q1o1b" fx:id="q3o1b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="29.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox id="q1o1b" fx:id="q3o1c" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="23.0" prefWidth="220.0" styleClass="answersStyle" text="" wrapText="true" />
               </children>

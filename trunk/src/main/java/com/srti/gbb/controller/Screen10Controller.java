@@ -227,25 +227,25 @@ public class Screen10Controller implements Initializable, ControlledScreen {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //        if(navigator.getUserInfo().getSelfIllnessList()==null)
 //        {
-            System.out.println("******selfIllnessList="+selfIllnessList.size());
+            System.out.println("******selfIllnessList="+selfIllnessList);
             navigator.getUserInfo().setSelfIllnessList(selfIllnessList);
         //}
         
 //        if(navigator.getUserInfo().getParentsIllnessList()==null)
 //        {
-            System.out.println("******parentsIllnessList="+parentsIllnessList.size());
+            System.out.println("******parentsIllnessList="+parentsIllnessList);
             navigator.getUserInfo().setParentsIllnessList(parentsIllnessList);
         //}
         
 //        if(navigator.getUserInfo().getGrandParentsIllnessList()==null)
 //        {
-            System.out.println("******grandParentsIllnessList="+grandParentsIllnessList.size());
+            System.out.println("******grandParentsIllnessList="+grandParentsIllnessList);
             navigator.getUserInfo().setGrandParentsIllnessList(grandParentsIllnessList);
         //}
         
 //        if(navigator.getUserInfo().getSiblingsIllnessList()==null)
 //        {
-            System.out.println("******sibIllnessList="+sibIllnessList.size());
+            System.out.println("******sibIllnessList="+sibIllnessList);
             navigator.getUserInfo().setSiblingsIllnessList(sibIllnessList);
         //}
     }
