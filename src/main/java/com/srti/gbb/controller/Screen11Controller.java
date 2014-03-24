@@ -257,11 +257,12 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q3o1a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q3o2a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q3o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
-            qC--;
             
             setAdditionalOptionsValuesQ3();
             
-             if(q3.getText()!=null && q3.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
+            qC--;
+            
+            if(q3.getText()!=null && q3.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
                    {
                        q3.setDisable(true);
                        q3o1a.setDisable(true);
@@ -283,50 +284,47 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q2o1a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q2o2a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q2o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
-            qC--;
             
             setAdditionalOptionsValuesQ2();
             
-                    if(q2.getText()!=null && q2.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
-                    {
-                        q2.setDisable(true);
-                        q2o1a.setDisable(true);
-                        q2o2a.setDisable(true);
-                        q2o3a.setDisable(true);
-                    }
-                    else
-                    {
-                        q2.setDisable(false);
-                        q2o1a.setDisable(false);
-                        q2o2a.setDisable(false);
-                        q2o3a.setDisable(false);
-
-                    }
+            qC--;
+            
+            if (q2.getText() != null && q2.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male)) 
+            {
+                q2.setDisable(true);
+                q2o1a.setDisable(true);
+                q2o2a.setDisable(true);
+                q2o3a.setDisable(true);
+            } else 
+            {
+                q2.setDisable(false);
+                q2o1a.setDisable(false);
+                q2o2a.setDisable(false);
+                q2o3a.setDisable(false);
+            }
             
             q1.setText(GlobalConstants.getProperty(Q+qC));
             
             q1o1a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q1o2a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q1o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
+            setAdditionalOptionsValuesQ1();
             qC--;
             
-            setAdditionalOptionsValuesQ1();
-            
-                   if(q1.getText()!=null && q1.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
-                    {
-                        q1.setDisable(true);
-                        q1o1a.setDisable(true);
-                        q1o2a.setDisable(true);
-                        q1o3a.setDisable(true);
-                    }
-                    else
-                    {
-                        q1.setDisable(false);
-                        q1o1a.setDisable(false);
-                        q1o2a.setDisable(false);
-                        q1o3a.setDisable(false);
+            if (q1.getText() != null && q1.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male)) 
+            {
+                q1.setDisable(true);
+                q1o1a.setDisable(true);
+                q1o2a.setDisable(true);
+                q1o3a.setDisable(true);
+            } else 
+            {
+                q1.setDisable(false);
+                q1o1a.setDisable(false);
+                q1o2a.setDisable(false);
+                q1o3a.setDisable(false);
 
-                    }
+            }
             
             setLastQuestionOptionsVisibility();
             removeUserQueAnsResponse();
