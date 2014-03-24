@@ -85,7 +85,7 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         
         
-        nav.navigateTo(ScreensFramework.screen5ID);
+        nav.navigateTo(ScreensFramework.screen0ID);
         
         Group root = new Group();
         root.getChildren().addAll(nav);
@@ -111,6 +111,7 @@ public class ScreensFramework extends Application {
         scene.getStylesheets().add("/styles/Styles.css");
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setScene(scene);
+        primaryStage.setTitle("GoBeyondBalance");
 //        scene.setm(false);
 //        scene.setResizable(true);
         primaryStage.show();

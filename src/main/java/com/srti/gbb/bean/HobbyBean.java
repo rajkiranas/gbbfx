@@ -15,7 +15,7 @@ import java.util.Objects;
 public class HobbyBean 
 {
     private String hobby;
-    private int hobbyHoursPerWeek;
+    private float hobbyHoursPerWeek;
 
     public String getHobby() {
         return hobby;
@@ -25,11 +25,11 @@ public class HobbyBean
         this.hobby = hobby;
     }
 
-    public int getHobbyHoursPerWeek() {
+    public float getHobbyHoursPerWeek() {
         return hobbyHoursPerWeek;
     }
 
-    public void setHobbyHoursPerWeek(int hobbyHoursPerWeek) {
+    public void setHobbyHoursPerWeek(float hobbyHoursPerWeek) {
         this.hobbyHoursPerWeek = hobbyHoursPerWeek;
     }
 

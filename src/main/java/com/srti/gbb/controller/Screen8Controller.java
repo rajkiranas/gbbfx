@@ -227,7 +227,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
                  h.setHobby(txtHobby.getText().trim());
              }
              //h.setHobby(cmbHobby.getValue().toString());
-             h.setHobbyHoursPerWeek(Integer.parseInt(cmbHobbyHoursPerWeek.getValue().toString()));
+             h.setHobbyHoursPerWeek(Float.parseFloat(cmbHobbyHoursPerWeek.getValue().toString()));
              
              if(listForHobbyAddition.contains(h))
              {
@@ -524,7 +524,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
         }
             HobbyBean v = listForHobbyAddition.get(previousCounter);
             String hobby = v.getHobby();
-            int hoursPerWeek = v.getHobbyHoursPerWeek();
+            float hoursPerWeek = v.getHobbyHoursPerWeek();
             if(listOfHobbiesForShowPrevious.contains(hobby))
             {
                 cmbHobby.getSelectionModel().select(hobby);
