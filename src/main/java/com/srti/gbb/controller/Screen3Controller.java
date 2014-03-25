@@ -121,7 +121,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
              }
              
          }
-         else if((cmbFreq1.getValue()!=null && !cmbFreq1.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+          
+          if((cmbFreq1.getValue()!=null && !cmbFreq1.getValue().toString().trim().equals(GlobalConstants.emptyString)))
          {
              if((cmbAddict1.getValue()==null || cmbAddict1.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
@@ -131,7 +132,9 @@ public class Screen3Controller implements Initializable, ControlledScreen {
              }
              
          }
-         else if((cmbAddict2.getValue()!=null && !cmbAddict2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+         
+          
+          if((cmbAddict2.getValue()!=null && !cmbAddict2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
          {
              if((cmbFreq2.getValue()==null || cmbFreq2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
@@ -139,7 +142,9 @@ public class Screen3Controller implements Initializable, ControlledScreen {
                 isValid=false;
              }
          }
-         else if((cmbFreq2.getValue()!=null && !cmbFreq2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+         
+          
+          if((cmbFreq2.getValue()!=null && !cmbFreq2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
          {
              if((cmbAddict2.getValue()==null ||cmbAddict2.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
@@ -147,7 +152,9 @@ public class Screen3Controller implements Initializable, ControlledScreen {
                 isValid=false;
              }
          }
-          else if((cmbAddict3.getValue()!=null && !cmbAddict3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+          
+          
+          if((cmbAddict3.getValue()!=null && !cmbAddict3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
          {
              if((cmbFreq3.getValue()==null || cmbFreq3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
@@ -155,7 +162,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
                 isValid=false;
              }
          }
-         else if((cmbFreq3.getValue()!=null && !cmbFreq3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+        
+          if((cmbFreq3.getValue()!=null && !cmbFreq3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
          {
              if((cmbAddict3.getValue()==null || cmbAddict3.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
@@ -163,7 +171,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
                 isValid=false;
              }
          }
-          else if((cmbAddict4.getValue()!=null && !cmbAddict4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+          
+          if((cmbAddict4.getValue()!=null && !cmbAddict4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
          {
              if((cmbFreq4.getValue()==null || cmbFreq4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
@@ -171,7 +180,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
                 isValid=false;
              }
          }
-         else if((cmbFreq4.getValue()!=null && !cmbFreq4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+         
+          if((cmbFreq4.getValue()!=null && !cmbFreq4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
          {
              if((cmbAddict4.getValue()==null || cmbAddict4.getValue().toString().trim().equals(GlobalConstants.emptyString)))
              {
