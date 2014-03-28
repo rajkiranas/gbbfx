@@ -299,14 +299,14 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         
          @FXML
     private void populateHeightFeets(Event event) {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Height_Feets_Values);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbHeightFeets.getItems().size()==0)
         {
             for(String gen : list)
             {
-                if(!gen.equals(GlobalConstants.Zero))
+                //if(!gen.equals(GlobalConstants.Zero))
                     cmbHeightFeets.getItems().addAll(gen);
             }
         }
@@ -322,7 +322,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         {
             for(String gen : list)
             {
-                if(!gen.equals(GlobalConstants.Zero))
+                //if(!gen.equals(GlobalConstants.Zero))
                  cmbHeightInches.getItems().addAll(gen);
             }
         }
