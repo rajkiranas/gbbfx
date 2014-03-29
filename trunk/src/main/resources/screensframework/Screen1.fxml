@@ -19,7 +19,7 @@
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="432.0" layoutY="10.0" styleClass="screenHeading" text="%Second_Screen_Heading" textFill="$x1" />
+        <Label layoutX="418.0" layoutY="10.0" styleClass="screenHeading" text="%Second_Screen_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
@@ -45,23 +45,19 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="10.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="325.0" prefWidth="408.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="10.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="325.0" prefWidth="391.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="36.0" layoutY="7.0" prefHeight="311.0" prefWidth="340.0">
+        <GridPane id="GridPane" layoutX="36.0" layoutY="7.0" prefHeight="288.0" prefWidth="340.0">
           <children>
             <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Age" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Gender" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_Religion" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <Label text="%Lbl_Mobile" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <Label text="%Lbl_Email" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <TextField fx:id="txtName" prefHeight="35.0" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtAge" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#setAgeLimit" prefHeight="34.0" prefWidth="71.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtMobile" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="txtEmail" prefHeight="35.0" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtAge" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#setAgeLimit" prefHeight="35.0" prefWidth="71.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
-                <ComboBox fx:id="cmbReligionList" onShowing="#getReligionsFromProperty" prefHeight="34.0" prefWidth="102.0">
+                <ComboBox fx:id="cmbReligionList" prefHeight="35.0" prefWidth="102.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                     <!--                <FXCollections fx:factory="observableArrayList">
@@ -75,7 +71,7 @@
                 <TextField fx:id="txtReligion" prefHeight="35.0" prefWidth="118.0" />
               </children>
             </HBox>
-            <ComboBox fx:id="cmbGenderList" onShowing="#getGendersFromProperty" prefHeight="34.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbGenderList" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
                 <!--                <FXCollections fx:factory="observableArrayList">
@@ -85,23 +81,32 @@
                 </FXCollections>-->
               </items>
             </ComboBox>
-            <Label text="%Lbl_Org" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <TextField fx:id="txtOrganization" prefHeight="34.999900000002526" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label text="%Lbl_Occupation" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <Label text="%Lbl_Income" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-            <ComboBox fx:id="cmbOccupation" onShowing="#populateOccupation" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+            <Label text="%Lbl_Height" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <children>
-                <ComboBox fx:id="cmbIncome" onShowing="#populateIncome" prefHeight="35.0">
+                <ComboBox fx:id="cmbHeightFeets" minWidth="49.0" prefHeight="35.0" prefWidth="49.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                    <!--              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>-->
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Height_Param1" />
+                <ComboBox fx:id="cmbHeightInches" prefHeight="35.0" prefWidth="50.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
                 </ComboBox>
-                <Label text="%Lbl_Income_Params" />
+                <Label text="%Lbl_Height_Param2" />
+              </children>
+            </HBox>
+            <Label text="%Lbl_Weight" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+              <children>
+                <TextField id="txtAge" fx:id="txtWeight" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" text="" />
+                <Label prefHeight="29.0" prefWidth="50.0" text="%Lbl_Weight_Param" textAlignment="LEFT" wrapText="true" />
               </children>
             </HBox>
           </children>
@@ -116,48 +121,49 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane id="AnchorPane" layoutX="432.0" layoutY="82.0" minHeight="325.0" minWidth="325.0" prefHeight="325.0" prefWidth="354.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane id="AnchorPane" layoutX="413.0" layoutY="82.0" minHeight="325.0" minWidth="325.0" prefHeight="325.0" prefWidth="373.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="347.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="84.0">
+        <GridPane id="GridPane" layoutX="11.0" layoutY="39.0" prefHeight="224.0" prefWidth="352.0">
           <children>
-            <Label text="%Lbl_Height" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Weight" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <TextField id="txtAge" fx:id="txtWeight" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label prefHeight="29.0" prefWidth="50.0" text="%Lbl_Weight_Param" textAlignment="LEFT" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="%Lbl_Height_Param1" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Height_Param2" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <ComboBox fx:id="cmbHeightFeets" minWidth="49.0" onShowing="#populateHeightFeets" prefHeight="35.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-                <!--              <String fx:value="Item 1" />
-              <String fx:value="Item 2" />
-              <String fx:value="Item 3" />
-            </FXCollections>-->
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbHeightInches" onShowing="#populateHeightInches" prefHeight="35.0" prefWidth="50.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <Label text="%Lbl_Mobile" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtMobile" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Email" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtEmail" prefHeight="35.0" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Occupation" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbOccupation" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
+            <Label text="%Lbl_Org" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="txtOrganization" prefHeight="34.999900000002526" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Income" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <children>
+                <ComboBox fx:id="cmbIncome" prefHeight="35.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="101.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="0.0" prefWidth="53.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="56.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="57.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="59.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
       </children>

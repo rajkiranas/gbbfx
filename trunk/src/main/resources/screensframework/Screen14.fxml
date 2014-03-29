@@ -10,12 +10,12 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen14Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-    <HBox alignment="CENTER_LEFT" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+    <HBox alignment="CENTER" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
-        <Label alignment="CENTER_LEFT" prefWidth="268.0" styleClass="screenHeading" text="%WelcomeMsg_Prakruti_Nidaan" textAlignment="LEFT" textFill="#2e7c95" wrapText="true" />
+        <Label alignment="CENTER_LEFT" prefWidth="222.0" styleClass="screenHeading" text="%WelcomeMsg_Prakruti_Nidaan" textAlignment="LEFT" textFill="#2e7c95" wrapText="true" />
       </children>
       <padding>
         <Insets />
@@ -27,14 +27,14 @@
         <GridPane id="GridPane" layoutX="25.0" layoutY="30.0" prefHeight="166.0" prefWidth="307.0">
           <children>
             <Label minHeight="14.0" prefHeight="35.0" prefWidth="142.0" text="%Lbl_Loose_Motions" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox id="cmbLooseMotions" minWidth="49.0" onShowing="#populateLooseMotionsCombo" prefHeight="35.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbLooseMotions" minWidth="49.0" prefHeight="35.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
             <Label prefHeight="28.0" prefWidth="97.0" text="%Lbl_Loose_Motions_Param" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             <Label minHeight="14.0" prefHeight="35.0" prefWidth="118.0" text="%Lbl_Constipations" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <ComboBox id="cmbConstipations" onShowing="#populateConstipationsCombo" prefHeight="35.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbConstipations" prefHeight="35.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
@@ -53,6 +53,26 @@
         </GridPane>
       </children>
     </AnchorPane>
+    <HBox alignment="CENTER_LEFT" layoutX="3.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" layoutX="268.0" layoutY="415.0" prefHeight="35.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
   </children>
   <stylesheets>
     <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />

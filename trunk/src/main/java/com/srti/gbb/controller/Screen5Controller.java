@@ -39,6 +39,9 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     @FXML
     private CheckBox chkDeceasedMother;
     
+    @FXML
+    private CheckBox chkDeceasedFM;
+    
     /**
      * Initializes the controller class.
      */
@@ -58,24 +61,24 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         this.navigator=screenPage;
     }
 
-    @FXML
-    private void populateFamilyMemberTypes(Event event) {
-    }
+//    @FXML
+//    private void populateFamilyMemberTypes(Event event) {
+//    }
 
     
 
     @FXML
     private void addFamilyMember(ActionEvent event) 
     {
-        if(validateEducationFormForFamilyMember())
+        if(validateForFamilyMemberForm())
         {
-            familyMembersList.add(getFamilyEducationBeanForCurrentForm());
-            clearFamilyForm();
+            familyMembersList.add(getFamilyMemberBeanForCurrentForm());
+            clearFamilyMemberForm();
             showPreviousLink();
         }
     }
     
-    private FamilyEducation getFamilyEducationBeanForCurrentForm()
+    private FamilyEducation getFamilyMemberBeanForCurrentForm()
     {
         FamilyEducation bean = new FamilyEducation();
         bean.setFamilyMember(cmbFM1.getValue().toString());
@@ -83,9 +86,10 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         bean.setOccupation(cmbFMOccupation.getValue().toString());
         bean.setProfession(cmbFMProfession.getValue().toString());
         bean.setIncome(cmbFMIncome.getValue().toString());
+        bean.setIsDeceased(chkDeceasedFM.isSelected());
         return bean;
     }
-    private void clearFamilyForm()
+    private void clearFamilyMemberForm()
     {
         cmbFM1.getSelectionModel().clearSelection();
         
@@ -93,6 +97,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         cmbFMOccupation.getSelectionModel().clearSelection();
         cmbFMProfession.getSelectionModel().clearSelection();
         cmbFMIncome.getSelectionModel().clearSelection();
+        chkDeceasedFM.setSelected(false);
         
     }
 
@@ -111,21 +116,22 @@ public class Screen5Controller implements Initializable, ControlledScreen {
                 cmbFMHQ.getValue()!=null || 
                 cmbFMOccupation.getValue()!=null || 
                 cmbFMProfession.getValue()!=null || 
-                cmbFMIncome.getValue()!=null)
+                cmbFMIncome.getValue()!=null ||
+                    chkDeceasedFM.isSelected())
             {
-                if(validateEducationFormForFamilyMember() && validateFatherForm() && validateMotherForm())
+                if(validateForFamilyMemberForm() && validateFatherForm() && validateMotherForm())
                 {
-                    familyMembersList.add(getFamilyEducationBeanForCurrentForm());
+                    familyMembersList.add(getFamilyMemberBeanForCurrentForm());
                     insertFatherMotherDataInList();
                     setFamilyEducationData();
-                    navigator.navigateTo(ScreensFramework.screen6ID);
+                    navigateToNextScreen();
                 }
             }
             else if(validateFatherForm() && validateMotherForm())
             {
                 insertFatherMotherDataInList();
                 setFamilyEducationData();
-                navigator.navigateTo(ScreensFramework.screen6ID);
+                navigateToNextScreen();
             }
         
     }
@@ -377,7 +383,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         
     }
 
-    private boolean validateEducationFormForFamilyMember() {
+    private boolean validateForFamilyMemberForm() {
         boolean isValid=true;
         if(cmbFM1.getValue()==null || cmbFM1.getValue().toString().equals(GlobalConstants.emptyString))
         {
@@ -469,10 +475,12 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             bean.setOccupation(cmbFatherOccupation.getValue().toString());
             bean.setProfession(cmbFatherProfession.getValue().toString());
             bean.setIncome(cmbFatherIncome.getValue().toString());
-
-            familyList.add(bean);
         }
         
+        bean.setIsDeceased(chkDeceasedFather.isSelected());
+        familyList.add(bean);
+        
+        bean = new FamilyEducation();
         if (!chkDeceasedMother.isSelected()) 
         {
             bean.setFamilyMember(MU.getMsg("Lbl_Mother"));
@@ -480,9 +488,9 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             bean.setOccupation(cmbMotherOccupation.getValue().toString());
             bean.setProfession(cmbMotherProfession.getValue().toString());
             bean.setIncome(cmbMotherIncome.getValue().toString());
-
-            familyList.add(bean);
         }
+        bean.setIsDeceased(chkDeceasedMother.isSelected());
+        familyList.add(bean);
     }
 
     private void setFamilyEducationData() 
@@ -583,5 +591,10 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         cmbFMOccupation.getSelectionModel().select(fOccu);
         cmbFMProfession.getSelectionModel().select(fProfession);
         cmbFMIncome.getSelectionModel().select(fIncome);        
+        chkDeceasedFM.setSelected(member.isIsDeceased());
+    }
+
+    private void navigateToNextScreen() {
+        navigator.navigateTo(ScreensFramework.screen6ID);
     }
 }

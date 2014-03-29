@@ -15,6 +15,7 @@ public class FamilyEducation
     private String occupation;
     private String profession;
     private String income;
+    private boolean isDeceased;
 
     public String getFamilyMember() {
         return familyMember;
@@ -59,6 +60,14 @@ public class FamilyEducation
     @Override
     public String toString() {
         return "FamilyEducation{" + "familyMember=" + familyMember + ", highestQualification=" + highestQualification + ", occupation=" + occupation + ", profession=" + profession + ", income=" + income + '}';
+    }
+
+    public boolean isIsDeceased() {
+        return isDeceased;
+    }
+
+    public void setIsDeceased(boolean isDeceased) {
+        this.isDeceased = isDeceased;
     }
     
     

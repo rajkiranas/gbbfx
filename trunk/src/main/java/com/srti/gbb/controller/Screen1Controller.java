@@ -68,11 +68,6 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         @FXML
         private TextField txtWeight;
         
-        @FXML
-        private ComboBox cmbLooseMotions;
-        
-        @FXML
-        private ComboBox cmbConstipations;
         
         @FXML
         private TextField txtReligion;
@@ -82,11 +77,19 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        getGendersFromProperty();
+        getReligionsFromProperty();
+        populateOccupation();
+        populateIncome();
+        populateHeightFeets();
+        populateHeightInches();
     }    
 
     /**
      * Initializes the controller class.
+     * @param screenParent
      */
+        @Override
     public void setScreenParent(ScreensNavigator screenParent){
         navigator = screenParent;
     }
@@ -209,8 +212,8 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
          return isValid;
      }
 
-    @FXML
-    private void getReligionsFromProperty(Event event) {
+    
+    private void getReligionsFromProperty() {
         String genderList = GlobalConstants.getProperty(GlobalConstants.ReligionList);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
@@ -224,8 +227,8 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
        
     }
 
-    @FXML
-    private void getGendersFromProperty(Event event) 
+    
+    private void getGendersFromProperty() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.GenderList);
         //ObservableList genderOptions = new ObservableList();
@@ -239,8 +242,8 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         }
     }
     
-    @FXML
-    private void populateOccupation(Event event) 
+    
+    private void populateOccupation() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
         //ObservableList genderOptions = new ObservableList();
@@ -254,8 +257,8 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         }
     }
     
-    @FXML
-    private void populateIncome(Event event) 
+    
+    private void populateIncome() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Income_Options);
         //ObservableList genderOptions = new ObservableList();
@@ -292,13 +295,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         navigator.getUserInfo().setPi(pi);
     }
     
-    
-    
-        
-        
-        
-         @FXML
-    private void populateHeightFeets(Event event) {
+    private void populateHeightFeets() {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Height_Feets_Values);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
@@ -313,8 +310,8 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
        
     }
     
-    @FXML
-    private void populateHeightInches(Event event) {
+    
+    private void populateHeightInches() {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
@@ -329,37 +326,6 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
        
     }
     
-    @FXML
-    private void populateLooseMotionsCombo(Event event) {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
-        //ObservableList genderOptions = new ObservableList();
-        String[] list =  genderList.split(GlobalConstants.COMMA);
-        if(cmbLooseMotions.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                cmbLooseMotions.getItems().addAll(gen);
-            }
-            
-        }
-        
-       
-    }
-   
-    @FXML
-    private void populateConstipationsCombo(Event event) 
-    {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
-        //ObservableList genderOptions = new ObservableList();
-        String[] list =  genderList.split(GlobalConstants.COMMA);
-        if(cmbConstipations.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                 cmbConstipations.getItems().addAll(gen);
-            }
-        }
-    }
         
 private boolean validatePhysicalParametersForm()
      {
@@ -380,17 +346,7 @@ private boolean validatePhysicalParametersForm()
              UIUtils.showAlert("sc1_msg_enter_weight", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-          else if(cmbLooseMotions.getValue()==null || cmbLooseMotions.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_lm", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-          else if(cmbConstipations.getValue()==null || cmbConstipations.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_consti", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         
+          
          return isValid;
      }
     private void setPhysicalParameters() {
@@ -398,11 +354,7 @@ private boolean validatePhysicalParametersForm()
         phy.setFeets(Integer.valueOf(cmbHeightFeets.getValue().toString()));
         phy.setInches(Integer.valueOf(cmbHeightInches.getValue().toString()));
         phy.setWeight(Integer.parseInt(txtWeight.getText()));
-        phy.setLooseMotionsPerWeek(Integer.valueOf(cmbLooseMotions.getValue().toString()));
-        phy.setConstipationsPerWeek(Integer.valueOf(cmbConstipations.getValue().toString()));
         System.out.println("2****phy="+phy);
         navigator.getUserInfo().setPhysicalParams(phy);
     }        
-        
-        
 }

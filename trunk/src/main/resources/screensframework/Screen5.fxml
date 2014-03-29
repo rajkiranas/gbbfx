@@ -112,7 +112,7 @@
             </HBox>
             <CheckBox fx:id="chkDeceasedFather" mnemonicParsing="false" onAction="#toggleFatherCombos" text="%Lbl_Deceased" GridPane.columnIndex="5" GridPane.rowIndex="0" />
             <CheckBox fx:id="chkDeceasedMother" mnemonicParsing="false" onAction="#toggleMotherCombos" text="%Lbl_Deceased" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <CheckBox id="chkDeceasedMother" fx:id="chkDeceasedFM" mnemonicParsing="false" onAction="#toggleMotherCombos" text="%Lbl_Deceased" GridPane.columnIndex="5" GridPane.rowIndex="2" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="100.0" />
@@ -129,6 +129,7 @@
           </rowConstraints>
         </GridPane>
         <Button fx:id="btnAddFM" layoutX="501.0" layoutY="277.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" text="%Btn_Add_Family_Member" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="373.0" layoutY="277.0" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
