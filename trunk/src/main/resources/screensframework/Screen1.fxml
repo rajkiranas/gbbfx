@@ -125,16 +125,12 @@
     </AnchorPane>
     <AnchorPane id="AnchorPane" layoutX="432.0" layoutY="82.0" minHeight="325.0" minWidth="325.0" prefHeight="325.0" prefWidth="354.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="347.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="40.0">
+        <GridPane id="GridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="347.0" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="84.0">
           <children>
             <Label text="%Lbl_Height" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Weight" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Label text="%Lbl_Loose_Motions" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label text="%Lbl_Constipations" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <TextField id="txtAge" fx:id="txtWeight" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label prefHeight="29.0" prefWidth="50.0" text="%Lbl_Weight_Param" textAlignment="LEFT" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label prefWidth="42.0" text="%Lbl_Loose_Motions_Param" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label prefWidth="39.0" text="%Lbl_Constipations_Param" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Label text="%Lbl_Height_Param1" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             <Label text="%Lbl_Height_Param2" GridPane.columnIndex="4" GridPane.rowIndex="0" />
             <ComboBox fx:id="cmbHeightFeets" minWidth="49.0" onShowing="#populateHeightFeets" prefHeight="35.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
@@ -151,16 +147,6 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbLooseMotions" minWidth="49.0" onShowing="#populateLooseMotionsCombo" prefHeight="35.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbConstipations" onShowing="#populateConstipationsCombo" prefHeight="35.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="101.0" />
@@ -170,10 +156,8 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="59.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
       </children>
