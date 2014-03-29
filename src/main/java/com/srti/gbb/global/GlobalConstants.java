@@ -32,7 +32,7 @@ public class GlobalConstants {
 
         public InputStream getProperty() {
             InputStream l_objInputStream = getClass().getClassLoader().
-                    getResourceAsStream("default_en_US.properties");
+                    getResourceAsStream("default_mr_IN.properties");
             return l_objInputStream;
         }
     }
