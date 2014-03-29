@@ -26,9 +26,9 @@ public class ScreensNavigator  extends StackPane {
     //Holds the screens to be displayed
 
     private HashMap<String, Node> screens = new HashMap<>();
-    //private static Locale enUs = new Locale("en", "US");
-    private static Locale mrIn = new Locale("mr", "IN");
-    private static ResourceBundle rb = ResourceBundle.getBundle("default",mrIn);
+    private static Locale enUs = new Locale("en", "US");
+    //private static Locale mrIn = new Locale("mr", "IN");
+    private static ResourceBundle rb = ResourceBundle.getBundle("default",enUs);
     private UserInfo userInfo = new UserInfo();
     
     public ScreensNavigator() {
@@ -57,6 +57,7 @@ public class ScreensNavigator  extends StackPane {
             return true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }

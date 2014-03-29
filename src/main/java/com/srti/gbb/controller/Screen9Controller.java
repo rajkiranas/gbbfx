@@ -50,7 +50,9 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
     @FXML
     private CheckBox chkLandRented;
     @FXML
-    private TextField txtLandApproxArea;
+    private TextField txtLandApproxAreaSqFt;
+    @FXML
+    private TextField txtLandApproxAreaAcres;
     @FXML
     private TextField txtLandMembers;
     @FXML
@@ -293,14 +295,25 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
          return isValid;
     }
 
-    private boolean validateLandForm() {
+    private boolean validateLandForm() 
+    {
         boolean isValid=true;
-         if(txtLandApproxArea.getText() ==null || txtLandApproxArea.getText().trim().equals(GlobalConstants.emptyString))
+        if((txtLandApproxAreaSqFt.getText() ==null || txtLandApproxAreaSqFt.getText().trim().equals(GlobalConstants.emptyString)) && (txtLandApproxAreaAcres.getText() ==null || txtLandApproxAreaAcres.getText().trim().equals(GlobalConstants.emptyString)))
          {
              UIUtils.showAlert("sc9_msg_enter_land_area", GlobalConstants.Lbl_Alert); 
              isValid=false;
+         }
+        else if(txtLandApproxAreaSqFt.getText() !=null && !txtLandApproxAreaSqFt.getText().trim().equals(GlobalConstants.emptyString) && txtLandApproxAreaAcres.getText() !=null && !txtLandApproxAreaAcres.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc9_msg_enter_land_either_SqFt_Acres", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+        else if(txtLandApproxAreaSqFt.getText() !=null && !txtLandApproxAreaSqFt.getText().trim().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtLandApproxAreaSqFt.getText().trim()))
+         {
+             UIUtils.showAlert("sc9_msg_invalid_land_area", GlobalConstants.Lbl_Alert); 
+             isValid=false;
          }         
-         else if(!GbbValidator.isValidNumber(txtLandApproxArea.getText()))
+         else if(txtLandApproxAreaAcres.getText() !=null && !txtLandApproxAreaAcres.getText().trim().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtLandApproxAreaAcres.getText().trim()))
          {
               UIUtils.showAlert("sc9_msg_invalid_land_area", GlobalConstants.Lbl_Alert);  
              isValid=false;
@@ -310,7 +323,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("sc9_msg_enter_land_dependants", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }         
-         else if(!GbbValidator.isValidNumber(txtLandApproxArea.getText()))
+         else if(!GbbValidator.isValidNumber(txtLandMembers.getText()))
          {
               UIUtils.showAlert("sc9_msg_invalid_land_dependants", GlobalConstants.Lbl_Alert);  
              isValid=false;
@@ -368,7 +381,14 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
                         land.setPropertyType(lblLand.getText());
                         land.setIsOwned(chkLandOwned.isSelected());
                         land.setIsRented(chkLandRented.isSelected());
-                        land.setApproxArea(Integer.parseInt(txtLandApproxArea.getText()));
+                        if(!txtLandApproxAreaSqFt.getText().trim().equals(GlobalConstants.emptyString))
+                        {
+                            land.setApproxArea(Integer.parseInt(txtLandApproxAreaSqFt.getText()));
+                        }
+                        else
+                        {
+                            land.setApproxArea(Integer.parseInt(txtLandApproxAreaAcres.getText()));
+                        }
                         land.setMembersInHouse(Integer.parseInt(txtLandMembers.getText()));
                         land.setOutstandingLoan(Integer.parseInt(txtLandLoan.getText()));
                         propertyList.add(land);
