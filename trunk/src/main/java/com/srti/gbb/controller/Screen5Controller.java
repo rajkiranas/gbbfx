@@ -470,39 +470,40 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         FamilyEducation bean = new FamilyEducation();
         if (!chkDeceasedFather.isSelected()) 
         {
-            bean.setFamilyMember(MU.getMsg("Lbl_Father"));
             bean.setHighestQualification(cmbFatherHQ.getValue().toString());
             bean.setOccupation(cmbFatherOccupation.getValue().toString());
             bean.setProfession(cmbFatherProfession.getValue().toString());
             bean.setIncome(cmbFatherIncome.getValue().toString());
         }
         
+        bean.setFamilyMember(MU.getMsg("Lbl_Father"));
         bean.setIsDeceased(chkDeceasedFather.isSelected());
         familyList.add(bean);
         
         bean = new FamilyEducation();
         if (!chkDeceasedMother.isSelected()) 
         {
-            bean.setFamilyMember(MU.getMsg("Lbl_Mother"));
             bean.setHighestQualification(cmbMotherHQ.getValue().toString());
             bean.setOccupation(cmbMotherOccupation.getValue().toString());
             bean.setProfession(cmbMotherProfession.getValue().toString());
             bean.setIncome(cmbMotherIncome.getValue().toString());
         }
+        
+        bean.setFamilyMember(MU.getMsg("Lbl_Mother"));
         bean.setIsDeceased(chkDeceasedMother.isSelected());
         familyList.add(bean);
     }
 
     private void setFamilyEducationData() 
     {
-        System.out.println("$$$$familyMembersList="+familyMembersList.size());
-        System.out.println("previouse$$$$=familyList"+familyList.size());
+        System.out.println("$$$$familyMembersList="+familyMembersList);
+        System.out.println("previouse$$$$=familyList"+familyList);
         for(FamilyEducation member : familyMembersList)
         {
             familyList.add(member);
         }
         
-        System.out.println("after$$$$=familyList"+familyList.size());
+        System.out.println("after$$$$=familyList"+familyList);
 //        if(navigator.getUserInfo().getFamilyEducationList()==null)
 //        {
             navigator.getUserInfo().setFamilyEducationList(familyList);

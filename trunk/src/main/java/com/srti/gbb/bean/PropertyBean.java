@@ -4,6 +4,8 @@
  */
 package com.srti.gbb.bean;
 
+import java.util.Objects;
+
 /**
  *
  * @author rajkirans
@@ -13,9 +15,10 @@ public class PropertyBean
     private String propertyType;
     private boolean isOwned;
     private boolean isRented;
-    private int approxArea;
+    private int approxAreaSqFt;
+    private int approxAreaAcres;
     private int membersInHouse;
-    private int outstandingLoan;
+    private long outstandingLoan;
 
     public String getPropertyType() {
         return propertyType;
@@ -41,12 +44,12 @@ public class PropertyBean
         this.isRented = isRented;
     }
 
-    public int getApproxArea() {
-        return approxArea;
+    public int getApproxAreaSqFt() {
+        return approxAreaSqFt;
     }
 
-    public void setApproxArea(int approxArea) {
-        this.approxArea = approxArea;
+    public void setApproxAreaSqFt(int approxArea) {
+        this.approxAreaSqFt = approxArea;
     }
 
     public int getMembersInHouse() {
@@ -57,17 +60,53 @@ public class PropertyBean
         this.membersInHouse = membersInHouse;
     }
 
-    public int getOutstandingLoan() {
+    public long getOutstandingLoan() {
         return outstandingLoan;
     }
 
-    public void setOutstandingLoan(int outstandingLoan) {
+    public void setOutstandingLoan(long outstandingLoan) {
         this.outstandingLoan = outstandingLoan;
     }
 
     @Override
     public String toString() {
-        return "PropertyBean{" + "propertyType=" + propertyType + ", isOwned=" + isOwned + ", isRented=" + isRented + ", approxArea=" + approxArea + ", membersInHouse=" + membersInHouse + ", outstandingLoan=" + outstandingLoan + '}';
+        return "PropertyBean{" + "propertyType=" + propertyType + ", isOwned=" + isOwned + ", isRented=" + isRented + ", approxArea=" + approxAreaSqFt + ", membersInHouse=" + membersInHouse + ", outstandingLoan=" + outstandingLoan + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + Objects.hashCode(this.propertyType);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PropertyBean other = (PropertyBean) obj;
+        if (!Objects.equals(this.propertyType, other.propertyType)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @return the approxAreaAcres
+     */
+    public int getApproxAreaAcres() {
+        return approxAreaAcres;
+    }
+
+    /**
+     * @param approxAreaAcres the approxAreaAcres to set
+     */
+    public void setApproxAreaAcres(int approxAreaAcres) {
+        this.approxAreaAcres = approxAreaAcres;
     }
     
     

@@ -97,6 +97,8 @@ public class EducationBean
     public String toString() {
         return "EducationBean{" + "schoolName=" + schoolName + ", classDegree=" + classDegree + ", medium=" + medium + ", facultyStream=" + facultyStream + ", boardUniveristy=" + boardUniveristy + ", subjects=" + subjects + '}';
     }
+
+    
     
     
     

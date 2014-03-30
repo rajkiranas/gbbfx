@@ -370,10 +370,10 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
                 house.setPropertyType(lblHouse.getText());
                 house.setIsOwned(chkHouseOwned.isSelected());
                 house.setIsRented(chkHouseRented.isSelected());
-                house.setApproxArea(Integer.parseInt(txtHouseApproxArea.getText()));
+                house.setApproxAreaSqFt(Integer.parseInt(txtHouseApproxArea.getText()));
                 house.setMembersInHouse(Integer.parseInt(txtHouseMembers.getText()));
-                house.setOutstandingLoan(Integer.parseInt(txtHouseLoan.getText()));
-                propertyList.add(house);
+                house.setOutstandingLoan(Long.parseLong(txtHouseLoan.getText()));
+                addToPropertyList(house);
     }
 
     private void addLandToList() {
@@ -383,15 +383,15 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
                         land.setIsRented(chkLandRented.isSelected());
                         if(!txtLandApproxAreaSqFt.getText().trim().equals(GlobalConstants.emptyString))
                         {
-                            land.setApproxArea(Integer.parseInt(txtLandApproxAreaSqFt.getText()));
+                            land.setApproxAreaSqFt(Integer.parseInt(txtLandApproxAreaSqFt.getText()));
                         }
                         else
                         {
-                            land.setApproxArea(Integer.parseInt(txtLandApproxAreaAcres.getText()));
+                            land.setApproxAreaAcres(Integer.parseInt(txtLandApproxAreaAcres.getText()));
                         }
                         land.setMembersInHouse(Integer.parseInt(txtLandMembers.getText()));
-                        land.setOutstandingLoan(Integer.parseInt(txtLandLoan.getText()));
-                        propertyList.add(land);
+                        land.setOutstandingLoan(Long.parseLong(txtLandLoan.getText()));
+                        addToPropertyList(land);
     }
 
     private void setVehicleData() 
@@ -530,5 +530,17 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
             btnAddVehicle.setDisable(false);
          }
         
+    }
+
+    private void addToPropertyList(PropertyBean property) {
+        if(propertyList.contains(property))
+        {
+            propertyList.remove(property);
+            propertyList.add(property);
+        }
+        else
+        {
+            propertyList.add(property);
+        }
     }
 }
