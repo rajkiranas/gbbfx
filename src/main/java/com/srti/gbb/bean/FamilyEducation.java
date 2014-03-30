@@ -57,10 +57,6 @@ public class FamilyEducation
         this.income = income;
     }
 
-    @Override
-    public String toString() {
-        return "FamilyEducation{" + "familyMember=" + familyMember + ", highestQualification=" + highestQualification + ", occupation=" + occupation + ", profession=" + profession + ", income=" + income + '}';
-    }
 
     public boolean isIsDeceased() {
         return isDeceased;
@@ -69,6 +65,12 @@ public class FamilyEducation
     public void setIsDeceased(boolean isDeceased) {
         this.isDeceased = isDeceased;
     }
+
+    @Override
+    public String toString() {
+        return "FamilyEducation{" + "familyMember=" + familyMember + ", highestQualification=" + highestQualification + ", occupation=" + occupation + ", profession=" + profession + ", income=" + income + ", isDeceased=" + isDeceased + '}';
+    }
+
     
     
 }

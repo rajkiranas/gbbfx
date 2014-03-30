@@ -90,7 +90,7 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="112.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
               <children>
-                <Label fx:id="lblHeavy" prefHeight="29.0" prefWidth="68.0" text="%Lbl_Heavy_Menses" wrapText="true" />
+                <Label fx:id="lblHeavy" prefHeight="29.0" prefWidth="38.0" text="%Lbl_Heavy_Menses" wrapText="true" />
                 <CheckBox fx:id="chkHeavy" mnemonicParsing="false" text="" />
               </children>
             </HBox>
