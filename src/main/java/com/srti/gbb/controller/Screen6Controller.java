@@ -38,7 +38,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         // TODO
         hideShowPreviousLink();
         populateHighestQualification();
-        populateOccupation();
+//        populateOccupation();
         populateProfession();
         populateIncome();
     }     
@@ -57,7 +57,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         boolean f3=false;
         if(!txtFrnd1.getText().equals(GlobalConstants.emptyString) ||
              cmbQualFrnd1.getValue()!=null ||
-                cmbOccupationFrnd1.getValue()!=null ||
+  //              cmbOccupationFrnd1.getValue()!=null ||
                 cmbProfessionFrnd1.getValue()!=null ||
                 cmbIncomeFrnd1.getValue()!=null)
         {
@@ -75,7 +75,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         
         if(!txtFrnd2.getText().equals(GlobalConstants.emptyString) ||
              cmbQualFrnd2.getValue()!=null ||
-                cmbOccupationFrnd2.getValue()!=null ||
+    //            cmbOccupationFrnd2.getValue()!=null ||
                 cmbProfessionFrnd2.getValue()!=null ||
                 cmbIncomeFrnd2.getValue()!=null)
         {
@@ -92,7 +92,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         
         if(!txtFrnd3.getText().equals(GlobalConstants.emptyString) ||
              cmbQualFrnd3.getValue()!=null ||
-                cmbOccupationFrnd3.getValue()!=null ||
+      //          cmbOccupationFrnd3.getValue()!=null ||
                 cmbProfessionFrnd3.getValue()!=null ||
                 cmbIncomeFrnd3.getValue()!=null)
         {
@@ -128,7 +128,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             Friends bean = new Friends();
             bean.setFriendName(txtFrnd1.getText());
             bean.setHighestQualification(cmbQualFrnd1.getValue().toString());
-            bean.setOccupation(cmbOccupationFrnd1.getValue().toString());
+        //    bean.setOccupation(cmbOccupationFrnd1.getValue().toString());
             bean.setProfession(cmbProfessionFrnd1.getValue().toString());
             bean.setIncome(cmbIncomeFrnd1.getValue().toString());        
             addToFriendsListForAddition(bean);
@@ -136,7 +136,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             bean = new Friends();
             bean.setFriendName(txtFrnd2.getText());
             bean.setHighestQualification(cmbQualFrnd2.getValue().toString());
-            bean.setOccupation(cmbOccupationFrnd2.getValue().toString());
+          //  bean.setOccupation(cmbOccupationFrnd2.getValue().toString());
             bean.setProfession(cmbProfessionFrnd2.getValue().toString());
             bean.setIncome(cmbIncomeFrnd2.getValue().toString());
             
@@ -145,7 +145,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             bean = new Friends();
             bean.setFriendName(txtFrnd3.getText());
             bean.setHighestQualification(cmbQualFrnd3.getValue().toString());
-            bean.setOccupation(cmbOccupationFrnd3.getValue().toString());
+            //bean.setOccupation(cmbOccupationFrnd3.getValue().toString());
             bean.setProfession(cmbProfessionFrnd3.getValue().toString());
             bean.setIncome(cmbIncomeFrnd3.getValue().toString());        
             
@@ -181,19 +181,19 @@ public class Screen6Controller implements Initializable, ControlledScreen {
     {
         txtFrnd1.clear();
         cmbQualFrnd1.getSelectionModel().clearSelection();
-        cmbOccupationFrnd1.getSelectionModel().clearSelection();
+        //cmbOccupationFrnd1.getSelectionModel().clearSelection();
         cmbProfessionFrnd1.getSelectionModel().clearSelection();
         cmbIncomeFrnd1.getSelectionModel().clearSelection();
         
         txtFrnd2.clear();
         cmbQualFrnd2.getSelectionModel().clearSelection();
-        cmbOccupationFrnd2.getSelectionModel().clearSelection();
+        //cmbOccupationFrnd2.getSelectionModel().clearSelection();
         cmbProfessionFrnd2.getSelectionModel().clearSelection();
         cmbIncomeFrnd2.getSelectionModel().clearSelection();
         
         txtFrnd3.clear();
         cmbQualFrnd3.getSelectionModel().clearSelection();
-        cmbOccupationFrnd3.getSelectionModel().clearSelection();
+        //cmbOccupationFrnd3.getSelectionModel().clearSelection();
         cmbProfessionFrnd3.getSelectionModel().clearSelection();
         cmbIncomeFrnd3.getSelectionModel().clearSelection();
         
@@ -211,11 +211,11 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             isValid=false;
             UIUtils.showAlert("sc6_msg_enter_qual_friend1", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbOccupationFrnd1.getValue()==null || cmbOccupationFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.Lbl_Alert);
-        }
+//        else if(cmbOccupationFrnd1.getValue()==null || cmbOccupationFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
+//        {
+//            isValid=false;
+//            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.Lbl_Alert);
+//        }
         else if(cmbProfessionFrnd1.getValue()==null || cmbProfessionFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
@@ -236,11 +236,11 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             isValid=false;
             UIUtils.showAlert("sc6_msg_enter_qual_friend2", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbOccupationFrnd2.getValue()==null || cmbOccupationFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.Lbl_Alert);
-        }
+//        else if(cmbOccupationFrnd2.getValue()==null || cmbOccupationFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
+//        {
+//            isValid=false;
+//            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.Lbl_Alert);
+//        }
         else if(cmbProfessionFrnd2.getValue()==null || cmbProfessionFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
@@ -261,11 +261,11 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             isValid=false;
             UIUtils.showAlert("sc6_msg_enter_qual_friend3", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbOccupationFrnd3.getValue()==null || cmbOccupationFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.Lbl_Alert);
-        }
+//        else if(cmbOccupationFrnd3.getValue()==null || cmbOccupationFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
+//        {
+//            isValid=false;
+//            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.Lbl_Alert);
+//        }
         else if(cmbProfessionFrnd3.getValue()==null || cmbProfessionFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
@@ -320,46 +320,46 @@ public class Screen6Controller implements Initializable, ControlledScreen {
     }
     
     
-    @FXML
-    private ComboBox cmbOccupationFrnd1;
-    
-    @FXML
-    private ComboBox cmbOccupationFrnd2;
-    
-    @FXML
-    private ComboBox cmbOccupationFrnd3;
-
-    private void populateOccupation() 
-    {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
-        String[] list =  genderList.split(GlobalConstants.COMMA);
-        
-        if(cmbOccupationFrnd1.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                    cmbOccupationFrnd1.getItems().addAll(gen);                    
-            }
-        }
-        
-        if(cmbOccupationFrnd2.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                    cmbOccupationFrnd2.getItems().addAll(gen);                    
-            }
-        }
-        
-        if(cmbOccupationFrnd3.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                    cmbOccupationFrnd3.getItems().addAll(gen);                    
-            }
-        }
-        
-        
-    }
+//    @FXML
+//    private ComboBox cmbOccupationFrnd1;
+//    
+//    @FXML
+//    private ComboBox cmbOccupationFrnd2;
+//    
+//    @FXML
+//    private ComboBox cmbOccupationFrnd3;
+//
+//    private void populateOccupation() 
+//    {
+//        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
+//        String[] list =  genderList.split(GlobalConstants.COMMA);
+//        
+//        if(cmbOccupationFrnd1.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                    cmbOccupationFrnd1.getItems().addAll(gen);                    
+//            }
+//        }
+//        
+//        if(cmbOccupationFrnd2.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                    cmbOccupationFrnd2.getItems().addAll(gen);                    
+//            }
+//        }
+//        
+//        if(cmbOccupationFrnd3.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                    cmbOccupationFrnd3.getItems().addAll(gen);                    
+//            }
+//        }
+//        
+//        
+//    }
 
     
     @FXML
@@ -459,11 +459,11 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             isValid=false;
             UIUtils.showAlert("sc6_msg_enter_qual_friend1", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbOccupationFrnd1.getValue()==null || cmbOccupationFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.Lbl_Alert);
-        }
+//        else if(cmbOccupationFrnd1.getValue()==null || cmbOccupationFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
+//        {
+//            isValid=false;
+//            UIUtils.showAlert("sc6_msg_enter_occu_friend1", GlobalConstants.Lbl_Alert);
+//        }
         else if(cmbProfessionFrnd1.getValue()==null || cmbProfessionFrnd1.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
@@ -481,7 +481,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         Friends bean = new Friends();
             bean.setFriendName(txtFrnd1.getText());
             bean.setHighestQualification(cmbQualFrnd1.getValue().toString());
-            bean.setOccupation(cmbOccupationFrnd1.getValue().toString());
+          //  bean.setOccupation(cmbOccupationFrnd1.getValue().toString());
             bean.setProfession(cmbProfessionFrnd1.getValue().toString());
             bean.setIncome(cmbIncomeFrnd1.getValue().toString());        
             addToFriendsList(bean);
@@ -500,11 +500,11 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             isValid=false;
             UIUtils.showAlert("sc6_msg_enter_qual_friend2", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbOccupationFrnd2.getValue()==null || cmbOccupationFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.Lbl_Alert);
-        }
+//        else if(cmbOccupationFrnd2.getValue()==null || cmbOccupationFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
+//        {
+//            isValid=false;
+//            UIUtils.showAlert("sc6_msg_enter_occu_friend2", GlobalConstants.Lbl_Alert);
+//        }
         else if(cmbProfessionFrnd2.getValue()==null || cmbProfessionFrnd2.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
@@ -521,7 +521,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         Friends bean = new Friends();
             bean.setFriendName(txtFrnd2.getText());
             bean.setHighestQualification(cmbQualFrnd2.getValue().toString());
-            bean.setOccupation(cmbOccupationFrnd2.getValue().toString());
+            //bean.setOccupation(cmbOccupationFrnd2.getValue().toString());
             bean.setProfession(cmbProfessionFrnd2.getValue().toString());
             bean.setIncome(cmbIncomeFrnd2.getValue().toString());        
             addToFriendsList(bean);
@@ -539,11 +539,11 @@ public class Screen6Controller implements Initializable, ControlledScreen {
             isValid=false;
             UIUtils.showAlert("sc6_msg_enter_qual_friend3", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbOccupationFrnd3.getValue()==null || cmbOccupationFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.Lbl_Alert);
-        }
+//        else if(cmbOccupationFrnd3.getValue()==null || cmbOccupationFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
+//        {
+//            isValid=false;
+//            UIUtils.showAlert("sc6_msg_enter_occu_friend3", GlobalConstants.Lbl_Alert);
+//        }
         else if(cmbProfessionFrnd3.getValue()==null || cmbProfessionFrnd3.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
@@ -560,7 +560,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         Friends bean = new Friends();
             bean.setFriendName(txtFrnd3.getText());
             bean.setHighestQualification(cmbQualFrnd3.getValue().toString());
-            bean.setOccupation(cmbOccupationFrnd3.getValue().toString());
+          //  bean.setOccupation(cmbOccupationFrnd3.getValue().toString());
             bean.setProfession(cmbProfessionFrnd3.getValue().toString());
             bean.setIncome(cmbIncomeFrnd3.getValue().toString());        
             addToFriendsList(bean);
@@ -614,7 +614,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         
         txtFrnd3.setText(fName);
         cmbQualFrnd3.getSelectionModel().select(fQual);
-        cmbOccupationFrnd3.getSelectionModel().select(fOccu);
+        //cmbOccupationFrnd3.getSelectionModel().select(fOccu);
         cmbProfessionFrnd3.getSelectionModel().select(fProfession);
         cmbIncomeFrnd3.getSelectionModel().select(fIncome);
         
@@ -632,7 +632,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         
         txtFrnd2.setText(fName);
         cmbQualFrnd2.getSelectionModel().select(fQual);
-        cmbOccupationFrnd2.getSelectionModel().select(fOccu);
+        //cmbOccupationFrnd2.getSelectionModel().select(fOccu);
         cmbProfessionFrnd2.getSelectionModel().select(fProfession);
         cmbIncomeFrnd2.getSelectionModel().select(fIncome);
         
@@ -650,7 +650,7 @@ public class Screen6Controller implements Initializable, ControlledScreen {
         
         txtFrnd1.setText(fName);
         cmbQualFrnd1.getSelectionModel().select(fQual);
-        cmbOccupationFrnd1.getSelectionModel().select(fOccu);
+        //cmbOccupationFrnd1.getSelectionModel().select(fOccu);
         cmbProfessionFrnd1.getSelectionModel().select(fProfession);
         cmbIncomeFrnd1.getSelectionModel().select(fIncome);        
     }
