@@ -71,7 +71,7 @@
                 <TextField fx:id="txtReligion" prefHeight="35.0" prefWidth="118.0" />
               </children>
             </HBox>
-            <ComboBox fx:id="cmbGenderList" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbGenderList" onAction="#manageOccuAndProfForHouseWife" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
                 <!--                <FXCollections fx:factory="observableArrayList">
