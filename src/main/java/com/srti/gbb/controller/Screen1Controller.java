@@ -12,6 +12,7 @@ import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.GbbValidator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -357,4 +358,54 @@ private boolean validatePhysicalParametersForm()
         System.out.println("2****phy="+phy);
         navigator.getUserInfo().setPhysicalParams(phy);
     }        
+    
+    
+    @FXML
+    private void manageOccuAndProfForHouseWife()
+    {
+        
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+//        if(cmbOccupation.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                 cmbOccupation.getItems().addAll(gen);
+//            }
+//        }
+        
+        if (cmbGenderList.getValue()!=null && cmbGenderList.getValue().toString().equals(MU.getMsg("Lbl_Male"))) 
+        {
+            
+            cmbOccupation.getItems().clear();
+            if(cmbOccupation.getItems().size()==0)
+            {
+                for(String gen : list)
+                {
+                    if (!gen.equals(MU.getMsg("Lbl_Housewife"))) {
+                        cmbOccupation.getItems().addAll(gen);
+                    }
+                        
+                }
+            }
+
+        }
+        else
+        {
+            
+            cmbOccupation.getItems().clear();
+            if(cmbOccupation.getItems().size()==0)
+            {
+                for(String gen : list)
+                {
+                        cmbOccupation.getItems().addAll(gen);
+                }
+            }
+            
+        }
+        
+        
+    }
+
 }

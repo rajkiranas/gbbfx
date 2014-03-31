@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -51,7 +52,7 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         hideShowPreviousLink();
         populateFamilyMembers();
         populateHighestQualification();
-        populateOccupation();
+        //populateOccupation();
         populateProfession();
         populateIncome();
     }  
@@ -72,18 +73,30 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     {
         if(validateForFamilyMemberForm())
         {
-            familyMembersList.add(getFamilyMemberBeanForCurrentForm());
+            addToFamilyMembersList(getFamilyMemberBeanForCurrentForm());
+            
             clearFamilyMemberForm();
             showPreviousLink();
         }
     }
+    
+    
+    @FXML
+    private TextField txtNameFather;
+    
+    @FXML
+    private TextField txtNameMother;
+    
+    @FXML
+    private TextField txtNameFM;
     
     private FamilyEducation getFamilyMemberBeanForCurrentForm()
     {
         FamilyEducation bean = new FamilyEducation();
         bean.setFamilyMember(cmbFM1.getValue().toString());
         bean.setHighestQualification(cmbFMHQ.getValue().toString());
-        bean.setOccupation(cmbFMOccupation.getValue().toString());
+        //bean.setOccupation(cmbFMOccupation.getValue().toString());
+        bean.setName(txtNameFM.getText());
         bean.setProfession(cmbFMProfession.getValue().toString());
         bean.setIncome(cmbFMIncome.getValue().toString());
         bean.setIsDeceased(chkDeceasedFM.isSelected());
@@ -94,7 +107,8 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         cmbFM1.getSelectionModel().clearSelection();
         
         cmbFMHQ.getSelectionModel().clearSelection();
-        cmbFMOccupation.getSelectionModel().clearSelection();
+        //cmbFMOccupation.getSelectionModel().clearSelection();
+        txtNameFM.setText(GlobalConstants.emptyString);
         cmbFMProfession.getSelectionModel().clearSelection();
         cmbFMIncome.getSelectionModel().clearSelection();
         chkDeceasedFM.setSelected(false);
@@ -114,14 +128,15 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             
             if(cmbFM1.getValue()!=null || 
                 cmbFMHQ.getValue()!=null || 
-                cmbFMOccupation.getValue()!=null || 
+                //cmbFMOccupation.getValue()!=null || 
+                    !txtNameFM.getText().equals(GlobalConstants.emptyString) ||
                 cmbFMProfession.getValue()!=null || 
                 cmbFMIncome.getValue()!=null ||
                     chkDeceasedFM.isSelected())
             {
                 if(validateForFamilyMemberForm() && validateFatherForm() && validateMotherForm())
                 {
-                    familyMembersList.add(getFamilyMemberBeanForCurrentForm());
+                    addToFamilyMembersList(getFamilyMemberBeanForCurrentForm());
                     insertFatherMotherDataInList();
                     setFamilyEducationData();
                     navigateToNextScreen();
@@ -167,14 +182,14 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         
         if (cmbFM1.getValue()!=null && cmbFM1.getValue().toString().equals(MU.getMsg("Lbl_Brother"))) 
         {
-            cmbFMOccupation.getItems().clear();
-            if (cmbFMOccupation.getItems().size() == 0) {
-                for (String gen : occuList) {
-                    if (!gen.equals(MU.getMsg("Lbl_Housewife"))) {
-                        cmbFMOccupation.getItems().addAll(gen);
-                    }
-                }
-            }
+//            cmbFMOccupation.getItems().clear();
+//            if (cmbFMOccupation.getItems().size() == 0) {
+//                for (String gen : occuList) {
+//                    if (!gen.equals(MU.getMsg("Lbl_Housewife"))) {
+//                        cmbFMOccupation.getItems().addAll(gen);
+//                    }
+//                }
+//            }
             
             cmbFMProfession.getItems().clear();
             if(cmbFMProfession.getItems().size()==0)
@@ -191,14 +206,14 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         }
         else
         {
-            cmbFMOccupation.getItems().clear();
-            if (cmbFMOccupation.getItems().size() == 0) {
-                for (String gen : occuList) {
-                    
-                        cmbFMOccupation.getItems().addAll(gen);
-                    
-                }
-            }
+//            cmbFMOccupation.getItems().clear();
+//            if (cmbFMOccupation.getItems().size() == 0) {
+//                for (String gen : occuList) {
+//                    
+//                        cmbFMOccupation.getItems().addAll(gen);
+//                    
+//                }
+//            }
             
             cmbFMProfession.getItems().clear();
             if(cmbFMProfession.getItems().size()==0)
@@ -256,45 +271,45 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     }
     
     
-    @FXML
-    private ComboBox cmbFatherOccupation;
-    
-    @FXML
-    private ComboBox cmbMotherOccupation;
-    
-    @FXML
-    private ComboBox cmbFMOccupation;
+//    @FXML
+//    private ComboBox cmbFatherOccupation;
+//    
+//    @FXML
+//    private ComboBox cmbMotherOccupation;
+//    
+//    @FXML
+//    private ComboBox cmbFMOccupation;
 
-    private void populateOccupation() 
-    {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
-        String[] list =  genderList.split(GlobalConstants.COMMA);
-        
-        if(cmbFatherOccupation.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                if(!gen.equals(MU.getMsg("Lbl_Housewife")))
-                    cmbFatherOccupation.getItems().addAll(gen);                    
-            }
-        }
-        
-        if(cmbMotherOccupation.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                    cmbMotherOccupation.getItems().addAll(gen);                    
-            }
-        }
-        
-        if(cmbFMOccupation.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                    cmbFMOccupation.getItems().addAll(gen);                    
-            }
-        }
-    }
+//    private void populateOccupation() 
+//    {
+//        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
+//        String[] list =  genderList.split(GlobalConstants.COMMA);
+//        
+//        if(cmbFatherOccupation.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                if(!gen.equals(MU.getMsg("Lbl_Housewife")))
+//                    cmbFatherOccupation.getItems().addAll(gen);                    
+//            }
+//        }
+//        
+//        if(cmbMotherOccupation.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                    cmbMotherOccupation.getItems().addAll(gen);                    
+//            }
+//        }
+//        
+//        if(cmbFMOccupation.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                    cmbFMOccupation.getItems().addAll(gen);                    
+//            }
+//        }
+//    }
 
     
     @FXML
@@ -390,16 +405,21 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             isValid=false;
             UIUtils.showAlert("sc5_msg_sel_family_member", GlobalConstants.Lbl_Alert);
         }
+        else if(txtNameFM.getText()==null || txtNameFM.getText().equals(GlobalConstants.emptyString))
+        {
+            isValid=false;
+            UIUtils.showAlert("sc5_msg_enter_fm_name", GlobalConstants.Lbl_Alert);
+        }
         else if(cmbFMHQ.getValue()==null || cmbFMHQ.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
             UIUtils.showAlert("sc5_msg_sel_fm_qual", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbFMOccupation.getValue()==null || cmbFMOccupation.getValue().toString().equals(GlobalConstants.emptyString))
-        {
-            isValid=false;
-            UIUtils.showAlert("sc5_msg_sel_fm_occu", GlobalConstants.Lbl_Alert);
-        }
+//        else if(cmbFMOccupation.getValue()==null || cmbFMOccupation.getValue().toString().equals(GlobalConstants.emptyString))
+//        {
+//            isValid=false;
+//            UIUtils.showAlert("sc5_msg_sel_fm_occu", GlobalConstants.Lbl_Alert);
+//        }
         else if(cmbFMProfession.getValue()==null || cmbFMProfession.getValue().toString().equals(GlobalConstants.emptyString))
         {
             isValid=false;
@@ -416,17 +436,24 @@ public class Screen5Controller implements Initializable, ControlledScreen {
     private boolean validateFatherForm() 
     {
         boolean isValid=true;
-        if (!chkDeceasedFather.isSelected()) 
-        {
-            if (cmbFatherHQ.getValue() == null || cmbFatherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
+//        if (!chkDeceasedFather.isSelected()) 
+//        {
+            if (txtNameFather.getText() == null || txtNameFather.getText().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("sc5_msg_enter_father_name", GlobalConstants.Lbl_Alert);
+            } 
+            else if (cmbFatherHQ.getValue() == null || cmbFatherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
                 UIUtils.showAlert("sc5_msg_sel_father_qual", GlobalConstants.Lbl_Alert);
-            } else if (cmbFatherOccupation.getValue() == null || cmbFatherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
-            {
-                isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_father_occu", GlobalConstants.Lbl_Alert);
-            } else if (cmbFatherProfession.getValue() == null || cmbFatherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
+            } 
+//            else if (cmbFatherOccupation.getValue() == null || cmbFatherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
+//            {
+//                isValid = false;
+//                UIUtils.showAlert("sc5_msg_sel_father_occu", GlobalConstants.Lbl_Alert);
+//            }
+            else if (cmbFatherProfession.getValue() == null || cmbFatherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
                 UIUtils.showAlert("sc5_msg_sel_father_prof", GlobalConstants.Lbl_Alert);
@@ -435,24 +462,31 @@ public class Screen5Controller implements Initializable, ControlledScreen {
                 isValid = false;
                 UIUtils.showAlert("sc5_msg_sel_father_income", GlobalConstants.Lbl_Alert);
             }
-        }
+        //}
         return isValid;
     }
     
     private boolean validateMotherForm() 
     {
         boolean isValid=true;
-        if (!chkDeceasedMother.isSelected()) 
-        {
-            if (cmbMotherHQ.getValue() == null || cmbMotherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
+//        if (!chkDeceasedMother.isSelected()) 
+//        {
+            if (txtNameMother.getText() == null || txtNameMother.getText().equals(GlobalConstants.emptyString)) 
+            {
+                isValid = false;
+                UIUtils.showAlert("sc5_msg_enter_mother_name", GlobalConstants.Lbl_Alert);
+            } 
+            else if (cmbMotherHQ.getValue() == null || cmbMotherHQ.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
                 UIUtils.showAlert("sc5_msg_sel_mother_qual", GlobalConstants.Lbl_Alert);
-            } else if (cmbMotherOccupation.getValue() == null || cmbMotherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
-            {
-                isValid = false;
-                UIUtils.showAlert("sc5_msg_sel_mother_occu", GlobalConstants.Lbl_Alert);
-            } else if (cmbMotherProfession.getValue() == null || cmbMotherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
+            } 
+//            else if (cmbMotherOccupation.getValue() == null || cmbMotherOccupation.getValue().toString().equals(GlobalConstants.emptyString)) 
+//            {
+//                isValid = false;
+//                UIUtils.showAlert("sc5_msg_sel_mother_occu", GlobalConstants.Lbl_Alert);
+//            }
+            else if (cmbMotherProfession.getValue() == null || cmbMotherProfession.getValue().toString().equals(GlobalConstants.emptyString)) 
             {
                 isValid = false;
                 UIUtils.showAlert("sc5_msg_sel_mother_prof", GlobalConstants.Lbl_Alert);
@@ -461,33 +495,35 @@ public class Screen5Controller implements Initializable, ControlledScreen {
                 isValid = false;
                 UIUtils.showAlert("sc5_msg_sel_mother_income", GlobalConstants.Lbl_Alert);
             }
-        }
+        //}
         return isValid;
     }
 
     private void insertFatherMotherDataInList() 
     {
         FamilyEducation bean = new FamilyEducation();
-        if (!chkDeceasedFather.isSelected()) 
-        {
+//        if (!chkDeceasedFather.isSelected()) 
+//        {
             bean.setHighestQualification(cmbFatherHQ.getValue().toString());
-            bean.setOccupation(cmbFatherOccupation.getValue().toString());
+            //bean.setOccupation(cmbFatherOccupation.getValue().toString());
+            bean.setName(txtNameFather.getText());
             bean.setProfession(cmbFatherProfession.getValue().toString());
             bean.setIncome(cmbFatherIncome.getValue().toString());
-        }
+        //}
         
         bean.setFamilyMember(MU.getMsg("Lbl_Father"));
         bean.setIsDeceased(chkDeceasedFather.isSelected());
         familyList.add(bean);
         
         bean = new FamilyEducation();
-        if (!chkDeceasedMother.isSelected()) 
-        {
+//        if (!chkDeceasedMother.isSelected()) 
+//        {
             bean.setHighestQualification(cmbMotherHQ.getValue().toString());
-            bean.setOccupation(cmbMotherOccupation.getValue().toString());
+            //bean.setOccupation(cmbMotherOccupation.getValue().toString());
+            bean.setName(txtNameMother.getText());
             bean.setProfession(cmbMotherProfession.getValue().toString());
             bean.setIncome(cmbMotherIncome.getValue().toString());
-        }
+        //}
         
         bean.setFamilyMember(MU.getMsg("Lbl_Mother"));
         bean.setIsDeceased(chkDeceasedMother.isSelected());
@@ -510,48 +546,52 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         //}
     }
     
-    @FXML
-    private void toggleFatherCombos(ActionEvent event) 
-    {
-        if(chkDeceasedFather.isSelected())
-         {
-             
-             cmbFatherHQ.setDisable(true);
-             cmbFatherOccupation.setDisable(true);
-             cmbFatherProfession.setDisable(true);
-             cmbFatherIncome.setDisable(true);
-         }
-         else
-         {
-             cmbFatherHQ.setDisable(false);
-             cmbFatherOccupation.setDisable(false);
-             cmbFatherProfession.setDisable(false);
-             cmbFatherIncome.setDisable(false);
-             
-         }
-        
-    }
-    
-    @FXML
-    private void toggleMotherCombos(ActionEvent event) 
-    {
-        if(chkDeceasedMother.isSelected())
-         {
-             
-             cmbMotherHQ.setDisable(true);
-             cmbMotherOccupation.setDisable(true);
-             cmbMotherProfession.setDisable(true);
-             cmbMotherIncome.setDisable(true);
-         }
-         else
-         {
-             cmbMotherHQ.setDisable(false);
-             cmbMotherOccupation.setDisable(false);
-             cmbMotherProfession.setDisable(false);
-             cmbMotherIncome.setDisable(false);
-             
-         }
-    }
+//    @FXML
+//    private void toggleFatherCombos(ActionEvent event) 
+//    {
+//        if(chkDeceasedFather.isSelected())
+//         {
+//             
+//             cmbFatherHQ.setDisable(true);
+//             //cmbFatherOccupation.setDisable(true);
+//             txtNameFather.setDisable(true);
+//             cmbFatherProfession.setDisable(true);
+//             cmbFatherIncome.setDisable(true);
+//         }
+//         else
+//         {
+//             cmbFatherHQ.setDisable(false);
+//             //cmbFatherOccupation.setDisable(false);
+//             txtNameFather.setDisable(false);
+//             cmbFatherProfession.setDisable(false);
+//             cmbFatherIncome.setDisable(false);
+//             
+//         }
+//        
+//    }
+//    
+//    @FXML
+//    private void toggleMotherCombos(ActionEvent event) 
+//    {
+//        if(chkDeceasedMother.isSelected())
+//         {
+//             
+//             cmbMotherHQ.setDisable(true);
+//             //cmbMotherOccupation.setDisable(true);
+//             txtNameMother.setDisable(true);
+//             cmbMotherProfession.setDisable(true);
+//             cmbMotherIncome.setDisable(true);
+//         }
+//         else
+//         {
+//             cmbMotherHQ.setDisable(false);
+//             //cmbMotherOccupation.setDisable(false);
+//             txtNameMother.setDisable(false);
+//             cmbMotherProfession.setDisable(false);
+//             cmbMotherIncome.setDisable(false);
+//             
+//         }
+//    }
     
     @FXML
     Hyperlink linkShowPrevious;
@@ -589,7 +629,8 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         
         cmbFM1.getSelectionModel().select(m);
         cmbFMHQ.getSelectionModel().select(fQual);
-        cmbFMOccupation.getSelectionModel().select(fOccu);
+        //cmbFMOccupation.getSelectionModel().select(fOccu);
+        txtNameFM.setText(member.getName());
         cmbFMProfession.getSelectionModel().select(fProfession);
         cmbFMIncome.getSelectionModel().select(fIncome);        
         chkDeceasedFM.setSelected(member.isIsDeceased());
@@ -597,5 +638,18 @@ public class Screen5Controller implements Initializable, ControlledScreen {
 
     private void navigateToNextScreen() {
         navigator.navigateTo(ScreensFramework.screen6ID);
+    }
+
+    private void addToFamilyMembersList(FamilyEducation familyMemberBeanForCurrentForm) 
+    {
+        if(familyMembersList.contains(familyMemberBeanForCurrentForm))
+        {
+            familyMembersList.remove(familyMemberBeanForCurrentForm);
+            familyMembersList.add(familyMemberBeanForCurrentForm);
+        }
+        else
+        {
+            familyMembersList.add(familyMemberBeanForCurrentForm);
+        }
     }
 }

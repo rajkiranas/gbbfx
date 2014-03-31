@@ -4,12 +4,15 @@
  */
 package com.srti.gbb.bean;
 
+import java.util.Objects;
+
 /**
  *
  * @author rajkirans
  */
 public class FamilyEducation 
 {
+    private String name;
     private String familyMember;
     private String highestQualification;
     private String occupation;
@@ -66,11 +69,47 @@ public class FamilyEducation
         this.isDeceased = isDeceased;
     }
 
-    @Override
-    public String toString() {
-        return "FamilyEducation{" + "familyMember=" + familyMember + ", highestQualification=" + highestQualification + ", occupation=" + occupation + ", profession=" + profession + ", income=" + income + ", isDeceased=" + isDeceased + '}';
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
     }
 
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.name);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final FamilyEducation other = (FamilyEducation) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "FamilyEducation{" + "name=" + name + ", familyMember=" + familyMember + ", highestQualification=" + highestQualification + ", occupation=" + occupation + ", profession=" + profession + ", income=" + income + ", isDeceased=" + isDeceased + '}';
+    }
     
-    
+
 }
