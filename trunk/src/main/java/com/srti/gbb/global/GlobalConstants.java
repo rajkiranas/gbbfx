@@ -102,4 +102,6 @@ public class GlobalConstants {
     public static final String Lbl_Female="Lbl_Female";
     public static final String Lbl_Male="Lbl_Male";
     //public static final String Lbl_Alert="Lbl_Alert";
+    public static final String threeOptionQuestions="threeOptionQuestions";
+    public static final String twoOptionQuestions="twoOptionQuestions";
 }
