@@ -93,6 +93,9 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     private CheckBox q3o3b;
     @FXML
     private CheckBox q3o3c;
+    
+    private List<String> twoOptionQuestionList = new ArrayList<String>();
+    private List<String> threeOptionQuestionList = new ArrayList<String>();
 
     /**
      * Initializes the controller class.
@@ -103,7 +106,9 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         hideExtraOptionsQ1();
         hideExtraOptionsQ2();
         hideExtraOptionsQ3();
-        setNextQuestionsAndAnswersToLabels();        
+        setNextQuestionsAndAnswersToLabels();
+        getTwoOptionQuestions();
+        getThreeOptionQuestions();
     }
     
         @Override
@@ -651,7 +656,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     private static final String c="c";
 
     private void setAdditionalOptionsValuesQ1() {
-        if(q1.getText()!=null && q1.getText().contains(GlobalConstants.hash))
+        //if(q1.getText()!=null && q1.getText().contains(GlobalConstants.hash))
+        if(q1.getText()!=null && threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
             {
                 showExtraOptionsQ1();
                 q1o1b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE+b));
@@ -663,7 +669,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                 q1o3b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE+b));
                 q1o3c.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE+c));
             }
-            else if(q1.getText()!=null && q1.getText().contains(GlobalConstants.dollar))
+            else if(q1.getText()!=null && twoOptionQuestionList.contains(GlobalConstants.emptyString+qC))
             {
                 showExtraOptionsQ1();
                 q1o1b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE+b));
@@ -683,7 +689,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     }
     
     private void setAdditionalOptionsValuesQ2() {
-        if(q2.getText()!=null && q2.getText().contains(GlobalConstants.hash))
+        if(q2.getText()!=null && threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
             {
                 showExtraOptionsQ2();
                 q2o1b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE+b));
@@ -695,7 +701,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                 q2o3b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE+b));
                 q2o3c.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE+c));
             }
-        else if(q2.getText()!=null && q2.getText().contains(GlobalConstants.dollar))
+        else if(q2.getText()!=null && twoOptionQuestionList.contains(GlobalConstants.emptyString+qC))
             {
                 showExtraOptionsQ2();
                 q2o1b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE+b));
@@ -715,7 +721,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     }
     
     private void setAdditionalOptionsValuesQ3() {
-        if(q3.getText()!=null && q3.getText().contains(GlobalConstants.hash))
+        if(q3.getText()!=null && threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
             {
                 showExtraOptionsQ3();
                 q3o1b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE+b));
@@ -727,7 +733,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                 q3o3b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE+b));
                 q3o3c.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE+c));
             }
-        else if(q3.getText()!=null && q3.getText().contains(GlobalConstants.dollar))
+        else if(q3.getText()!=null && twoOptionQuestionList.contains(GlobalConstants.emptyString+qC))
             {
                 showExtraOptionsQ3();
                 q3o1b.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE+b));
@@ -859,6 +865,35 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                     res.setAns3b(q3o3b.getText());
             }
         }
+    }
+
+    private void getThreeOptionQuestions() {
+
+        String toq = GlobalConstants.getProperty(GlobalConstants.threeOptionQuestions);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  toq.split(GlobalConstants.COMMA);
+        if(threeOptionQuestionList.isEmpty())
+        {
+            for(String gen : list)
+            {
+                 threeOptionQuestionList.add(gen);
+            }
+        }
+    }
+
+    private void getTwoOptionQuestions() 
+    {
+        String toq = GlobalConstants.getProperty(GlobalConstants.twoOptionQuestions);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  toq.split(GlobalConstants.COMMA);
+        if(twoOptionQuestionList.isEmpty())
+        {
+            for(String gen : list)
+            {
+                 twoOptionQuestionList.add(gen);
+            }
+        }
+        
     }
 }
 
