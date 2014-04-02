@@ -332,8 +332,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             }
             
             setLastQuestionOptionsVisibility();
-            removeUserQueAnsResponse();
-            clearUserSelection();
+//            removeUserQueAnsResponse();
+//            clearUserSelection();
             
     }
 
@@ -379,7 +379,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         }
         
         recordAdditionalOptionsQ1(res);
-        prakrutiQuestionAnsList.add(res);
+        
+        addToPrakrutiQuestionsAnsList(res);
         
         
         res = new PrakrutiQuestionAnsBean();
@@ -402,7 +403,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         
         
         recordAdditionalOptionsQ2(res);
-        prakrutiQuestionAnsList.add(res);
+        
+        addToPrakrutiQuestionsAnsList(res);
         
         res = new PrakrutiQuestionAnsBean();
         res.setQuestion(q3.getText());
@@ -423,7 +425,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         }
                 
         recordAdditionalOptionsQ3(res);
-        prakrutiQuestionAnsList.add(res);
+        
+        addToPrakrutiQuestionsAnsList(res);
     }
 
     private void setPrakrutiQuestionAnsData() 
@@ -448,13 +451,15 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             isQ1Answered = true;
 
         }
-         else if ((q1.getText().contains(GlobalConstants.hash)) && (q1o1a.isSelected() || q1o1b.isSelected() || q1o1c.isSelected() 
+         //(q1.getText().contains(GlobalConstants.hash)) &&
+         else if ( (q1o1a.isSelected() || q1o1b.isSelected() || q1o1c.isSelected() 
                  || q1o2a.isSelected() ||  q1o2b.isSelected() || q1o2c.isSelected() 
                  || q1o3a.isSelected() || q1o3b.isSelected() || q1o3c.isSelected())) 
         {
             isQ1Answered = true;
         }
-         else if ((q1.getText().contains(GlobalConstants.dollar)) && (q1o1a.isSelected() || q1o1b.isSelected()
+         //(q1.getText().contains(GlobalConstants.dollar)) && 
+         else if ((q1o1a.isSelected() || q1o1b.isSelected()
                  || q1o2a.isSelected() ||  q1o2b.isSelected()
                  || q1o3a.isSelected() || q1o3b.isSelected())) 
         {
@@ -471,13 +476,15 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             isQ2Answered = true;
 
         }
-        else if ((q2.getText().contains(GlobalConstants.hash)) && (q2o1a.isSelected() || q2o1b.isSelected() || q2o1c.isSelected() 
+        //(q2.getText().contains(GlobalConstants.hash)) && 
+        else if ((q2o1a.isSelected() || q2o1b.isSelected() || q2o1c.isSelected() 
                  || q2o2a.isSelected() ||  q2o2b.isSelected() || q2o2c.isSelected() 
                  || q2o3a.isSelected() || q2o3b.isSelected() || q2o3c.isSelected())) 
         {
             isQ2Answered = true;
         }
-        else if ((q2.getText().contains(GlobalConstants.dollar)) && (q2o1a.isSelected() || q2o1b.isSelected() 
+        //(q2.getText().contains(GlobalConstants.dollar)) &&
+        else if ( (q2o1a.isSelected() || q2o1b.isSelected() 
                  || q2o2a.isSelected() ||  q2o2b.isSelected() 
                  || q2o3a.isSelected() || q2o3b.isSelected() )) 
         {
@@ -493,13 +500,15 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             isQ3Answered = true;
 
         } 
-        else if ((q3.getText().contains(GlobalConstants.hash)) && (q3o1a.isSelected() || q3o1b.isSelected() || q3o1c.isSelected() 
+        //(q3.getText().contains(GlobalConstants.hash)) &&
+        else if ( (q3o1a.isSelected() || q3o1b.isSelected() || q3o1c.isSelected() 
                  || q3o2a.isSelected() ||  q3o2b.isSelected() || q3o2c.isSelected() 
                  || q3o3a.isSelected() || q3o3b.isSelected() || q3o3c.isSelected())) 
         {
             isQ3Answered = true;
         }
-        else if ((q3.getText().contains(GlobalConstants.dollar)) && (q3o1a.isSelected() || q3o1b.isSelected() 
+        //(q3.getText().contains(GlobalConstants.dollar)) &&
+        else if ( (q3o1a.isSelected() || q3o1b.isSelected() 
                  || q3o2a.isSelected() ||  q3o2b.isSelected() 
                  || q3o3a.isSelected() || q3o3b.isSelected() )) 
         {
@@ -757,8 +766,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         if(q1.getText()!=null)
         {
             //additional options recording
-            if(q1.getText().contains(GlobalConstants.hash))
-            {
+//            if(threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
+//            {
                 if(q1o1b.isSelected())
                     res.setAns1b(q1o1b.getText());
 
@@ -776,9 +785,9 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
                 if(q1o3c.isSelected())
                     res.setAns3c(q1o3c.getText());
-            }
-            else if(q1.getText().contains(GlobalConstants.dollar))
-            {
+//            }
+//            else if(twoOptionQuestionList.contains(GlobalConstants.emptyString+qC))
+//            {
                 if(q1o1b.isSelected())
                     res.setAns1b(q1o1b.getText());
 
@@ -787,7 +796,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
                 if(q1o3b.isSelected())
                     res.setAns3b(q1o3b.getText());            
-            }
+            //}
         }
     }
 
@@ -795,8 +804,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         if(q2.getText()!=null)
         {
             //additional options recording
-            if(q2.getText().contains(GlobalConstants.hash))
-            {
+//            if(threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
+//            {
                 if(q2o1b.isSelected())
                     res.setAns1b(q2o1b.getText());
 
@@ -814,9 +823,9 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
                 if(q2o3c.isSelected())
                     res.setAns3c(q2o3c.getText());
-            }
-            else if(q2.getText().contains(GlobalConstants.dollar))
-            {
+//            }
+//            else if(twoOptionQuestionList.contains(GlobalConstants.emptyString+qC))
+//            {
                 if(q2o1b.isSelected())
                     res.setAns1b(q2o1b.getText());            
 
@@ -825,7 +834,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
                 if(q2o3b.isSelected())
                     res.setAns3b(q2o3b.getText());
-            }
+            //}
         }
     }
 
@@ -833,8 +842,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         if(q3.getText()!=null)
         {
             //additional options recording
-            if(q3.getText().contains(GlobalConstants.hash))
-            {
+//            if(threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
+//            {
                 if(q3o1b.isSelected())
                     res.setAns1b(q3o1b.getText());
 
@@ -852,9 +861,9 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
                 if(q3o3c.isSelected())
                     res.setAns3c(q3o3c.getText());
-            }
-            else if(q3.getText().contains(GlobalConstants.dollar))
-            {
+//            }
+//            else if(twoOptionQuestionList.contains(GlobalConstants.emptyString+qC))
+//            {
                 if(q3o1b.isSelected())
                     res.setAns1b(q3o1b.getText());            
 
@@ -863,7 +872,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
                 if(q3o3b.isSelected())
                     res.setAns3b(q3o3b.getText());
-            }
+            //}
         }
     }
 
@@ -894,6 +903,19 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             }
         }
         
+    }
+
+    private void addToPrakrutiQuestionsAnsList(PrakrutiQuestionAnsBean res) 
+    {
+        if (prakrutiQuestionAnsList.contains(res)) 
+        {
+            prakrutiQuestionAnsList.remove(res);
+            prakrutiQuestionAnsList.add(res);
+        } 
+        else 
+        {
+            prakrutiQuestionAnsList.add(res);
+        }
     }
 }
 
