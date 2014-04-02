@@ -13,7 +13,10 @@ import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,7 +32,7 @@ import javafx.scene.paint.Color;
  */
 public class Screen11Controller implements Initializable, ControlledScreen {
     private ScreensNavigator navigator;
-    private List<PrakrutiQuestionAnsBean> prakrutiQuestionAnsList = new ArrayList<PrakrutiQuestionAnsBean>();
+    private Map<String,PrakrutiQuestionAnsBean> prakrutiQuestionAnsMap = new HashMap<String,PrakrutiQuestionAnsBean>();
     
     @FXML
     private Color x1;
@@ -103,12 +106,12 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        getTwoOptionQuestions();
+        getThreeOptionQuestions();
         hideExtraOptionsQ1();
         hideExtraOptionsQ2();
         hideExtraOptionsQ3();
         setNextQuestionsAndAnswersToLabels();
-        getTwoOptionQuestions();
-        getThreeOptionQuestions();
     }
     
         @Override
@@ -178,6 +181,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q1o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             
             setAdditionalOptionsValuesQ1();
+            setRecordedUserOptionsToFormQ1();
             
                     if(q1.getText()!=null && q1.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
                     {
@@ -204,6 +208,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q2o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             
             setAdditionalOptionsValuesQ2();
+            setRecordedUserOptionsToFormQ2();
             
                     if(q2.getText()!=null && q2.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
                     {
@@ -230,6 +235,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q3o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             
             setAdditionalOptionsValuesQ3();
+            setRecordedUserOptionsToFormQ3();
             
                     if(q3.getText()!=null && q3.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
                     {
@@ -247,7 +253,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                     }
             
            setLastQuestionOptionsVisibility();
-           clearUserSelection();
+           //clearUserSelection();
     }
     
     private void setPreviousQuestionsAndAnswersToLabels() 
@@ -264,8 +270,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q3o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             
             setAdditionalOptionsValuesQ3();
-            
-            qC--;
+            setRecordedUserOptionsToFormQ3();
             
             if(q3.getText()!=null && q3.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male))
                    {
@@ -282,8 +287,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                        q3o3a.setDisable(false);
                    }
             
-                    
-            
+            qC--;
             q2.setText(GlobalConstants.getProperty(Q+qC));
             
             q2o1a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
@@ -291,8 +295,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q2o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             
             setAdditionalOptionsValuesQ2();
-            
-            qC--;
+            setRecordedUserOptionsToFormQ2();
             
             if (q2.getText() != null && q2.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male)) 
             {
@@ -308,13 +311,15 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                 q2o3a.setDisable(false);
             }
             
+            
+            qC--;
             q1.setText(GlobalConstants.getProperty(Q+qC));
             
             q1o1a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.ONE));
             q1o2a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.TWO));
             q1o3a.setText(GlobalConstants.getProperty(Q+qC+GlobalConstants.underscore+GlobalConstants.THREE));
             setAdditionalOptionsValuesQ1();
-            qC--;
+            setRecordedUserOptionsToFormQ1();
             
             if (q1.getText() != null && q1.getText().contains(female) && navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(male)) 
             {
@@ -331,9 +336,12 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
             }
             
+            
+            qC--;
             setLastQuestionOptionsVisibility();
 //            removeUserQueAnsResponse();
-//            clearUserSelection();
+            //clearUserSelection();
+            
             
     }
 
@@ -433,8 +441,13 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     {
 //        if(navigator.getUserInfo().getPrakrutiQuestionAnsList()==null)
 //        {
+        
+        List<PrakrutiQuestionAnsBean> prakrutiQuestionAnsList = Collections.list(Collections.enumeration(prakrutiQuestionAnsMap.values()));
+        
         System.out.println("****prakrutiQuestionAnsList="+prakrutiQuestionAnsList);
-            navigator.getUserInfo().setPrakrutiQuestionAnsList(prakrutiQuestionAnsList);
+        navigator.getUserInfo().setPrakrutiQuestionAnsList(prakrutiQuestionAnsList);
+        
+        
         //}
         
     }
@@ -575,17 +588,17 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     {
         PrakrutiQuestionAnsBean res = new PrakrutiQuestionAnsBean();
         res.setQuestion(q1.getText());
-        prakrutiQuestionAnsList.remove(res);
+        prakrutiQuestionAnsMap.remove(res);
         
         res = new PrakrutiQuestionAnsBean();
         res.setQuestion(q2.getText());
-        prakrutiQuestionAnsList.remove(res);
+        prakrutiQuestionAnsMap.remove(res);
         
         res = new PrakrutiQuestionAnsBean();
         res.setQuestion(q3.getText());
-        prakrutiQuestionAnsList.remove(res);
+        prakrutiQuestionAnsMap.remove(res);
         
-        System.out.println("prakrutiQuestionAnsList="+prakrutiQuestionAnsList.size());
+        System.out.println("prakrutiQuestionAnsList="+prakrutiQuestionAnsMap.size());
     }
 
     private void hideExtraOptionsQ1() {
@@ -907,14 +920,315 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
     private void addToPrakrutiQuestionsAnsList(PrakrutiQuestionAnsBean res) 
     {
-        if (prakrutiQuestionAnsList.contains(res)) 
+        System.out.println("****res="+res);
+        prakrutiQuestionAnsMap.put(res.getQuestion(), res);
+        
+//        if (prakrutiQuestionAnsList.contains(res)) 
+//        {
+//            prakrutiQuestionAnsList.remove(res);
+//            prakrutiQuestionAnsList.add(res);
+//        } 
+//        else 
+//        {
+//            prakrutiQuestionAnsList.add(res);
+//        }
+    }
+
+    private void setRecordedUserOptionsToFormQ3() {
+        if(q3.getText()!=null)
         {
-            prakrutiQuestionAnsList.remove(res);
-            prakrutiQuestionAnsList.add(res);
-        } 
-        else 
+            PrakrutiQuestionAnsBean userResponse=prakrutiQuestionAnsMap.get(q3.getText());
+            //System.out.println("***userResponse="+userResponse);
+            if(userResponse!=null)
+            {
+                
+                if(userResponse.getAns1()!=null)
+                {
+                    q3o1a.setSelected(true);
+                }
+                else
+                {
+                    q3o1a.setSelected(false);
+                }
+                
+                if(userResponse.getAns1b()!=null)
+                {
+                    q3o1b.setSelected(true);
+                }
+                else
+                {
+                    q3o1b.setSelected(false);
+                }
+                
+                
+                if(userResponse.getAns1c()!=null)
+                {
+                    q3o1c.setSelected(true);
+                }
+                else
+                {
+                    q3o1c.setSelected(false);
+                }
+                
+
+                if(userResponse.getAns2()!=null)
+                {
+                    q3o2a.setSelected(true);
+                }
+                else
+                {
+                    q3o2a.setSelected(false);
+                }
+                
+                if(userResponse.getAns2b()!=null)
+                {
+                    q3o2b.setSelected(true);
+                }
+                else
+                {
+                    q3o2b.setSelected(false);
+                }
+                
+                if(userResponse.getAns2c()!=null)
+                {
+                    q3o2c.setSelected(true);
+                }
+                else
+                {
+                    q3o2c.setSelected(false);
+                }
+
+                if(userResponse.getAns3()!=null)
+                {
+                    q3o3a.setSelected(true);
+                }
+                else
+                {
+                    q3o3a.setSelected(false);
+                }
+                
+                if(userResponse.getAns3b()!=null)
+                {
+                    q3o3b.setSelected(true);
+                }
+                else
+                {
+                    q3o3b.setSelected(false);
+                }
+                
+                if(userResponse.getAns3c()!=null)
+                {
+                    q3o3c.setSelected(true);
+                }
+                else
+                {
+                    q3o3c.setSelected(false);
+                }
+            
+            }
+            else
+            {
+                clearUserSelection();
+            }
+        }
+    }
+
+    private void setRecordedUserOptionsToFormQ2() {
+        if(q2.getText()!=null)
         {
-            prakrutiQuestionAnsList.add(res);
+            PrakrutiQuestionAnsBean userResponse=prakrutiQuestionAnsMap.get(q2.getText());
+//            System.out.println("***userResponse="+userResponse);
+            if(userResponse!=null)
+            {
+                
+                if(userResponse.getAns1()!=null)
+                {
+                    q2o1a.setSelected(true);
+                }
+                else
+                {
+                    q2o1a.setSelected(false);
+                }
+                
+                if(userResponse.getAns1b()!=null)
+                {
+                    q2o1b.setSelected(true);
+                }
+                else
+                {
+                    q2o1b.setSelected(false);
+                }
+                
+                if(userResponse.getAns1c()!=null)
+                {
+                    q2o1c.setSelected(true);
+                }
+                else
+                {
+                    q2o1c.setSelected(false);
+                }
+
+                if(userResponse.getAns2()!=null)
+                {
+                    q2o2a.setSelected(true);
+                }
+                else
+                {
+                    q2o2a.setSelected(false);
+                }
+                
+                if(userResponse.getAns2b()!=null)
+                {
+                    q2o2b.setSelected(true);
+                }
+                else
+                {
+                    q2o2b.setSelected(false);
+                }
+                
+                if(userResponse.getAns2c()!=null)
+                {
+                    q2o2c.setSelected(true);
+                }
+                else
+                {
+                    q2o2c.setSelected(false);
+                }
+                
+
+                if(userResponse.getAns3()!=null)
+                {
+                    q2o3a.setSelected(true);
+                }
+                else
+                {
+                    q2o3a.setSelected(false);
+                }
+                
+                if(userResponse.getAns3b()!=null)
+                {
+                    q2o3b.setSelected(true);
+                }
+                else
+                {
+                    q2o3b.setSelected(false);
+                }
+                
+                if(userResponse.getAns3c()!=null)
+                {
+                    q2o3c.setSelected(true);
+                }
+                else
+                {
+                    q2o3c.setSelected(false);
+                }
+            
+            }
+            else
+            {
+                clearUserSelection();
+            }
+        }
+    }
+    
+    private void setRecordedUserOptionsToFormQ1() {
+        if(q1.getText()!=null)
+        {
+            PrakrutiQuestionAnsBean userResponse=prakrutiQuestionAnsMap.get(q1.getText());
+//            System.out.println("***userResponse="+userResponse);
+            if(userResponse!=null)
+            {
+                
+                if(userResponse.getAns1()!=null)
+                {
+                    q1o1a.setSelected(true);
+                }
+                else
+                {
+                    q1o1a.setSelected(false);
+                }
+                
+                if(userResponse.getAns1b()!=null)
+                {
+                    q1o1b.setSelected(true);
+                }
+                else
+                {
+                    q1o1b.setSelected(false);
+                }
+                
+                if(userResponse.getAns1c()!=null)
+                {
+                    q1o1c.setSelected(true);
+                }
+                else
+                {
+                    q1o1c.setSelected(false);
+                }
+                
+
+                if(userResponse.getAns2()!=null)
+                {
+                    q1o2a.setSelected(true);
+                }
+                else
+                {
+                    q1o2a.setSelected(false);
+                }
+                
+                
+                if(userResponse.getAns2b()!=null)
+                {
+                    q1o2b.setSelected(true);
+                }
+                else
+                {
+                    q1o2b.setSelected(false);
+                }
+                
+                if(userResponse.getAns2c()!=null)
+                {
+                    q1o2c.setSelected(true);
+                }
+                else
+                {
+                    q1o2c.setSelected(false);
+                }
+                
+                
+
+                if(userResponse.getAns3()!=null)
+                {
+                    q1o3a.setSelected(true);
+                }
+                else
+                {
+                    q1o3a.setSelected(false);
+                }
+                
+                if(userResponse.getAns3b()!=null)
+                {
+                    q1o3b.setSelected(true);
+                }
+                else
+                {
+                    q1o3b.setSelected(false);
+                }
+                
+                if(userResponse.getAns3c()!=null)
+                {
+                    q1o3c.setSelected(true);
+                }
+                else
+                {
+                    q1o3c.setSelected(false);
+                }
+            
+            }
+            else
+            {
+                clearUserSelection();
+            }
         }
     }
 }
