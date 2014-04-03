@@ -76,7 +76,8 @@
 .answersStyle
 {
 /*    -fx-font-family: "Arial Black";*/
-    -fx-text-fill: #F95F5E;
+/*    -fx-text-fill: #F95F5E;*/
+      -fx-text-fill: #BF232B;
 /*    -fx-font-weight: bold;*/
     -fx-font-size: 13px;
 /*    -fx-font-weight: bold;*/
@@ -104,3 +105,22 @@
     -fx-height: 30;
     -fx-font-family: "Segoe UI Semibold";
 }*/
+
+
+.option1 {
+/*    -fx-background-color: #D4EBF4;*/
+
+/*-fx-background-color: #FFCCCC;*/
+-fx-background-color: #FEE5E5;
+}
+
+.option2 {
+/*    -fx-background-color: #BDE6F6;*/
+-fx-background-color: #FFCCCC;
+}
+
+.option3 {
+/*    -fx-background-color: #92D5E8;*/
+/*-fx-background-color: #F68F8E;*/
+-fx-background-color: #FFAAAA;
+}
