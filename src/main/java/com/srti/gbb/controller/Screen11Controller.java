@@ -14,6 +14,7 @@ import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -32,7 +33,7 @@ import javafx.scene.paint.Color;
  */
 public class Screen11Controller implements Initializable, ControlledScreen {
     private ScreensNavigator navigator;
-    private Map<String,PrakrutiQuestionAnsBean> prakrutiQuestionAnsMap = new TreeMap<String,PrakrutiQuestionAnsBean>();
+    private Map<String,PrakrutiQuestionAnsBean> prakrutiQuestionAnsMap = new HashMap<String,PrakrutiQuestionAnsBean>();
     
     @FXML
     private Color x1;
@@ -144,6 +145,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         if(validateUserQueAnsResponse())
         {
             recordUserQueAnsResponse();
+            
 
             if(qC==Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.Total_Prakruti_Questions)))
             {
@@ -287,73 +289,84 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
     private void recordUserQueAnsResponse() 
     {
-        PrakrutiQuestionAnsBean res = new PrakrutiQuestionAnsBean();
-        res.setQuestion(q1.getText());
+        PrakrutiQuestionAnsBean res;
         
-        if(q1o1a.isSelected())
+        if(q1.getText()!=null)
         {
-            res.setAns1(q1o1a.getText());
-        }
+            res = new PrakrutiQuestionAnsBean();
+            res.setQuestion(q1.getText());
         
-        if(q1o2a.isSelected())
-        {
-            res.setAns2(q1o2a.getText());            
-        }
-        
-        if(q1o3a.isSelected())
-        {
-            res.setAns3(q1o3a.getText());            
-        }
-        
-        recordAdditionalOptionsQ1(res);
-        
-        addToPrakrutiQuestionsAnsList(res);
-        
-        
-        res = new PrakrutiQuestionAnsBean();
-        res.setQuestion(q2.getText());
-        
-        if(q2o1a.isSelected())
-        {
-            res.setAns1(q2o1a.getText());            
-        }
-        
-        if(q2o2a.isSelected())
-        {
-            res.setAns2(q2o2a.getText());            
-        }
-        
-        if(q2o3a.isSelected())
-        {
-            res.setAns3(q2o3a.getText());            
+            if(q1o1a.isSelected())
+            {
+                res.setAns1(q1o1a.getText());
+            }
+
+            if(q1o2a.isSelected())
+            {
+                res.setAns2(q1o2a.getText());            
+            }
+
+            if(q1o3a.isSelected())
+            {
+                res.setAns3(q1o3a.getText());            
+            }
+
+            recordAdditionalOptionsQ1(res);
+            determineCheckedOptionsForQuestion(res);
+            addToPrakrutiQuestionsAnsList(res);
         }
         
         
-        recordAdditionalOptionsQ2(res);
-        
-        addToPrakrutiQuestionsAnsList(res);
-        
-        res = new PrakrutiQuestionAnsBean();
-        res.setQuestion(q3.getText());
-        
-        if(q3o1a.isSelected())
+        if(q2.getText()!=null)
         {
-            res.setAns1(q3o1a.getText());            
+            res = new PrakrutiQuestionAnsBean();
+            res.setQuestion(q2.getText());
+
+            if(q2o1a.isSelected())
+            {
+                res.setAns1(q2o1a.getText());            
+            }
+
+            if(q2o2a.isSelected())
+            {
+                res.setAns2(q2o2a.getText());            
+            }
+
+            if(q2o3a.isSelected())
+            {
+                res.setAns3(q2o3a.getText());            
+            }
+
+            recordAdditionalOptionsQ2(res);
+            determineCheckedOptionsForQuestion(res);
+            addToPrakrutiQuestionsAnsList(res);
+        
         }
         
-        if(q3o2a.isSelected())
+        if(q3.getText()!=null)
         {
-            res.setAns2(q3o2a.getText());            
+            res = new PrakrutiQuestionAnsBean();
+            res.setQuestion(q3.getText());
+
+            if(q3o1a.isSelected())
+            {
+                res.setAns1(q3o1a.getText());            
+            }
+
+            if(q3o2a.isSelected())
+            {
+                res.setAns2(q3o2a.getText());            
+            }
+
+            if(q3o3a.isSelected())
+            {
+                res.setAns3(q3o3a.getText());            
+            }
+
+            recordAdditionalOptionsQ3(res);
+            determineCheckedOptionsForQuestion(res);
+            addToPrakrutiQuestionsAnsList(res);
         }
-        
-        if(q3o3a.isSelected())
-        {
-            res.setAns3(q3o3a.getText());            
-        }
-                
-        recordAdditionalOptionsQ3(res);
-        
-        addToPrakrutiQuestionsAnsList(res);
     }
 
     private void setPrakrutiQuestionAnsData() 
@@ -695,8 +708,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 
     private void recordAdditionalOptionsQ1(PrakrutiQuestionAnsBean res) 
     {
-        if(q1.getText()!=null)
-        {
+//        if(q1.getText()!=null)
+//        {
             //additional options recording
 //            if(threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
 //            {
@@ -720,21 +733,21 @@ public class Screen11Controller implements Initializable, ControlledScreen {
 //            }
 //            else if(twoOptionQuestionList.contains(GlobalConstants.emptyString+qC))
 //            {
-                if(q1o1b.isSelected())
-                    res.setAns1b(q1o1b.getText());
-
-                if(q1o2b.isSelected())
-                    res.setAns2b(q1o2b.getText());
-
-                if(q1o3b.isSelected())
-                    res.setAns3b(q1o3b.getText());            
+//                if(q1o1b.isSelected())
+//                    res.setAns1b(q1o1b.getText());
+//
+//                if(q1o2b.isSelected())
+//                    res.setAns2b(q1o2b.getText());
+//
+//                if(q1o3b.isSelected())
+//                    res.setAns3b(q1o3b.getText());            
             //}
-        }
+        //}
     }
 
     private void recordAdditionalOptionsQ2(PrakrutiQuestionAnsBean res) {
-        if(q2.getText()!=null)
-        {
+//        if(q2.getText()!=null)
+//        {
             //additional options recording
 //            if(threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
 //            {
@@ -767,12 +780,12 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                 if(q2o3b.isSelected())
                     res.setAns3b(q2o3b.getText());
             //}
-        }
+        //}
     }
 
     private void recordAdditionalOptionsQ3(PrakrutiQuestionAnsBean res) {
-        if(q3.getText()!=null)
-        {
+//        if(q3.getText()!=null)
+//        {
             //additional options recording
 //            if(threeOptionQuestionList.contains(GlobalConstants.emptyString+qC))
 //            {
@@ -805,7 +818,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
                 if(q3o3b.isSelected())
                     res.setAns3b(q3o3b.getText());
             //}
-        }
+        //}
     }
     
     private void getFemaleOnlyQuestions() {
@@ -853,7 +866,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     private void addToPrakrutiQuestionsAnsList(PrakrutiQuestionAnsBean res) 
     {
         System.out.println("****res="+res);
-        if(res.getQuestion()!=null)
+        //if(res.getQuestion()!=null)
             prakrutiQuestionAnsMap.put(res.getQuestion(), res);
         
 //        if (prakrutiQuestionAnsList.contains(res)) 
@@ -1259,6 +1272,24 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             q3o3a.setDisable(false);
             q3o3b.setDisable(false);
             q3o3c.setDisable(false);
+        }
+    }
+
+    private void determineCheckedOptionsForQuestion(PrakrutiQuestionAnsBean res) 
+    {
+        if(res.getAns1()!=null || res.getAns1b()!=null || res.getAns1c()!=null)
+        {
+            res.setOpt1Checked(true);
+        }
+        
+        if(res.getAns2()!=null || res.getAns2b()!=null || res.getAns2c()!=null)
+        {
+            res.setOpt2Checked(true);
+        }
+        
+        if(res.getAns3()!=null || res.getAns3b()!=null || res.getAns3c()!=null)
+        {
+            res.setOpt3Checked(true);
         }
     }
 }

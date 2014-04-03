@@ -22,6 +22,10 @@ public class PrakrutiQuestionAnsBean
     private String ans3;
     private String ans3b;
     private String ans3c;
+    
+    private boolean opt1Checked;
+    private boolean opt2Checked;
+    private boolean opt3Checked;
 
     public String getQuestion() {
         return question;
@@ -126,9 +130,34 @@ public class PrakrutiQuestionAnsBean
         this.ans3c = ans3c;
     }
 
+
+    public boolean isOpt1Checked() {
+        return opt1Checked;
+    }
+
+    public void setOpt1Checked(boolean opt1Checked) {
+        this.opt1Checked = opt1Checked;
+    }
+
+    public boolean isOpt2Checked() {
+        return opt2Checked;
+    }
+
+    public void setOpt2Checked(boolean opt2Checked) {
+        this.opt2Checked = opt2Checked;
+    }
+
+    public boolean isOpt3Checked() {
+        return opt3Checked;
+    }
+
+    public void setOpt3Checked(boolean opt3Checked) {
+        this.opt3Checked = opt3Checked;
+    }
+
     @Override
     public String toString() {
-        return "PrakrutiQuestionAnsBean{" + "question=" + question + ", ans1=" + ans1 + ", ans1b=" + ans1b + ", ans1c=" + ans1c + ", ans2=" + ans2 + ", ans2b=" + ans2b + ", ans2c=" + ans2c + ", ans3=" + ans3 + ", ans3b=" + ans3b + ", ans3c=" + ans3c + '}';
+        return "PrakrutiQuestionAnsBean{" + "question=" + question + ", ans1=" + ans1 + ", ans1b=" + ans1b + ", ans1c=" + ans1c + ", ans2=" + ans2 + ", ans2b=" + ans2b + ", ans2c=" + ans2c + ", ans3=" + ans3 + ", ans3b=" + ans3b + ", ans3c=" + ans3c + ", opt1Checked=" + opt1Checked + ", opt2Checked=" + opt2Checked + ", opt3Checked=" + opt3Checked + '}';
     }
     
     
