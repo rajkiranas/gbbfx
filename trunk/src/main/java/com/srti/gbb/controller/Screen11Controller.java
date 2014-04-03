@@ -14,10 +14,10 @@ import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.TreeMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,7 +32,7 @@ import javafx.scene.paint.Color;
  */
 public class Screen11Controller implements Initializable, ControlledScreen {
     private ScreensNavigator navigator;
-    private Map<String,PrakrutiQuestionAnsBean> prakrutiQuestionAnsMap = new HashMap<String,PrakrutiQuestionAnsBean>();
+    private Map<String,PrakrutiQuestionAnsBean> prakrutiQuestionAnsMap = new TreeMap<String,PrakrutiQuestionAnsBean>();
     
     @FXML
     private Color x1;
@@ -921,7 +921,8 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     private void addToPrakrutiQuestionsAnsList(PrakrutiQuestionAnsBean res) 
     {
         System.out.println("****res="+res);
-        prakrutiQuestionAnsMap.put(res.getQuestion(), res);
+        if(res.getQuestion()!=null)
+            prakrutiQuestionAnsMap.put(res.getQuestion(), res);
         
 //        if (prakrutiQuestionAnsList.contains(res)) 
 //        {
