@@ -124,3 +124,46 @@
 /*-fx-background-color: #F68F8E;*/
 -fx-background-color: #FFAAAA;
 }
+
+.redFont
+{
+    -fx-font-size: 15px;
+/*    -fx-text-fill: red;*/
+-fx-background-color: red;
+}
+
+.saffronFont
+{
+    -fx-font-size: 15px;
+    -fx-background-color: Orange;
+}
+
+.yellowFont
+{
+    -fx-font-size: 15px;
+    -fx-background-color: yellow;
+}
+
+.greenFont
+{
+    -fx-font-size: 15px;
+    -fx-background-color: green;
+}
+
+.blueFont
+{
+    -fx-font-size: 15px;
+    -fx-background-color: blue;
+}
+
+.voiletFont
+{
+    -fx-font-size: 15px;
+    -fx-background-color: violet;
+}
+
+.whiteFont
+{
+    -fx-font-size: 15px;
+    -fx-background-color: white;
+}
