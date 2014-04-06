@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+<?scenebuilder-stylesheet ../styles/Styles.css?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen14Controller">
   <children>
@@ -22,9 +23,9 @@
       </padding>
     </HBox>
     <Label layoutX="14.0" layoutY="123.0" prefHeight="225.0" prefWidth="337.0" styleClass="answersStyle" text="%IntroMsg_Prakruti_Nidaan" textAlignment="CENTER" wrapText="true" />
-    <AnchorPane id="AnchorPane" layoutX="407.0" layoutY="131.0" prefHeight="225.0" styleClass="roundEdge">
+    <AnchorPane id="AnchorPane" layoutX="407.0" layoutY="99.0" prefHeight="294.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="25.0" layoutY="30.0" prefHeight="166.0" prefWidth="307.0">
+        <GridPane id="GridPane" layoutX="25.0" layoutY="127.0" prefHeight="166.0" prefWidth="307.0">
           <children>
             <Label minHeight="14.0" prefHeight="35.0" prefWidth="142.0" text="%Lbl_Loose_Motions" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <ComboBox fx:id="cmbLooseMotions" minWidth="49.0" prefHeight="35.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
@@ -51,6 +52,11 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
+        <Label layoutX="25.0" layoutY="27.0" text="%Lbl_Allergies" />
+        <TextField fx:id="txtAllergyName" layoutX="106.0" layoutY="21.0" prefHeight="40.0" prefWidth="211.0" promptText="%Lbl_InputPrompt" />
+        <Button layoutX="105.0" layoutY="75.0" mnemonicParsing="false" onAction="#addAllergyAndClearForm" prefHeight="35.0" text="%Lbl_Add_Allergy_Btn" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="212.0" layoutY="82.0" onAction="#showPrevious" prefWidth="108.0" text="%Link_View_Previous" visible="true" />
+        <Separator layoutX="14.0" layoutY="123.0" prefWidth="318.0" />
       </children>
     </AnchorPane>
     <HBox alignment="CENTER_LEFT" layoutX="3.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
