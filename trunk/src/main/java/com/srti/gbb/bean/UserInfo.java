@@ -39,6 +39,9 @@ public class UserInfo
      private List<IllnessBean> parentsIllnessList;
      private List<IllnessBean> grandParentsIllnessList;
      private List<IllnessBean> siblingsIllnessList;
+     private List<IdolBean> idolList;
+     private ColourBean colour;
+     private TasteBean taste;
      
      
      
@@ -341,6 +344,48 @@ public class UserInfo
      */
     public void setSiblingsIllnessList(List<IllnessBean> siblingsIllnessList) {
         this.siblingsIllnessList = siblingsIllnessList;
+    }
+
+    /**
+     * @return the idolList
+     */
+    public List<IdolBean> getIdolList() {
+        return idolList;
+    }
+
+    /**
+     * @param idolList the idolList to set
+     */
+    public void setIdolList(List<IdolBean> idolList) {
+        this.idolList = idolList;
+    }
+
+    /**
+     * @return the colour
+     */
+    public ColourBean getColour() {
+        return colour;
+    }
+
+    /**
+     * @param colour the colour to set
+     */
+    public void setColour(ColourBean colour) {
+        this.colour = colour;
+    }
+
+    /**
+     * @return the taste
+     */
+    public TasteBean getTaste() {
+        return taste;
+    }
+
+    /**
+     * @param taste the taste to set
+     */
+    public void setTaste(TasteBean taste) {
+        this.taste = taste;
     }
 
     

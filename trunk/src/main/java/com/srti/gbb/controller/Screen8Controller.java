@@ -107,7 +107,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
                 setTravelingData();
                 setHobyData();
                 setEntertainmentData();
-                navigator.navigateTo(ScreensFramework.screen9ID);
+                navigateToNextScreen();
             }
         }
         else if(validateTravelsForm() && !isEntertainmentListEmpty())
@@ -117,7 +117,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
                 setTravelingData();
                 setHobyData();
                 setEntertainmentData();
-                navigator.navigateTo(ScreensFramework.screen9ID);
+                navigateToNextScreen();
             }
             else
             {
@@ -585,5 +585,9 @@ public class Screen8Controller implements Initializable, ControlledScreen {
 
     private void removeNoneOptionFromList() {
         cmbHobby.getItems().remove(MU.getMsg(GlobalConstants.None));
+    }
+
+    private void navigateToNextScreen() {
+        navigator.navigateTo(ScreensFramework.screen15ID);
     }
 }
