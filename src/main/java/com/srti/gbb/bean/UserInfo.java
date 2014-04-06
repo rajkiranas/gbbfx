@@ -42,7 +42,7 @@ public class UserInfo
      private List<IdolBean> idolList;
      private ColourBean colour;
      private TasteBean taste;
-     
+     private List<AllergyBean> allergyList;
      
      
      
@@ -386,6 +386,20 @@ public class UserInfo
      */
     public void setTaste(TasteBean taste) {
         this.taste = taste;
+    }
+
+    /**
+     * @return the allergyList
+     */
+    public List<AllergyBean> getAllergyList() {
+        return allergyList;
+    }
+
+    /**
+     * @param allergyList the allergyList to set
+     */
+    public void setAllergyList(List<AllergyBean> allergyList) {
+        this.allergyList = allergyList;
     }
 
     
