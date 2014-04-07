@@ -4,11 +4,13 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkirans
  */
-public class LifestyleBean 
+public class LifestyleBean  implements Serializable
 {
     private float wakeupTime;
     private float sleepTime;

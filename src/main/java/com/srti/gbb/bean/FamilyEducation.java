@@ -4,13 +4,14 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkirans
  */
-public class FamilyEducation 
+public class FamilyEducation  implements Serializable
 {
     private String name;
     private String familyMember;

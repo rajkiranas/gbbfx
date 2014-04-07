@@ -4,11 +4,13 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkirans
  */
-public class AddressBean 
+public class AddressBean  implements Serializable
 {
     private String house;
     private String area;

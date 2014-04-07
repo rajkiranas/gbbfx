@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author sateri
  */
-public class ColourBean 
+public class ColourBean  implements Serializable
 {
     private boolean red;
     private boolean orange;

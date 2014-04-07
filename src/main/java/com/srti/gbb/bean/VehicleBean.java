@@ -4,13 +4,15 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkirans
  */
-public class VehicleBean {
+public class VehicleBean  implements Serializable
+{
     private String vehicleType;
     private int numberOfVehicles;
 

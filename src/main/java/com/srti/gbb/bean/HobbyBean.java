@@ -6,13 +6,14 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkiran
  */
-public class HobbyBean 
+public class HobbyBean  implements Serializable
 {
     private String hobby;
     private float hobbyHoursPerWeek;

@@ -6,11 +6,14 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkiran
  */
-public class MealTypeBean {
+public class MealTypeBean  implements Serializable
+{
  private String diet;
  private int nonVegPerWeek;
  private String foodType;

@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkiran
  */
-public class PersonalInformationBean 
+public class PersonalInformationBean  implements Serializable
 {
     private String name;
     private int age;

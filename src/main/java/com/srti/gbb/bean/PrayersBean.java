@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkiran
  */
-public class PrayersBean 
+public class PrayersBean  implements Serializable
 {
     private boolean regularPray;
     private int individualPrayerPerWeek;

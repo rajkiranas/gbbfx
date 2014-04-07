@@ -4,11 +4,13 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkirans
  */
-public class AddictionBean 
+public class AddictionBean  implements Serializable
 {
     private String addiction;
     private int frequencyPerWeek;

@@ -4,13 +4,14 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkirans
  */
-public class EducationBean 
+public class EducationBean  implements Serializable
 {
     private String schoolName;
     private String classDegree;

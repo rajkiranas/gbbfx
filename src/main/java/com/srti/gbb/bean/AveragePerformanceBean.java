@@ -4,11 +4,13 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkirans
  */
-public class AveragePerformanceBean 
+public class AveragePerformanceBean  implements Serializable
 {
     private float avgSchoolPercentage;
     private int noOfSchoolRepeats;

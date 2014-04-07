@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author sateri
  */
-public class TasteBean 
+public class TasteBean  implements Serializable
 {
     private boolean sweet;
     private boolean sour;
