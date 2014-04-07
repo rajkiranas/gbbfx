@@ -4,13 +4,14 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkirans
  */
-public class Friends 
+public class Friends  implements Serializable
 {
     private String friendName;
     private String highestQualification;

@@ -6,13 +6,14 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkiran
  */
-public class EntertainmentBean 
+public class EntertainmentBean  implements Serializable
 {
    private String entertainement;
 

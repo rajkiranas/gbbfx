@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkiran
  */
-public class SocialServiceBean 
+public class SocialServiceBean  implements Serializable
 {
     private float approxAmtCash;
     private float approxAmtKind;

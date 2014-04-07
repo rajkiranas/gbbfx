@@ -4,13 +4,14 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkirans
  */
-public class PropertyBean 
+public class PropertyBean  implements Serializable
 {
     private String propertyType;
     private boolean isOwned;

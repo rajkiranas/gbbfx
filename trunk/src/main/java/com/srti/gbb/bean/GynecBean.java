@@ -4,11 +4,13 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkirans
  */
-public class GynecBean 
+public class GynecBean  implements Serializable
 {
     private boolean irregularMenses;
     private boolean painfulMenses;

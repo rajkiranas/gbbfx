@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkiran
  */
-public class ExerciseBean 
+public class ExerciseBean  implements Serializable
 {
     private int exercisePerWeek;
     private String exerciseType;

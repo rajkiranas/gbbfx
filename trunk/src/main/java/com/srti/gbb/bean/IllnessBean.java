@@ -4,13 +4,14 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkirans
  */
-public class IllnessBean 
+public class IllnessBean  implements Serializable
 {
     private String illness;
     private boolean isHospitalized;

@@ -6,13 +6,14 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author sateri
  */
-public class AllergyBean 
+public class AllergyBean  implements Serializable
 {
     private String allergyName;
 

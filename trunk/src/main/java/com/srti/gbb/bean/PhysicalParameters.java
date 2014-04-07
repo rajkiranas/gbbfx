@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkiran
  */
-public class PhysicalParameters 
+public class PhysicalParameters  implements Serializable
 {
     private int feets;
     private int inches;

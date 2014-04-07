@@ -4,13 +4,14 @@
  */
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author rajkirans
  */
-public class PrakrutiQuestionAnsBean 
+public class PrakrutiQuestionAnsBean  implements Serializable
 {
     private String question;
     private String ans1;

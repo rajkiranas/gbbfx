@@ -6,11 +6,13 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author rajkiran
  */
-public class TravelingBean 
+public class TravelingBean  implements Serializable
 {
     private int localIndividual;
     private int localFamily;

@@ -6,14 +6,14 @@
 
 package com.srti.gbb.bean;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author rajkiran
  */
-public class UserInfo 
+public class UserInfo  implements Serializable
 {
      private PersonalInformationBean pi;
      private AddressBean address;

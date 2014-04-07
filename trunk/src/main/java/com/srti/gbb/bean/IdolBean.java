@@ -6,13 +6,14 @@
 
 package com.srti.gbb.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author sateri
  */
-public class IdolBean 
+public class IdolBean  implements Serializable
 {
     private String idolName;
 
