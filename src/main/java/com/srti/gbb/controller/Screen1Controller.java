@@ -40,21 +40,6 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         private TextField txtAge;
         
         @FXML
-        private TextField txtMobile;
-        
-        @FXML
-        private TextField txtEmail;
-        
-        @FXML
-        private TextField txtOrganization;
-        
-        @FXML
-        private ComboBox cmbOccupation;
-        
-        @FXML
-        private ComboBox cmbIncome;
-        
-        @FXML
         private ComboBox cmbGenderList;
         
         @FXML
@@ -69,7 +54,6 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         @FXML
         private TextField txtWeight;
         
-        
         @FXML
         private TextField txtReligion;
     /**
@@ -80,8 +64,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         // TODO
         getGendersFromProperty();
         getReligionsFromProperty();
-        populateOccupation();
-        populateIncome();
+        
         populateHeightFeets();
         populateHeightInches();
     }    
@@ -177,38 +160,38 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("sc1_msg_either_sel_or_enter_religion", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-         else if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_enter_mobile", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         else if(!GbbValidator.isValidPhoneNumber(txtMobile.getText()))
-         {
-              UIUtils.showAlert("sc1_msg_valid_mobile", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
-         }
-         else if(txtEmail.getText() ==null || txtEmail.getText().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_enter_email", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         else if(!GbbValidator.isValidEmail(txtEmail.getText()))
-         {
-              UIUtils.showAlert("sc1_msg_valid_email", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
-         }
-         else if(cmbOccupation.getValue()==null || cmbOccupation.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_occu", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         else if(cmbIncome.getValue()==null || cmbIncome.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_income", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
+//         else if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_enter_mobile", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
+//         else if(!GbbValidator.isValidPhoneNumber(txtMobile.getText()))
+//         {
+//              UIUtils.showAlert("sc1_msg_valid_mobile", GlobalConstants.Lbl_Alert);  
+//    
+//             isValid=false;
+//         }
+//         else if(txtEmail.getText() ==null || txtEmail.getText().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_enter_email", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
+//         else if(!GbbValidator.isValidEmail(txtEmail.getText()))
+//         {
+//              UIUtils.showAlert("sc1_msg_valid_email", GlobalConstants.Lbl_Alert);  
+//    
+//             isValid=false;
+//         }
+//         else if(cmbOccupation.getValue()==null || cmbOccupation.getValue().toString().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_sel_occu", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
+//         else if(cmbIncome.getValue()==null || cmbIncome.getValue().toString().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_sel_income", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
          
          return isValid;
      }
@@ -244,35 +227,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     }
     
     
-    private void populateOccupation() 
-    {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
-        //ObservableList genderOptions = new ObservableList();
-        String[] list =  genderList.split(GlobalConstants.COMMA);
-        if(cmbOccupation.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-                 cmbOccupation.getItems().addAll(gen);
-            }
-        }
-    }
     
-    
-    private void populateIncome() 
-    {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Income_Options);
-        //ObservableList genderOptions = new ObservableList();
-        String[] list =  genderList.split(GlobalConstants.COMMA);
-        if(cmbIncome.getItems().size()==0)
-        {
-            for(String gen : list)
-            {
-
-                 cmbIncome.getItems().addAll(gen);
-            }
-        }
-    }
 
     private void setPersonalInformation() {
         PersonalInformationBean pi = new PersonalInformationBean();
@@ -287,11 +242,11 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         {
             pi.setReligion(txtReligion.getText().trim());
         }
-        pi.setMobile(Long.parseLong(txtMobile.getText()));
-        pi.setEmail(txtEmail.getText());
-        pi.setOrganization(txtOrganization.getText());
-        pi.setOccupation(cmbOccupation.getValue().toString());
-        pi.setIncome(cmbIncome.getValue().toString());
+//        pi.setMobile(Long.parseLong(txtMobile.getText()));
+//        pi.setEmail(txtEmail.getText());
+//        pi.setOrganization(txtOrganization.getText());
+//        pi.setOccupation(cmbOccupation.getValue().toString());
+//        pi.setIncome(cmbIncome.getValue().toString());
         System.out.println("1****pi="+pi);
         navigator.getUserInfo().setPi(pi);
     }
@@ -358,54 +313,4 @@ private boolean validatePhysicalParametersForm()
         System.out.println("2****phy="+phy);
         navigator.getUserInfo().setPhysicalParams(phy);
     }        
-    
-    
-    @FXML
-    private void manageOccuAndProfForHouseWife()
-    {
-        
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
-        //ObservableList genderOptions = new ObservableList();
-        String[] list =  genderList.split(GlobalConstants.COMMA);
-//        if(cmbOccupation.getItems().size()==0)
-//        {
-//            for(String gen : list)
-//            {
-//                 cmbOccupation.getItems().addAll(gen);
-//            }
-//        }
-        
-        if (cmbGenderList.getValue()!=null && cmbGenderList.getValue().toString().equals(MU.getMsg("Lbl_Male"))) 
-        {
-            
-            cmbOccupation.getItems().clear();
-            if(cmbOccupation.getItems().size()==0)
-            {
-                for(String gen : list)
-                {
-                    if (!gen.equals(MU.getMsg("Lbl_Housewife"))) {
-                        cmbOccupation.getItems().addAll(gen);
-                    }
-                        
-                }
-            }
-
-        }
-        else
-        {
-            
-            cmbOccupation.getItems().clear();
-            if(cmbOccupation.getItems().size()==0)
-            {
-                for(String gen : list)
-                {
-                        cmbOccupation.getItems().addAll(gen);
-                }
-            }
-            
-        }
-        
-        
-    }
-
 }

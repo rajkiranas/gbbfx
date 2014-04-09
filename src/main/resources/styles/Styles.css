@@ -167,3 +167,8 @@
     -fx-font-size: 15px;
     -fx-background-color: white;
 }
+
+.toeTouchingFont
+{
+    -fx-font-size: 10px;    
+}
