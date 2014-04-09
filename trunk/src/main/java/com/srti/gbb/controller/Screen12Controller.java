@@ -5,11 +5,12 @@
 package com.srti.gbb.controller;
 
 import com.srti.gbb.bean.AddressBean;
-import com.srti.gbb.controller.ControlledScreen;
+import com.srti.gbb.bean.PersonalInformationBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.GbbValidator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,10 +45,30 @@ public class Screen12Controller implements Initializable, ControlledScreen {
      @FXML
      private ComboBox cmbState;
      
+     
+    @FXML
+    private TextField txtMobile;
+    @FXML
+    private TextField txtEmail;
+    @FXML
+    private TextField txtOrganization;
+    @FXML
+    private ComboBox cmbQual;
+    @FXML
+    private ComboBox cmbOccupation;
+    @FXML
+    private ComboBox cmbIncome;
+     
+     
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         populateCountryList();
+        populateOccupation();
+        populateIncome();
+        populateHighestQualification();
+        //manageOccuAndProfForHouseWife();
     }    
     
     @Override
@@ -63,12 +84,58 @@ public class Screen12Controller implements Initializable, ControlledScreen {
 
     @FXML
     private void goToScreen2(ActionEvent event) {
-        if(validateAddressForm())
+        if(validateOccupationForm() && validateAddressForm())
         {
+            setOccupationData();
             setAddressData();
             navigator.navigateTo(ScreensFramework.screen2ID);
         }
     }
+    
+    private boolean validateOccupationForm()
+     {
+         
+         boolean isValid=true;
+         if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_mobile", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!GbbValidator.isValidPhoneNumber(txtMobile.getText()))
+         {
+              UIUtils.showAlert("sc1_msg_valid_mobile", GlobalConstants.Lbl_Alert);  
+    
+             isValid=false;
+         }
+         else if(txtEmail.getText() ==null || txtEmail.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_email", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!GbbValidator.isValidEmail(txtEmail.getText()))
+         {
+              UIUtils.showAlert("sc1_msg_valid_email", GlobalConstants.Lbl_Alert);  
+    
+             isValid=false;
+         }
+         else if(cmbOccupation.getValue()==null || cmbOccupation.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_occu", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(cmbQual.getValue()==null || cmbQual.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc12_msg_sel_qual", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }         
+         else if(cmbIncome.getValue()==null || cmbIncome.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_income", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         
+         return isValid;
+     }
     
     private boolean validateAddressForm()
      {
@@ -167,6 +234,118 @@ public class Screen12Controller implements Initializable, ControlledScreen {
             navigator.getUserInfo().setAddress(address);
         //}
         //System.out.println("address***="+navigator.getUserInfo().getAddress());
+    }
+    
+    
+    private void populateHighestQualification() 
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Lbl_Highest_Education_Options);
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        
+        if(cmbQual.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                    cmbQual.getItems().addAll(gen);                    
+            }
+        }
+    }
+    
+    private void populateOccupation() 
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbOccupation.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                 cmbOccupation.getItems().addAll(gen);
+            }
+        }
+    }
+    
+    
+    private void populateIncome() 
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Income_Options);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbIncome.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+
+                 cmbIncome.getItems().addAll(gen);
+            }
+        }
+    }
+
+    private void setOccupationData() {
+        PersonalInformationBean pi = navigator.getUserInfo().getPi();
+        if(pi==null)
+        {
+            pi = new PersonalInformationBean();
+        }
+        
+        pi.setMobile(Long.parseLong(txtMobile.getText()));
+        pi.setEmail(txtEmail.getText());
+        pi.setOrganization(txtOrganization.getText());
+        pi.setOccupation(cmbOccupation.getValue().toString());
+        pi.setIncome(cmbIncome.getValue().toString());
+        pi.setQualification(cmbQual.getValue().toString());
+        
+        System.out.println("1****pi="+pi);
+        navigator.getUserInfo().setPi(pi);
+    }
+    
+    
+    @FXML
+    private void manageOccuAndProfForHouseWife()
+    {
+        
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Occupation_Options);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+//        if(cmbOccupation.getItems().size()==0)
+//        {
+//            for(String gen : list)
+//            {
+//                 cmbOccupation.getItems().addAll(gen);
+//            }
+//        }
+        
+        if (navigator!=null && navigator.getUserInfo().getPi().getGender()!=null && navigator.getUserInfo().getPi().getGender().equals(MU.getMsg("Lbl_Male"))) 
+        {
+            
+            cmbOccupation.getItems().clear();
+            if(cmbOccupation.getItems().size()==0)
+            {
+                for(String gen : list)
+                {
+                    if (!gen.equals(MU.getMsg("Lbl_Housewife"))) {
+                        cmbOccupation.getItems().addAll(gen);
+                    }
+                        
+                }
+            }
+
+        }
+        else
+        {
+            
+            cmbOccupation.getItems().clear();
+            if(cmbOccupation.getItems().size()==0)
+            {
+                for(String gen : list)
+                {
+                        cmbOccupation.getItems().addAll(gen);
+                }
+            }
+            
+        }
+        
+        
     }
     
     

@@ -23,6 +23,7 @@ public class PersonalInformationBean  implements Serializable
     private String organization;
     private String occupation;
     private String income;
+    private String qualification;
 
     public String getName() {
         return name;
@@ -117,6 +118,20 @@ public class PersonalInformationBean  implements Serializable
     @Override
     public String toString() {
         return "PersonalInformationBean{" + "name=" + name + ", age=" + age + ", gender=" + gender + ", religion=" + religion + ", mobile=" + mobile + ", email=" + email + ", organization=" + organization + ", occupation=" + occupation + ", income=" + income + '}';
+    }
+
+    /**
+     * @return the qualification
+     */
+    public String getQualification() {
+        return qualification;
+    }
+
+    /**
+     * @param qualification the qualification to set
+     */
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
     }
     
     

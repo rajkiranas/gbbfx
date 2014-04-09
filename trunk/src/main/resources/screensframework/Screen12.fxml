@@ -15,7 +15,12 @@
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
       <children>
-        <Label layoutX="14.0" layoutY="11.0" styleClass="screenHeading" text="%Address_Heading" textFill="#2e7c95" />
+        <Label layoutX="413.0" layoutY="14.0" styleClass="screenHeading" text="%Address_Heading">
+          <textFill>
+            <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label layoutX="14.0" layoutY="9.0" styleClass="screenHeading" text="%Second_Screen_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
@@ -41,17 +46,17 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="14.0" layoutY="86.0" prefHeight="327.0" prefWidth="772.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="410.0" layoutY="86.0" prefHeight="327.0" prefWidth="376.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="187.0" layoutY="7.0" prefHeight="313.0" prefWidth="394.0">
+        <GridPane id="GridPane" alignment="TOP_LEFT" layoutX="12.0" layoutY="7.0" prefHeight="313.0" prefWidth="352.0">
           <children>
             <Label text="%Lbl_House" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Area" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Country" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_State" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_City" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <TextField fx:id="txtHouse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtHouse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <ComboBox fx:id="cmbCountry" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#populateStatesList" prefHeight="40.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
@@ -81,8 +86,58 @@
         </GridPane>
       </children>
     </AnchorPane>
+    <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="86.0" minHeight="325.0" minWidth="325.0" prefHeight="325.0" prefWidth="357.0" styleClass="roundEdge, throughoutLabelsStyle">
+      <children>
+        <GridPane id="GridPane" layoutX="11.0" layoutY="25.0" prefHeight="261.0" prefWidth="352.0">
+          <children>
+            <Label text="%Lbl_Mobile" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtMobile" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Email" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtEmail" prefHeight="40.0" prefWidth="246.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Occupation" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbOccupation" prefHeight="40.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <Label text="%Lbl_Org" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="txtOrganization" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="246.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="%Lbl_Income" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+              <children>
+                <ComboBox fx:id="cmbIncome" prefHeight="40.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <Label text="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbQual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#manageOccuAndProfForHouseWife" prefHeight="40.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList"/>
+              </items>
+            </ComboBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
   </children>
   <stylesheets>
-    <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
+    <URL value="@../styles/Styles.css" />
   </stylesheets>
 </AnchorPane>
