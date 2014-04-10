@@ -45,9 +45,9 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="23.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="325.0" prefWidth="391.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="23.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="332.0" prefWidth="391.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="36.0" layoutY="7.0" prefHeight="288.0" prefWidth="340.0">
+        <GridPane id="GridPane" layoutX="36.0" layoutY="14.0" prefHeight="288.0" prefWidth="340.0">
           <children>
             <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Age" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -81,10 +81,22 @@
                 </FXCollections>-->
               </items>
             </ComboBox>
+            <Label text="%Lbl_Marital_Status" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cmbMaritalStatus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#populateChildren" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="cmbChildren" disable="true" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <Label text="%Lbl_Children" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="81.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="241.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="92.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="303.0" minWidth="10.0" prefWidth="248.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -97,9 +109,9 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="433.0" layoutY="83.0" prefHeight="325.0" prefWidth="340.0" styleClass="roundEdge">
+    <AnchorPane layoutX="433.0" layoutY="83.0" prefHeight="332.0" prefWidth="340.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="14.0" layoutY="10.0" prefHeight="254.0">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="8.0" prefHeight="252.0">
           <children>
             <Label text="%Lbl_Hip" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_Waist" GridPane.columnIndex="0" GridPane.rowIndex="3" />
@@ -107,25 +119,30 @@
             <Label text="%Lbl_Haemoglobin" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
-                <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtHip" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
+                <Label styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
+                  <tooltip>
+                    <Tooltip text="%Lbl_How_To_Measure_Msg" />
+                  </tooltip>
+                </Label>
               </children>
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
-                <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtWaist" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
               </children>
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <children>
-                <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtBp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Blood_Pressure_Unit" />
               </children>
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
               <children>
-                <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtHaemoglobin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Haemoglobin_Unit" />
               </children>
             </HBox>
@@ -171,13 +188,29 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <HBox id="HBox" alignment="CENTER" layoutX="10.0" layoutY="280.0" spacing="5.0" styleClass="toeTouchingFont">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="260.0" prefHeight="67.0" prefWidth="319.0" styleClass="toeTouchingFont">
           <children>
-            <RadioButton mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt1" />
-            <RadioButton mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt2" />
-            <RadioButton mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt3" />
+            <RadioButton fx:id="radCanGoBeyond" mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <RadioButton fx:id="radCanTouch" mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <RadioButton fx:id="radCannotTouch" mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <children>
+                <TextField fx:id="txtToeCm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
+                <Label text="%Lbl_Centimeter" />
+              </children>
+            </HBox>
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Toe_Touching" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
-        </HBox>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
       </children>
     </AnchorPane>
   </children>

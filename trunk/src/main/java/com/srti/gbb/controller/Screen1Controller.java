@@ -12,16 +12,16 @@ import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.GbbValidator;
-import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 
 /**
@@ -56,6 +56,13 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         
         @FXML
         private TextField txtReligion;
+        
+        @FXML
+        private ComboBox cmbMaritalStatus;
+        
+        @FXML
+        private ComboBox cmbChildren;
+        
     /**
      * Initializes the controller class.
      */
@@ -64,9 +71,10 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         // TODO
         getGendersFromProperty();
         getReligionsFromProperty();
-        
+        populateMaritalStatus();
         populateHeightFeets();
         populateHeightInches();
+        consolidateRadioButtonsInToggleGroup();
     }    
 
     /**
@@ -160,6 +168,16 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("sc1_msg_either_sel_or_enter_religion", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
+         else if(cmbMaritalStatus.getValue()==null || cmbMaritalStatus.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_marital_status", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if((!cmbChildren.isDisabled()) && (cmbChildren.getValue()==null || cmbChildren.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+         {
+             UIUtils.showAlert("sc1_msg_sel_children", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
 //         else if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
 //         {
 //             UIUtils.showAlert("sc1_msg_enter_mobile", GlobalConstants.Lbl_Alert); 
@@ -242,6 +260,8 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         {
             pi.setReligion(txtReligion.getText().trim());
         }
+        pi.setMaritalStatus(cmbMaritalStatus.getValue().toString());
+        pi.setNoOfChildren(Integer.parseInt(cmbChildren.getValue().toString()));
 //        pi.setMobile(Long.parseLong(txtMobile.getText()));
 //        pi.setEmail(txtEmail.getText());
 //        pi.setOrganization(txtOrganization.getText());
@@ -275,12 +295,38 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         {
             for(String gen : list)
             {
-                //if(!gen.equals(GlobalConstants.Zero))
+                if(!gen.equals(GlobalConstants.getProperty((GlobalConstants.Twelve))))
                  cmbHeightInches.getItems().addAll(gen);
             }
         }
        
     }
+    
+    @FXML
+    private TextField txtWaist;
+    
+    @FXML
+    private TextField txtHip;
+    
+    @FXML
+    private TextField txtBp;
+    
+    @FXML
+    private TextField txtHaemoglobin;
+    
+    @FXML
+    private TextField txtToeCm;
+    
+    @FXML
+    private RadioButton radCanTouch;
+    
+    @FXML
+    private RadioButton radCannotTouch;
+    
+    @FXML
+    private RadioButton radCanGoBeyond;
+    
+    final ToggleGroup group = new ToggleGroup();
     
         
 private boolean validatePhysicalParametersForm()
@@ -302,6 +348,63 @@ private boolean validatePhysicalParametersForm()
              UIUtils.showAlert("sc1_msg_enter_weight", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
+         else if(!GbbValidator.isValidNumber(txtWeight.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_weight", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtHip.getText() ==null || txtHip.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_hip", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isValidNumber(txtHip.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_hip", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtWaist.getText() ==null || txtWaist.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_waist", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isValidNumber(txtWaist.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtBp.getText() !=null 
+                  && !txtBp.getText().trim().equals(GlobalConstants.emptyString)
+                  && !GbbValidator.isValidNumber(txtBp.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_bp", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          
+          else if(txtHaemoglobin.getText() !=null 
+                  && !txtHaemoglobin.getText().trim().equals(GlobalConstants.emptyString)
+                  && !GbbValidator.isValidNumber(txtHaemoglobin.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_haemoglobin", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+           else if(!radCanTouch.isSelected() && !radCannotTouch.isSelected() && !radCanGoBeyond.isSelected())
+         {
+             UIUtils.showAlert("sc1_msg_enter_toe_option", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          
+          else if(txtToeCm.getText() ==null || txtToeCm.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_toe_cm", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!GbbValidator.isValidNumber(txtToeCm.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_toe_cm", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          
           
          return isValid;
      }
@@ -310,7 +413,72 @@ private boolean validatePhysicalParametersForm()
         phy.setFeets(Integer.valueOf(cmbHeightFeets.getValue().toString()));
         phy.setInches(Integer.valueOf(cmbHeightInches.getValue().toString()));
         phy.setWeight(Integer.parseInt(txtWeight.getText()));
+        
+        phy.setHip(Integer.parseInt(txtHip.getText()));
+        phy.setWaist(Integer.parseInt(txtWaist.getText()));
+        phy.setBp(Integer.parseInt(txtBp.getText()));
+        phy.setHaemoglobin(Integer.parseInt(txtHaemoglobin.getText()));
+        
+        if(radCanTouch.isSelected())
+        {
+            phy.setToeTouching(radCanTouch.getText());
+        }
+        else if(radCannotTouch.isSelected())
+        {
+            phy.setToeTouching(radCannotTouch.getText());
+        }
+        else if(radCanGoBeyond.isSelected())
+        {
+            phy.setToeTouching(radCanGoBeyond.getText());
+        }
+        
+        phy.setToeTouchingCm(Integer.parseInt(txtToeCm.getText()));
+        
         System.out.println("2****phy="+phy);
         navigator.getUserInfo().setPhysicalParams(phy);
-    }        
+    }
+
+    
+    private void populateMaritalStatus() {
+         String genderList = GlobalConstants.getProperty(GlobalConstants.Lbl_Marital_Status_Options);
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbMaritalStatus.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                //if(!gen.equals(GlobalConstants.Zero))
+                 cmbMaritalStatus.getItems().addAll(gen);
+            }
+        }
+    }
+    
+    
+    @FXML
+    private void populateChildren() 
+    {
+        if (cmbMaritalStatus.getValue() != null
+                && !cmbMaritalStatus.getValue().toString().trim().equals(GlobalConstants.emptyString)
+                && !cmbMaritalStatus.getValue().toString().equals(GlobalConstants.getProperty(GlobalConstants.Lbl_Single_Status)))
+        {
+            cmbChildren.setDisable(false);
+            String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+            String[] list = genderList.split(GlobalConstants.COMMA);
+            if (cmbChildren.getItems().size() == 0) {
+                for (String gen : list) {
+                    //if(!gen.equals(GlobalConstants.Zero))
+                    cmbChildren.getItems().addAll(gen);
+                }
+            }
+        }
+        else
+        {
+            cmbChildren.setDisable(true);
+        }
+    }
+
+    private void consolidateRadioButtonsInToggleGroup() {
+        radCanTouch.setToggleGroup(group);
+        radCannotTouch.setToggleGroup(group);
+        radCanGoBeyond.setToggleGroup(group);
+    }
 }

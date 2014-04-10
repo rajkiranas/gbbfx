@@ -116,6 +116,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
+                if(!gen.equals(GlobalConstants.getProperty((GlobalConstants.Zero))))
                     cmbPrayIndividual.getItems().addAll(gen);                    
             }
         }
@@ -124,6 +125,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
+                if(!gen.equals(GlobalConstants.getProperty((GlobalConstants.Zero))))
                     cmbPrayFamily.getItems().addAll(gen);                    
             }
         }
@@ -132,6 +134,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
+                if(!gen.equals(GlobalConstants.getProperty((GlobalConstants.Zero))))
                     cmbPrayCommunity.getItems().addAll(gen);                    
             }
         }

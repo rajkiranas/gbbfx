@@ -15,7 +15,7 @@
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
       <children>
-        <Label layoutX="413.0" layoutY="14.0" styleClass="screenHeading" text="%Address_Heading">
+        <Label layoutX="407.0" layoutY="13.0" styleClass="screenHeading" text="%Address_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
@@ -46,7 +46,7 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="410.0" layoutY="86.0" prefHeight="327.0" prefWidth="376.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="400.0" layoutY="87.0" prefHeight="327.0" prefWidth="386.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
         <GridPane id="GridPane" alignment="TOP_LEFT" layoutX="12.0" layoutY="7.0" prefHeight="313.0" prefWidth="352.0">
           <children>
@@ -86,7 +86,7 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="86.0" minHeight="325.0" minWidth="325.0" prefHeight="325.0" prefWidth="357.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="86.0" minHeight="325.0" minWidth="325.0" prefHeight="325.0" prefWidth="367.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
         <GridPane id="GridPane" layoutX="11.0" layoutY="25.0" prefHeight="261.0" prefWidth="352.0">
           <children>
@@ -116,7 +116,7 @@
             <Label text="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <ComboBox fx:id="cmbQual" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#manageOccuAndProfForHouseWife" prefHeight="40.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
-                <FXCollections fx:factory="observableArrayList"/>
+                <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
           </children>
