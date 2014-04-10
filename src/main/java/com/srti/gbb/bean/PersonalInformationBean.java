@@ -18,6 +18,9 @@ public class PersonalInformationBean  implements Serializable
     private int age;
     private String gender;
     private String religion;
+    private String maritalStatus;
+    private int noOfChildren;
+    
     private long mobile;
     private String email;
     private String organization;
@@ -115,11 +118,7 @@ public class PersonalInformationBean  implements Serializable
         this.income = income;
     }
 
-    @Override
-    public String toString() {
-        return "PersonalInformationBean{" + "name=" + name + ", age=" + age + ", gender=" + gender + ", religion=" + religion + ", mobile=" + mobile + ", email=" + email + ", organization=" + organization + ", occupation=" + occupation + ", income=" + income + '}';
-    }
-
+    
     /**
      * @return the qualification
      */
@@ -132,6 +131,39 @@ public class PersonalInformationBean  implements Serializable
      */
     public void setQualification(String qualification) {
         this.qualification = qualification;
+    }
+
+    /**
+     * @return the maritalStatus
+     */
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    /**
+     * @param maritalStatus the maritalStatus to set
+     */
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    /**
+     * @return the noOfChildren
+     */
+    public int getNoOfChildren() {
+        return noOfChildren;
+    }
+
+    /**
+     * @param noOfChildren the noOfChildren to set
+     */
+    public void setNoOfChildren(int noOfChildren) {
+        this.noOfChildren = noOfChildren;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonalInformationBean{" + "name=" + name + ", age=" + age + ", gender=" + gender + ", religion=" + religion + ", maritalStatus=" + maritalStatus + ", noOfChildren=" + noOfChildren + ", mobile=" + mobile + ", email=" + email + ", organization=" + organization + ", occupation=" + occupation + ", income=" + income + ", qualification=" + qualification + '}';
     }
     
     

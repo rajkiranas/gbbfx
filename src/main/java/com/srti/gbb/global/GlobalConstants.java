@@ -60,7 +60,8 @@ public class GlobalConstants {
     public static final String Loose_Motions_Constipations_Values="Loose_Motions_Constipations_Values";
     public static final String Height_Feets_Values="Height_Feets_Values";
     public static final String Zero_To_Seven_WeekDays="Zero_To_Seven_WeekDays";
-    public static final String Zero="0";
+    public static final String Zero="Zero";
+    public static final String Twelve="Twelve";
     public static final String TwentyFour="TwentyFour";
     public static final String Diet_Options="Diet_Options";
     public static final String Food_Type_Options="Food_Type_Options";
@@ -105,5 +106,7 @@ public class GlobalConstants {
     public static final String twoOptionQuestions="twoOptionQuestions";
     public static final String threeOptionQuestions="threeOptionQuestions";
     public static final String femaleOnlyQuestions="femaleOnlyQuestions";
+    public static final String Lbl_Marital_Status_Options="Lbl_Marital_Status_Options";
+    public static final String Lbl_Single_Status="Lbl_Single_Status";
     
 }

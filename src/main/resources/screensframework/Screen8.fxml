@@ -101,8 +101,8 @@
     <AnchorPane layoutX="441.0" layoutY="100.0" prefHeight="305.0" prefWidth="344.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
         <Label layoutX="180.0" layoutY="20.0" styleClass="answersStyle" text="%Lbl_Entertainment" />
-        <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="180.0" layoutY="66.0" onMouseClicked="#manageMultipleSelections" prefHeight="221.0" prefWidth="150.0" />
-        <Separator layoutX="161.0" layoutY="29.0" orientation="VERTICAL" prefHeight="259.0" />
+        <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="163.0" layoutY="46.0" onMouseClicked="#manageMultipleSelections" prefHeight="241.0" prefWidth="167.0" styleClass="diseaseStyle" />
+        <Separator layoutX="154.0" layoutY="29.0" orientation="VERTICAL" prefHeight="259.0" />
       </children>
     </AnchorPane>
     <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="269.0">

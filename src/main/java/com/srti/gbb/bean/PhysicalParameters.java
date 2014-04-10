@@ -17,6 +17,13 @@ public class PhysicalParameters  implements Serializable
     private int feets;
     private int inches;
     private int weight;
+    private int hip;
+    private int waist;
+    private int bp;
+    private int haemoglobin;
+    private String toeTouching;
+    private int toeTouchingCm;
+    
     private int looseMotionsPerWeek;
     private int constipationsPerWeek;
 
@@ -60,11 +67,57 @@ public class PhysicalParameters  implements Serializable
         this.constipationsPerWeek = constipationsPerWeek;
     }
 
+    public int getHip() {
+        return hip;
+    }
+
+    public void setHip(int hip) {
+        this.hip = hip;
+    }
+
+    public int getWaist() {
+        return waist;
+    }
+
+    public void setWaist(int waist) {
+        this.waist = waist;
+    }
+
+    public int getBp() {
+        return bp;
+    }
+
+    public void setBp(int bp) {
+        this.bp = bp;
+    }
+
+    public int getHaemoglobin() {
+        return haemoglobin;
+    }
+
+    public void setHaemoglobin(int haemoglobin) {
+        this.haemoglobin = haemoglobin;
+    }
+
+    public String getToeTouching() {
+        return toeTouching;
+    }
+
+    public void setToeTouching(String toeTouching) {
+        this.toeTouching = toeTouching;
+    }
+
+    public int getToeTouchingCm() {
+        return toeTouchingCm;
+    }
+
+    public void setToeTouchingCm(int toeTouchingCm) {
+        this.toeTouchingCm = toeTouchingCm;
+    }
+
     @Override
     public String toString() {
-        return "PhysicalParameters{" + "feets=" + feets + ", inches=" + inches + ", weight=" + weight + ", looseMotionsPerWeek=" + looseMotionsPerWeek + ", constipationsPerWeek=" + constipationsPerWeek + '}';
+        return "PhysicalParameters{" + "feets=" + feets + ", inches=" + inches + ", weight=" + weight + ", hip=" + hip + ", waist=" + waist + ", bp=" + bp + ", haemoglobin=" + haemoglobin + ", toeTouching=" + toeTouching + ", toeTouchingCm=" + toeTouchingCm + ", looseMotionsPerWeek=" + looseMotionsPerWeek + ", constipationsPerWeek=" + constipationsPerWeek + '}';
     }
-    
-    
     
 }
