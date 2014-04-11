@@ -7,6 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen1Controller">
@@ -123,7 +124,11 @@
                 <Label text="%Lbl_Centimeter" />
                 <Label styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
                   <tooltip>
-                    <Tooltip text="%Lbl_How_To_Measure_Msg" />
+                    <Tooltip hideOnEscape="true" text="%Lbl_How_To_Measure_Msg">
+                      <font>
+                        <Font size="12.0" />
+                      </font>
+                    </Tooltip>
                   </tooltip>
                 </Label>
               </children>

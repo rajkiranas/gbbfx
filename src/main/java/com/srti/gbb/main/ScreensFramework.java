@@ -61,6 +61,9 @@ public class ScreensFramework extends Application {
     public static String screen11ID = "screen11";
     public static String screen11File = "/screensframework/Screen11.fxml";
     
+    public static String screen17ID = "screen17";
+    public static String screen17File = "/screensframework/Screen17.fxml";
+    
     public static String ThankyouSceneId = "ThankyouScene";
     public static String ThankyouSceneFile = "/screensframework/ThankyouScene.fxml";
     
@@ -89,11 +92,12 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen14ID, ScreensFramework.screen14File);
         
         nav.loadScreen(ScreensFramework.screen11ID, ScreensFramework.screen11File);
+        nav.loadScreen(ScreensFramework.screen17ID, ScreensFramework.screen17File);
         
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         
         
-        nav.navigateTo(ScreensFramework.screen0ID);
+        nav.navigateTo(ScreensFramework.screen11ID);
         
         Group root = new Group();
         root.getChildren().addAll(nav);
