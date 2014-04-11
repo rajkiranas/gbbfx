@@ -43,6 +43,8 @@ public class UserInfo  implements Serializable
      private ColourBean colour;
      private TasteBean taste;
      private List<AllergyBean> allergyList;
+     private boolean dataSubmittedSuccessfully = false;
+     private String healthReportPath;
      
      
      
@@ -400,6 +402,34 @@ public class UserInfo  implements Serializable
      */
     public void setAllergyList(List<AllergyBean> allergyList) {
         this.allergyList = allergyList;
+    }
+
+    /**
+     * @return the dataSubmittedSuccessfully
+     */
+    public boolean isDataSubmittedSuccessfully() {
+        return dataSubmittedSuccessfully;
+    }
+
+    /**
+     * @param dataSubmittedSuccessfully the dataSubmittedSuccessfully to set
+     */
+    public void setDataSubmittedSuccessfully(boolean dataSubmittedSuccessfully) {
+        this.dataSubmittedSuccessfully = dataSubmittedSuccessfully;
+    }
+
+    /**
+     * @return the healthReportPath
+     */
+    public String getHealthReportPath() {
+        return healthReportPath;
+    }
+
+    /**
+     * @param healthReportPath the healthReportPath to set
+     */
+    public void setHealthReportPath(String healthReportPath) {
+        this.healthReportPath = healthReportPath;
     }
 
     

@@ -20,7 +20,7 @@
         <Insets />
       </padding>
     </HBox>
-    <VBox alignment="CENTER" layoutX="2.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="201.0" prefWidth="802.000244140625">
+    <VBox alignment="CENTER" layoutX="2.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="803.0">
       <children>
         <Label prefWidth="535.0000999999975" styleClass="answersStyle" text="%LastMsg" textAlignment="CENTER" wrapText="true">
           <VBox.margin>
@@ -29,6 +29,12 @@
         </Label>
       </children>
     </VBox>
+    <HBox id="HBox" alignment="CENTER" layoutX="174.0" layoutY="285.0" spacing="5.0">
+      <children>
+        <Label text="%LastMsg2" />
+        <Hyperlink onAction="#showHealthReport" text="%LastMsg3" />
+      </children>
+    </HBox>
   </children>
   <stylesheets>
     <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
