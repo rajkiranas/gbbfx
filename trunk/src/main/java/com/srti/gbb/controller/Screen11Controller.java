@@ -150,7 +150,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             if(qC==Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.Total_Prakruti_Questions)))
             {
                 setPrakrutiQuestionAnsData();
-                navigator.navigateTo(ScreensFramework.ThankyouSceneId);
+                navigator.navigateTo(ScreensFramework.screen17ID);
             }
             else
             {
