@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen4" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="407.0" prefHeight="43.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen6" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="28.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Wife_And_Children" textFill="#2e7c95" />
+      </children>
+      <stylesheets>
+        <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <AnchorPane layoutX="47.0" layoutY="110.0" prefHeight="285.0" prefWidth="710.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="42.0" layoutY="11.0" prefHeight="260.0" prefWidth="246.0">
+          <children>
+            <Label text="%Lbl_Wife" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField id="txtNameMother" fx:id="txtWifeName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Input_Prompt_Wife_Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox id="cmbMotherHQ" fx:id="cmbWifeQuali" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <ComboBox id="cmbMotherProfession" fx:id="cmbWifeProfession" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="121.0" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+              <children>
+                <ComboBox id="cmbMotherIncome" fx:id="cmbWifeIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <CheckBox id="chkDeceasedMother" fx:id="chkIsWifeDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <Separator layoutX="371.0" layoutY="14.0" orientation="VERTICAL" prefHeight="260.0" />
+        <GridPane id="GridPane" layoutX="429.0" layoutY="16.0" prefHeight="260.0" prefWidth="262.0">
+          <children>
+            <Label text="%Lbl_Children" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField id="txtNameMother" fx:id="txtChildName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Children_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="121.0" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+              <children>
+                <ComboBox id="cmbMotherIncome" fx:id="cmbChildIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <CheckBox id="chkDeceasedMother" fx:id="chkIsChildDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+              <children>
+                <ComboBox id="cmbMotherHQ" fx:id="cmbChildQual" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <ComboBox id="cmbMotherProfession" fx:id="cmbChildProfession" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+              </children>
+            </HBox>
+            <ComboBox id="cmbMotherProfession" fx:id="cmbChildGender" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="file:/Users/sateri/NetBeansProjects/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>
