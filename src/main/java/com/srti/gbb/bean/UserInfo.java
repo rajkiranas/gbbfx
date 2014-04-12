@@ -45,6 +45,9 @@ public class UserInfo  implements Serializable
      private List<AllergyBean> allergyList;
      private boolean dataSubmittedSuccessfully = false;
      private String healthReportPath;
+     private FamilyEducation spouse;
+     private List<FamilyEducation> childrenList;
+     
      
      
      
@@ -430,6 +433,34 @@ public class UserInfo  implements Serializable
      */
     public void setHealthReportPath(String healthReportPath) {
         this.healthReportPath = healthReportPath;
+    }
+
+    /**
+     * @return the spouse
+     */
+    public FamilyEducation getSpouse() {
+        return spouse;
+    }
+
+    /**
+     * @param spouse the spouse to set
+     */
+    public void setSpouse(FamilyEducation spouse) {
+        this.spouse = spouse;
+    }
+
+    /**
+     * @return the childrenList
+     */
+    public List<FamilyEducation> getChildrenList() {
+        return childrenList;
+    }
+
+    /**
+     * @param childrenList the childrenList to set
+     */
+    public void setChildrenList(List<FamilyEducation> childrenList) {
+        this.childrenList = childrenList;
     }
 
     

@@ -636,8 +636,16 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         chkDeceasedFM.setSelected(member.isIsDeceased());
     }
 
-    private void navigateToNextScreen() {
-        navigator.navigateTo(ScreensFramework.screen6ID);
+    private void navigateToNextScreen() 
+    {
+        if(navigator.getUserInfo().getPi().getMaritalStatus()!=null && !navigator.getUserInfo().getPi().getMaritalStatus().equals(GlobalConstants.getProperty(GlobalConstants.Lbl_Single_Status)))
+        {
+            navigator.navigateTo(ScreensFramework.screen18ID);
+        }
+        else
+        {
+            navigator.navigateTo(ScreensFramework.screen6ID);
+        }
     }
 
     private void addToFamilyMembersList(FamilyEducation familyMemberBeanForCurrentForm) 
