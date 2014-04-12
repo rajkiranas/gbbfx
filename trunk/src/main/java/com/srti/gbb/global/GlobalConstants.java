@@ -108,5 +108,8 @@ public class GlobalConstants {
     public static final String femaleOnlyQuestions="femaleOnlyQuestions";
     public static final String Lbl_Marital_Status_Options="Lbl_Marital_Status_Options";
     public static final String Lbl_Single_Status="Lbl_Single_Status";
-    
+    public static final String Lbl_Spouse="Lbl_Spouse";
+    public static final String Lbl_Husband="Lbl_Husband";
+    public static final String Lbl_Wife="Lbl_Wife";
+            
 }

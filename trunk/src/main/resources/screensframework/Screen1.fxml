@@ -120,7 +120,7 @@
             <Label text="%Lbl_Haemoglobin" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
-                <TextField fx:id="txtHip" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtHip" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
                 <Label styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
                   <tooltip>
@@ -135,19 +135,19 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
-                <TextField fx:id="txtWaist" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtWaist" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
               </children>
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <children>
-                <TextField fx:id="txtBp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtBp" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Blood_Pressure_Unit" />
               </children>
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
               <children>
-                <TextField fx:id="txtHaemoglobin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField fx:id="txtHaemoglobin" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Haemoglobin_Unit" />
               </children>
             </HBox>
@@ -200,7 +200,7 @@
             <RadioButton fx:id="radCannotTouch" mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
-                <TextField fx:id="txtToeCm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
+                <TextField fx:id="txtToeCm" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
               </children>
             </HBox>

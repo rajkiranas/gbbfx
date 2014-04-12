@@ -261,7 +261,9 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
             pi.setReligion(txtReligion.getText().trim());
         }
         pi.setMaritalStatus(cmbMaritalStatus.getValue().toString());
-        pi.setNoOfChildren(Integer.parseInt(cmbChildren.getValue().toString()));
+        
+        if(!cmbChildren.isDisabled())
+            pi.setNoOfChildren(Integer.parseInt(cmbChildren.getValue().toString()));
 //        pi.setMobile(Long.parseLong(txtMobile.getText()));
 //        pi.setEmail(txtEmail.getText());
 //        pi.setOrganization(txtOrganization.getText());
@@ -415,8 +417,13 @@ private boolean validatePhysicalParametersForm()
         phy.setWeight(Integer.parseInt(txtWeight.getText()));
         
         phy.setHip(Integer.parseInt(txtHip.getText()));
-        phy.setWaist(Integer.parseInt(txtWaist.getText()));
-        phy.setBp(Integer.parseInt(txtBp.getText()));
+        
+        if(!txtWaist.getText().equals(GlobalConstants.emptyString))
+            phy.setWaist(Integer.parseInt(txtWaist.getText()));
+        
+        if(!txtBp.getText().equals(GlobalConstants.emptyString))
+            phy.setBp(Integer.parseInt(txtBp.getText()));
+        
         phy.setHaemoglobin(Integer.parseInt(txtHaemoglobin.getText()));
         
         if(radCanTouch.isSelected())

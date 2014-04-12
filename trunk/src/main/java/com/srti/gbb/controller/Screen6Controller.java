@@ -45,7 +45,15 @@ public class Screen6Controller implements Initializable, ControlledScreen {
 
     @FXML
     private void goToScreen5(ActionEvent event) {
-        navigator.navigateTo(ScreensFramework.screen5ID);
+        
+        if(navigator.getUserInfo().getPi().getMaritalStatus()!=null && !navigator.getUserInfo().getPi().getMaritalStatus().equals(GlobalConstants.getProperty(GlobalConstants.Lbl_Single_Status)))
+        {
+            navigator.navigateTo(ScreensFramework.screen18ID);
+        }
+        else
+        {
+            navigator.navigateTo(ScreensFramework.screen5ID);
+        }
     }
 
     @FXML

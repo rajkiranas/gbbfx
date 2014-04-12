@@ -102,7 +102,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <GridPane id="GridPane" layoutX="529.0" layoutY="12.0" prefHeight="310.0">
+        <GridPane id="GridPane" layoutX="511.0" layoutY="14.0" prefHeight="310.0">
           <children>
             <ComboBox id="cmbFamilyMember" fx:id="cmbFM1" onAction="#manageOccuAndProfForHouseWife" prefHeight="35.0" prefWidth="83.0" promptText="%Lbl_Family_Member" GridPane.columnIndex="0" GridPane.rowIndex="0">
               <items>
@@ -110,17 +110,21 @@
               </items>
             </ComboBox>
             <TextField fx:id="txtNameFM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Input_Prompt_Family_Member_Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cmbFMHQ" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <ComboBox fx:id="cmbFMProfession" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="3">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <children>
+                <ComboBox fx:id="cmbFMHQ" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <ComboBox fx:id="cmbFMProfession" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <children>
                 <ComboBox fx:id="cmbFMIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
                   <items>
@@ -130,8 +134,8 @@
                 <Label text="%Lbl_Income_Params" />
               </children>
             </HBox>
-            <CheckBox id="chkDeceasedMother" fx:id="chkDeceasedFM" mnemonicParsing="false" text="%Lbl_Deceased" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <VBox id="VBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="6">
+            <CheckBox id="chkDeceasedMother" fx:id="chkDeceasedFM" mnemonicParsing="false" text="%Lbl_Deceased" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <VBox id="VBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
               <children>
                 <Button fx:id="btnAddFM" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" text="%Btn_Add_Family_Member" />
                 <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
@@ -142,7 +146,6 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
