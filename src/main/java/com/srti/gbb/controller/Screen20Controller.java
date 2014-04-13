@@ -25,14 +25,14 @@ import javafx.scene.control.TextField;
  *
  * @author rajkirans
  */
-public class Screen19Controller implements  Initializable, ControlledScreen {
+public class Screen20Controller implements  Initializable, ControlledScreen {
 
     private ScreensNavigator navigator;
     
-    private List<String> incidenceList = new ArrayList<String>();
+    private List<String> personalityList = new ArrayList<String>();
     
     @FXML
-    private TextField txtIncidenceName;
+    private TextField txtPersonality;
     
     
     /**
@@ -52,35 +52,35 @@ public class Screen19Controller implements  Initializable, ControlledScreen {
     @FXML
     private void goToPreviousScreen(ActionEvent event) 
     {
-        navigator.navigateTo(ScreensFramework.screen15ID);
+        navigator.navigateTo(ScreensFramework.screen19ID);
     }
 
     @FXML
     private void goToNextScreen(ActionEvent event) 
     {
-        if(txtIncidenceName.getText()!=null && !txtIncidenceName.getText().equals(GlobalConstants.emptyString))
+        if(txtPersonality.getText()!=null && !txtPersonality.getText().equals(GlobalConstants.emptyString))
         {
-           if(validateIncidenceForm())
+           if(validatePersonalityForm())
            {
-                    addToIncidenceList(getIncidenceFromCurrentForm());
-                    clearFamilyMemberForm();
+                    addToPersonalityList(getPersonalityFromCurrentForm());
+                    clearPersonalityForm();
                     showPreviousLink();
                     recordUserResponse();
-                    setIncidenceData();
+                    setPersonalityData();
                     navigateToNextScreen();
            }
         }
         else
         {
             recordUserResponse();
-            setIncidenceData();
+            setPersonalityData();
             navigateToNextScreen();
             
         }
     }
             
     private void navigateToNextScreen() {
-         navigator.navigateTo(ScreensFramework.screen20ID);
+         navigator.navigateTo(ScreensFramework.screen9ID);
     }
 
     @FXML
@@ -103,72 +103,72 @@ public class Screen19Controller implements  Initializable, ControlledScreen {
     {
         if(previousCounter==0)
         {
-            previousCounter=incidenceList.size()-1;
+            previousCounter=personalityList.size()-1;
         }
         else
         {
             previousCounter--;        
         }
             
-        String incidence = incidenceList.get(previousCounter);
+        String personality = personalityList.get(previousCounter);
         
-        txtIncidenceName.setText(incidence);
+        txtPersonality.setText(personality);
     }
     
     @FXML
-    private void addIncidence(ActionEvent event) 
+    private void addPersonality(ActionEvent event) 
     {
-        if(validateIncidenceForm())
+        if(validatePersonalityForm())
         {
-            addToIncidenceList(getIncidenceFromCurrentForm());
+            addToPersonalityList(getPersonalityFromCurrentForm());
             
-            clearFamilyMemberForm();
+            clearPersonalityForm();
             showPreviousLink();
         }
     }
     
-    private String getIncidenceFromCurrentForm()
+    private String getPersonalityFromCurrentForm()
     {
-        return txtIncidenceName.getText();
+        return txtPersonality.getText();
     }
-    private void clearFamilyMemberForm()
+    private void clearPersonalityForm()
     {
-        txtIncidenceName.setText(GlobalConstants.emptyString);
+        txtPersonality.setText(GlobalConstants.emptyString);
     }
     
-    private void addToIncidenceList(String incidence) 
+    private void addToPersonalityList(String incidence) 
     {
-        if(incidenceList.contains(incidence))
+        if(personalityList.contains(incidence))
         {
-            incidenceList.remove(incidence);
-            incidenceList.add(incidence);
+            personalityList.remove(incidence);
+            personalityList.add(incidence);
         }
         else
         {
-            incidenceList.add(incidence);
+            personalityList.add(incidence);
         }
     }
     
-    private boolean validateIncidenceForm() 
+    private boolean validatePersonalityForm() 
     {
         boolean isValid=true;
         
-        if(txtIncidenceName.getText()==null || txtIncidenceName.getText().equals(GlobalConstants.emptyString))
+        if(txtPersonality.getText()==null || txtPersonality.getText().equals(GlobalConstants.emptyString))
         {
             isValid=false;
-            UIUtils.showAlert("sc19_msg_enter_incidence_name", GlobalConstants.Lbl_Alert);
+            UIUtils.showAlert("sc20_msg_enter_personality_name", GlobalConstants.Lbl_Alert);
         }
-        else if(!GbbValidator.isValidName(txtIncidenceName.getText()))
+        else if(!GbbValidator.isValidName(txtPersonality.getText()))
         {
             isValid=false;
-            UIUtils.showAlert("sc19_msg_invalid_incidence", GlobalConstants.Lbl_Alert);
+            UIUtils.showAlert("sc20_msg_invalid_personality", GlobalConstants.Lbl_Alert);
         }
         return isValid;
     }
 
-    private void setIncidenceData() {
-        System.out.println("***incidenceList="+incidenceList);
-        navigator.getUserInfo().setIncidenceList(incidenceList);
+    private void setPersonalityData() {
+        System.out.println("***personalityList="+personalityList);
+        navigator.getUserInfo().setPersonalityList(personalityList);
     }
 
     @FXML
@@ -209,57 +209,57 @@ public class Screen19Controller implements  Initializable, ControlledScreen {
     private CheckBox chkInc18;
     private void recordUserResponse() {
         if(chkInc1.isSelected())
-            addToIncidenceList(chkInc1.getText());
+            addToPersonalityList(chkInc1.getText());
         
         if(chkInc2.isSelected())
-            addToIncidenceList(chkInc2.getText());
+            addToPersonalityList(chkInc2.getText());
         
         if(chkInc3.isSelected())
-            addToIncidenceList(chkInc3.getText());
+            addToPersonalityList(chkInc3.getText());
         
         if(chkInc4.isSelected())
-            addToIncidenceList(chkInc4.getText());
+            addToPersonalityList(chkInc4.getText());
         
         if(chkInc5.isSelected())
-            addToIncidenceList(chkInc5.getText());
+            addToPersonalityList(chkInc5.getText());
         
         if(chkInc6.isSelected())
-            addToIncidenceList(chkInc6.getText());
+            addToPersonalityList(chkInc6.getText());
         
         if(chkInc7.isSelected())
-            addToIncidenceList(chkInc7.getText());
+            addToPersonalityList(chkInc7.getText());
         
         if(chkInc8.isSelected())
-            addToIncidenceList(chkInc8.getText());
+            addToPersonalityList(chkInc8.getText());
         
         if(chkInc9.isSelected())
-            addToIncidenceList(chkInc9.getText());
+            addToPersonalityList(chkInc9.getText());
         
         if(chkInc10.isSelected())
-            addToIncidenceList(chkInc10.getText());
+            addToPersonalityList(chkInc10.getText());
         
         if(chkInc11.isSelected())
-            addToIncidenceList(chkInc11.getText());
+            addToPersonalityList(chkInc11.getText());
         
         if(chkInc12.isSelected())
-            addToIncidenceList(chkInc12.getText());
+            addToPersonalityList(chkInc12.getText());
         
         if(chkInc13.isSelected())
-            addToIncidenceList(chkInc13.getText());
+            addToPersonalityList(chkInc13.getText());
         
         if(chkInc14.isSelected())
-            addToIncidenceList(chkInc14.getText());
+            addToPersonalityList(chkInc14.getText());
         
         if(chkInc15.isSelected())
-            addToIncidenceList(chkInc15.getText());
+            addToPersonalityList(chkInc15.getText());
         
         if(chkInc16.isSelected())
-            addToIncidenceList(chkInc16.getText());
+            addToPersonalityList(chkInc16.getText());
         
         if(chkInc17.isSelected())
-            addToIncidenceList(chkInc17.getText());
+            addToPersonalityList(chkInc17.getText());
         
         if(chkInc18.isSelected())
-            addToIncidenceList(chkInc18.getText());
+            addToPersonalityList(chkInc18.getText());
     }
 }

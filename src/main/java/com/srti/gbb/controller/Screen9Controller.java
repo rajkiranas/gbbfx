@@ -108,7 +108,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
     
     @FXML
     private void goToScreen8(ActionEvent event) {
-        navigator.navigateTo(ScreensFramework.screen15ID);
+        navigator.navigateTo(ScreensFramework.screen20ID);
     }
 
     @FXML

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen20Controller">
+  <children>
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="14.0" layoutY="9.0" styleClass="screenHeading" text="%Lbl_Influential_Person_Heading" textFill="#2e7c95" />
+      </children>
+      <stylesheets>
+        <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
+    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="533.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+    <HBox alignment="CENTER_RIGHT" layoutX="267.0" layoutY="407.0" prefHeight="43.0" prefWidth="533.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+    <GridPane id="GridPane" layoutX="34.0" layoutY="100.0" prefHeight="228.0">
+      <children>
+        <CheckBox fx:id="chkInc1" mnemonicParsing="false" text="%Lbl_Influential_Person1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <CheckBox fx:id="chkInc2" mnemonicParsing="false" text="%Lbl_Influential_Person2" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <CheckBox fx:id="chkInc3" mnemonicParsing="false" text="%Lbl_Influential_Person3" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <CheckBox fx:id="chkInc4" mnemonicParsing="false" text="%Lbl_Influential_Person4" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <CheckBox fx:id="chkInc5" mnemonicParsing="false" text="%Lbl_Influential_Person5" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <CheckBox fx:id="chkInc6" mnemonicParsing="false" text="%Lbl_Influential_Person6" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane id="GridPane" layoutX="248.0" layoutY="100.0" prefHeight="228.0">
+      <children>
+        <CheckBox fx:id="chkInc7" mnemonicParsing="false" text="%Lbl_Influential_Person7" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <CheckBox fx:id="chkInc8" mnemonicParsing="false" text="%Lbl_Influential_Person8" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <CheckBox fx:id="chkInc9" mnemonicParsing="false" text="%Lbl_Influential_Person9" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <CheckBox fx:id="chkInc10" mnemonicParsing="false" text="%Lbl_Influential_Person10" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <CheckBox fx:id="chkInc11" mnemonicParsing="false" text="%Lbl_Influential_Person11" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <CheckBox fx:id="chkInc12" mnemonicParsing="false" text="%Lbl_Influential_Person12" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane id="GridPane" layoutX="486.0" layoutY="100.0" prefHeight="228.0">
+      <children>
+        <CheckBox fx:id="chkInc13" mnemonicParsing="false" text="%Lbl_Influential_Person13" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <CheckBox fx:id="chkInc14" mnemonicParsing="false" text="%Lbl_Influential_Person14" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <CheckBox fx:id="chkInc15" mnemonicParsing="false" text="%Lbl_Influential_Person15" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <CheckBox fx:id="chkInc16" mnemonicParsing="false" text="%Lbl_Influential_Person16" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <CheckBox fx:id="chkInc17" mnemonicParsing="false" text="%Lbl_Influential_Person17" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <CheckBox fx:id="chkInc18" mnemonicParsing="false" text="%Lbl_Influential_Person18" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Separator layoutX="219.0" layoutY="109.0" orientation="VERTICAL" prefHeight="208.0" />
+    <Separator layoutX="455.0" layoutY="109.0" orientation="VERTICAL" prefHeight="208.0" />
+    <HBox id="HBox" alignment="CENTER" layoutX="31.0" layoutY="350.0" prefHeight="43.0" spacing="5.0">
+      <children>
+        <Label text="%Lbl_Not_In_List_Add_Own_Personality" />
+        <TextField id="txtIncidenceName" fx:id="txtPersonality" prefHeight="35.0" prefWidth="263.0" promptText="%Input_Prompt_Personality" />
+        <Button mnemonicParsing="false" onAction="#addPersonality" prefHeight="35.0" text="%Lbl_Add_Personality" />
+        <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="103.0" text="%Link_View_Previous" visible="true" />
+      </children>
+    </HBox>
+  </children>
+  <stylesheets>
+    <URL value="file:/Users/sateri/NetBeansProjects/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>
