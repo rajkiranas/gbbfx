@@ -48,6 +48,7 @@ public class UserInfo  implements Serializable
      private FamilyEducation spouse;
      private List<FamilyEducation> childrenList;
      private List<String> incidenceList;
+     private List<String> personalityList;
      
      
      
@@ -476,6 +477,20 @@ public class UserInfo  implements Serializable
      */
     public void setIncidenceList(List<String> incidenceList) {
         this.incidenceList = incidenceList;
+    }
+
+    /**
+     * @return the personalityList
+     */
+    public List<String> getPersonalityList() {
+        return personalityList;
+    }
+
+    /**
+     * @param personalityList the personalityList to set
+     */
+    public void setPersonalityList(List<String> personalityList) {
+        this.personalityList = personalityList;
     }
 
     
