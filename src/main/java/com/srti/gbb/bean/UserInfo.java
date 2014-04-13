@@ -47,6 +47,7 @@ public class UserInfo  implements Serializable
      private String healthReportPath;
      private FamilyEducation spouse;
      private List<FamilyEducation> childrenList;
+     private List<String> incidenceList;
      
      
      
@@ -461,6 +462,20 @@ public class UserInfo  implements Serializable
      */
     public void setChildrenList(List<FamilyEducation> childrenList) {
         this.childrenList = childrenList;
+    }
+
+    /**
+     * @return the incidenceList
+     */
+    public List<String> getIncidenceList() {
+        return incidenceList;
+    }
+
+    /**
+     * @param incidenceList the incidenceList to set
+     */
+    public void setIncidenceList(List<String> incidenceList) {
+        this.incidenceList = incidenceList;
     }
 
     

@@ -271,6 +271,6 @@ public class Screen15Controller implements Initializable, ControlledScreen {
     }
 
     private void navigateToNextScreen() {
-        navigator.navigateTo(ScreensFramework.screen9ID);
+        navigator.navigateTo(ScreensFramework.screen19ID);
     }
 }

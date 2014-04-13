@@ -35,7 +35,7 @@
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
       <children>
-        <Label layoutX="28.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Spouse_And_Children" textFill="#2e7c95" />
+        <Label layoutX="55.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Spouse_And_Children" textFill="#2e7c95" />
       </children>
       <stylesheets>
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />

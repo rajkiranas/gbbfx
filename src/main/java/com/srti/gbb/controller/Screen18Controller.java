@@ -310,9 +310,6 @@ public class Screen18Controller implements  Initializable, ControlledScreen {
     @FXML
     private CheckBox chkIsChildDeceased;
     
-    @FXML
-    private Button btnAddFM;
-    
     
     private void hideShowPreviousLink() {
         linkShowPrevious.setVisible(false);
