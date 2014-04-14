@@ -414,17 +414,17 @@ private boolean validatePhysicalParametersForm()
         PhysicalParameters phy = new PhysicalParameters();
         phy.setFeets(Integer.valueOf(cmbHeightFeets.getValue().toString()));
         phy.setInches(Integer.valueOf(cmbHeightInches.getValue().toString()));
-        phy.setWeight(Integer.parseInt(txtWeight.getText()));
+        phy.setWeight(Float.parseFloat(txtWeight.getText()));
         
-        phy.setHip(Integer.parseInt(txtHip.getText()));
+        phy.setHip(Float.parseFloat(txtHip.getText()));
         
         if(!txtWaist.getText().equals(GlobalConstants.emptyString))
-            phy.setWaist(Integer.parseInt(txtWaist.getText()));
+            phy.setWaist(Float.parseFloat(txtWaist.getText()));
         
         if(!txtBp.getText().equals(GlobalConstants.emptyString))
-            phy.setBp(Integer.parseInt(txtBp.getText()));
+            phy.setBp(Float.parseFloat(txtBp.getText()));
         
-        phy.setHaemoglobin(Integer.parseInt(txtHaemoglobin.getText()));
+        phy.setHaemoglobin(Float.parseFloat(txtHaemoglobin.getText()));
         
         if(radCanTouch.isSelected())
         {
@@ -439,7 +439,7 @@ private boolean validatePhysicalParametersForm()
             phy.setToeTouching(radCanGoBeyond.getText());
         }
         
-        phy.setToeTouchingCm(Integer.parseInt(txtToeCm.getText()));
+        phy.setToeTouchingCm(Float.parseFloat(txtToeCm.getText()));
         
         System.out.println("2****phy="+phy);
         navigator.getUserInfo().setPhysicalParams(phy);
