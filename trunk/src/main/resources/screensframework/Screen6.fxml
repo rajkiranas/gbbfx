@@ -25,20 +25,20 @@
       <children>
         <Button layoutX="264.0" layoutY="283.0" mnemonicParsing="false" onAction="#addFriendsToList" prefHeight="26.0" text="%Btn_Add_More_Friends" />
         <Hyperlink fx:id="linkShowPrevious" layoutX="406.0" layoutY="287.0" minHeight="20.0" onAction="#showPrevious" prefHeight="20.0" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
-        <GridPane id="GridPane" layoutX="19.0" layoutY="18.0" prefHeight="230.0" prefWidth="207.0">
+        <GridPane id="GridPane" layoutX="19.0" layoutY="18.0" prefHeight="237.0" prefWidth="207.0">
           <children>
-            <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox fx:id="cmbQualFrnd1" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbQualFrnd1" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbProfessionFrnd1" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbProfessionFrnd1" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
               <children>
                 <ComboBox fx:id="cmbIncomeFrnd1" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income">
                   <items>
@@ -48,6 +48,7 @@
                 <Label text="%Lbl_Income_Params" />
               </children>
             </HBox>
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Friend1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -57,22 +58,23 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <GridPane id="GridPane" layoutX="264.0" layoutY="18.0" prefHeight="230.0" prefWidth="207.0">
+        <GridPane id="GridPane" layoutX="264.0" layoutY="18.0" prefHeight="237.0" prefWidth="207.0">
           <children>
-            <TextField fx:id="txtFrnd2" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox fx:id="cmbQualFrnd2" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <TextField fx:id="txtFrnd2" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbQualFrnd2" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbProfessionFrnd2" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbProfessionFrnd2" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
               <children>
                 <ComboBox fx:id="cmbIncomeFrnd2" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income">
                   <items>
@@ -82,6 +84,7 @@
                 <Label text="%Lbl_Income_Params" />
               </children>
             </HBox>
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Friend2" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -91,22 +94,23 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <GridPane id="GridPane" layoutX="513.0" layoutY="18.0" prefHeight="230.0" prefWidth="207.0">
+        <GridPane id="GridPane" layoutX="513.0" layoutY="18.0" prefHeight="237.0" prefWidth="207.0">
           <children>
-            <TextField fx:id="txtFrnd3" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox fx:id="cmbQualFrnd3" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <TextField fx:id="txtFrnd3" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbQualFrnd3" prefHeight="35.0" prefWidth="116.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbProfessionFrnd3" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbProfessionFrnd3" prefHeight="35.0" prefWidth="103.0" promptText="%Input_Prompt_Profession" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
               <children>
                 <ComboBox fx:id="cmbIncomeFrnd3" prefHeight="35.0" prefWidth="94.0" promptText="%Input_Prompt_Income">
                   <items>
@@ -116,11 +120,13 @@
                 <Label text="%Lbl_Income_Params" />
               </children>
             </HBox>
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Friend3" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
           </columnConstraints>
           <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

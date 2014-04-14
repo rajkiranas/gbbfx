@@ -67,7 +67,7 @@
                 <Label text="%Lbl_Income_Params" />
               </children>
             </HBox>
-            <CheckBox id="chkDeceasedMother" fx:id="chkIsSpouseDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <CheckBox id="chkDeceasedMother" fx:id="chkIsSpouseDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="118.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -96,7 +96,7 @@
                 <Label text="%Lbl_Income_Params" />
               </children>
             </HBox>
-            <CheckBox id="chkDeceasedMother" fx:id="chkIsChildDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <CheckBox id="chkDeceasedMother" fx:id="chkIsChildDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="103.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <children>
                 <ComboBox id="cmbMotherHQ" fx:id="cmbChildQual" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education">
@@ -129,7 +129,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button id="btnAddFM" layoutX="429.0" layoutY="274.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="146.00009999999747" text="%Lbl_Add_Child_Btn" />
+        <Button id="btnAddFM" layoutX="429.0" layoutY="274.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="151.0" text="%Lbl_Add_Child_Btn" />
         <Hyperlink fx:id="linkShowPrevious" layoutX="588.0" layoutY="276.0" onAction="#showPrevious" prefWidth="103.0" text="%Link_View_Previous" visible="true" />
       </children>
     </AnchorPane>
