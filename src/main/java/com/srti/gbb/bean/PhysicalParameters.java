@@ -16,13 +16,13 @@ public class PhysicalParameters  implements Serializable
 {
     private int feets;
     private int inches;
-    private int weight;
-    private int hip;
-    private int waist;
-    private int bp;
-    private int haemoglobin;
+    private float weight;
+    private float hip;
+    private float waist;
+    private float bp;
+    private float haemoglobin;
     private String toeTouching;
-    private int toeTouchingCm;
+    private float toeTouchingCm;
     
     private int looseMotionsPerWeek;
     private int constipationsPerWeek;
@@ -43,11 +43,11 @@ public class PhysicalParameters  implements Serializable
         this.inches = inches;
     }
 
-    public int getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
@@ -67,35 +67,35 @@ public class PhysicalParameters  implements Serializable
         this.constipationsPerWeek = constipationsPerWeek;
     }
 
-    public int getHip() {
+    public float getHip() {
         return hip;
     }
 
-    public void setHip(int hip) {
+    public void setHip(float hip) {
         this.hip = hip;
     }
 
-    public int getWaist() {
+    public float getWaist() {
         return waist;
     }
 
-    public void setWaist(int waist) {
+    public void setWaist(float waist) {
         this.waist = waist;
     }
 
-    public int getBp() {
+    public float getBp() {
         return bp;
     }
 
-    public void setBp(int bp) {
+    public void setBp(float bp) {
         this.bp = bp;
     }
 
-    public int getHaemoglobin() {
+    public float getHaemoglobin() {
         return haemoglobin;
     }
 
-    public void setHaemoglobin(int haemoglobin) {
+    public void setHaemoglobin(float haemoglobin) {
         this.haemoglobin = haemoglobin;
     }
 
@@ -107,11 +107,11 @@ public class PhysicalParameters  implements Serializable
         this.toeTouching = toeTouching;
     }
 
-    public int getToeTouchingCm() {
+    public float getToeTouchingCm() {
         return toeTouchingCm;
     }
 
-    public void setToeTouchingCm(int toeTouchingCm) {
+    public void setToeTouchingCm(float toeTouchingCm) {
         this.toeTouchingCm = toeTouchingCm;
     }
 
