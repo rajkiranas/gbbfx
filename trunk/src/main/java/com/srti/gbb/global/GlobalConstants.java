@@ -111,5 +111,9 @@ public class GlobalConstants {
     public static final String Lbl_Spouse="Lbl_Spouse";
     public static final String Lbl_Husband="Lbl_Husband";
     public static final String Lbl_Wife="Lbl_Wife";
+    
+    public static final String application_json="application/json";
+    public static final String userInfoObject="userInfoObject";
+    public static final String gsonTimeFormat="yyyy-MM-dd'T'HH:mm:ss'Z'";
             
 }

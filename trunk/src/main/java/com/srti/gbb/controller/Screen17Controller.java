@@ -4,11 +4,17 @@
  */
 package com.srti.gbb.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.srti.gbb.bean.PrakrutiQuestionAnsBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.UIUtils;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +27,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+//import javax.ws.rs.client.Client;
+import javax.ws.rs.core.MediaType;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 /**
  * FXML Controller class
@@ -58,19 +68,19 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
     private void submitDataAndShowReport(ActionEvent event) 
     {
         //if net // if data submitted // then go to next screen and show prakruti report
-        if(isInternetAvailable())
-        {
+//        if(isInternetAvailable())
+//        {
             //submit data
             submitDataToService();
             
             //show constitution
             showPrakrutiConstitution();
             navigateToNextScreen();
-        }
-        else
-        {
-            UIUtils.showAlert("sc17_msg_no_inet_available", GlobalConstants.Lbl_Alert);
-        }
+//        }
+//        else
+//        {
+//            UIUtils.showAlert("sc17_msg_no_inet_available", GlobalConstants.Lbl_Alert);
+//        }
     }
 
     
@@ -238,7 +248,55 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
         return isAvailable;
     }
 
+    private static final String dataSubmitUrl="http://localhost:8084/gbb/services/UserResource/saveUserDetails";
+    
+   
+    
     private void submitDataToService() {
+        
+        try 
+        {
+            Client client = Client.create();
+            //WebResource webResource = client.resource(GlobalConstants.getProperty(dataSubmitUrl));
+            WebResource webResource = client.resource(dataSubmitUrl);
+            //String input = "{\"userName\":\"raj\",\"password\":\"FadeToBlack\"}";
+            JSONObject inputJson = new JSONObject();
+            
+            Gson gson=  new GsonBuilder().setDateFormat(GlobalConstants.gsonTimeFormat).create();       
+            String json = gson.toJson(navigator.getUserInfo());
+            
+            try 
+            {
+                           
+            
+                inputJson.put(GlobalConstants.userInfoObject, json);
+                System.out.println("*********inputJson="+inputJson);
+            } catch (JSONException ex) {
+                ex.printStackTrace();
+            }
+
+            ClientResponse response = webResource.type(GlobalConstants.application_json)
+                    .accept(MediaType.APPLICATION_JSON)
+                    
+                    .post(ClientResponse.class, inputJson);
+
+          
+            JSONObject outJson = null;
+//            String output = response.getEntity(String.class);
+//            outJson = new JSONObject(output);
+            outJson = response.getEntity(JSONObject.class);
+
+            System.out.println("outJson="+outJson);
+            
+//            Type listType = new TypeToken<ArrayList<String>>() {
+//            }.getType();
+//            
+//             noticeList=new Gson().fromJson(outNObject.getString(""), listType);
+            
+        } catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
         navigator.getUserInfo().setDataSubmittedSuccessfully(true);
     }
 
