@@ -88,7 +88,7 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbChildren" disable="true" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <ComboBox fx:id="cmbChildren" disable="false" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
@@ -195,16 +195,17 @@
         </GridPane>
         <GridPane id="GridPane" layoutX="14.0" layoutY="260.0" prefHeight="67.0" prefWidth="319.0" styleClass="toeTouchingFont">
           <children>
-            <RadioButton fx:id="radCanGoBeyond" mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <RadioButton fx:id="radCanTouch" mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <RadioButton fx:id="radCannotTouch" mnemonicParsing="false" text="%Lbl_Toe_Touching_Prompt2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <RadioButton fx:id="radCanGoBeyond" mnemonicParsing="false" onAction="#manageCentimeterBoxBeyond" text="%Lbl_Toe_Touching_Prompt3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <RadioButton fx:id="radCanTouch" mnemonicParsing="false" onAction="#manageCentimeterBoxCan" text="%Lbl_Toe_Touching_Prompt1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <RadioButton fx:id="radCannotTouch" mnemonicParsing="false" onAction="#manageCentimeterBoxCannot" text="%Lbl_Toe_Touching_Prompt2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Toe_Touching" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
+                <Label fx:id="lblSign" styleClass="throughoutLabelsStyle" text="" />
                 <TextField fx:id="txtToeCm" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
               </children>
             </HBox>
-            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Toe_Touching" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
