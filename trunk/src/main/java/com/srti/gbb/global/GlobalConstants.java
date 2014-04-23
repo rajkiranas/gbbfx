@@ -60,6 +60,7 @@ public class GlobalConstants {
     public static final String Loose_Motions_Constipations_Values="Loose_Motions_Constipations_Values";
     public static final String Height_Feets_Values="Height_Feets_Values";
     public static final String Zero_To_Seven_WeekDays="Zero_To_Seven_WeekDays";
+    public static final String Zero_Number="0";
     public static final String Zero="Zero";
     public static final String Twelve="Twelve";
     public static final String TwentyFour="TwentyFour";
@@ -115,5 +116,7 @@ public class GlobalConstants {
     public static final String application_json="application/json";
     public static final String userInfoObject="userInfoObject";
     public static final String gsonTimeFormat="yyyy-MM-dd'T'HH:mm:ss'Z'";
+    public static final String hyphen="-";
+    public static final String plus="+";
             
 }

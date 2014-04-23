@@ -19,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -62,6 +63,9 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         
         @FXML
         private ComboBox cmbChildren;
+        
+        @FXML
+        private Label lblSign;
         
     /**
      * Initializes the controller class.
@@ -463,10 +467,10 @@ private boolean validatePhysicalParametersForm()
     @FXML
     private void populateChildren() 
     {
-        if (cmbMaritalStatus.getValue() != null
-                && !cmbMaritalStatus.getValue().toString().trim().equals(GlobalConstants.emptyString)
-                && !cmbMaritalStatus.getValue().toString().equals(GlobalConstants.getProperty(GlobalConstants.Lbl_Single_Status)))
-        {
+//        if (cmbMaritalStatus.getValue() != null
+//                && !cmbMaritalStatus.getValue().toString().trim().equals(GlobalConstants.emptyString)
+//                && !cmbMaritalStatus.getValue().toString().equals(GlobalConstants.getProperty(GlobalConstants.Lbl_Single_Status)))
+//        {
             cmbChildren.setDisable(false);
             String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
             String[] list = genderList.split(GlobalConstants.COMMA);
@@ -476,16 +480,40 @@ private boolean validatePhysicalParametersForm()
                     cmbChildren.getItems().addAll(gen);
                 }
             }
-        }
-        else
-        {
-            cmbChildren.setDisable(true);
-        }
+        //}
+//        else
+//        {
+//            cmbChildren.setDisable(true);
+//        }
     }
 
     private void consolidateRadioButtonsInToggleGroup() {
         radCanTouch.setToggleGroup(group);
         radCannotTouch.setToggleGroup(group);
         radCanGoBeyond.setToggleGroup(group);
+    }
+    
+    @FXML
+    private void manageCentimeterBoxCan() 
+    {
+        lblSign.setText(GlobalConstants.emptyString);
+        txtToeCm.setText(GlobalConstants.Zero_Number);
+        txtToeCm.setDisable(true);
+    }
+    
+    @FXML
+    private void manageCentimeterBoxCannot() 
+    {
+        lblSign.setText(GlobalConstants.hyphen);
+        txtToeCm.setText(GlobalConstants.emptyString);
+        txtToeCm.setDisable(false);
+    }
+    
+    @FXML
+    private void manageCentimeterBoxBeyond() 
+    {
+        lblSign.setText(GlobalConstants.plus);
+        txtToeCm.setText(GlobalConstants.emptyString);
+        txtToeCm.setDisable(false);
     }
 }
