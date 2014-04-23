@@ -20,13 +20,13 @@
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="420.0" layoutY="11.0" styleClass="screenHeading" text="%Social_Service_Heading" textFill="$x1" />
+        <Label layoutX="409.0" layoutY="11.0" styleClass="screenHeading" text="%Social_Service_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="24.0" layoutY="93.0" prefHeight="305.0" prefWidth="349.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="14.0" layoutY="93.0" prefHeight="305.0" prefWidth="359.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
         <GridPane id="GridPane" layoutX="46.0" layoutY="-8.0" prefHeight="270.0" prefWidth="289.0">
           <children>
@@ -80,16 +80,16 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="414.0" layoutY="93.0" minHeight="305.0" prefHeight="305.0" prefWidth="362.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="403.0" layoutY="93.0" minHeight="305.0" prefHeight="305.0" prefWidth="383.0" styleClass="roundEdge, throughoutLabelsStyle">
       <children>
-        <GridPane id="GridPane" layoutX="25.0" layoutY="35.0" prefHeight="207.0" prefWidth="323.0">
+        <GridPane id="GridPane" layoutX="25.0" layoutY="35.0" prefHeight="207.0" prefWidth="344.0">
           <children>
             <Label text="%Lbl_Cash" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Kind" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Kind" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Service" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label text="%Social_Service_Params" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="%Social_Service_Params" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Label text="%Social_Service_Params" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="%Social_Service_Params" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <ComboBox fx:id="cmbTimesPerWeekCash" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
@@ -109,8 +109,8 @@
             <TextField fx:id="txtAmtKind" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="55.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="99.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="62.0" minWidth="10.0" prefWidth="60.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="94.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="87.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="82.0" />
           </columnConstraints>
