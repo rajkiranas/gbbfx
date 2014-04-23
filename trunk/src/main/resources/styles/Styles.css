@@ -168,6 +168,11 @@
     -fx-background-color: white;
 }
 
+.linear-grad2{
+   -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #FEE5E5, #FFAAAA);
+   /*-fx-text-fill: white;*/
+}
+
 .toeTouchingFont
 {
     -fx-font-size: 12px;    
