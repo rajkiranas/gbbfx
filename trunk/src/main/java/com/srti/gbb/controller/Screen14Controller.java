@@ -85,7 +85,7 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
             }
             
         }
-         else if(!allergyList.isEmpty())
+         else //if(!allergyList.isEmpty())
          {
              if(validatePhysicalParametersForm())
             {
@@ -94,10 +94,10 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
                 navigateToNextScreen();
             }   
          }
-         else
-        {
-            UIUtils.showAlert("sc14_msg_enter_atleast_one_allergy_name", GlobalConstants.Lbl_Alert);  
-        }
+//         else
+//        {
+//            UIUtils.showAlert("sc14_msg_enter_atleast_one_allergy_name", GlobalConstants.Lbl_Alert);  
+//        }
      }
      
      
