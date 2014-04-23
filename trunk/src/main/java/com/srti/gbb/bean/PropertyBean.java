@@ -71,8 +71,10 @@ public class PropertyBean  implements Serializable
 
     @Override
     public String toString() {
-        return "PropertyBean{" + "propertyType=" + propertyType + ", isOwned=" + isOwned + ", isRented=" + isRented + ", approxArea=" + approxAreaSqFt + ", membersInHouse=" + membersInHouse + ", outstandingLoan=" + outstandingLoan + '}';
+        return "PropertyBean{" + "propertyType=" + propertyType + ", isOwned=" + isOwned + ", isRented=" + isRented + ", approxAreaSqFt=" + approxAreaSqFt + ", approxAreaAcres=" + approxAreaAcres + ", membersInHouse=" + membersInHouse + ", outstandingLoan=" + outstandingLoan + '}';
     }
+
+    
 
     @Override
     public int hashCode() {
