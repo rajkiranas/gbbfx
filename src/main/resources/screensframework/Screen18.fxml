@@ -41,7 +41,7 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="47.0" layoutY="87.0" prefHeight="320.0" prefWidth="710.0" styleClass="roundEdge">
+    <AnchorPane layoutX="47.0" layoutY="87.0" onMouseMoved="#enableDisableChildrenSection" prefHeight="320.0" prefWidth="710.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="42.0" layoutY="11.0" prefHeight="260.0" prefWidth="246.0">
           <children>
@@ -82,7 +82,7 @@
           </rowConstraints>
         </GridPane>
         <Separator layoutX="355.0" layoutY="14.0" orientation="VERTICAL" prefHeight="292.0" />
-        <GridPane id="GridPane" layoutX="429.0" layoutY="11.0" prefHeight="260.0" prefWidth="262.0">
+        <GridPane id="GridPane" fx:id="childrenGrid" layoutX="429.0" layoutY="11.0" prefHeight="260.0" prefWidth="262.0">
           <children>
             <Label text="%Lbl_Child" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField id="txtNameMother" fx:id="txtChildName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Children_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -129,9 +129,12 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button id="btnAddFM" layoutX="429.0" layoutY="274.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="151.0" text="%Lbl_Add_Child_Btn" />
+        <Button id="btnAddFM" fx:id="btnAddChild" layoutX="429.0" layoutY="274.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="151.0" text="%Lbl_Add_Child_Btn" />
         <Hyperlink fx:id="linkShowPrevious" layoutX="588.0" layoutY="276.0" onAction="#showPrevious" prefWidth="103.0" text="%Link_View_Previous" visible="true" />
       </children>
+      <stylesheets>
+        <URL value="@../styles/Styles.css" />
+      </stylesheets>
     </AnchorPane>
   </children>
   <stylesheets>

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -22,6 +23,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 /**
  * FXML Controller class
@@ -48,6 +50,7 @@ public class Screen18Controller implements  Initializable, ControlledScreen {
         populateIncome();
         populateChildGender();
         hideShowPreviousLink();
+        
     }
     
      @Override
@@ -446,5 +449,34 @@ public class Screen18Controller implements  Initializable, ControlledScreen {
     private void setFamilyEducationData() {
         System.out.println("***childrenList="+childrenList);
         navigator.getUserInfo().setChildrenList(childrenList);
+    }
+
+    @FXML
+    private GridPane childrenGrid;
+    
+    @FXML
+    private Button btnAddChild;
+    
+    @FXML
+    private void enableDisableChildrenSection(Event event) {
+        System.out.println("****enableDisableChildrenSection**");
+        if(navigator!=null)
+        {
+            if(navigator.getUserInfo().getPi().getNoOfChildren()==0)
+            {
+                childrenGrid.setDisable(true);
+                btnAddChild.setDisable(true);
+            }
+            else if(navigator.getUserInfo().getPi().getNoOfChildren()==1)
+            {
+                childrenGrid.setDisable(false);
+                btnAddChild.setDisable(true);
+            }
+            else
+            {
+                childrenGrid.setDisable(false);
+                btnAddChild.setDisable(false);            
+            }
+        }
     }
 }
