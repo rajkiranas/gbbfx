@@ -26,7 +26,7 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="14.0" layoutY="91.0" minHeight="310.0" prefHeight="317.0" prefWidth="386.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="14.0" layoutY="91.0" minHeight="310.0" prefHeight="317.0" prefWidth="386.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="14.0" layoutY="24.0" prefHeight="255.0" prefWidth="366.0">
           <children>
@@ -67,12 +67,12 @@
           </rowConstraints>
         </GridPane>
         <Button fx:id="btnAddSchool" layoutX="189.0" layoutY="281.0" mnemonicParsing="false" onAction="#addSchoolAndClearForm" prefHeight="26.0" prefWidth="186.0" text="%Btn_Add_More_Schools" />
-        <Hyperlink fx:id="linkShowPrevious" layoutX="88.0" layoutY="284.0" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="75.0" layoutY="284.0" onAction="#showPrevious" prefWidth="106.0" text="%Link_View_Previous" visible="true" />
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="415.0" layoutY="91.0" prefHeight="317.0" prefWidth="366.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="415.0" layoutY="91.0" prefHeight="317.0" prefWidth="366.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="32.0" layoutY="14.0" prefHeight="285.0" prefWidth="289.0">
+        <GridPane id="GridPane" layoutX="32.0" layoutY="14.0" prefHeight="285.0" prefWidth="320.0">
           <children>
             <Label text="%Lbl_Avg_School_Per" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_School_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -80,20 +80,20 @@
             <Label text="%Lbl_College_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_Avg_Post_Grad_Per" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <Label text="%Lbl_Post_Grad_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <TextField fx:id="txtAvgSchoolPer" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <TextField fx:id="txtNoOfSchoolRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtAvgCollegePer" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtNoOfCollegeRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="txtAvgPgPer" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField fx:id="txtNoOfPgRepeats" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="txtAvgSchoolPer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNoOfSchoolRepeats" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAvgCollegePer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtNoOfCollegeRepeats" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtAvgPgPer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtNoOfPgRepeats" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Label text="%Lbl_Subject_College_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <TextField id="txtNoOfCollegeRepeats" fx:id="txtSubRepeatsCollege" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="%Lbl_Subject_Post_Grad_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="7" />
             <TextField id="txtNoOfPgRepeats" fx:id="txtSubRepeatsPG" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="39.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="243.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="7.0" prefWidth="14.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="280.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="7.0" prefWidth="40.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

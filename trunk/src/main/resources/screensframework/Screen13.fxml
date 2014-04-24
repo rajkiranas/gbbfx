@@ -43,10 +43,10 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <Label layoutX="34.0" layoutY="84.0" text="%Lbl_Self" />
-    <Label layoutX="220.0" layoutY="84.0" text="%Lbl_Parents" />
-    <Label layoutX="408.0" layoutY="84.0" text="%Lbl_Grand_Parents" />
-    <Label layoutX="585.0" layoutY="84.0" text="%Lbl_Siblings" />
+    <Label layoutX="34.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Self" />
+    <Label layoutX="220.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Parents" />
+    <Label layoutX="408.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Grand_Parents" />
+    <Label layoutX="585.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Siblings" />
     <VBox id="VBox" alignment="CENTER" layoutX="32.0" layoutY="359.0" spacing="5.0">
       <children>
         <Label text="%Lbl_Add_Other_Disease_Msg" />
@@ -66,4 +66,7 @@
     </VBox>
     <fx:include source="ProductBannerScene.fxml" layoutX="-1.0" layoutY="0.0" prefHeight="39.0" prefWidth="800.0000999999975" />
   </children>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
 </AnchorPane>

@@ -17,18 +17,18 @@
     <fx:include source="ProductBannerScene.fxml" layoutY="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     <AnchorPane layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
-        <Label layoutX="33.0" layoutY="8.0" styleClass="screenHeading" text="%Lifestyle_Heading">
+        <Label layoutX="24.0" layoutY="8.0" styleClass="screenHeading" text="%Lifestyle_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="415.0" layoutY="8.0" styleClass="screenHeading" text="%Addiction_Heading" textFill="$x1" />
+        <Label layoutX="393.0" layoutY="9.0" styleClass="screenHeading" text="%Addiction_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="32.0" layoutY="91.0" prefHeight="316.0000999999975" prefWidth="354.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="22.0" layoutY="91.0" prefHeight="316.0000999999975" prefWidth="354.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="14.0" layoutY="15.0" prefHeight="214.0" prefWidth="332.0">
           <children>
@@ -81,7 +81,7 @@
                 <CheckBox fx:id="chkIrregular" mnemonicParsing="false" text="" />
               </children>
             </HBox>
-            <Label fx:id="lblMenses" text="%Lbl_Menses" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="lblMenses" styleClass="throughoutLabelsStyle" text="%Lbl_Menses" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <children>
                 <Label fx:id="lblPainful" text="%Lbl_Painful_Menses" />
@@ -90,7 +90,7 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="112.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
               <children>
-                <Label fx:id="lblHeavy" prefHeight="29.0" prefWidth="38.0" text="%Lbl_Heavy_Menses" wrapText="true" />
+                <Label fx:id="lblHeavy" prefHeight="29.0" prefWidth="48.0" text="%Lbl_Heavy_Menses" wrapText="true" />
                 <CheckBox fx:id="chkHeavy" mnemonicParsing="false" text="" />
               </children>
             </HBox>
@@ -105,7 +105,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <HBox id="HBox" alignment="CENTER" layoutX="3.0" layoutY="281.0" prefWidth="267.0" spacing="5.0">
+        <HBox id="HBox" alignment="CENTER" layoutX="10.0" layoutY="282.0" prefWidth="267.0" spacing="5.0">
           <children>
             <Label id="lblMenopause" fx:id="lblAge" text="%Lbl_Menopause_Hysterectomy_age" />
             <TextField fx:id="txtAge" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="50.0" />
@@ -113,12 +113,12 @@
         </HBox>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="400.0" layoutY="92.0" prefHeight="316.0" prefWidth="365.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="390.0" layoutY="92.0" prefHeight="316.0" prefWidth="386.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" fx:id="addictionGridPane" layoutX="7.0" layoutY="26.0" prefHeight="257.0" prefWidth="354.0">
+        <GridPane id="GridPane" fx:id="addictionGridPane" layoutX="7.0" layoutY="26.0" prefHeight="257.0" prefWidth="369.0">
           <children>
             <Label text="%Lbl_Addiction_Type1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Addiction_Frequency" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label text="%Lbl_Addiction_Frequency" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             <Label text="%Lbl_Addiction_Frequency_Params" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="0" />
             <ComboBox fx:id="cmbAddict1" onShowing="#populateAddiction1" prefHeight="35.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
@@ -130,9 +130,9 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <Label text="%Lbl_Addiction_Frequency" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="%Lbl_Addiction_Frequency" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label text="%Lbl_Addiction_Frequency" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Addiction_Frequency" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Addiction_Frequency" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Addiction_Frequency" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Label text="%Lbl_Addiction_Type2" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label text="%Lbl_Addiction_Type3" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_Addiction_Type4" GridPane.columnIndex="0" GridPane.rowIndex="3" />
@@ -172,8 +172,8 @@
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="73.0" minWidth="10.0" prefWidth="73.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="96.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="10.0" prefWidth="66.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="10.0" prefWidth="72.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="79.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="43.0" minWidth="10.0" prefWidth="40.0" />
           </columnConstraints>

@@ -48,7 +48,7 @@
     </HBox>
     <AnchorPane layoutX="14.0" layoutY="103.0" prefHeight="278.0" prefWidth="259.0" styleClass="roundEdge">
       <children>
-        <Label layoutX="21.0" layoutY="14.0" text="%Lbl_Colour_Qestion" />
+        <Label layoutX="21.0" layoutY="14.0" styleClass="throughoutLabelsStyle" text="%Lbl_Colour_Qestion" />
         <GridPane id="GridPane" layoutX="21.0" layoutY="44.0" prefHeight="220.0" prefWidth="234.0">
           <children>
             <CheckBox fx:id="chkRed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" styleClass="redFont" text="%Lbl_Colour_Option_Red" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -74,7 +74,7 @@
     </AnchorPane>
     <AnchorPane layoutX="291.0" layoutY="103.0" prefHeight="278.0" prefWidth="251.0" styleClass="roundEdge">
       <children>
-        <Label layoutX="14.0" layoutY="14.0" text="%Lbl_Taste_Qestion" />
+        <Label layoutX="14.0" layoutY="14.0" styleClass="throughoutLabelsStyle" text="%Lbl_Taste_Qestion" />
         <GridPane id="GridPane" layoutX="25.0" layoutY="43.0" prefHeight="162.0" prefWidth="234.0">
           <children>
             <CheckBox fx:id="chkSweet" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" styleClass="whiteFont" text="%Lbl_Taste_Option_Sweet" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -98,7 +98,7 @@
     </AnchorPane>
     <AnchorPane layoutX="564.0" layoutY="103.0" prefHeight="278.0" prefWidth="222.0" styleClass="roundEdge">
       <children>
-        <Label layoutX="14.0" layoutY="14.0" text="%Lbl_Idol_Qestion" />
+        <Label layoutX="14.0" layoutY="14.0" styleClass="throughoutLabelsStyle" text="%Lbl_Idol_Qestion" />
         <TextField fx:id="txtIdolName" layoutX="11.0" layoutY="74.0" prefHeight="40.0" prefWidth="200.0" promptText="%Lbl_Idol_Name_Input_Prompt" />
         <Button fx:id="btnAddIdol" layoutX="10.0" layoutY="139.0" mnemonicParsing="false" onAction="#addIdolAndClearForm" prefHeight="35.0" text="%Lbl_Add_Idol_Btn" />
         <Hyperlink fx:id="linkShowPrevious" layoutX="104.0" layoutY="146.0" onAction="#showPrevious" prefWidth="108.0" text="%Link_View_Previous" visible="true" />

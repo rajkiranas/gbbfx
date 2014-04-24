@@ -45,7 +45,7 @@
       <children>
         <GridPane id="GridPane" layoutX="42.0" layoutY="11.0" prefHeight="260.0" prefWidth="246.0">
           <children>
-            <Label text="%Lbl_Spouse" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Spouse" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField id="txtNameMother" fx:id="txtSpouseName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Input_Prompt_Wife_Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <ComboBox id="cmbMotherHQ" fx:id="cmbSpouseQual" onAction="#populateProfession" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
@@ -84,7 +84,7 @@
         <Separator layoutX="355.0" layoutY="14.0" orientation="VERTICAL" prefHeight="292.0" />
         <GridPane id="GridPane" fx:id="childrenGrid" layoutX="429.0" layoutY="11.0" prefHeight="260.0" prefWidth="262.0">
           <children>
-            <Label text="%Lbl_Child" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Child" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField id="txtNameMother" fx:id="txtChildName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Children_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="121.0" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
               <children>
@@ -138,6 +138,6 @@
     </AnchorPane>
   </children>
   <stylesheets>
-    <URL value="file:/Users/sateri/NetBeansProjects/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
+    <URL value="@../styles/Styles.css" />
   </stylesheets>
 </AnchorPane>

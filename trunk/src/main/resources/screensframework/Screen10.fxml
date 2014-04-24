@@ -43,10 +43,10 @@
         <ListView fx:id="listSiblingsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSiblings" prefHeight="243.0" prefWidth="180.0" />
       </children>
     </HBox>
-    <Label layoutX="33.0" layoutY="84.0" text="%Lbl_Self" />
-    <Label layoutX="219.0" layoutY="84.0" text="%Lbl_Parents" />
-    <Label layoutX="593.0" layoutY="84.0" text="%Lbl_Siblings" />
-    <Label layoutX="407.0" layoutY="84.0" text="%Lbl_Grand_Parents" />
+    <Label layoutX="33.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Self" />
+    <Label layoutX="219.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Parents" />
+    <Label layoutX="593.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Siblings" />
+    <Label layoutX="407.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Grand_Parents" />
     <VBox id="VBox" alignment="CENTER" layoutX="33.0" layoutY="360.0" spacing="5.0">
       <children>
         <Label text="%Lbl_Add_Other_Disease_Msg" />

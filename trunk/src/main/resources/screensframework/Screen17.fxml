@@ -12,11 +12,11 @@
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen17Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <VBox id="VBox" alignment="CENTER" layoutX="150.0" layoutY="94.0" prefHeight="117.0" prefWidth="514.0" spacing="5.0">
+    <VBox id="VBox" alignment="CENTER" layoutX="139.0" layoutY="95.0" prefHeight="117.0" prefWidth="572.0" spacing="5.0">
       <children>
-        <Label alignment="CENTER" text="%Upload_Info_Message_P1" wrapText="true" />
-        <Label text="%Upload_Info_Message_P2" />
-        <Label text="%Upload_Info_Message_P3" />
+        <Label alignment="CENTER" styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P1" wrapText="true" />
+        <Label styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P2" />
+        <Label styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P3" />
       </children>
     </VBox>
     <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">

@@ -21,10 +21,10 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="26.0" layoutY="86.0" minHeight="307.0" prefHeight="321.0" prefWidth="749.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="26.0" layoutY="86.0" minHeight="307.0" prefHeight="321.0" prefWidth="749.0" styleClass="roundEdge">
       <children>
         <Button layoutX="264.0" layoutY="283.0" mnemonicParsing="false" onAction="#addFriendsToList" prefHeight="26.0" text="%Btn_Add_More_Friends" />
-        <Hyperlink fx:id="linkShowPrevious" layoutX="406.0" layoutY="287.0" minHeight="20.0" onAction="#showPrevious" prefHeight="20.0" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="423.0" layoutY="287.0" minHeight="20.0" onAction="#showPrevious" prefHeight="20.0" prefWidth="116.0" text="%Link_View_Previous" visible="true" />
         <GridPane id="GridPane" layoutX="19.0" layoutY="18.0" prefHeight="237.0" prefWidth="207.0">
           <children>
             <TextField fx:id="txtFrnd1" maxWidth="-Infinity" prefHeight="35.0" prefWidth="231.0" promptText="%Friends_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />

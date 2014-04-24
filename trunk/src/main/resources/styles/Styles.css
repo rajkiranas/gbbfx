@@ -90,6 +90,7 @@
     -fx-font-size: 12px;
 /*    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.2) , 0,0,0,1 );*/
     -fx-text-fill: #BF232B;
+    -fx-font-weight: bold;
 }
 
 .diseaseStyle
@@ -176,4 +177,11 @@
 .toeTouchingFont
 {
     -fx-font-size: 12px;    
+}
+
+.msgsStyle
+{
+    -fx-text-fill: #BF232B;
+    -fx-font-size: 17px;
+/*    -fx-font-weight: bold;*/
 }

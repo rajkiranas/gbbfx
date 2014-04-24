@@ -46,14 +46,18 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="23.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="332.0" prefWidth="391.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="23.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="332.0" prefWidth="391.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="36.0" layoutY="14.0" prefHeight="288.0" prefWidth="340.0">
           <children>
-            <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Label text="%Lbl_Age" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Label text="%Lbl_Gender" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label text="%Lbl_Religion" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <font>
+                <Font size="12.0" fx:id="x2" />
+              </font>
+            </Label>
+            <Label font="$x2" text="%Lbl_Age" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label font="$x2" text="%Lbl_Gender" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label font="$x2" text="%Lbl_Religion" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <TextField fx:id="txtName" prefHeight="35.0" prefWidth="288.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             <TextField fx:id="txtAge" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#setAgeLimit" prefHeight="35.0" prefWidth="71.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -82,7 +86,7 @@
                 </FXCollections>-->
               </items>
             </ComboBox>
-            <Label text="%Lbl_Marital_Status" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label font="$x2" text="%Lbl_Marital_Status" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <ComboBox fx:id="cmbMaritalStatus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#populateChildren" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
@@ -93,7 +97,7 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <Label text="%Lbl_Children" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label font="$x2" text="%Lbl_Children" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="92.0" />
@@ -124,11 +128,7 @@
                 <Label text="%Lbl_Centimeter" />
                 <Label styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
                   <tooltip>
-                    <Tooltip hideOnEscape="true" text="%Lbl_How_To_Measure_Msg">
-                      <font>
-                        <Font size="12.0" />
-                      </font>
-                    </Tooltip>
+                    <Tooltip font="$x2" hideOnEscape="true" text="%Lbl_How_To_Measure_Msg" />
                   </tooltip>
                 </Label>
               </children>
