@@ -20,21 +20,21 @@
         <Insets />
       </padding>
     </HBox>
-    <VBox alignment="CENTER" layoutX="2.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="803.0">
+    <HBox id="HBox" alignment="CENTER" layoutX="163.0" layoutY="325.0" spacing="5.0">
       <children>
-        <Label prefWidth="535.0000999999975" styleClass="msgsStyle" text="%LastMsg" textAlignment="CENTER" wrapText="true">
-          <VBox.margin>
-            <Insets left="5.0" right="5.0" />
-          </VBox.margin>
-        </Label>
-      </children>
-    </VBox>
-    <HBox id="HBox" alignment="CENTER" layoutX="174.0" layoutY="285.0" spacing="5.0">
-      <children>
-        <Label styleClass="throughoutLabelsStyle" text="%LastMsg2" />
-        <Hyperlink onAction="#showHealthReport" text="%LastMsg3" />
+        <Label styleClass="throughoutLabelsStyle" text="%LastMsg6" />
+        <Hyperlink onAction="#showHealthReport" text="%LastMsg7" />
       </children>
     </HBox>
+    <VBox alignment="CENTER" layoutX="50.0" layoutY="89.0" prefHeight="228.0" prefWidth="695.0" spacing="20.0" styleClass="roundEdge, msgsBg">
+      <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg1" />
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg2" />
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg3" />
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg4" />
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg5" />
+      </children>
+    </VBox>
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

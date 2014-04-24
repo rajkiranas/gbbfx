@@ -71,7 +71,7 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
 //        if(isInternetAvailable())
 //        {
             //submit data
-            submitDataToService();
+            //submitDataToService();
             
             //show constitution
             showPrakrutiConstitution();
