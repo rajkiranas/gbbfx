@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen11Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen11Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
     <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
@@ -24,7 +24,7 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="74.0" prefHeight="346.0" prefWidth="779.0" styleClass="throughoutLabelsStyle">
+    <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="74.0" prefHeight="346.0" prefWidth="779.0">
       <children>
         <GridPane id="GridPane" layoutX="-10.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="250.0">
           <children>
