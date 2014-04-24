@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen18Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen18Controller">
   <children>
     <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
       <children>
@@ -129,8 +129,8 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button id="btnAddFM" fx:id="btnAddChild" layoutX="429.0" layoutY="274.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="151.0" text="%Lbl_Add_Child_Btn" />
-        <Hyperlink fx:id="linkShowPrevious" layoutX="588.0" layoutY="276.0" onAction="#showPrevious" prefWidth="103.0" text="%Link_View_Previous" visible="true" />
+        <Button id="btnAddFM" fx:id="btnAddChild" layoutX="429.0" layoutY="274.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="157.0" text="%Lbl_Add_Child_Btn" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="593.0" layoutY="276.0" onAction="#showPrevious" prefWidth="103.0" text="%Link_View_Previous" visible="true" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
