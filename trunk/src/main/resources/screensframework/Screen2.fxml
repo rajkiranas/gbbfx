@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen2Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen2Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -151,7 +151,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <CheckBox fx:id="chkRegularExercise" layoutX="28.0" layoutY="16.0" mnemonicParsing="false" onAction="#toggleExerciseCombos" text="%Lbl_CheckBox_Regular_Exercise" />
+        <CheckBox fx:id="chkRegularExercise" layoutX="28.0" layoutY="16.0" mnemonicParsing="false" onAction="#toggleExerciseCombos" styleClass="throughoutLabelsStyle" text="%Lbl_CheckBox_Regular_Exercise" />
       </children>
     </AnchorPane>
   </children>

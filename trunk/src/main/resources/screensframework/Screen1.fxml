@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen1Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen1Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -72,7 +72,7 @@
                 </FXCollections>-->
                   </items>
                 </ComboBox>
-                <Label text="%Lbl_Or" wrapText="true" />
+                <Label prefHeight="31.0" prefWidth="21.0" text="%Lbl_Or" wrapText="true" />
                 <TextField fx:id="txtReligion" prefHeight="35.0" prefWidth="118.0" />
               </children>
             </HBox>
