@@ -511,7 +511,10 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             bean.setIncome(cmbFatherIncome.getValue().toString());
         //}
         
-        bean.setFamilyMember(MU.getMsg("Lbl_Father"));
+        String lblFather = MU.getMsg("Lbl_Father");
+        lblFather=lblFather.substring(0, lblFather.length()-1);
+        bean.setFamilyMember(lblFather);
+        
         bean.setIsDeceased(chkDeceasedFather.isSelected());
         familyList.add(bean);
         
@@ -524,8 +527,10 @@ public class Screen5Controller implements Initializable, ControlledScreen {
             bean.setProfession(cmbMotherProfession.getValue().toString());
             bean.setIncome(cmbMotherIncome.getValue().toString());
         //}
-        
-        bean.setFamilyMember(MU.getMsg("Lbl_Mother"));
+
+        String lblMother = MU.getMsg("Lbl_Mother");
+        lblMother=lblMother.substring(0, lblMother.length()-1);
+        bean.setFamilyMember(lblMother);
         bean.setIsDeceased(chkDeceasedMother.isSelected());
         familyList.add(bean);
     }
