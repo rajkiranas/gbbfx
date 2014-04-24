@@ -20,15 +20,12 @@
           </textFill>
         </Label>
       </children>
-      <stylesheets>
-        <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
-      </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="24.0" layoutY="83.0" minHeight="311.0" prefHeight="324.0" prefWidth="751.0" styleClass="roundEdge, throughoutLabelsStyle">
+    <AnchorPane layoutX="24.0" layoutY="83.0" minHeight="311.0" prefHeight="324.0" prefWidth="751.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="14.0" layoutY="9.0" prefHeight="310.0">
           <children>
-            <Label text="%Lbl_Father" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Father" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField fx:id="txtNameFather" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Input_Prompt_Father_Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <ComboBox fx:id="cmbFatherHQ" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
@@ -66,7 +63,7 @@
         </GridPane>
         <GridPane id="GridPane" layoutX="261.0" layoutY="12.0" prefHeight="315.0">
           <children>
-            <Label text="%Lbl_Mother" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Mother" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField fx:id="txtNameMother" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Input_Prompt_Mother_Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <ComboBox fx:id="cmbMotherHQ" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
@@ -138,7 +135,7 @@
             <VBox id="VBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
               <children>
                 <Button fx:id="btnAddFM" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" text="%Btn_Add_Family_Member" />
-                <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="97.0" text="%Link_View_Previous" visible="true" />
+                <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="118.0" text="%Link_View_Previous" visible="true" />
               </children>
             </VBox>
           </children>
@@ -154,8 +151,8 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Separator layoutX="489.0" layoutY="14.0" orientation="VERTICAL" prefHeight="310.0" />
-        <Separator layoutX="232.0" layoutY="12.0" orientation="VERTICAL" prefHeight="310.0" />
+        <Separator layoutX="489.0" layoutY="14.0" orientation="VERTICAL" prefHeight="298.0" />
+        <Separator layoutX="232.0" layoutY="12.0" orientation="VERTICAL" prefHeight="298.0" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
@@ -183,6 +180,6 @@
     </HBox>
   </children>
   <stylesheets>
-    <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfx/src/main/resources/styles/Styles.css" />
+    <URL value="@../styles/Styles.css" />
   </stylesheets>
 </AnchorPane>
