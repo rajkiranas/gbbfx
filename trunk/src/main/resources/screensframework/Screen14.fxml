@@ -22,7 +22,7 @@
         <Insets />
       </padding>
     </HBox>
-    <Label layoutX="14.0" layoutY="123.0" prefHeight="225.0" prefWidth="337.0" styleClass="throughoutLabelsStyle" text="%IntroMsg_Prakruti_Nidaan" textAlignment="CENTER" wrapText="true" />
+    <Label layoutX="40.0" layoutY="134.0" prefHeight="225.0" prefWidth="337.0" styleClass="msgsBg, msgsStyle" text="%IntroMsg_Prakruti_Nidaan" textAlignment="CENTER" wrapText="true" />
     <AnchorPane id="AnchorPane" layoutX="407.0" layoutY="99.0" prefHeight="294.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="25.0" layoutY="127.0" prefHeight="166.0" prefWidth="307.0">
@@ -81,6 +81,6 @@
     </HBox>
   </children>
   <stylesheets>
-    <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
+    <URL value="@../styles/Styles.css" />
   </stylesheets>
 </AnchorPane>

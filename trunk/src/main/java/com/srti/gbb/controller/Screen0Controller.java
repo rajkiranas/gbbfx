@@ -37,7 +37,7 @@ public class Screen0Controller implements Initializable, ControlledScreen {
     
     @FXML
     private void goToScreen1(ActionEvent event) {
-        navigator.navigateTo(ScreensFramework.screen1ID);
+        navigator.navigateTo(ScreensFramework.screen21ID);
     }
     
 }

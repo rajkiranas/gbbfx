@@ -73,6 +73,9 @@ public class ScreensFramework extends Application {
     public static String screen20ID = "screen20";
     public static String screen20File = "/screensframework/Screen20.fxml";
     
+    public static String screen21ID = "screen21";
+    public static String screen21File = "/screensframework/Screen21.fxml";
+    
     public static String ThankyouSceneId = "ThankyouScene";
     public static String ThankyouSceneFile = "/screensframework/ThankyouScene.fxml";
     
@@ -85,6 +88,7 @@ public class ScreensFramework extends Application {
         
         ScreensNavigator nav = new ScreensNavigator();
         nav.loadScreen(ScreensFramework.screen0ID, ScreensFramework.screen0File);
+        nav.loadScreen(ScreensFramework.screen21ID, ScreensFramework.screen21File);
         nav.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
         nav.loadScreen(ScreensFramework.screen12ID, ScreensFramework.screen12File);
         nav.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
