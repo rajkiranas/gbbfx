@@ -12,6 +12,7 @@ import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.GbbValidator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
@@ -367,31 +368,37 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
 
     private void addHouseToList() {
         PropertyBean house = new PropertyBean();
-                house.setPropertyType(lblHouse.getText());
-                house.setIsOwned(chkHouseOwned.isSelected());
-                house.setIsRented(chkHouseRented.isSelected());
-                house.setApproxAreaSqFt(Integer.parseInt(txtHouseApproxArea.getText()));
-                house.setMembersInHouse(Integer.parseInt(txtHouseMembers.getText()));
-                house.setOutstandingLoan(Long.parseLong(txtHouseLoan.getText()));
-                addToPropertyList(house);
+        
+        String houseType = lblHouse.getText();        
+        houseType=houseType.substring(0, houseType.length()-1);        
+        house.setPropertyType(houseType);
+        house.setIsOwned(chkHouseOwned.isSelected());
+        house.setIsRented(chkHouseRented.isSelected());
+        house.setApproxAreaSqFt(Integer.parseInt(txtHouseApproxArea.getText()));
+        house.setMembersInHouse(Integer.parseInt(txtHouseMembers.getText()));
+        house.setOutstandingLoan(Long.parseLong(txtHouseLoan.getText()));
+        addToPropertyList(house);
     }
 
-    private void addLandToList() {
+    private void addLandToList() 
+    {
         PropertyBean land = new PropertyBean();
-                        land.setPropertyType(lblLand.getText());
-                        land.setIsOwned(chkLandOwned.isSelected());
-                        land.setIsRented(chkLandRented.isSelected());
-                        if(!txtLandApproxAreaSqFt.getText().trim().equals(GlobalConstants.emptyString))
-                        {
-                            land.setApproxAreaSqFt(Integer.parseInt(txtLandApproxAreaSqFt.getText()));
-                        }
-                        else
-                        {
-                            land.setApproxAreaAcres(Integer.parseInt(txtLandApproxAreaAcres.getText()));
-                        }
-                        land.setMembersInHouse(Integer.parseInt(txtLandMembers.getText()));
-                        land.setOutstandingLoan(Long.parseLong(txtLandLoan.getText()));
-                        addToPropertyList(land);
+        land.setPropertyType(lblLand.getText());
+        land.setIsOwned(chkLandOwned.isSelected());
+        land.setIsRented(chkLandRented.isSelected());
+        
+        if (txtLandApproxAreaSqFt.getText() != null && !txtLandApproxAreaSqFt.getText().trim().equals(GlobalConstants.emptyString)) {
+            land.setApproxAreaSqFt(Integer.parseInt(txtLandApproxAreaSqFt.getText()));
+        } 
+        
+        if (txtLandApproxAreaAcres.getText() != null && !txtLandApproxAreaAcres.getText().trim().equals(GlobalConstants.emptyString)) 
+        {
+            land.setApproxAreaAcres(Integer.parseInt(txtLandApproxAreaAcres.getText()));
+        }
+        
+        land.setMembersInHouse(Integer.parseInt(txtLandMembers.getText()));
+        land.setOutstandingLoan(Long.parseLong(txtLandLoan.getText()));
+        addToPropertyList(land);
     }
 
     private void setVehicleData() 
