@@ -12,7 +12,7 @@
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen17Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <VBox id="VBox" alignment="CENTER" layoutX="139.0" layoutY="95.0" prefHeight="117.0" prefWidth="572.0" spacing="15.0">
+    <VBox id="VBox" alignment="CENTER" layoutX="121.0" layoutY="101.0" prefHeight="130.0" prefWidth="572.0" spacing="15.0" styleClass="msgsBg, roundEdge">
       <children>
         <Label alignment="CENTER" styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P1" wrapText="true" />
         <Label styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P2" />
@@ -27,7 +27,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <Button fx:id="submitDataBtn" layoutX="332.0" layoutY="270.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submitDataAndShowReport" prefHeight="35.0" prefWidth="150.0" text="%Lbl_Submit" />
+    <Button fx:id="submitDataBtn" layoutX="325.0" layoutY="297.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submitDataAndShowReport" prefHeight="35.0" prefWidth="150.0" text="%Lbl_Submit" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />
