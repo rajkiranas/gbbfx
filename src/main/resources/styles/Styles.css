@@ -181,7 +181,12 @@
 
 .msgsStyle
 {
-    -fx-text-fill: #BF232B;
-    -fx-font-size: 17px;
-/*    -fx-font-weight: bold;*/
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #105675;
+}
+
+.msgsBg
+{
+    -fx-background-color: #E7E7E7;
 }

@@ -34,13 +34,13 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <VBox alignment="CENTER" layoutX="2.0" layoutY="118.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="201.0" prefWidth="802.000244140625">
+    <VBox alignment="CENTER" layoutX="27.0" layoutY="124.0" prefHeight="256.0" prefWidth="746.0" spacing="20.0" styleClass="roundEdge, msgsBg">
       <children>
-        <Label prefWidth="542.0" styleClass="msgsStyle" text="%IntroMsg" textAlignment="CENTER" wrapText="true">
-          <VBox.margin>
-            <Insets left="5.0" right="5.0" />
-          </VBox.margin>
-        </Label>
+        <Label alignment="CENTER" styleClass="msgsStyle" text="%IntroMsg1" />
+        <Label alignment="CENTER" styleClass="msgsStyle" text="%IntroMsg2" />
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%IntroMsg3" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
+        <Label alignment="CENTER" styleClass="msgsStyle" text="%IntroMsg4" />
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%IntroMsg5" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
       </children>
     </VBox>
   </children>
