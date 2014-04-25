@@ -10,6 +10,7 @@ import com.srti.gbb.bean.PrakrutiQuestionAnsBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -68,19 +69,20 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
     private void submitDataAndShowReport(ActionEvent event) 
     {
         //if net // if data submitted // then go to next screen and show prakruti report
-//        if(isInternetAvailable())
-//        {
+        
+        if(isHandshakeSuccessful())
+        {
             //submit data
-            //submitDataToService();
+            submitDataToService();
             
             //show constitution
             showPrakrutiConstitution();
             navigateToNextScreen();
-//        }
-//        else
-//        {
-//            UIUtils.showAlert("sc17_msg_no_inet_available", GlobalConstants.Lbl_Alert);
-//        }
+        }
+        else
+        {
+            UIUtils.showAlert("sc17_msg_no_inet_available", GlobalConstants.Lbl_Alert);
+        }
     }
 
     
@@ -227,29 +229,64 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
              UIUtils.showAlert("sc17_msg_report_does_not_exists", GlobalConstants.Lbl_Alert);
         }
     }
+
     
-    private boolean isInternetAvailable()
+    private boolean isHandshakeSuccessful()
     {
         boolean isAvailable=false;
-        try {
-            final URL url = new URL("http://www.google.com");
-            final URLConnection conn = url.openConnection();
-            conn.setConnectTimeout(5000);
-            conn.connect();
-            isAvailable= true;
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        try 
+        {
+            Client client = Client.create();
+            WebResource webResource = client.resource(MU.getMsg(GlobalConstants.handshakeUrl));
+            
+            ClientResponse response = webResource.type(GlobalConstants.application_json)
+                    .accept(MediaType.APPLICATION_JSON)
+                    .get(ClientResponse.class);
+
+            System.out.println("***response="+response.getStatus());
+            if(response.getStatus()==200)
+            {
+                JSONObject outJson = null;
+                outJson = response.getEntity(JSONObject.class);
+                System.out.println("outJson=" + outJson);
+                if(outJson.getString("Status").equalsIgnoreCase("Handshake-Success"))
+                {
+                    isAvailable= true;
+                }
+            }
+//            String output = response.getEntity(String.class);
+//            outJson = new JSONObject(output);
+            
+        } catch (Exception e) 
+        {
             e.printStackTrace();
         }
         
         System.out.println("***isAvailable="+isAvailable);
         return isAvailable;
     }
+//    private boolean isInternetAvailable()
+//    {
+//        boolean isAvailable=false;
+//        try {
+//            final URL url = new URL("http://www.google.com");
+//            final URLConnection conn = url.openConnection();
+//            conn.setConnectTimeout(5000);
+//            conn.connect();
+//            isAvailable= true;
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//            throw new RuntimeException(e);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        
+//        System.out.println("***isAvailable="+isAvailable);
+//        return isAvailable;
+//    }
 
-    private static final String dataSubmitUrl="http://localhost:8084/gbb/services/UserResource/saveUserDetails";
-    
+//    private static final String dataSubmitUrl="http://localhost:8084/gbb/services/UserResource/saveUserDetails";
+//    private static final String handshakeUrl="http://localhost:8084/gbb/services/UserResource/handshake";
    
     
     private void submitDataToService() {
@@ -258,7 +295,7 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
         {
             Client client = Client.create();
             //WebResource webResource = client.resource(GlobalConstants.getProperty(dataSubmitUrl));
-            WebResource webResource = client.resource(dataSubmitUrl);
+            WebResource webResource = client.resource(MU.getMsg(GlobalConstants.dataSubmitUrl));
             //String input = "{\"userName\":\"raj\",\"password\":\"FadeToBlack\"}";
             JSONObject inputJson = new JSONObject();
             

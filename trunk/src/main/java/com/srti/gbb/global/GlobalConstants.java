@@ -118,5 +118,7 @@ public class GlobalConstants {
     public static final String gsonTimeFormat="yyyy-MM-dd'T'HH:mm:ss'Z'";
     public static final String hyphen="-";
     public static final String plus="+";
+    public static final String handshakeUrl="handshakeUrl";
+    public static final String dataSubmitUrl="dataSubmitUrl";
             
 }
