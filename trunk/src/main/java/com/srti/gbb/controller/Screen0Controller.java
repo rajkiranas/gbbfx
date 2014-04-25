@@ -6,8 +6,13 @@
 
 package com.srti.gbb.controller;
 
+import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.UIUtils;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -38,6 +43,37 @@ public class Screen0Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToScreen1(ActionEvent event) {
         navigator.navigateTo(ScreensFramework.screen21ID);
+    }
+    
+    @FXML
+    private void showDisclaimer(ActionEvent event) 
+    {
+        
+        File f = new File(GlobalConstants.emptyString);
+        String projectFolder=GlobalConstants.emptyString;
+        try {
+            projectFolder = f.getCanonicalPath();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
+        File pdfFile = new File(projectFolder+File.separatorChar+"Disclaimer"+File.separatorChar+"Gbb-Disclaimer.pdf");
+		
+        if (pdfFile.exists()) 
+        {
+
+            //navigator.getUserInfo().setHealthReportPath(pdfFile.getAbsolutePath());
+            if (Desktop.isDesktopSupported()) {
+                try {
+                    Desktop.getDesktop().open(pdfFile);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } else {
+                System.out.println("Awt Desktop is not supported!");
+            }
+
+        }
     }
     
 }
