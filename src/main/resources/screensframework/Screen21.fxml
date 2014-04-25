@@ -42,11 +42,12 @@
     </HBox>
     <VBox alignment="CENTER_LEFT" layoutX="43.0" layoutY="125.0" prefHeight="244.0" prefWidth="712.0" spacing="20.0" styleClass="roundEdge, msgsBg">
       <children>
-        <Label styleClass="msgsStyle" text="%Ll_gi1" />
+        <Label styleClass="msgsStyle" text="%Ll_gi0" />
         <Label styleClass="msgsStyle" text="%Ll_gi2" />
         <Label styleClass="msgsStyle" text="%Ll_gi3" />
         <Label styleClass="msgsStyle" text="%Ll_gi4" />
         <Label styleClass="msgsStyle" text="%Ll_gi5" />
+        <Label styleClass="msgsStyle" text="%Ll_gi1" />
       </children>
     </VBox>
   </children>

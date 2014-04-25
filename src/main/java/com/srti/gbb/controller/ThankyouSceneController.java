@@ -15,6 +15,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import com.srti.gbb.global.GlobalConstants;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 
 /**
  * FXML Controller class
@@ -41,6 +43,7 @@ public class ThankyouSceneController implements Initializable, ControlledScreen 
     private void showHealthReport(ActionEvent event) 
     {
         
+        //File pdfFile = new File(navigator.getUserInfo().getHealthReportPath());
         File pdfFile = new File(navigator.getUserInfo().getHealthReportPath());
 		
         if (pdfFile.exists()) 
@@ -61,5 +64,16 @@ public class ThankyouSceneController implements Initializable, ControlledScreen 
         {
              UIUtils.showAlert("sc17_msg_report_does_not_exists", GlobalConstants.Lbl_Alert);
         }
+        
+//        DirectoryChooser dc = new DirectoryChooser();
+//        File file = dc.showDialog(null);
+//        if (file != null) 
+//        {
+//            file = new File(file.getAbsolutePath() + "/dafaultFilename.extension");
+//            
+//            FileChooser myFile = new FileChooser();
+//            myFile.setInitialFileName("Whatever_file_I_want.coolFile");
+//        }
+        
     }
 }
