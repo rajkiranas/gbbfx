@@ -428,7 +428,8 @@ private boolean validatePhysicalParametersForm()
         if(!txtBp.getText().equals(GlobalConstants.emptyString))
             phy.setBp(Float.parseFloat(txtBp.getText()));
         
-        phy.setHaemoglobin(Float.parseFloat(txtHaemoglobin.getText()));
+        if(!txtHaemoglobin.getText().equals(GlobalConstants.emptyString))
+            phy.setHaemoglobin(Float.parseFloat(txtHaemoglobin.getText()));
         
         if(radCanTouch.isSelected())
         {
