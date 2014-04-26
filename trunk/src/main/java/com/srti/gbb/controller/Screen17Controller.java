@@ -155,7 +155,7 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
         if (vCount > pCount && vCount > kCount) {
             firstLetter=V;
             
-            if(pCount>kCount)
+            if(pCount>=kCount)
             {
                 secondLetter=P;
             }
@@ -168,7 +168,7 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
         else if (pCount > vCount && pCount > kCount) {
             firstLetter=P;
             
-            if(vCount > kCount)
+            if(vCount >= kCount)
             {
                 secondLetter=V;
             }
@@ -181,7 +181,7 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
         else if (kCount > vCount && kCount > pCount) {
             firstLetter=K;
             
-            if(vCount > pCount)
+            if(vCount >= pCount)
             {
                 secondLetter=V;
             }
