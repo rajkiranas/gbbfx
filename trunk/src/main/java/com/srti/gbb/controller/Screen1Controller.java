@@ -16,14 +16,19 @@ import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Point2D;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 
 /**
  * FXML Controller class
@@ -67,6 +72,17 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         @FXML
         private Label lblSign;
         
+        @FXML
+        private Tooltip howToMeasureTooltip;
+        
+//        @FXML
+//        private HBox hipHbox;
+        
+        @FXML
+        private Hyperlink lblMeasure;
+        
+        
+        
     /**
      * Initializes the controller class.
      */
@@ -79,7 +95,23 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         populateHeightFeets();
         populateHeightInches();
         consolidateRadioButtonsInToggleGroup();
+        
     }    
+    
+    @FXML
+    private void showToolTip(Event e)
+    {
+        Point2D p = lblMeasure.localToScene(0.0, 0.0);
+        lblMeasure.getTooltip().show(lblMeasure, p.getX() + lblMeasure.getScene().getX() + lblMeasure.getScene().getWindow().getX(),
+        p.getY() + lblMeasure.getScene().getY() + lblMeasure.getScene().getWindow().getY());
+        //howToMeasureTooltip.show(howToMeasureTooltip);
+    }
+    
+    @FXML
+    private void hideToolTip(Event e)
+    {
+        lblMeasure.getTooltip().hide();
+    }
 
     /**
      * Initializes the controller class.
