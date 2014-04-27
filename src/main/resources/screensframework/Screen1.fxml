@@ -122,15 +122,15 @@
             <Label text="%Lbl_Waist" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_Blood_Pressure" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <Label text="%Lbl_Haemoglobin" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <HBox id="HBox" fx:id="hipHbox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
                 <TextField fx:id="txtHip" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
-                <Label styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
+                <Hyperlink fx:id="lblMeasure" onAction="#showToolTip" onMouseExited="#hideToolTip" styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
                   <tooltip>
-                    <Tooltip font="$x2" hideOnEscape="true" text="%Lbl_How_To_Measure_Msg" />
+                    <Tooltip text="%Lbl_How_To_Measure_Msg" fx:id="howToMeasureTooltip" />
                   </tooltip>
-                </Label>
+                </Hyperlink>
               </children>
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
