@@ -15,6 +15,8 @@ import com.srti.gbb.utils.GbbValidator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -72,14 +74,14 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         @FXML
         private Label lblSign;
         
-        @FXML
-        private Tooltip howToMeasureTooltip;
+//        @FXML
+//        private Tooltip howToMeasureTooltip;
         
 //        @FXML
 //        private HBox hipHbox;
         
         @FXML
-        private Hyperlink lblMeasure;
+        private Hyperlink lnkHowToMeasure;
         
         
         
@@ -101,16 +103,30 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     @FXML
     private void showToolTip(Event e)
     {
-        Point2D p = lblMeasure.localToScene(0.0, 0.0);
-        lblMeasure.getTooltip().show(lblMeasure, p.getX() + lblMeasure.getScene().getX() + lblMeasure.getScene().getWindow().getX(),
-        p.getY() + lblMeasure.getScene().getY() + lblMeasure.getScene().getWindow().getY());
+//        System.out.println("showing");
+        Point2D p = lnkHowToMeasure.localToScene(0.0, 0.0);
+        lnkHowToMeasure.getTooltip().show(lnkHowToMeasure, p.getX() + lnkHowToMeasure.getScene().getX() + lnkHowToMeasure.getScene().getWindow().getX(),
+        p.getY() + lnkHowToMeasure.getScene().getY() + lnkHowToMeasure.getScene().getWindow().getY());
+        
+        lnkHowToMeasure.getTooltip().setAutoHide(true);
+        
         //howToMeasureTooltip.show(howToMeasureTooltip);
+            
+//        try {
+//                Thread.sleep(5000);
+//            } catch (InterruptedException ex) {
+//                ex.printStackTrace();
+//            }
+//        
+//        System.out.println("hiding");
+//        lnkHowToMeasure.getTooltip().hide();
     }
     
     @FXML
     private void hideToolTip(Event e)
     {
-        lblMeasure.getTooltip().hide();
+        System.out.println("hiding");
+        lnkHowToMeasure.getTooltip().hide();
     }
 
     /**
