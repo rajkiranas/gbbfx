@@ -276,7 +276,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         {
             for(String gen : list)
             {
-                if(!gen.equals(GlobalConstants.getProperty(GlobalConstants.Zero)))
+                if(!gen.equals(GlobalConstants.getProperty(GlobalConstants.Zero_Number)))
                     cmbExerciseSchedule.getItems().addAll(gen);
             }
         }
@@ -307,7 +307,7 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         {
             for(String gen : list)
             {
-                if(!gen.equals(GlobalConstants.getProperty(GlobalConstants.Zero)))
+                if(!gen.equals(GlobalConstants.getProperty(GlobalConstants.Zero_Number)))
                  cmbDuration.getItems().addAll(gen);
             }
         }

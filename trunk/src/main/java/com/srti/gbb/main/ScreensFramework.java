@@ -76,6 +76,9 @@ public class ScreensFramework extends Application {
     public static String screen21ID = "screen21";
     public static String screen21File = "/screensframework/Screen21.fxml";
     
+    public static String screen22ID = "screen22";
+    public static String screen22File = "/screensframework/Screen22.fxml";
+    
     public static String ThankyouSceneId = "ThankyouScene";
     public static String ThankyouSceneFile = "/screensframework/ThankyouScene.fxml";
     
@@ -102,6 +105,7 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen15ID, ScreensFramework.screen15File);
         nav.loadScreen(ScreensFramework.screen9ID, ScreensFramework.screen9File);
         nav.loadScreen(ScreensFramework.screen10ID, ScreensFramework.screen10File);
+        nav.loadScreen(ScreensFramework.screen22ID, ScreensFramework.screen22File);
         nav.loadScreen(ScreensFramework.screen13ID, ScreensFramework.screen13File);
         nav.loadScreen(ScreensFramework.screen14ID, ScreensFramework.screen14File);
         
@@ -114,7 +118,7 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         
         
-        nav.navigateTo(ScreensFramework.screen0ID);
+        nav.navigateTo(ScreensFramework.screen22ID);
         
         Group root = new Group();
         root.getChildren().addAll(nav);
