@@ -147,7 +147,14 @@ public class Screen10Controller implements Initializable, ControlledScreen {
         
             recordUserResponseForIllnessAndSetData();
 
-            navigator.navigateTo(ScreensFramework.screen13ID);
+            if(!navigator.getUserInfo().getSelfIllnessList().isEmpty())
+            {
+                navigator.navigateTo(ScreensFramework.screen22ID);
+            }
+            else
+            {
+                navigator.navigateTo(ScreensFramework.screen13ID);
+            }
         }
     }
 

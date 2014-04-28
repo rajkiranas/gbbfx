@@ -4,7 +4,9 @@
  */
 package com.srti.gbb.controller;
 
+import com.srti.gbb.bean.IllnessBean;
 import com.srti.gbb.global.GlobalConstants;
+import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,6 +14,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -47,6 +51,9 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     @FXML
     private ComboBox cmbLossOfManDays;
     
+    @FXML
+    private ListView listSelfIllness;
+    
     
     /**
      * Initializes the controller class.
@@ -63,11 +70,15 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     }    
 
     @FXML
-    private void goToNextScreen(ActionEvent event) {
+    private void goToNextScreen(ActionEvent event) 
+    {
+        navigator.navigateTo(ScreensFramework.screen13ID);
     }
 
     @FXML
-    private void goToPreviousScreen(ActionEvent event) {
+    private void goToPreviousScreen(ActionEvent event) 
+    {
+        navigator.navigateTo(ScreensFramework.screen10ID);
     }
 
     @FXML
@@ -166,4 +177,21 @@ public class Screen22Controller implements Initializable, ControlledScreen {
             }
         }
     }
+    
+    @FXML
+    private void populateIllnessListView() {
+        
+        if(navigator.getUserInfo().getSelfIllnessList().size() != listSelfIllness.getItems().size())
+        {
+            listSelfIllness.getItems().removeAll(listSelfIllness.getItems());
+            
+            for(IllnessBean bean : navigator.getUserInfo().getSelfIllnessList())
+            {
+                listSelfIllness.getItems().addAll(bean.getIllness());
+            }
+           // listSelfIllness.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        }
+        
+    }
+    
 }

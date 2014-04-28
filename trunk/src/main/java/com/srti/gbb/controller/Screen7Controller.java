@@ -71,13 +71,14 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     
     private void populateSocialServicePerWeek() 
     {
-        String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Traveling_Options);
         String[] list =  genderList.split(GlobalConstants.COMMA);
         
         if(cmbTimesPerWeekCash.getItems().size()==0)
         {
             for(String gen : list)
             {
+                if(!gen.equals(GlobalConstants.Zero_Number))
                     cmbTimesPerWeekCash.getItems().addAll(gen);                    
             }
         }
@@ -86,6 +87,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
+                if(!gen.equals(GlobalConstants.Zero_Number))
                     cmbTimesPerWeekKind.getItems().addAll(gen);                    
             }
         }
@@ -94,6 +96,7 @@ public class Screen7Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list)
             {
+                if(!gen.equals(GlobalConstants.Zero_Number))
                     cmbTimesPerWeekService.getItems().addAll(gen);                    
             }
         }
