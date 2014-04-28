@@ -8,14 +8,15 @@ import com.srti.gbb.bean.IllnessBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -90,7 +91,14 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     }
 
     @FXML
-    private void recordSelfIllnessQuantificationDetails(ActionEvent event) {
+    private void recordSelfIllnessQuantificationDetails(ActionEvent event) 
+    {
+        if(validate())
+        {
+            updateSelfIllnessBean();
+            clearForm();
+            //updateCounter();
+        }
     }
 
     private void populateIntensity() {
@@ -193,5 +201,88 @@ public class Screen22Controller implements Initializable, ControlledScreen {
         }
         
     }
-    
+
+    private boolean validate() {
+        boolean isValid = true;
+        
+        if (listSelfIllness.getSelectionModel().getSelectedItems().size()==0) 
+        {
+            isValid = false;
+            UIUtils.showAlert("sc22_msg_sel_illness", GlobalConstants.Lbl_Alert);
+        }
+        else if(cmbIntensity.getValue()==null || cmbIntensity.getValue().toString().equals(GlobalConstants.emptyString))
+        {
+            isValid=false;
+            UIUtils.showAlert("sc22_msg_sel_intensity", GlobalConstants.Lbl_Alert);
+        }
+        else if(cmbFrequency.getValue()==null || cmbFrequency.getValue().toString().equals(GlobalConstants.emptyString))
+        {
+            isValid=false;
+            UIUtils.showAlert("sc22_msg_sel_frequency", GlobalConstants.Lbl_Alert);
+        }
+        else if(cmbDuration.getValue()==null || cmbDuration.getValue().toString().equals(GlobalConstants.emptyString))
+        {
+            isValid=false;
+            UIUtils.showAlert("sc22_msg_sel_duration", GlobalConstants.Lbl_Alert);
+        }
+        else if(cmbLastsForDays.getValue()==null || cmbLastsForDays.getValue().toString().equals(GlobalConstants.emptyString))
+        {
+            isValid=false;
+            UIUtils.showAlert("sc22_msg_sel_lastsfordays", GlobalConstants.Lbl_Alert);
+        }
+        else if(cmbSinceYears.getValue()==null || cmbSinceYears.getValue().toString().equals(GlobalConstants.emptyString))
+        {
+            isValid=false;
+            UIUtils.showAlert("sc22_msg_sel_since_years", GlobalConstants.Lbl_Alert);
+        }
+        else if(cmbLossOfManDays.getValue()==null || cmbLossOfManDays.getValue().toString().equals(GlobalConstants.emptyString))
+        {
+            isValid=false;
+            UIUtils.showAlert("sc22_msg_sel_loss_of_man_days", GlobalConstants.Lbl_Alert);
+        }
+        return isValid;
+    }
+
+    private void updateSelfIllnessBean() 
+    {
+        List<IllnessBean> illList  = navigator.getUserInfo().getSelfIllnessList();
+            String selection = (String) listSelfIllness.getSelectionModel().getSelectedItem();
+            IllnessBean dummy  = new IllnessBean();
+            dummy.setIllness(selection);
+            int index = illList.indexOf(dummy);
+            
+            IllnessBean b = illList.get(index);
+            b.setIntensity(Short.valueOf(cmbIntensity.getValue().toString()));
+            b.setFrequency(Short.valueOf(cmbFrequency.getValue().toString()));
+            b.setDuration(cmbDuration.getValue().toString());
+            
+            b.setLastsForDays(Short.valueOf(cmbLastsForDays.getValue().toString()));
+            b.setSinceYears(Short.valueOf(cmbSinceYears.getValue().toString()));
+            b.setLossOfManDays(Short.valueOf(cmbLossOfManDays.getValue().toString()));
+            
+            System.out.println("****illList="+navigator.getUserInfo().getSelfIllnessList());
+    }
+
+    private void clearForm() {
+        listSelfIllness.getSelectionModel().clearSelection();
+        cmbIntensity.getSelectionModel().clearSelection();
+        cmbFrequency.getSelectionModel().clearSelection();
+        cmbDuration.getSelectionModel().clearSelection();
+        cmbLastsForDays.getSelectionModel().clearSelection();
+        cmbSinceYears.getSelectionModel().clearSelection();
+        cmbLossOfManDays.getSelectionModel().clearSelection();        
+    }
+
+//    private int updateCounter=0;
+//    private void updateCounter() 
+//    {
+//        if(navigator.getUserInfo().getSelfIllnessList().size()==updateCounter)
+//        {
+//            updateCounter=0;
+//        }
+//        else
+//        {
+//            updateCounter++;
+//        }
+//    }
 }

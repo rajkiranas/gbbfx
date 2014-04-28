@@ -15,6 +15,12 @@ public class IllnessBean  implements Serializable
 {
     private String illness;
     private boolean isHospitalized;
+    private short intensity;
+    private short frequency;
+    private String duration;
+    private short lastsForDays;
+    private short sinceYears;
+    private short lossOfManDays;
 
     public String getIllness() {
         return illness;
@@ -56,7 +62,57 @@ public class IllnessBean  implements Serializable
 
     @Override
     public String toString() {
-        return "IllnessBean{" + "illness=" + illness + ", isHospitalized=" + isHospitalized + '}';
+        return "IllnessBean{" + "illness=" + illness + ", isHospitalized=" + isHospitalized + ", intensity=" + intensity + ", frequency=" + frequency + ", duration=" + duration + ", lastsForDays=" + lastsForDays + ", sinceYears=" + sinceYears + ", lossOfManDays=" + lossOfManDays + '}';
+    }
+
+    
+
+    public short getIntensity() {
+        return intensity;
+    }
+
+    public void setIntensity(short intensity) {
+        this.intensity = intensity;
+    }
+
+    public short getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(short frequency) {
+        this.frequency = frequency;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public short getLastsForDays() {
+        return lastsForDays;
+    }
+
+    public void setLastsForDays(short lastsForDays) {
+        this.lastsForDays = lastsForDays;
+    }
+
+    public short getSinceYears() {
+        return sinceYears;
+    }
+
+    public void setSinceYears(short sinceYears) {
+        this.sinceYears = sinceYears;
+    }
+
+    public short getLossOfManDays() {
+        return lossOfManDays;
+    }
+
+    public void setLossOfManDays(short lossOfManDays) {
+        this.lossOfManDays = lossOfManDays;
     }
     
     
