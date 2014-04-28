@@ -126,7 +126,7 @@
               <children>
                 <TextField fx:id="txtHip" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
                 <Label text="%Lbl_Centimeter" />
-                <Hyperlink fx:id="lblMeasure" onAction="#showToolTip" onMouseExited="#hideToolTip" styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
+                <Hyperlink id="lblMeasure" fx:id="lnkHowToMeasure" onAction="#showToolTip" styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
                   <tooltip>
                     <Tooltip text="%Lbl_How_To_Measure_Msg" fx:id="howToMeasureTooltip" />
                   </tooltip>
