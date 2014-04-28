@@ -132,7 +132,7 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbDuration" onShowing="#populateExerciseDuration" prefHeight="35.0" prefWidth="97.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbDuration" onShowing="#populateExerciseDuration" prefHeight="35.0" prefWidth="97.0" promptText="%Input_Prompt_Hours" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>

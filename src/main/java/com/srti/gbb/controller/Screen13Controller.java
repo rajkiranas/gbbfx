@@ -130,7 +130,14 @@ public class Screen13Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToPreviousScreen(ActionEvent event) 
     {
-        navigator.navigateTo(ScreensFramework.screen10ID);
+        if(!navigator.getUserInfo().getSelfIllnessList().isEmpty())
+            {
+                navigator.navigateTo(ScreensFramework.screen22ID);
+            }
+            else
+            {
+               navigator.navigateTo(ScreensFramework.screen10ID);
+            }
     }
 
     @FXML
