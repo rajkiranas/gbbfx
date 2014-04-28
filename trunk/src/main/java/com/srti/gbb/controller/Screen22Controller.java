@@ -10,6 +10,7 @@ import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -83,12 +84,31 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     }
 
     @FXML
-    private void manageMultipleSelectionsSelf(MouseEvent event) {
+    private void setFormData(MouseEvent event) 
+    {
+        IllnessBean b =getIllnessBeanForSelectionFromNavigator();
+        
+        System.out.println("***="+cmbIntensity.getItems().contains(String.valueOf(b.getIntensity())));
+        
+        if(cmbIntensity.getItems().contains(String.valueOf(b.getIntensity())))
+            cmbIntensity.getSelectionModel().select(String.valueOf(b.getIntensity()));
+        
+        if(cmbFrequency.getItems().contains(String.valueOf(b.getFrequency())))
+            cmbFrequency.getSelectionModel().select(String.valueOf(b.getFrequency()));
+        
+        if(cmbDuration.getItems().contains(String.valueOf(b.getDuration())))
+            cmbDuration.getSelectionModel().select(String.valueOf(b.getDuration()));
+        
+        if(cmbLastsForDays.getItems().contains(String.valueOf(b.getLastsForDays())))
+            cmbLastsForDays.getSelectionModel().select(String.valueOf(b.getLastsForDays()));
+        
+        if(cmbSinceYears.getItems().contains(String.valueOf(b.getSinceYears())))
+            cmbSinceYears.getSelectionModel().select(String.valueOf(b.getSinceYears()));
+        
+        if(cmbLossOfManDays.getItems().contains(String.valueOf(b.getLossOfManDays())))
+            cmbLossOfManDays.getSelectionModel().select(String.valueOf(b.getLossOfManDays()));
     }
 
-    @FXML
-    private void listSelfDiseases(ContextMenuEvent event) {
-    }
 
     @FXML
     private void recordSelfIllnessQuantificationDetails(ActionEvent event) 
@@ -96,8 +116,10 @@ public class Screen22Controller implements Initializable, ControlledScreen {
         if(validate())
         {
             updateSelfIllnessBean();
+            
+            updateCounter();
+            
             clearForm();
-            //updateCounter();
         }
     }
 
@@ -242,8 +264,8 @@ public class Screen22Controller implements Initializable, ControlledScreen {
         }
         return isValid;
     }
-
-    private void updateSelfIllnessBean() 
+    
+    private IllnessBean getIllnessBeanForSelectionFromNavigator()
     {
         List<IllnessBean> illList  = navigator.getUserInfo().getSelfIllnessList();
             String selection = (String) listSelfIllness.getSelectionModel().getSelectedItem();
@@ -252,6 +274,12 @@ public class Screen22Controller implements Initializable, ControlledScreen {
             int index = illList.indexOf(dummy);
             
             IllnessBean b = illList.get(index);
+            return b;
+    }
+
+    private void updateSelfIllnessBean() 
+    {
+            IllnessBean b =getIllnessBeanForSelectionFromNavigator();
             b.setIntensity(Short.valueOf(cmbIntensity.getValue().toString()));
             b.setFrequency(Short.valueOf(cmbFrequency.getValue().toString()));
             b.setDuration(cmbDuration.getValue().toString());
@@ -273,16 +301,10 @@ public class Screen22Controller implements Initializable, ControlledScreen {
         cmbLossOfManDays.getSelectionModel().clearSelection();        
     }
 
-//    private int updateCounter=0;
-//    private void updateCounter() 
-//    {
-//        if(navigator.getUserInfo().getSelfIllnessList().size()==updateCounter)
-//        {
-//            updateCounter=0;
-//        }
-//        else
-//        {
-//            updateCounter++;
-//        }
-//    }
+    private HashMap counterMap = new HashMap();
+    private void updateCounter() 
+    {
+        String sel = (String) listSelfIllness.getSelectionModel().getSelectedItem();
+        counterMap.put(sel,sel);
+    }
 }

@@ -40,7 +40,7 @@
     <AnchorPane id="AnchorPane" layoutX="20.0" layoutY="84.0" prefHeight="328.0" prefWidth="759.0" styleClass="roundEdge">
       <children>
         <Label layoutX="41.0" layoutY="7.0" styleClass="throughoutLabelsStyle" text="%Lbl_Self" />
-        <ListView id="listSelfHostpitalization" fx:id="listSelfIllness" layoutX="41.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSelf" prefHeight="262.0" prefWidth="205.0" />
+        <ListView id="listSelfHostpitalization" fx:id="listSelfIllness" layoutX="41.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#setFormData" prefHeight="262.0" prefWidth="205.0" />
         <GridPane id="GridPane" layoutX="269.0" layoutY="45.0" prefHeight="215.0" prefWidth="174.0">
           <children>
             <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
