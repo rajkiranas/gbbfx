@@ -18,7 +18,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
-import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -74,7 +73,24 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToNextScreen(ActionEvent event) 
     {
-        navigator.navigateTo(ScreensFramework.screen13ID);
+        if(cmbIntensity.getValue()!=null ||
+                cmbFrequency.getValue()!=null ||
+                cmbDuration.getValue()!=null ||
+                cmbLastsForDays.getValue()!=null ||
+                cmbSinceYears.getValue()!=null ||
+                cmbLossOfManDays.getValue()!=null)
+        {
+            validateAndUpdateSelfIllnessQuantificationDetails();
+        }
+        
+        if(counterMap.size()==navigator.getUserInfo().getSelfIllnessList().size())
+        {
+            navigateToNextScreen();
+        }
+        else
+        {
+            UIUtils.showAlert("sc22_msg_fill_all_disease_dtls", GlobalConstants.Lbl_Alert);
+        }
     }
 
     @FXML
@@ -88,30 +104,47 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     {
         IllnessBean b =getIllnessBeanForSelectionFromNavigator();
         
-        System.out.println("***="+cmbIntensity.getItems().contains(String.valueOf(b.getIntensity())));
+        //System.out.println("***="+cmbIntensity.getItems().contains(String.valueOf(b.getIntensity())));
         
         if(cmbIntensity.getItems().contains(String.valueOf(b.getIntensity())))
             cmbIntensity.getSelectionModel().select(String.valueOf(b.getIntensity()));
+        else
+            cmbIntensity.getSelectionModel().clearSelection();
         
         if(cmbFrequency.getItems().contains(String.valueOf(b.getFrequency())))
             cmbFrequency.getSelectionModel().select(String.valueOf(b.getFrequency()));
+        else
+            cmbFrequency.getSelectionModel().clearSelection();
         
         if(cmbDuration.getItems().contains(String.valueOf(b.getDuration())))
             cmbDuration.getSelectionModel().select(String.valueOf(b.getDuration()));
+        else
+            cmbDuration.getSelectionModel().clearSelection();
         
         if(cmbLastsForDays.getItems().contains(String.valueOf(b.getLastsForDays())))
             cmbLastsForDays.getSelectionModel().select(String.valueOf(b.getLastsForDays()));
+        else
+            cmbLastsForDays.getSelectionModel().clearSelection();
         
         if(cmbSinceYears.getItems().contains(String.valueOf(b.getSinceYears())))
             cmbSinceYears.getSelectionModel().select(String.valueOf(b.getSinceYears()));
+        else
+            cmbSinceYears.getSelectionModel().clearSelection();
         
         if(cmbLossOfManDays.getItems().contains(String.valueOf(b.getLossOfManDays())))
             cmbLossOfManDays.getSelectionModel().select(String.valueOf(b.getLossOfManDays()));
+        else
+            cmbLossOfManDays.getSelectionModel().clearSelection();
     }
 
 
     @FXML
     private void recordSelfIllnessQuantificationDetails(ActionEvent event) 
+    {
+        validateAndUpdateSelfIllnessQuantificationDetails();
+    }
+    
+    private void validateAndUpdateSelfIllnessQuantificationDetails()
     {
         if(validate())
         {
@@ -177,6 +210,7 @@ public class Screen22Controller implements Initializable, ControlledScreen {
             String[] list = genderList.split(GlobalConstants.COMMA);
             if (cmbLastsForDays.getItems().size() == 0) {
                 for (String gen : list) {
+                    if(!gen.equals(GlobalConstants.Zero_Number))
                         cmbLastsForDays.getItems().addAll(gen);
                 }
             }
@@ -190,6 +224,7 @@ public class Screen22Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list1)
             {
+                if(!gen.equals(GlobalConstants.Zero_Number))
                     cmbSinceYears.getItems().addAll(gen); 
             }
         }
@@ -203,6 +238,7 @@ public class Screen22Controller implements Initializable, ControlledScreen {
         {
             for(String gen : list1)
             {
+                if(!gen.equals(GlobalConstants.Zero_Number))
                     cmbLossOfManDays.getItems().addAll(gen); 
             }
         }
@@ -306,5 +342,9 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     {
         String sel = (String) listSelfIllness.getSelectionModel().getSelectedItem();
         counterMap.put(sel,sel);
+    }
+
+    private void navigateToNextScreen() {
+        navigator.navigateTo(ScreensFramework.screen13ID);
     }
 }
