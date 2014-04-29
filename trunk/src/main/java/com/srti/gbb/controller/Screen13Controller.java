@@ -124,7 +124,51 @@ public class Screen13Controller implements Initializable, ControlledScreen {
     
 
     @FXML
-    private void listSelfDiseases(ContextMenuEvent event) {
+    private void populateCarriedOverLists(MouseEvent event) 
+    {
+//        if(navigator.getUserInfo().getSelfIllnessList().size() != listSelfHostpitalization.getItems().size())
+//        {
+//            listSelfHostpitalization.getItems().removeAll(listSelfHostpitalization.getItems());
+//            
+//            for(IllnessBean bean : navigator.getUserInfo().getSelfIllnessList())
+//            {
+//                listSelfHostpitalization.getItems().addAll(bean.getIllness());
+//            }
+//            listSelfHostpitalization.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//        }
+//        
+//        if(navigator.getUserInfo().getParentsIllnessList().size() != listParentsHostpitalization.getItems().size())
+//        {
+//            listParentsHostpitalization.getItems().removeAll(listParentsHostpitalization.getItems());
+//            
+//            for(IllnessBean bean : navigator.getUserInfo().getParentsIllnessList())
+//            {
+//                listParentsHostpitalization.getItems().addAll(bean.getIllness());
+//            }
+//            listParentsHostpitalization.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//        }
+//        
+//        if(navigator.getUserInfo().getGrandParentsIllnessList().size() != listGrandParentsHostpitalization.getItems().size())
+//        {
+//            listGrandParentsHostpitalization.getItems().removeAll(listGrandParentsHostpitalization.getItems());
+//            
+//            for(IllnessBean bean : navigator.getUserInfo().getGrandParentsIllnessList())
+//            {
+//                listGrandParentsHostpitalization.getItems().addAll(bean.getIllness());
+//            }
+//            listGrandParentsHostpitalization.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//        }
+//        
+//        if(navigator.getUserInfo().getSiblingsIllnessList().size() != listSiblingsHostpitalization.getItems().size())
+//        {
+//            listSiblingsHostpitalization.getItems().removeAll(listSiblingsHostpitalization.getItems());
+//            
+//            for(IllnessBean bean : navigator.getUserInfo().getSiblingsIllnessList())
+//            {
+//                listSiblingsHostpitalization.getItems().addAll(bean.getIllness());
+//            }
+//            listSiblingsHostpitalization.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//        }
     }
     
     @FXML
