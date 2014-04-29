@@ -318,7 +318,7 @@ public class Screen22Controller implements Initializable, ControlledScreen {
             IllnessBean b =getIllnessBeanForSelectionFromNavigator();
             b.setIntensity(Short.valueOf(cmbIntensity.getValue().toString()));
             b.setFrequency(Short.valueOf(cmbFrequency.getValue().toString()));
-            b.setDuration(cmbDuration.getValue().toString());
+            b.setDuration(Float.valueOf(cmbDuration.getValue().toString()));
             
             b.setLastsForDays(Short.valueOf(cmbLastsForDays.getValue().toString()));
             b.setSinceYears(Short.valueOf(cmbSinceYears.getValue().toString()));

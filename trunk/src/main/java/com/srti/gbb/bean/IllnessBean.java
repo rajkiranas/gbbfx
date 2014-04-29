@@ -17,7 +17,7 @@ public class IllnessBean  implements Serializable
     private boolean isHospitalized;
     private short intensity;
     private short frequency;
-    private String duration;
+    private float duration;
     private short lastsForDays;
     private short sinceYears;
     private short lossOfManDays;
@@ -83,11 +83,11 @@ public class IllnessBean  implements Serializable
         this.frequency = frequency;
     }
 
-    public String getDuration() {
+    public float getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(float duration) {
         this.duration = duration;
     }
 
