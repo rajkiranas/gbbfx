@@ -12,12 +12,19 @@ import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.UIUtils;
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -64,15 +71,63 @@ public class Screen0Controller implements Initializable, ControlledScreen {
 
             //navigator.getUserInfo().setHealthReportPath(pdfFile.getAbsolutePath());
             if (Desktop.isDesktopSupported()) {
+//            if (!true) {
                 try {
                     Desktop.getDesktop().open(pdfFile);
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-            } else {
+            } else 
+            {
                 System.out.println("Awt Desktop is not supported!");
+                pushDisclaimerForSaving(pdfFile);
             }
+        }
+    }
+    
+    private void pushDisclaimerForSaving(File pdfFile) 
+    {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Disclaimer in PDF format");
 
+        Stage stage = new Stage(StageStyle.UTILITY);
+        File file = fileChooser.showSaveDialog(stage);
+        
+        String path = file.getAbsolutePath();
+        
+        if(path.indexOf(".pdf")>0)
+        {
+            
+        }
+        else
+        {
+            path = path+".pdf";
+        }
+        
+        System.out.println("pat*******h="+path);
+        
+        InputStream inStream = null;
+	OutputStream outStream = null;
+        
+        try 
+        {
+            inStream = new FileInputStream(pdfFile);
+            outStream = new FileOutputStream(new File(path));
+            
+            byte[] buffer = new byte[1024];
+            
+            int length;
+    	    //copy the file content in bytes 
+    	    while ((length = inStream.read(buffer)) > 0){
+ 
+    	    	outStream.write(buffer, 0, length);
+ 
+    	    }
+    	    inStream.close();
+    	    outStream.close();
+        } 
+        catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
     
