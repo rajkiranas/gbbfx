@@ -31,7 +31,7 @@
         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg1" />
         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg2" />
         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg3" />
-        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg4" />
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg4" wrapText="true" />
         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%LastMsg5" />
       </children>
     </VBox>
