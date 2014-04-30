@@ -54,14 +54,14 @@
             <Label text="%Lbl_Food_Type" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_Fruits" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_Eating_Out" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <ComboBox fx:id="cmbDiet" onShowing="#populateDietTypes" prefHeight="35.0" prefWidth="91.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbDiet" onAction="#manageNonVeg" prefHeight="35.0" prefWidth="91.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <children>
-                <ComboBox fx:id="cmbNonVeg" onShowing="#populateNonVegPerWeek" prefHeight="35.0" prefWidth="91.0">
+                <ComboBox fx:id="cmbNonVeg" prefHeight="35.0" prefWidth="91.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -71,7 +71,7 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="271.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
-                <ComboBox fx:id="cmbFoodType" onShowing="#populateFoodTypes" prefHeight="35.0" prefWidth="145.0">
+                <ComboBox fx:id="cmbFoodType" prefHeight="35.0" prefWidth="145.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -82,7 +82,7 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
-                <ComboBox fx:id="cmbFruits" onShowing="#populateFruitsPerWeek" prefHeight="35.0" prefWidth="91.0">
+                <ComboBox fx:id="cmbFruits" prefHeight="35.0" prefWidth="91.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -92,7 +92,7 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <children>
-                <ComboBox fx:id="cmbEatingOut" onShowing="#populateEatingOutPerWeek" prefHeight="35.0" prefWidth="91.0">
+                <ComboBox fx:id="cmbEatingOut" prefHeight="35.0" prefWidth="91.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
                   </items>
@@ -123,17 +123,17 @@
             <Label text="%Lbl_Exercise_Schedule" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Exercise_Type" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label fx:id="cmbExerciseDuration" text="%Lbl_Duration" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cmbExerciseSchedule" onShowing="#populateExerciseSchedule" prefHeight="35.0" prefWidth="97.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbExerciseSchedule" prefHeight="35.0" prefWidth="97.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbExerciseType" onShowing="#populateExerciseTypes" prefHeight="35.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbExerciseType" prefHeight="35.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox fx:id="cmbDuration" onShowing="#populateExerciseDuration" prefHeight="35.0" prefWidth="97.0" promptText="%Input_Prompt_Hours" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbDuration" prefHeight="35.0" prefWidth="97.0" promptText="%Input_Prompt_Hours" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>

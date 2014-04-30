@@ -6,6 +6,7 @@ import com.srti.gbb.bean.PhysicalParameters;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,9 +63,18 @@ public class Screen2Controller implements Initializable , ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        populateDietTypes();
+        populateNonVegPerWeek();
+        populateFoodTypes();
+        populateFruitsPerWeek();
+        populateEatingOutPerWeek();
+        populateExerciseSchedule();
+        populateExerciseTypes();
+        populateExerciseDuration();
         cmbExerciseSchedule.setDisable(true);
         cmbExerciseType.setDisable(true);
         cmbDuration.setDisable(true);
+        
     }
     
     public void setScreenParent(ScreensNavigator screenParent){
@@ -192,8 +202,8 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         }
     }
     
-     @FXML
-    private void populateDietTypes(Event event) {
+     
+    private void populateDietTypes() {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Diet_Options);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
@@ -207,8 +217,8 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         
     }
     
-    @FXML
-    private void populateNonVegPerWeek(Event event) {
+    
+    private void populateNonVegPerWeek() {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
@@ -221,8 +231,8 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         }
     }
     
-    @FXML
-    private void populateFoodTypes(Event event) {
+    
+    private void populateFoodTypes() {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Food_Type_Options);
         //ObservableList genderOptions = new ObservableList();
         String[] list =  genderList.split(GlobalConstants.COMMA);
@@ -233,11 +243,10 @@ public class Screen2Controller implements Initializable , ControlledScreen {
                  cmbFoodType.getItems().addAll(gen);
             }
         }
-       
     }
    
-    @FXML
-    private void populateFruitsPerWeek(Event event) 
+    
+    private void populateFruitsPerWeek() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
@@ -251,8 +260,8 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         }
     }
     
-    @FXML
-    private void populateEatingOutPerWeek(Event event) 
+    
+    private void populateEatingOutPerWeek() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
@@ -266,8 +275,8 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         }
     }
     
-    @FXML
-    private void populateExerciseSchedule(Event event) 
+    
+    private void populateExerciseSchedule() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
@@ -282,8 +291,8 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         }
     }
     
-     @FXML
-    private void populateExerciseTypes(Event event) 
+     
+    private void populateExerciseTypes() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Exercise_Type_Options);
         //ObservableList genderOptions = new ObservableList();
@@ -297,8 +306,8 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         }
     }
     
-     @FXML
-    private void populateExerciseDuration(Event event) 
+     
+    private void populateExerciseDuration() 
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
         //ObservableList genderOptions = new ObservableList();
@@ -312,5 +321,25 @@ public class Screen2Controller implements Initializable , ControlledScreen {
             }
         }
     }
-   
+     
+    @FXML
+    private void manageNonVeg(ActionEvent event)
+    {
+        Object objDiet = cmbDiet.getValue();
+        
+        if(objDiet!=null)
+        {
+            String diet = objDiet.toString();
+            if(!diet.equals(GlobalConstants.emptyString) && diet.equals(MU.getMsg("Lbl_Veg")))
+            {
+                cmbNonVeg.getSelectionModel().selectFirst();
+                cmbNonVeg.setDisable(true);
+            }
+            else
+            {
+                cmbNonVeg.getSelectionModel().clearSelection();
+                cmbNonVeg.setDisable(false);
+            }
+        }
+    }
 }
