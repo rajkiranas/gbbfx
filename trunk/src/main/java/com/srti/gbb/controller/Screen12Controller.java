@@ -14,6 +14,7 @@ import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -139,6 +140,7 @@ public class Screen12Controller implements Initializable, ControlledScreen {
     
     private boolean validateAddressForm()
      {
+         Pattern digitPattern = Pattern.compile("\\d{6}");
          
          boolean isValid=true;
          if(txtHouse.getText() ==null || txtHouse.getText().trim().equals(GlobalConstants.emptyString))
@@ -181,8 +183,12 @@ public class Screen12Controller implements Initializable, ControlledScreen {
     
              isValid=false;
          }
-         
-         
+         else if(!digitPattern.matcher(txtPincode.getText()).matches())
+         {
+              UIUtils.showAlert("sc12_msg_six_digit_pincode", GlobalConstants.Lbl_Alert);  
+    
+             isValid=false;
+         }
          
          return isValid;
      }
