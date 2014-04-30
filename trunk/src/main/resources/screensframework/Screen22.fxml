@@ -85,6 +85,16 @@
         </GridPane>
         <GridPane id="GridPane" layoutX="494.0" layoutY="46.0" prefHeight="215.0" prefWidth="247.0">
           <children>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <children>
+                <ComboBox fx:id="cmbLastsForDays" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="103.0" promptText="%Lbl_last_for_days">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Days" wrapText="true" />
+              </children>
+            </HBox>
             <ComboBox fx:id="cmbSinceYears" prefHeight="35.0" prefWidth="119.0" promptText="%Lbl_since" GridPane.columnIndex="0" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
@@ -98,16 +108,6 @@
                   </items>
                 </ComboBox>
                 <Label text="%Lbl_Days_Per_Six_Months" wrapText="true" />
-              </children>
-            </HBox>
-            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
-              <children>
-                <ComboBox fx:id="cmbLastsForDays" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="103.0" promptText="%Lbl_last_for_days">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList" />
-                  </items>
-                </ComboBox>
-                <Label text="%Lbl_Days" wrapText="true" />
               </children>
             </HBox>
           </children>

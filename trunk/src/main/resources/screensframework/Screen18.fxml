@@ -86,17 +86,11 @@
           <children>
             <Label styleClass="throughoutLabelsStyle" text="%Lbl_Child" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField id="txtNameMother" fx:id="txtChildName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Children_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="121.0" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
-              <children>
-                <ComboBox id="cmbMotherIncome" fx:id="cmbChildIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
-                  <items>
-                    <FXCollections fx:factory="observableArrayList" />
-                  </items>
-                </ComboBox>
-                <Label text="%Lbl_Income_Params" />
-              </children>
-            </HBox>
-            <CheckBox id="chkDeceasedMother" fx:id="chkIsChildDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="103.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <ComboBox id="cmbMotherProfession" fx:id="cmbChildGender" onAction="#setProfessionChild" prefHeight="35.0" prefWidth="103.0" promptText="%Lbl_Gender" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <children>
                 <ComboBox id="cmbMotherHQ" fx:id="cmbChildQual" prefHeight="35.0" prefWidth="118.0" promptText="%Lbl_Highest_Education">
@@ -111,11 +105,17 @@
                 </ComboBox>
               </children>
             </HBox>
-            <ComboBox id="cmbMotherProfession" fx:id="cmbChildGender" onAction="#setProfessionChild" prefHeight="35.0" prefWidth="103.0" promptText="%Lbl_Gender" GridPane.columnIndex="0" GridPane.rowIndex="2">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="121.0" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+              <children>
+                <ComboBox id="cmbMotherIncome" fx:id="cmbChildIncome" prefHeight="35.0" prefWidth="83.0" promptText="%Input_Prompt_Income">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Income_Params" />
+              </children>
+            </HBox>
+            <CheckBox id="chkDeceasedMother" fx:id="chkIsChildDeceased" mnemonicParsing="false" prefHeight="31.0" prefWidth="103.0" text="%Lbl_Deceased" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="5" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
