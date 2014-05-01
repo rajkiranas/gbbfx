@@ -12,13 +12,13 @@ import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.GbbValidator;
-import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -564,6 +564,36 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
         else
         {
             propertyList.add(property);
+        }
+    }
+    
+    @FXML
+    private void manageOutStandingLoanHouse(Event e)
+    {
+        if(chkHouseOwned.isSelected())
+        {
+            txtHouseLoan.setDisable(false);
+            txtHouseLoan.clear();
+        }
+        else
+        {
+            txtHouseLoan.setText(GlobalConstants.Zero_Number);
+            txtHouseLoan.setDisable(true);
+        }
+    }
+    
+    @FXML
+    private void manageOutStandingLoanLand(Event e)
+    {
+        if(chkLandOwned.isSelected())
+        {
+            txtLandLoan.setDisable(false);
+            txtLandLoan.clear();
+        }
+        else
+        {
+            txtLandLoan.setText(GlobalConstants.Zero_Number);
+            txtLandLoan.setDisable(true);
         }
     }
 }
