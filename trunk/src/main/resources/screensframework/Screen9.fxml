@@ -51,11 +51,11 @@
         <GridPane id="GridPane" layoutX="17.0" layoutY="21.0" prefHeight="263.0">
           <children>
             <Label fx:id="lblHouse" styleClass="throughoutLabelsStyle" text="%Lbl_House" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <CheckBox fx:id="chkHouseOwned" mnemonicParsing="false" prefHeight="39.0" text="%Lbl_Chk_Owned" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <CheckBox fx:id="chkHouseOwned" mnemonicParsing="false" onAction="#manageOutStandingLoanHouse" prefHeight="39.0" text="%Lbl_Chk_Owned" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <CheckBox fx:id="chkHouseRented" mnemonicParsing="false" prefHeight="39.0" text="%Lbl_Chk_Rented" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <TextField fx:id="txtHouseApproxArea" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="135.0" promptText="%Input_Prompt_Approx_Area" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <TextField fx:id="txtHouseMembers" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="135.0" promptText="%Lbl_Members_In_House" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <TextField fx:id="txtHouseLoan" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="135.0" promptText="%Outstanding_Loan_amt" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="txtHouseLoan" alignment="CENTER_RIGHT" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="135.0" promptText="%Outstanding_Loan_amt" text="%Zero" GridPane.columnIndex="0" GridPane.rowIndex="5" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -72,7 +72,7 @@
         <GridPane id="GridPane" layoutX="176.0" layoutY="21.0" prefHeight="258.0">
           <children>
             <Label fx:id="lblLand" styleClass="throughoutLabelsStyle" text="%Lbl_Land" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <CheckBox fx:id="chkLandOwned" mnemonicParsing="false" prefHeight="39.0" text="%Lbl_Chk_Owned" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <CheckBox fx:id="chkLandOwned" mnemonicParsing="false" onAction="#manageOutStandingLoanLand" prefHeight="39.0" text="%Lbl_Chk_Owned" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <CheckBox fx:id="chkLandRented" mnemonicParsing="false" prefHeight="39.0" text="%Lbl_Chk_Rented" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <children>
@@ -82,7 +82,7 @@
               </children>
             </HBox>
             <TextField fx:id="txtLandMembers" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="135.0" promptText="%Lbl_Members_In_Land" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <TextField fx:id="txtLandLoan" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="135.0" promptText="%Outstanding_Loan_amt" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="txtLandLoan" alignment="CENTER_RIGHT" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="135.0" promptText="%Outstanding_Loan_amt" text="%Zero" GridPane.columnIndex="0" GridPane.rowIndex="5" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />

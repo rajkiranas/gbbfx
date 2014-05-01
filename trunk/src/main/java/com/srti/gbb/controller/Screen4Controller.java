@@ -300,34 +300,64 @@ public class Screen4Controller implements Initializable, ControlledScreen {
              UIUtils.showAlert("sc4_msg_invalid_repeats_in_school", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-         else if(!txtAvgCollegePer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgCollegePer.getText()) && !GbbValidator.isNumLesserThanOffset(txtAvgCollegePer.getText(),100))
+         else if(!txtAvgCollegePer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgCollegePer.getText()))
          {
              UIUtils.showAlert("sc4_msg_invalid_avg_college_per", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-         else if(!txtNoOfCollegeRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfCollegeRepeats.getText()) && !GbbValidator.isNumLesserThanOffset(txtNoOfCollegeRepeats.getText(),20))
+         else if(!txtAvgCollegePer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isNumLesserThanOffset(txtAvgCollegePer.getText(),100))
+         {
+             UIUtils.showAlert("sc4_msg_invalid_avg_college_per", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!txtNoOfCollegeRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfCollegeRepeats.getText()))
          {
              UIUtils.showAlert("sc4_msg_invalid_repeats_in_college", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-         else if(!txtSubRepeatsCollege.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsCollege.getText()) && !GbbValidator.isNumLesserThanOffset(txtSubRepeatsCollege.getText(),20))
+         else if(!txtNoOfCollegeRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isNumLesserThanOffset(txtNoOfCollegeRepeats.getText(),20))
+         {
+             UIUtils.showAlert("sc4_msg_invalid_repeats_in_college", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!txtSubRepeatsCollege.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsCollege.getText()))
+         {
+             UIUtils.showAlert("sc4_msg_invalid_sub_repeats_in_college", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!txtSubRepeatsCollege.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isNumLesserThanOffset(txtSubRepeatsCollege.getText(),20))
          {
              UIUtils.showAlert("sc4_msg_invalid_sub_repeats_in_college", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          
-         else if(!txtAvgPgPer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgPgPer.getText()) && !GbbValidator.isNumLesserThanOffset(txtAvgPgPer.getText(),100))
+         else if(!txtAvgPgPer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtAvgPgPer.getText()))
+         {
+             UIUtils.showAlert("sc4_msg_invalid_avg_pg_per", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!txtAvgPgPer.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isNumLesserThanOffset(txtAvgPgPer.getText(),100))
          {
              UIUtils.showAlert("sc4_msg_invalid_avg_pg_per", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
          
-         else if(!txtNoOfPgRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfPgRepeats.getText()) && !GbbValidator.isNumLesserThanOffset(txtNoOfPgRepeats.getText(),20))
+         else if(!txtNoOfPgRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtNoOfPgRepeats.getText()))
          {
              UIUtils.showAlert("sc4_msg_invalid_repeats_in_pg", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-         else if(!txtSubRepeatsPG.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsPG.getText()) && !GbbValidator.isNumLesserThanOffset(txtSubRepeatsPG.getText(),20))
+         else if(!txtNoOfPgRepeats.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isNumLesserThanOffset(txtNoOfPgRepeats.getText(),20))
+         {
+             UIUtils.showAlert("sc4_msg_invalid_repeats_in_pg", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!txtSubRepeatsPG.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isValidNumber(txtSubRepeatsPG.getText()))
+         {
+             UIUtils.showAlert("sc4_msg_invalid_sub_repeats_in_pg", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!txtSubRepeatsPG.getText().equals(GlobalConstants.emptyString) && !GbbValidator.isNumLesserThanOffset(txtSubRepeatsPG.getText(),20))
          {
              UIUtils.showAlert("sc4_msg_invalid_sub_repeats_in_pg", GlobalConstants.Lbl_Alert); 
              isValid=false;
