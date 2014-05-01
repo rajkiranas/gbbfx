@@ -359,7 +359,10 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     private TextField txtHip;
     
     @FXML
-    private TextField txtBp;
+    private TextField txtBpSystolic;
+    
+    @FXML
+    private TextField txtBpDiastolic;
     
     @FXML
     private TextField txtHaemoglobin;
@@ -438,9 +441,16 @@ private boolean validatePhysicalParametersForm()
              UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-          else if(txtBp.getText() !=null 
-                  && !txtBp.getText().trim().equals(GlobalConstants.emptyString)
-                  && !GbbValidator.isValidNumber(txtBp.getText()))
+          else if(txtBpSystolic.getText() !=null 
+                  && !txtBpSystolic.getText().trim().equals(GlobalConstants.emptyString)
+                  && !GbbValidator.isValidNumber(txtBpSystolic.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_bp", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtBpDiastolic.getText() !=null 
+                  && !txtBpDiastolic.getText().trim().equals(GlobalConstants.emptyString)
+                  && !GbbValidator.isValidNumber(txtBpDiastolic.getText()))
          {
              UIUtils.showAlert("sc1_msg_enter_valid_bp", GlobalConstants.Lbl_Alert); 
              isValid=false;
@@ -490,8 +500,11 @@ private boolean validatePhysicalParametersForm()
         if(!txtWaist.getText().equals(GlobalConstants.emptyString))
             phy.setWaist(Float.parseFloat(txtWaist.getText()));
         
-        if(!txtBp.getText().equals(GlobalConstants.emptyString))
-            phy.setBp(Float.parseFloat(txtBp.getText()));
+        if(!txtBpSystolic.getText().equals(GlobalConstants.emptyString))
+            phy.setBpSystolic(Float.parseFloat(txtBpSystolic.getText()));
+        
+        if(!txtBpDiastolic.getText().equals(GlobalConstants.emptyString))
+            phy.setBpDiastolic(Float.parseFloat(txtBpDiastolic.getText()));
         
         if(!txtHaemoglobin.getText().equals(GlobalConstants.emptyString))
             phy.setHaemoglobin(Float.parseFloat(txtHaemoglobin.getText()));

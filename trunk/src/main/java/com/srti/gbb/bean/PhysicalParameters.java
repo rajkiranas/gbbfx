@@ -19,7 +19,8 @@ public class PhysicalParameters  implements Serializable
     private float weight;
     private float hip;
     private float waist;
-    private float bp;
+    private float bpSystolic;
+    private float bpDiastolic;
     private float haemoglobin;
     private String toeTouching;
     private float toeTouchingCm;
@@ -83,12 +84,12 @@ public class PhysicalParameters  implements Serializable
         this.waist = waist;
     }
 
-    public float getBp() {
-        return bp;
+    public float getBpSystolic() {
+        return bpSystolic;
     }
 
-    public void setBp(float bp) {
-        this.bp = bp;
+    public void setBpSystolic(float bpSystolic) {
+        this.bpSystolic = bpSystolic;
     }
 
     public float getHaemoglobin() {
@@ -117,7 +118,21 @@ public class PhysicalParameters  implements Serializable
 
     @Override
     public String toString() {
-        return "PhysicalParameters{" + "feets=" + feets + ", inches=" + inches + ", weight=" + weight + ", hip=" + hip + ", waist=" + waist + ", bp=" + bp + ", haemoglobin=" + haemoglobin + ", toeTouching=" + toeTouching + ", toeTouchingCm=" + toeTouchingCm + ", looseMotionsPerWeek=" + looseMotionsPerWeek + ", constipationsPerWeek=" + constipationsPerWeek + '}';
+        return "PhysicalParameters{" + "feets=" + feets + ", inches=" + inches + ", weight=" + weight + ", hip=" + hip + ", waist=" + waist + ", bp=" + bpSystolic + ", haemoglobin=" + haemoglobin + ", toeTouching=" + toeTouching + ", toeTouchingCm=" + toeTouchingCm + ", looseMotionsPerWeek=" + looseMotionsPerWeek + ", constipationsPerWeek=" + constipationsPerWeek + '}';
+    }
+
+    /**
+     * @return the bpDiastolic
+     */
+    public float getBpDiastolic() {
+        return bpDiastolic;
+    }
+
+    /**
+     * @param bpDiastolic the bpDiastolic to set
+     */
+    public void setBpDiastolic(float bpDiastolic) {
+        this.bpDiastolic = bpDiastolic;
     }
     
 }
