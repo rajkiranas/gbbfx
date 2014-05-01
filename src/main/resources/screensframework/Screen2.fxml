@@ -54,7 +54,7 @@
             <Label text="%Lbl_Food_Type" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Lbl_Fruits" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label text="%Lbl_Eating_Out" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <ComboBox fx:id="cmbDiet" onAction="#manageNonVeg" prefHeight="35.0" prefWidth="91.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ComboBox fx:id="cmbDiet" onAction="#manageNonVeg" prefHeight="35.0" prefWidth="105.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
               </items>

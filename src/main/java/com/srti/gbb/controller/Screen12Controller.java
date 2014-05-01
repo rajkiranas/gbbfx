@@ -140,7 +140,6 @@ public class Screen12Controller implements Initializable, ControlledScreen {
     
     private boolean validateAddressForm()
      {
-         Pattern digitPattern = Pattern.compile("\\d{6}");
          
          boolean isValid=true;
          if(txtHouse.getText() ==null || txtHouse.getText().trim().equals(GlobalConstants.emptyString))
@@ -183,7 +182,7 @@ public class Screen12Controller implements Initializable, ControlledScreen {
     
              isValid=false;
          }
-         else if(!digitPattern.matcher(txtPincode.getText()).matches())
+         else if(!GbbValidator.isValidPincode(txtPincode.getText()))
          {
               UIUtils.showAlert("sc12_msg_six_digit_pincode", GlobalConstants.Lbl_Alert);  
     

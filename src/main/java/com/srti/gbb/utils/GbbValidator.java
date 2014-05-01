@@ -68,4 +68,15 @@ public class GbbValidator {
     {
         return NumberUtils.isNumber(num);
     }
+    
+    public static boolean isValidPincode(String num)
+    {
+        Pattern digitPattern = Pattern.compile("\\d{6}");
+        return digitPattern.matcher(num).matches();
+    }
+    
+    public static boolean isNumLesserThanOffset(String num, int offset)
+    {
+        return Integer.parseInt(num) < offset;
+    }
 }

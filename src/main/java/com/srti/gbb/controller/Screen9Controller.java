@@ -251,6 +251,12 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
 
                 isValid=false;
             }
+            else if(!GbbValidator.isNumLesserThanOffset(txtVehicleNumbers.getText(),50))
+            {
+                 UIUtils.showAlert("sc9_msg_invalid_vehicles_nos", GlobalConstants.Lbl_Alert);  
+
+                isValid=false;
+            }
         }
          return isValid;
     }
@@ -276,8 +282,13 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
          {
              UIUtils.showAlert("sc9_msg_enter_house_members", GlobalConstants.Lbl_Alert); 
              isValid=false;
-         }         
-         else if(!GbbValidator.isValidNumber(txtHouseApproxArea.getText()))
+         }
+         else if(!GbbValidator.isValidNumber(txtHouseMembers.getText()))
+         {
+              UIUtils.showAlert("sc9_msg_invalid_house_members", GlobalConstants.Lbl_Alert);  
+             isValid=false;
+         }
+         else if(!GbbValidator.isNumLesserThanOffset(txtHouseMembers.getText(),50))
          {
               UIUtils.showAlert("sc9_msg_invalid_house_members", GlobalConstants.Lbl_Alert);  
              isValid=false;
@@ -325,6 +336,11 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
              isValid=false;
          }         
          else if(!GbbValidator.isValidNumber(txtLandMembers.getText()))
+         {
+              UIUtils.showAlert("sc9_msg_invalid_land_dependants", GlobalConstants.Lbl_Alert);  
+             isValid=false;
+         }
+         else if(!GbbValidator.isNumLesserThanOffset(txtLandMembers.getText(),50))
          {
               UIUtils.showAlert("sc9_msg_invalid_land_dependants", GlobalConstants.Lbl_Alert);  
              isValid=false;

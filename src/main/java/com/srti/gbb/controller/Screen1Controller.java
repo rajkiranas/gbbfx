@@ -15,8 +15,6 @@ import com.srti.gbb.utils.GbbValidator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -28,9 +26,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
 
 /**
  * FXML Controller class
@@ -407,12 +403,22 @@ private boolean validatePhysicalParametersForm()
              UIUtils.showAlert("sc1_msg_enter_valid_weight", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
+         else if(!GbbValidator.isNumLesserThanOffset(txtWeight.getText(),500))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_weight", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
           else if(txtHip.getText() ==null || txtHip.getText().trim().equals(GlobalConstants.emptyString))
          {
              UIUtils.showAlert("sc1_msg_enter_hip", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
           else if(!GbbValidator.isValidNumber(txtHip.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_hip", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isNumLesserThanOffset(txtHip.getText(),50))
          {
              UIUtils.showAlert("sc1_msg_enter_valid_hip", GlobalConstants.Lbl_Alert); 
              isValid=false;
@@ -427,6 +433,11 @@ private boolean validatePhysicalParametersForm()
              UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
+          else if(!GbbValidator.isNumLesserThanOffset(txtWaist.getText(),50))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
           else if(txtBp.getText() !=null 
                   && !txtBp.getText().trim().equals(GlobalConstants.emptyString)
                   && !GbbValidator.isValidNumber(txtBp.getText()))
@@ -437,7 +448,8 @@ private boolean validatePhysicalParametersForm()
           
           else if(txtHaemoglobin.getText() !=null 
                   && !txtHaemoglobin.getText().trim().equals(GlobalConstants.emptyString)
-                  && !GbbValidator.isValidNumber(txtHaemoglobin.getText()))
+                  && !GbbValidator.isValidNumber(txtHaemoglobin.getText())
+                  && !GbbValidator.isNumLesserThanOffset(txtHaemoglobin.getText(),25))
          {
              UIUtils.showAlert("sc1_msg_enter_valid_haemoglobin", GlobalConstants.Lbl_Alert); 
              isValid=false;
@@ -454,6 +466,11 @@ private boolean validatePhysicalParametersForm()
              isValid=false;
          }
          else if(!GbbValidator.isValidNumber(txtToeCm.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_toe_cm", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isNumLesserThanOffset(txtToeCm.getText(),10))
          {
              UIUtils.showAlert("sc1_msg_enter_valid_toe_cm", GlobalConstants.Lbl_Alert); 
              isValid=false;

@@ -330,15 +330,15 @@ public class Screen2Controller implements Initializable , ControlledScreen {
         if(objDiet!=null)
         {
             String diet = objDiet.toString();
-            if(!diet.equals(GlobalConstants.emptyString) && diet.equals(MU.getMsg("Lbl_Veg")))
-            {
-                cmbNonVeg.getSelectionModel().selectFirst();
-                cmbNonVeg.setDisable(true);
-            }
-            else
+            if(!diet.equals(GlobalConstants.emptyString) && diet.equals(MU.getMsg("Lbl_Non_Veg")))
             {
                 cmbNonVeg.getSelectionModel().clearSelection();
                 cmbNonVeg.setDisable(false);
+            }
+            else
+            {
+                cmbNonVeg.getSelectionModel().selectFirst();
+                cmbNonVeg.setDisable(true);
             }
         }
     }
