@@ -114,7 +114,7 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="433.0" layoutY="83.0" prefHeight="332.0" prefWidth="340.0" styleClass="roundEdge">
+    <AnchorPane layoutX="433.0" layoutY="83.0" prefHeight="332.0" prefWidth="343.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="14.0" layoutY="8.0" prefHeight="252.0">
           <children>
@@ -167,7 +167,9 @@
             </HBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <children>
-                <TextField fx:id="txtBp" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="50.0" />
+                <TextField id="txtBp" fx:id="txtBpSystolic" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" promptText="%Lbl_BP_Systolic" />
+                <Label text="%Lbl_Blood_Pressure_Unit" />
+                <TextField id="txtBpSystolic" fx:id="txtBpDiastolic" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" promptText="%Lbl_BP_Diastolic" />
                 <Label text="%Lbl_Blood_Pressure_Unit" />
               </children>
             </HBox>
