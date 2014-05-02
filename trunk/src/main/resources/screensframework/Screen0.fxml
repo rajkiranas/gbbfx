@@ -34,21 +34,16 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <VBox alignment="CENTER" layoutX="27.0" layoutY="124.0" prefHeight="256.0" prefWidth="746.0" spacing="20.0" styleClass="roundEdge, msgsBg">
+    <VBox alignment="CENTER" layoutX="28.0" layoutY="116.0" prefHeight="256.0" prefWidth="746.0" spacing="20.0" styleClass="roundEdge, msgsBg">
       <children>
         <Label alignment="CENTER" styleClass="msgsStyle" text="%IntroMsg1" />
         <Label alignment="CENTER" styleClass="msgsStyle" text="%IntroMsg2" />
         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%IntroMsg3" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
         <Label alignment="CENTER" styleClass="msgsStyle" text="%IntroMsg4" />
         <Label alignment="CENTER" contentDisplay="CENTER" styleClass="msgsStyle" text="%IntroMsg5" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
-        <HBox id="HBox" alignment="CENTER" spacing="5.0">
-          <children>
-            <Label styleClass="msgsStyle" text="%IntroMsg6" />
-            <Hyperlink onAction="#showDisclaimer" styleClass="throughoutLabelsStyle" text="%IntroMsg7" />
-          </children>
-        </HBox>
       </children>
     </VBox>
+    <Label layoutX="27.0" layoutY="420.0" styleClass="throughoutLabelsStyle" text="Version 1.0" />
   </children>
   <rotationAxis>
     <Point3D />
