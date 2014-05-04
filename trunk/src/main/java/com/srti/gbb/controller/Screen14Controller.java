@@ -75,7 +75,8 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
     
     @FXML
         private void goToPreviousScreen(ActionEvent event){
-       navigator.navigateTo(ScreensFramework.screen13ID);
+       //navigator.navigateTo(ScreensFramework.screen13ID);
+            navigator.navigateTo(ScreensFramework.screen12ID);
     }
 
      @FXML
@@ -254,7 +255,8 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
     }
 
     private void navigateToNextScreen() {
-        navigator.navigateTo(ScreensFramework.screen11ID);
+        //navigator.navigateTo(ScreensFramework.screen11ID);
+        navigator.navigateTo(ScreensFramework.screen2ID);
     }
     
     

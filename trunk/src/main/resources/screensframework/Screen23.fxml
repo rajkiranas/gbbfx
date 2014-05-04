@@ -9,10 +9,10 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen23Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <Label layoutX="235.0" layoutY="113.0" prefHeight="225.0" prefWidth="337.0" styleClass="msgsBg, msgsStyle" text="%IntroMsg_Prakruti_Nidaan" textAlignment="CENTER" wrapText="true" />
+    <Label layoutX="235.0" layoutY="113.0" prefHeight="225.0" prefWidth="337.0" styleClass="msgsBg, msgsStyle, roundEdge" text="%IntroMsg_Prakruti_Nidaan" textAlignment="CENTER" wrapText="true" />
     <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
