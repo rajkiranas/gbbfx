@@ -89,7 +89,7 @@ public class Screen12Controller implements Initializable, ControlledScreen {
         {
             setOccupationData();
             setAddressData();
-            navigator.navigateTo(ScreensFramework.screen2ID);
+            navigator.navigateTo(ScreensFramework.screen14ID);
         }
     }
     
