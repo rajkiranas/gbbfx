@@ -7,7 +7,6 @@
 package com.srti.gbb.controller;
 
 import com.srti.gbb.bean.AllergyBean;
-import com.srti.gbb.bean.IdolBean;
 import com.srti.gbb.bean.PhysicalParameters;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
@@ -19,11 +18,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Point2D;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
@@ -55,6 +59,9 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
         // TODO
         populateLooseMotionsCombo();
         populateConstipationsCombo();
+        populateHeightFeets();
+        populateHeightInches();
+        consolidateRadioButtonsInToggleGroup();
     }    
 
     /**
@@ -133,34 +140,35 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
         }
     }
         
-private boolean validatePhysicalParametersForm()
-     {
-         
-         boolean isValid=true;
-         if(cmbLooseMotions.getValue()==null || cmbLooseMotions.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_lm", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-          else if(cmbConstipations.getValue()==null || cmbConstipations.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_consti", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         
-         return isValid;
-     }
-    private void setPhysicalParameters() {
-        PhysicalParameters phy = navigator.getUserInfo().getPhysicalParams();
-        if(phy==null)
-        {
-            phy=new PhysicalParameters();
-        }
-        phy.setLooseMotionsPerWeek(Integer.valueOf(cmbLooseMotions.getValue().toString()));
-        phy.setConstipationsPerWeek(Integer.valueOf(cmbConstipations.getValue().toString()));
-        System.out.println("2****phy="+phy);
-        navigator.getUserInfo().setPhysicalParams(phy);
-    }        
+//private boolean validatePhysicalParametersForm()
+//     {
+//         
+//         boolean isValid=true;
+//         if(cmbLooseMotions.getValue()==null || cmbLooseMotions.getValue().toString().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_sel_lm", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
+//          else if(cmbConstipations.getValue()==null || cmbConstipations.getValue().toString().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_sel_consti", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
+//         
+//         return isValid;
+//     }
+    
+//    private void setPhysicalParameters() {
+//        PhysicalParameters phy = navigator.getUserInfo().getPhysicalParams();
+//        if(phy==null)
+//        {
+//            phy=new PhysicalParameters();
+//        }
+//        phy.setLooseMotionsPerWeek(Integer.valueOf(cmbLooseMotions.getValue().toString()));
+//        phy.setConstipationsPerWeek(Integer.valueOf(cmbConstipations.getValue().toString()));
+//        System.out.println("2****phy="+phy);
+//        navigator.getUserInfo().setPhysicalParams(phy);
+//    }        
 
     private void hideShowPreviousLink() {
         linkShowPrevious.setVisible(false);
@@ -247,5 +255,308 @@ private boolean validatePhysicalParametersForm()
 
     private void navigateToNextScreen() {
         navigator.navigateTo(ScreensFramework.screen11ID);
+    }
+    
+    
+        @FXML
+        private ComboBox cmbHeightFeets;
+        
+        @FXML
+        private ComboBox cmbHeightInches;
+        
+        @FXML
+        private TextField txtWeight;
+        
+        @FXML
+        private Label lblSign;
+    
+        @FXML
+        private TextField txtWaist;
+
+        @FXML
+        private TextField txtHip;
+
+        @FXML
+        private TextField txtBpSystolic;
+
+        @FXML
+        private TextField txtBpDiastolic;
+
+        @FXML
+        private TextField txtHaemoglobin;
+
+        @FXML
+        private TextField txtToeCm;
+
+        @FXML
+        private RadioButton radCanTouch;
+
+        @FXML
+        private RadioButton radCannotTouch;
+
+        @FXML
+        private RadioButton radCanGoBeyond;
+
+        final ToggleGroup group = new ToggleGroup();
+
+        
+//        @FXML
+//        private Tooltip howToMeasureTooltip;
+        
+//        @FXML
+//        private HBox hipHbox;
+        
+        @FXML
+        private Hyperlink lnkHowToMeasure;
+        
+        private void populateHeightFeets() {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Height_Feets_Values);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbHeightFeets.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                //if(!gen.equals(GlobalConstants.Zero))
+                    cmbHeightFeets.getItems().addAll(gen);
+            }
+        }
+       
+    }
+    
+    
+    private void populateHeightInches() {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Loose_Motions_Constipations_Values);
+        //ObservableList genderOptions = new ObservableList();
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbHeightInches.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                if(!gen.equals(GlobalConstants.getProperty((GlobalConstants.Twelve))))
+                 cmbHeightInches.getItems().addAll(gen);
+            }
+        }
+       
+    }
+        
+         @FXML
+    private void showToolTip(Event e)
+    {
+//        System.out.println("showing");
+        Point2D p = lnkHowToMeasure.localToScene(0.0, 0.0);
+        lnkHowToMeasure.getTooltip().show(lnkHowToMeasure, p.getX() + lnkHowToMeasure.getScene().getX() + lnkHowToMeasure.getScene().getWindow().getX(),
+        p.getY() + lnkHowToMeasure.getScene().getY() + lnkHowToMeasure.getScene().getWindow().getY());
+        
+        lnkHowToMeasure.getTooltip().setAutoHide(true);
+        
+        //howToMeasureTooltip.show(howToMeasureTooltip);
+            
+//        try {
+//                Thread.sleep(5000);
+//            } catch (InterruptedException ex) {
+//                ex.printStackTrace();
+//            }
+//        
+//        System.out.println("hiding");
+//        lnkHowToMeasure.getTooltip().hide();
+    }
+    
+    @FXML
+    private void hideToolTip(Event e)
+    {
+        System.out.println("hiding");
+        lnkHowToMeasure.getTooltip().hide();
+    }
+    
+    
+    private boolean validatePhysicalParametersForm()
+     {
+         
+         boolean isValid=true;
+          if(cmbHeightFeets.getValue()==null || cmbHeightFeets.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_feet", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(cmbHeightInches.getValue()==null || cmbHeightInches.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_inches", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(txtWeight.getText() ==null || txtWeight.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_weight", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!GbbValidator.isValidNumber(txtWeight.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_weight", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!GbbValidator.isNumLesserThanOffset(txtWeight.getText(),500))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_weight", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtHip.getText() ==null || txtHip.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_hip", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isValidNumber(txtHip.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_hip", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isNumLesserThanOffset(txtHip.getText(),50))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_hip", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtWaist.getText() ==null || txtWaist.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_waist", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isValidNumber(txtWaist.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isNumLesserThanOffset(txtWaist.getText(),50))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtBpSystolic.getText() !=null 
+                  && !txtBpSystolic.getText().trim().equals(GlobalConstants.emptyString)
+                  && !GbbValidator.isValidNumber(txtBpSystolic.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_bp", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(txtBpDiastolic.getText() !=null 
+                  && !txtBpDiastolic.getText().trim().equals(GlobalConstants.emptyString)
+                  && !GbbValidator.isValidNumber(txtBpDiastolic.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_bp", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          
+          else if(txtHaemoglobin.getText() !=null 
+                  && !txtHaemoglobin.getText().trim().equals(GlobalConstants.emptyString)
+                  && !GbbValidator.isValidNumber(txtHaemoglobin.getText())
+                  && !GbbValidator.isNumLesserThanOffset(txtHaemoglobin.getText(),25))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_haemoglobin", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+           else if(!radCanTouch.isSelected() && !radCannotTouch.isSelected() && !radCanGoBeyond.isSelected())
+         {
+             UIUtils.showAlert("sc1_msg_enter_toe_option", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          
+          else if(txtToeCm.getText() ==null || txtToeCm.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_toe_cm", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!GbbValidator.isValidNumber(txtToeCm.getText()))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_toe_cm", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(!GbbValidator.isNumLesserThanOffset(txtToeCm.getText(),10))
+         {
+             UIUtils.showAlert("sc1_msg_enter_valid_toe_cm", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(cmbLooseMotions.getValue()==null || cmbLooseMotions.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_lm", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          else if(cmbConstipations.getValue()==null || cmbConstipations.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_consti", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+          
+          
+         return isValid;
+     }
+    private void setPhysicalParameters() 
+    {
+        PhysicalParameters phy = new PhysicalParameters();
+        phy.setFeets(Integer.valueOf(cmbHeightFeets.getValue().toString()));
+        phy.setInches(Integer.valueOf(cmbHeightInches.getValue().toString()));
+        phy.setWeight(Float.parseFloat(txtWeight.getText()));
+        
+        phy.setHip(Float.parseFloat(txtHip.getText()));
+        
+        if(!txtWaist.getText().equals(GlobalConstants.emptyString))
+            phy.setWaist(Float.parseFloat(txtWaist.getText()));
+        
+        if(!txtBpSystolic.getText().equals(GlobalConstants.emptyString))
+            phy.setBpSystolic(Float.parseFloat(txtBpSystolic.getText()));
+        
+        if(!txtBpDiastolic.getText().equals(GlobalConstants.emptyString))
+            phy.setBpDiastolic(Float.parseFloat(txtBpDiastolic.getText()));
+        
+        if(!txtHaemoglobin.getText().equals(GlobalConstants.emptyString))
+            phy.setHaemoglobin(Float.parseFloat(txtHaemoglobin.getText()));
+        
+        if(radCanTouch.isSelected())
+        {
+            phy.setToeTouching(radCanTouch.getText());
+        }
+        else if(radCannotTouch.isSelected())
+        {
+            phy.setToeTouching(radCannotTouch.getText());
+        }
+        else if(radCanGoBeyond.isSelected())
+        {
+            phy.setToeTouching(radCanGoBeyond.getText());
+        }
+        
+        phy.setToeTouchingCm(Float.parseFloat(txtToeCm.getText()));
+        
+        phy.setLooseMotionsPerWeek(Integer.valueOf(cmbLooseMotions.getValue().toString()));
+        phy.setConstipationsPerWeek(Integer.valueOf(cmbConstipations.getValue().toString()));
+        
+        System.out.println("2****phy="+phy);
+        navigator.getUserInfo().setPhysicalParams(phy);
+    }
+    
+        private void consolidateRadioButtonsInToggleGroup() {
+        radCanTouch.setToggleGroup(group);
+        radCannotTouch.setToggleGroup(group);
+        radCanGoBeyond.setToggleGroup(group);
+    }
+    
+    @FXML
+    private void manageCentimeterBoxCan() 
+    {
+        lblSign.setText(GlobalConstants.emptyString);
+        txtToeCm.setText(GlobalConstants.Zero_Number);
+        txtToeCm.setDisable(true);
+    }
+    
+    @FXML
+    private void manageCentimeterBoxCannot() 
+    {
+        lblSign.setText(GlobalConstants.hyphen);
+        txtToeCm.setText(GlobalConstants.emptyString);
+        txtToeCm.setDisable(false);
+    }
+    
+    @FXML
+    private void manageCentimeterBoxBeyond() 
+    {
+        lblSign.setText(GlobalConstants.plus);
+        txtToeCm.setText(GlobalConstants.emptyString);
+        txtToeCm.setDisable(false);
     }
 }

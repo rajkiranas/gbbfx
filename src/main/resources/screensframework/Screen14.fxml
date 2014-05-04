@@ -14,49 +14,159 @@
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen14Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-    <HBox alignment="CENTER" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+    <AnchorPane layoutX="27.0" layoutY="88.0" prefHeight="322.0" prefWidth="352.0" styleClass="roundEdge">
       <children>
-        <Label alignment="CENTER_LEFT" prefWidth="222.0" styleClass="screenHeading" text="%WelcomeMsg_Prakruti_Nidaan" textAlignment="LEFT" textFill="#2e7c95" wrapText="true" />
-      </children>
-      <padding>
-        <Insets />
-      </padding>
-    </HBox>
-    <Label layoutX="40.0" layoutY="134.0" prefHeight="225.0" prefWidth="337.0" styleClass="msgsBg, msgsStyle" text="%IntroMsg_Prakruti_Nidaan" textAlignment="CENTER" wrapText="true" />
-    <AnchorPane id="AnchorPane" layoutX="407.0" layoutY="99.0" prefHeight="294.0" styleClass="roundEdge">
-      <children>
-        <Label layoutX="25.0" layoutY="27.0" text="%Lbl_Allergies" />
-        <TextField fx:id="txtAllergyName" layoutX="106.0" layoutY="21.0" prefHeight="40.0" prefWidth="211.0" promptText="%Lbl_InputPrompt" />
-        <Button layoutX="105.0" layoutY="75.0" mnemonicParsing="false" onAction="#addAllergyAndClearForm" prefHeight="35.0" text="%Lbl_Add_Allergy_Btn" />
-        <Hyperlink fx:id="linkShowPrevious" layoutX="212.0" layoutY="82.0" onAction="#showPrevious" prefWidth="108.0" text="%Link_View_Previous" visible="true" />
-        <Separator layoutX="14.0" layoutY="123.0" prefWidth="318.0" />
-        <GridPane id="GridPane" layoutX="25.0" layoutY="127.0" prefHeight="166.0" prefWidth="307.0">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="11.0" prefHeight="192.0" prefWidth="310.0">
           <children>
-            <Label minHeight="14.0" prefHeight="35.0" prefWidth="142.0" text="%Lbl_Loose_Motions" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox fx:id="cmbLooseMotions" minWidth="49.0" prefHeight="35.0" prefWidth="49.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <Label prefHeight="28.0" prefWidth="97.0" text="%Lbl_Loose_Motions_Param" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Label minHeight="14.0" prefHeight="35.0" prefWidth="118.0" text="%Lbl_Constipations" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cmbConstipations" prefHeight="35.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <Label prefHeight="28.0" prefWidth="97.0" text="%Lbl_Constipations_Param" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <children>
+                <ComboBox fx:id="cmbHeightFeets" minWidth="49.0" prefHeight="35.0" prefWidth="65.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                    <!--              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>-->
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Height_Param1" />
+                <ComboBox fx:id="cmbHeightInches" prefHeight="35.0" prefWidth="65.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label text="%Lbl_Height_Param2" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <children>
+                <TextField id="txtAge" fx:id="txtWeight" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" text="" />
+                <Label prefHeight="29.0" prefWidth="50.0" text="%Lbl_Weight_Param" textAlignment="LEFT" wrapText="true" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <children>
+                <TextField fx:id="txtHip" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" />
+                <Label text="%Lbl_Centimeter" />
+                <Hyperlink id="lblMeasure" fx:id="lnkHowToMeasure" onAction="#showToolTip" styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
+                  <tooltip>
+                    <Tooltip text="%Lbl_How_To_Measure_Msg" />
+                  </tooltip>
+                </Hyperlink>
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <children>
+                <TextField fx:id="txtWaist" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" />
+                <Label text="%Lbl_Centimeter" />
+              </children>
+            </HBox>
+            <Label text="%Lbl_Hip" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Waist" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="%Lbl_Weight" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Height" GridPane.columnIndex="0" GridPane.rowIndex="0" />
           </children>
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="114.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="0.0" prefWidth="70.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="123.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
+        <GridPane id="GridPane" layoutX="14.0" layoutY="203.0" prefHeight="115.0" prefWidth="253.0" styleClass="toeTouchingFont">
+          <children>
+            <RadioButton fx:id="radCanTouch" mnemonicParsing="false" onAction="#manageCentimeterBoxCan" text="%Lbl_Toe_Touching_Prompt1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <RadioButton fx:id="radCannotTouch" mnemonicParsing="false" onAction="#manageCentimeterBoxCannot" text="%Lbl_Toe_Touching_Prompt2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <RadioButton fx:id="radCanGoBeyond" mnemonicParsing="false" onAction="#manageCentimeterBoxBeyond" text="%Lbl_Toe_Touching_Prompt3" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <children>
+                <Label fx:id="lblSign" styleClass="throughoutLabelsStyle" text="" />
+                <TextField fx:id="txtToeCm" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" />
+                <Label text="%Lbl_Centimeter" />
+              </children>
+            </HBox>
+            <Label styleClass="throughoutLabelsStyle" text="%Lbl_Toe_Touching" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="145.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="108.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="AnchorPane" layoutX="405.0" layoutY="88.0" minHeight="322.0" prefHeight="322.0" prefWidth="368.0" styleClass="roundEdge">
+      <children>
+        <GridPane id="GridPane" layoutX="20.0" layoutY="10.0" prefHeight="192.0" prefWidth="343.0">
+          <children>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <children>
+                <TextField id="txtBp" fx:id="txtBpSystolic" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" promptText="%Lbl_BP_Systolic" />
+                <Label text="%Lbl_Blood_Pressure_Unit" />
+                <TextField id="txtBpSystolic" fx:id="txtBpDiastolic" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" promptText="%Lbl_BP_Diastolic" />
+                <Label text="%Lbl_Blood_Pressure_Unit" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <children>
+                <TextField fx:id="txtHaemoglobin" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" />
+                <Label text="%Lbl_Haemoglobin_Unit" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <children>
+                <ComboBox fx:id="cmbLooseMotions" minWidth="49.0" prefHeight="35.0" prefWidth="65.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label prefHeight="28.0" prefWidth="97.0" text="%Lbl_Loose_Motions_Param" wrapText="true" />
+              </children>
+            </HBox>
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <children>
+                <ComboBox fx:id="cmbConstipations" prefHeight="35.0" prefWidth="65.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label prefHeight="28.0" prefWidth="97.0" text="%Lbl_Constipations_Param" wrapText="true" />
+              </children>
+            </HBox>
+            <Label minHeight="14.0" prefHeight="35.0" prefWidth="118.0" text="%Lbl_Constipations" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label minHeight="14.0" prefHeight="35.0" prefWidth="142.0" text="%Lbl_Loose_Motions" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Haemoglobin" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%Lbl_Blood_Pressure" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="104.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="0.0" prefWidth="239.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <TextField fx:id="txtAllergyName" layoutX="107.0" layoutY="221.0" prefHeight="40.0" prefWidth="211.0" promptText="%Lbl_InputPrompt" />
+        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="107.0" layoutY="274.0" spacing="5.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#addAllergyAndClearForm" prefHeight="35.0" text="%Lbl_Add_Allergy_Btn" />
+            <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="108.0" text="%Link_View_Previous" visible="true" />
+          </children>
+        </HBox>
+        <Label layoutX="25.0" layoutY="233.0" text="%Lbl_Allergies" />
+        <Separator layoutX="25.0" layoutY="208.0" prefWidth="318.0" />
       </children>
     </AnchorPane>
     <HBox alignment="CENTER_LEFT" layoutX="3.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
@@ -79,6 +189,19 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
+    <AnchorPane layoutX="0.0" layoutY="41.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+      <children>
+        <Label layoutX="29.0" layoutY="9.0" styleClass="screenHeading" text="%First_Screen_Heading_Physical_Parameters">
+          <textFill>
+            <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label alignment="CENTER_LEFT" layoutX="408.0" layoutY="9.0" prefWidth="104.0" styleClass="screenHeading" text="%WelcomeMsg_Prakruti_Nidaan" textAlignment="LEFT" textFill="$x1" wrapText="true" />
+      </children>
+      <stylesheets>
+        <URL value="@../styles/Styles.css" />
+      </stylesheets>
+    </AnchorPane>
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />
