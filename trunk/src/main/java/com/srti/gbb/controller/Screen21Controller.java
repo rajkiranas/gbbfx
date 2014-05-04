@@ -99,7 +99,7 @@ public class Screen21Controller implements Initializable, ControlledScreen {
 
         Stage stage = new Stage(StageStyle.UTILITY);
         File file = fileChooser.showSaveDialog(stage);
-        fileChooser.setInitialFileName("Gbb-Disclaimer.pdf");
+        //fileChooser.setInitialFileName("Gbb-Disclaimer.pdf");
         
         String path = file.getAbsolutePath();
         

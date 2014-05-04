@@ -118,7 +118,7 @@ public class PhysicalParameters  implements Serializable
 
     @Override
     public String toString() {
-        return "PhysicalParameters{" + "feets=" + feets + ", inches=" + inches + ", weight=" + weight + ", hip=" + hip + ", waist=" + waist + ", bp=" + bpSystolic + ", haemoglobin=" + haemoglobin + ", toeTouching=" + toeTouching + ", toeTouchingCm=" + toeTouchingCm + ", looseMotionsPerWeek=" + looseMotionsPerWeek + ", constipationsPerWeek=" + constipationsPerWeek + '}';
+        return "PhysicalParameters{" + "feets=" + feets + ", inches=" + inches + ", weight=" + weight + ", hip=" + hip + ", waist=" + waist + ", bpSystolic=" + bpSystolic + ", bpDiastolic=" + bpDiastolic + ", haemoglobin=" + haemoglobin + ", toeTouching=" + toeTouching + ", toeTouchingCm=" + toeTouchingCm + ", looseMotionsPerWeek=" + looseMotionsPerWeek + ", constipationsPerWeek=" + constipationsPerWeek + '}';
     }
 
     /**

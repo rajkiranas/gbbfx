@@ -80,7 +80,7 @@ public class ThankyouSceneController implements Initializable, ControlledScreen 
 
         Stage stage = new Stage(StageStyle.UTILITY);
         File file = fileChooser.showSaveDialog(stage);
-        fileChooser.setInitialFileName("Prakruti-Report.pdf");
+        //fileChooser.setInitialFileName("Prakruti-Report.pdf");
         
         String path = file.getAbsolutePath();
         
