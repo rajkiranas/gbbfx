@@ -136,23 +136,7 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     
              isValid=false;
          }
-         else if(txtAge.getText() ==null || txtAge.getText().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_enter_age", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         else if(!GbbValidator.isValidNumber(txtAge.getText()))
-         {
-              UIUtils.showAlert("sc1_msg_valid_age", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
-         }
-         else if(Integer.parseInt(txtAge.getText())>Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.MaxAge)))
-         {
-              UIUtils.showAlert("sc1_msg_greater_age", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
-         }
+         
          else if(cmbGenderList.getValue()==null || cmbGenderList.getValue().toString().trim().equals(GlobalConstants.emptyString))
          {
              UIUtils.showAlert("sc1_msg_sel_gender", GlobalConstants.Lbl_Alert); 
@@ -213,6 +197,23 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
          else if(!GbbValidator.isValidName(txtBirthPlace.getText()))
          {
               UIUtils.showAlert("sc1_msg_enter_valid_birth_place", GlobalConstants.Lbl_Alert);  
+    
+             isValid=false;
+         }
+         else if(txtAge.getText() ==null || txtAge.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_enter_age", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(!GbbValidator.isValidNumber(txtAge.getText()))
+         {
+              UIUtils.showAlert("sc1_msg_valid_age", GlobalConstants.Lbl_Alert);  
+    
+             isValid=false;
+         }
+         else if(Integer.parseInt(txtAge.getText())>Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.MaxAge)))
+         {
+              UIUtils.showAlert("sc1_msg_greater_age", GlobalConstants.Lbl_Alert);  
     
              isValid=false;
          }
