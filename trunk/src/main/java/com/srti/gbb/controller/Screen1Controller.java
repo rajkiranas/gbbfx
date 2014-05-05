@@ -7,25 +7,20 @@
 package com.srti.gbb.controller;
 
 import com.srti.gbb.bean.PersonalInformationBean;
-import com.srti.gbb.bean.PhysicalParameters;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
 import com.srti.gbb.utils.GbbValidator;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Point2D;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 
 /**
@@ -71,6 +66,13 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         getGendersFromProperty();
         getReligionsFromProperty();
         populateMaritalStatus();
+        //dob
+        populateDays();
+        populateMonth();
+        populateYear();
+        
+        populateHours();
+        populateMinutes();
     }    
     
    
@@ -312,5 +314,91 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
 //        {
 //            cmbChildren.setDisable(true);
 //        }
+    }
+
+    @FXML
+    private ComboBox cmbDobDay;
+    private void populateDays() 
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Day_Options);
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbDobDay.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                //if(!gen.equals(GlobalConstants.Zero))
+                 cmbDobDay.getItems().addAll(gen);
+            }
+        }
+    }
+    
+    @FXML
+    private ComboBox cmbDobMonth;
+    private void populateMonth() 
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Month_Options);
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbDobMonth.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                //if(!gen.equals(GlobalConstants.Zero))
+                 cmbDobMonth.getItems().addAll(gen);
+            }
+        }
+    }
+    
+    @FXML
+    private ComboBox cmbDobYear;
+    private void populateYear() 
+    {
+        Date d = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(d);
+        int currentYear = c.get(Calendar.YEAR);
+        
+        int startYear = Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.Year_Start_Option));
+        
+        if(cmbDobYear.getItems().size()==0)
+        {
+            while(startYear<=currentYear)
+            {
+                //if(!gen.equals(GlobalConstants.Zero))
+                     cmbDobYear.getItems().addAll(GlobalConstants.emptyString+startYear);
+                     startYear++;
+            }
+        }
+    }
+    
+    @FXML
+    private ComboBox cmbHours;
+    private void populateHours() 
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Time_Params);
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbHours.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                //if(!gen.equals(GlobalConstants.Zero))
+                 cmbHours.getItems().addAll(gen);
+            }
+        }
+    }
+    
+    @FXML
+    private ComboBox cmbMinutes;
+    private void populateMinutes() 
+    {
+        String genderList = GlobalConstants.getProperty(GlobalConstants.Minute_Params);
+        String[] list =  genderList.split(GlobalConstants.COMMA);
+        if(cmbMinutes.getItems().size()==0)
+        {
+            for(String gen : list)
+            {
+                //if(!gen.equals(GlobalConstants.Zero))
+                 cmbMinutes.getItems().addAll(gen);
+            }
+        }
     }
 }

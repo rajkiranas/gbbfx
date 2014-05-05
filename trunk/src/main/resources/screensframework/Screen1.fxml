@@ -63,11 +63,11 @@
             <ComboBox fx:id="cmbGenderList" prefHeight="35.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList" />
-                <!--                <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Item 1" />
-                  <String fx:value="Item 2" />
-                  <String fx:value="Item 3" />
-                </FXCollections>-->
+                <!--                <FXCollections fx:factory="observableArrayList"/>
+                  
+                  
+                  
+                -->
               </items>
             </ComboBox>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -75,11 +75,11 @@
                 <ComboBox fx:id="cmbReligionList" prefHeight="35.0" prefWidth="102.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList" />
-                    <!--                <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Item 1" />
-                  <String fx:value="Item 2" />
-                  <String fx:value="Item 3" />
-                </FXCollections>-->
+                    <!--                <FXCollections fx:factory="observableArrayList"/>
+                  
+                  
+                  
+                -->
                   </items>
                 </ComboBox>
                 <Label prefHeight="31.0" prefWidth="21.0" text="%Lbl_Or" wrapText="true" />
@@ -118,31 +118,19 @@
       <children>
         <GridPane id="GridPane" layoutX="37.0" layoutY="35.0" prefHeight="192.0" prefWidth="117.0">
           <children>
-            <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Day" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbDobDay" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Day" GridPane.columnIndex="0" GridPane.rowIndex="1">
               <items>
-                <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Item 1" />
-                  <String fx:value="Item 2" />
-                  <String fx:value="Item 3" />
-                </FXCollections>
+                <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Month" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbDobMonth" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Month" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
-                <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Item 1" />
-                  <String fx:value="Item 2" />
-                  <String fx:value="Item 3" />
-                </FXCollections>
+                <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Year" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <ComboBox fx:id="cmbDobYear" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Year" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <items>
-                <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Item 1" />
-                  <String fx:value="Item 2" />
-                  <String fx:value="Item 3" />
-                </FXCollections>
+                <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
             <Label text="%Lbl_DOB" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -160,22 +148,14 @@
         <GridPane id="GridPane" layoutX="216.0" layoutY="29.0" prefHeight="169.0">
           <children>
             <Label text="%Lbl_Birth_Time" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Hours" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <ComboBox fx:id="cmbHours" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Hours" GridPane.columnIndex="0" GridPane.rowIndex="1">
               <items>
-                <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Item 1" />
-                  <String fx:value="Item 2" />
-                  <String fx:value="Item 3" />
-                </FXCollections>
+                <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Minutes" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbMinutes" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Minutes" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
-                <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Item 1" />
-                  <String fx:value="Item 2" />
-                  <String fx:value="Item 3" />
-                </FXCollections>
+                <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
           </children>

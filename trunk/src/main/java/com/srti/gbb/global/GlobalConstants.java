@@ -122,5 +122,9 @@ public class GlobalConstants {
     public static final String plus="+";
     public static final String handshakeUrl="handshakeUrl";
     public static final String dataSubmitUrl="dataSubmitUrl";
+    public static final String Day_Options="Day_Options";
+    public static final String Month_Options="Month_Options";
+    public static final String Year_Start_Option="Year_Start_Option";
+    public static final String Minute_Params="Minute_Params";
             
 }
