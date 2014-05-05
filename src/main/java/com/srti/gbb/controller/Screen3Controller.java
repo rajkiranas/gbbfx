@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
@@ -22,7 +21,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javax.xml.bind.Marshaller.Listener;
 
 /**
  * FXML Controller class
@@ -45,6 +43,23 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        populateWakeupTime();
+        populateSleepTime();
+        
+        populateAfternoonSleep();
+        populateLateNights();
+        
+        populateAddiction1();
+        populateFrequency1();
+        
+        populateAddiction2();
+        populateFrequency2();
+        
+        populateAddiction3();
+        populateFrequency3();
+        
+        populateAddiction4();
+        populateFrequency4();
        
                 }
     
@@ -205,8 +220,9 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     @FXML
     private ComboBox cmbWakeupTime;
-    @FXML
-    private void populateWakeupTime(Event e)
+    
+    
+    private void populateWakeupTime()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Time_Params);
         //ObservableList genderOptions = new ObservableList();
@@ -216,22 +232,22 @@ public class Screen3Controller implements Initializable, ControlledScreen {
             for(String gen : list)
             {
                     cmbWakeupTime.getItems().addAll(gen);
-                    if(!gen.equals(MU.getMsg(GlobalConstants.TwentyFour)))
-                    {
+//                    if(!gen.equals(MU.getMsg(GlobalConstants.TwentyFour)))
+//                    {
                         cmbWakeupTime.getItems().addAll(gen+".15");
                         cmbWakeupTime.getItems().addAll(gen+".30");
                         cmbWakeupTime.getItems().addAll(gen+".45");
-                    }
+  //                  }
             }
         }
-     setVisibilityOfGynecInputs();   
+     //setVisibilityOfGynecInputs();   
     }
     
     @FXML
     private ComboBox cmbSleepTime;
     
-    @FXML
-    private void populateSleepTime(Event e)
+    
+    private void populateSleepTime()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Time_Params);
         //ObservableList genderOptions = new ObservableList();
@@ -241,12 +257,12 @@ public class Screen3Controller implements Initializable, ControlledScreen {
             for(String gen : list)
             {
                     cmbSleepTime.getItems().addAll(gen);
-                    if(!gen.equals(MU.getMsg(GlobalConstants.TwentyFour)))
-                    {
+//                    if(!gen.equals(MU.getMsg(GlobalConstants.TwentyFour)))
+//                    {
                         cmbSleepTime.getItems().addAll(gen+".15");
                         cmbSleepTime.getItems().addAll(gen+".30");
                         cmbSleepTime.getItems().addAll(gen+".45");
-                    }
+                    //}
             }
         }
         
@@ -255,8 +271,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private ComboBox cmbAfternoonSleep;
     
-    @FXML
-    private void populateAfternoonSleep(Event e)
+    
+    private void populateAfternoonSleep()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
@@ -273,8 +289,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private ComboBox cmbLateNights;
     
-    @FXML
-    private void populateLateNights(Event e)
+    
+    private void populateLateNights()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Zero_To_Seven_WeekDays);
         //ObservableList genderOptions = new ObservableList();
@@ -291,8 +307,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     @FXML
     private ComboBox cmbAddict1;
-    @FXML
-    private void populateAddiction1(Event e)
+    
+    private void populateAddiction1()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Params);
         //ObservableList genderOptions = new ObservableList();
@@ -309,8 +325,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     @FXML
     private ComboBox cmbAddict2;
-    @FXML
-    private void populateAddiction2(Event e)
+    
+    private void populateAddiction2()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Params);
         //ObservableList genderOptions = new ObservableList();
@@ -328,8 +344,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     @FXML
     private ComboBox cmbAddict3;
-    @FXML
-    private void populateAddiction3(Event e)
+    
+    private void populateAddiction3()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Params);
         //ObservableList genderOptions = new ObservableList();
@@ -345,8 +361,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     @FXML
     private ComboBox cmbAddict4;
-    @FXML
-    private void populateAddiction4(Event e)
+    
+    private void populateAddiction4()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Params);
         //ObservableList genderOptions = new ObservableList();
@@ -362,8 +378,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     
     @FXML
     private ComboBox cmbFreq1;
-    @FXML
-    private void populateFrequency1(Event e)
+    
+    private void populateFrequency1()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
@@ -380,8 +396,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private ComboBox cmbFreq2;
     
-    @FXML
-    private void populateFrequency2(Event e)
+    
+    private void populateFrequency2()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
@@ -398,8 +414,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private ComboBox cmbFreq3;
     
-    @FXML
-    private void populateFrequency3(Event e)
+    
+    private void populateFrequency3()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
@@ -416,8 +432,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private ComboBox cmbFreq4;
     
-    @FXML
-    private void populateFrequency4(Event e)
+    
+    private void populateFrequency4()
     {
         String genderList = GlobalConstants.getProperty(GlobalConstants.Addiction_Frequency_Options);
         //ObservableList genderOptions = new ObservableList();
@@ -541,7 +557,9 @@ public class Screen3Controller implements Initializable, ControlledScreen {
     @FXML
     private TextField txtAge;
     
-    private void setVisibilityOfGynecInputs() {
+    @FXML
+    private void setVisibilityOfGynecInputs() 
+    {
         
         if(navigator.getUserInfo().getPi().getGender().equalsIgnoreCase(MU.getMsg("Lbl_Male")))
         {
