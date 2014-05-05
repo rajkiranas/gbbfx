@@ -177,6 +177,45 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("sc1_msg_sel_children", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
+         else if(cmbDobDay.getValue()==null || cmbDobDay.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_dob_day", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(cmbDobMonth.getValue()==null || cmbDobMonth.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_dob_month", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(cmbDobYear.getValue()==null || cmbDobYear.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_dob_year", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(cmbHours.getValue()==null || cmbHours.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_dob_hours", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(cmbMinutes.getValue()==null || cmbMinutes.getValue().toString().trim().equals(GlobalConstants.emptyString))
+         {
+             UIUtils.showAlert("sc1_msg_sel_dob_minutes", GlobalConstants.Lbl_Alert); 
+             isValid=false;
+         }
+         else if(txtBirthPlace.getText() ==null || txtBirthPlace.getText().trim().equals(GlobalConstants.emptyString))
+         {
+             
+              UIUtils.showAlert("sc1_msg_enter_birth_place", GlobalConstants.Lbl_Alert);
+    
+             isValid=false;
+         }
+         else if(!GbbValidator.isValidName(txtBirthPlace.getText()))
+         {
+              UIUtils.showAlert("sc1_msg_enter_valid_birth_place", GlobalConstants.Lbl_Alert);  
+    
+             isValid=false;
+         }
+         
 //         else if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
 //         {
 //             UIUtils.showAlert("sc1_msg_enter_mobile", GlobalConstants.Lbl_Alert); 
@@ -263,6 +302,9 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         
         if(!cmbChildren.isDisabled())
             pi.setNoOfChildren(Integer.parseInt(cmbChildren.getValue().toString()));
+        
+        
+        setBirthInformation(pi);
 //        pi.setMobile(Long.parseLong(txtMobile.getText()));
 //        pi.setEmail(txtEmail.getText());
 //        pi.setOrganization(txtOrganization.getText());
@@ -316,6 +358,9 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
 //        }
     }
 
+    @FXML
+    private TextField txtBirthPlace;
+    
     @FXML
     private ComboBox cmbDobDay;
     private void populateDays() 
@@ -400,5 +445,23 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
                  cmbMinutes.getItems().addAll(gen);
             }
         }
+    }
+
+    private void setBirthInformation(PersonalInformationBean pi) {
+        
+        
+        Calendar c = Calendar.getInstance();
+        
+        c.set(Calendar.DAY_OF_MONTH, Integer.parseInt(cmbDobDay.getValue().toString()));
+        c.set(Calendar.MONTH, (Integer.parseInt(cmbDobMonth.getValue().toString()) - 1));
+        c.set(Calendar.YEAR, Integer.parseInt(cmbDobYear.getValue().toString()));
+        
+        c.set(Calendar.HOUR_OF_DAY, Integer.parseInt(cmbHours.getValue().toString()));
+        c.set(Calendar.MINUTE, Integer.parseInt(cmbMinutes.getValue().toString()));
+        c.set(Calendar.SECOND, 0);
+        
+        System.out.println("*****"+c.getTime());
+        pi.setBirthDate(c.getTime().getTime());
+        pi.setBirthPlace(txtBirthPlace.getText().trim());
     }
 }
