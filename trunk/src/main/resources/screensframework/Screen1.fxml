@@ -169,7 +169,7 @@
           </rowConstraints>
         </GridPane>
         <Label layoutX="37.0" layoutY="255.0" text="%Lbl_Place_Of_Birth" />
-        <TextField layoutX="123.0" layoutY="245.0" prefHeight="35.0" prefWidth="200.0" />
+        <TextField fx:id="txtBirthPlace" layoutX="123.0" layoutY="245.0" prefHeight="35.0" prefWidth="200.0" />
         <Separator layoutX="175.0" layoutY="18.0" orientation="VERTICAL" prefHeight="200.0" />
       </children>
     </AnchorPane>
