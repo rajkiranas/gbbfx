@@ -15,11 +15,12 @@
     <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
-        <Label layoutX="14.0" layoutY="10.0" styleClass="screenHeading" text="%First_Screen_Heading">
+        <Label layoutX="26.0" layoutY="9.0" styleClass="screenHeading" text="%First_Screen_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
+        <Label layoutX="426.0" layoutY="10.0" styleClass="screenHeading" text="%Lbl_Date_Of_Birth" textFill="#2e7c95" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
@@ -115,10 +116,9 @@
     </AnchorPane>
     <AnchorPane layoutX="426.0" layoutY="82.0" prefHeight="332.0" prefWidth="350.0" styleClass="roundEdge">
       <children>
-        <Label layoutX="14.0" layoutY="32.0" styleClass="throughoutLabelsStyle" text="%Lbl_DOB" />
-        <GridPane id="GridPane" layoutX="14.0" layoutY="62.0" prefWidth="322.0">
+        <GridPane id="GridPane" layoutX="37.0" layoutY="35.0" prefHeight="192.0" prefWidth="117.0">
           <children>
-            <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Day" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Day" GridPane.columnIndex="0" GridPane.rowIndex="1">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Item 1" />
@@ -127,7 +127,7 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Month" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Month" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Item 1" />
@@ -136,7 +136,40 @@
                 </FXCollections>
               </items>
             </ComboBox>
-            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Year" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Year" GridPane.columnIndex="0" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <Label text="%Lbl_DOB" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane id="GridPane" layoutX="216.0" layoutY="29.0" prefHeight="169.0">
+          <children>
+            <Label text="%Lbl_Birth_Time" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Hours" GridPane.columnIndex="0" GridPane.rowIndex="1">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <ComboBox prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Minutes" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <items>
                 <FXCollections fx:factory="observableArrayList">
                   <String fx:value="Item 1" />
@@ -148,25 +181,16 @@
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Label layoutX="14.0" layoutY="143.0" text="%Lbl_Birth_Time" />
-        <Label layoutX="14.0" layoutY="218.0" text="%Lbl_Place_Of_Birth" />
-        <ComboBox layoutX="122.0" layoutY="133.0" prefHeight="35.0" prefWidth="81.0">
-          <items>
-            <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Item 1" />
-              <String fx:value="Item 2" />
-              <String fx:value="Item 3" />
-            </FXCollections>
-          </items>
-        </ComboBox>
-        <TextField layoutX="122.0" layoutY="208.0" prefHeight="35.0" prefWidth="200.0" />
+        <Label layoutX="37.0" layoutY="255.0" text="%Lbl_Place_Of_Birth" />
+        <TextField layoutX="123.0" layoutY="245.0" prefHeight="35.0" prefWidth="200.0" />
+        <Separator layoutX="175.0" layoutY="18.0" orientation="VERTICAL" prefHeight="200.0" />
       </children>
     </AnchorPane>
   </children>
