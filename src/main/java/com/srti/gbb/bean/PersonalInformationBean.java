@@ -166,8 +166,10 @@ public class PersonalInformationBean  implements Serializable
 
     @Override
     public String toString() {
-        return "PersonalInformationBean{" + "name=" + name + ", age=" + age + ", gender=" + gender + ", religion=" + religion + ", maritalStatus=" + maritalStatus + ", noOfChildren=" + noOfChildren + ", mobile=" + mobile + ", email=" + email + ", organization=" + organization + ", occupation=" + occupation + ", income=" + income + ", qualification=" + qualification + '}';
+        return "PersonalInformationBean{" + "name=" + name + ", age=" + age + ", gender=" + gender + ", religion=" + religion + ", maritalStatus=" + maritalStatus + ", noOfChildren=" + noOfChildren + ", mobile=" + mobile + ", email=" + email + ", organization=" + organization + ", occupation=" + occupation + ", income=" + income + ", qualification=" + qualification + ", birthDate=" + birthDate + ", birthPlace=" + birthPlace + '}';
     }
+
+    
 
     public long getBirthDate() {
         return birthDate;
