@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -449,7 +450,34 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
 
     private void setBirthInformation(PersonalInformationBean pi) {
         
+        pi.setBirthDate(getDateForCurrentForm().getTime());
+        pi.setBirthPlace(txtBirthPlace.getText().trim());
+    }
+    
+    @FXML
+    private void calculateAndDisplayAge(Event e)
+    {
+        //int age = getAge(getDateForCurrentForm());
         
+        
+        int from = Integer.parseInt(cmbDobYear.getValue().toString());
+        int to = 2014;
+        int age = to - from;
+        
+        txtAge.setText(GlobalConstants.emptyString+age);
+    }
+    
+    public int getAge(Date birthDate) 
+    {
+	long ageInMillis = new Date().getTime() - birthDate.getTime();
+
+	Date age = new Date(ageInMillis);
+
+	return age.getYear();
+}
+    
+    private Date getDateForCurrentForm()
+    {
         Calendar c = Calendar.getInstance();
         
         c.set(Calendar.DAY_OF_MONTH, Integer.parseInt(cmbDobDay.getValue().toString()));
@@ -461,7 +489,6 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         c.set(Calendar.SECOND, 0);
         
         System.out.println("*****"+c.getTime());
-        pi.setBirthDate(c.getTime().getTime());
-        pi.setBirthPlace(txtBirthPlace.getText().trim());
+        return c.getTime();
     }
 }
