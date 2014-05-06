@@ -315,10 +315,11 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbAddict1.getItems().size()==0)
         {
-            for(String gen : list)
-            {
-                    cmbAddict1.getItems().addAll(gen);
-            }
+//            for(String gen : list)
+//            {
+//                    cmbAddict1.getItems().addAll(gen);
+//            }
+            cmbAddict1.getItems().add(list[0]);
         }
         
     }
@@ -333,10 +334,11 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbAddict2.getItems().size()==0)
         {
-            for(String gen : list)
-            {
-                    cmbAddict2.getItems().addAll(gen);
-            }
+//            for(String gen : list)
+//            {
+//                    cmbAddict2.getItems().addAll(gen);
+//            }
+            cmbAddict2.getItems().add(list[1]);
         }
         
     }
@@ -352,10 +354,11 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbAddict3.getItems().size()==0)
         {
-            for(String gen : list)
-            {
-                    cmbAddict3.getItems().addAll(gen);
-            }
+//            for(String gen : list)
+//            {
+//                    cmbAddict3.getItems().addAll(gen);
+//            }
+            cmbAddict3.getItems().add(list[2]);
         }
     }
     
@@ -369,10 +372,11 @@ public class Screen3Controller implements Initializable, ControlledScreen {
         String[] list =  genderList.split(GlobalConstants.COMMA);
         if(cmbAddict4.getItems().size()==0)
         {
-            for(String gen : list)
-            {
-                cmbAddict4.getItems().addAll(gen);
-            }
+//            for(String gen : list)
+//            {
+//                cmbAddict4.getItems().addAll(gen);
+//            }
+            cmbAddict4.getItems().add(list[3]);
         }
     }
     
