@@ -411,7 +411,7 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("sc1_msg_enter_valid_hip", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-          else if(!GbbValidator.isNumLesserThanOffset(txtHip.getText(),50))
+          else if(!GbbValidator.isNumLesserThanOffset(txtHip.getText(),150))
          {
              UIUtils.showAlert("sc1_msg_enter_valid_hip", GlobalConstants.Lbl_Alert); 
              isValid=false;
@@ -426,7 +426,7 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-          else if(!GbbValidator.isNumLesserThanOffset(txtWaist.getText(),50))
+          else if(!GbbValidator.isNumLesserThanOffset(txtWaist.getText(),150))
          {
              UIUtils.showAlert("sc1_msg_enter_valid_waist", GlobalConstants.Lbl_Alert); 
              isValid=false;

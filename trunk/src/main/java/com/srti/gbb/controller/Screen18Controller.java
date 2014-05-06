@@ -483,8 +483,16 @@ public class Screen18Controller implements  Initializable, ControlledScreen {
             }
             else
             {
-                childrenGrid.setDisable(false);
-                btnAddChild.setDisable(false);            
+                 if(navigator.getUserInfo().getPi().getNoOfChildren()==childrenList.size())
+                 {
+                     childrenGrid.setDisable(true);
+                     btnAddChild.setDisable(true);
+                 }
+                 else
+                 {
+                     childrenGrid.setDisable(false);
+                     btnAddChild.setDisable(false);                     
+                 }
             }
         }
     }

@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen18Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#enableDisableChildrenSection" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen18Controller">
   <children>
     <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
       <children>
@@ -41,7 +41,7 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="47.0" layoutY="87.0" onMouseMoved="#enableDisableChildrenSection" prefHeight="320.0" prefWidth="710.0" styleClass="roundEdge">
+    <AnchorPane layoutX="47.0" layoutY="87.0" prefHeight="320.0" prefWidth="710.0" styleClass="roundEdge">
       <children>
         <GridPane id="GridPane" layoutX="42.0" layoutY="11.0" prefHeight="260.0" prefWidth="246.0">
           <children>
