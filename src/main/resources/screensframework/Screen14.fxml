@@ -47,7 +47,7 @@
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
               <children>
                 <TextField fx:id="txtHip" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" />
-                <Label text="%Lbl_Centimeter" />
+                <Label text="%Lbl_Height_Param2" />
                 <Hyperlink id="lblMeasure" fx:id="lnkHowToMeasure" onAction="#showToolTip" styleClass="throughoutLabelsStyle" text="%Lbl_How_To_Measure">
                   <tooltip>
                     <Tooltip text="%Lbl_How_To_Measure_Msg" />
@@ -58,7 +58,7 @@
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
               <children>
                 <TextField fx:id="txtWaist" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="65.0" />
-                <Label text="%Lbl_Centimeter" />
+                <Label text="%Lbl_Height_Param2" />
               </children>
             </HBox>
             <Label text="%Lbl_Hip" GridPane.columnIndex="0" GridPane.rowIndex="2" />

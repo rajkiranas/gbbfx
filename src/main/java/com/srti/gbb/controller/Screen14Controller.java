@@ -496,10 +496,10 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
         phy.setInches(Integer.valueOf(cmbHeightInches.getValue().toString()));
         phy.setWeight(Float.parseFloat(txtWeight.getText()));
         
-        phy.setHip(Float.parseFloat(txtHip.getText()));
+        phy.setHip(Float.parseFloat(txtHip.getText()) * 2.54f);
         
         if(!txtWaist.getText().equals(GlobalConstants.emptyString))
-            phy.setWaist(Float.parseFloat(txtWaist.getText()));
+            phy.setWaist(Float.parseFloat(txtWaist.getText()) * 2.54f);
         
         if(!txtBpSystolic.getText().equals(GlobalConstants.emptyString))
             phy.setBpSystolic(Float.parseFloat(txtBpSystolic.getText()));
