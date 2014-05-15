@@ -92,7 +92,7 @@ public class Screen8Controller implements Initializable, ControlledScreen {
                 entertainmentMap.put(e, e);
             }
 
-            if(!e.equals(MU.getMsg(GlobalConstants.None)) && entertainmentMap.containsKey(MU.getMsg(GlobalConstants.None)))
+            if(entertainmentMap.containsKey(MU.getMsg(GlobalConstants.None)))
             {
                 entertainmentMap.remove(MU.getMsg(GlobalConstants.None));
             }
