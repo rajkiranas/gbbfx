@@ -122,7 +122,7 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         
         
-        nav.navigateTo(ScreensFramework.screen0ID);
+        nav.navigateTo(ScreensFramework.screen8ID);
         
         Group root = new Group();
         root.getChildren().addAll(nav);

@@ -14,11 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 
 /**
  * FXML Controller class
@@ -261,5 +264,27 @@ public class Screen19Controller implements  Initializable, ControlledScreen {
         
         if(chkInc18.isSelected())
             addToIncidenceList(chkInc18.getText());
+    }
+    
+    @FXML
+    private HBox addOwnHbox;
+    @FXML
+    private AnchorPane optionsPane;
+    @FXML
+    private CheckBox chkNone;
+    
+    @FXML
+    private void toggleInputs(Event e)
+    {
+        if(chkNone.isSelected())
+        {
+            optionsPane.setDisable(true);
+            addOwnHbox.setDisable(true);
+        }
+        else
+        {
+            optionsPane.setDisable(false);
+            addOwnHbox.setDisable(false);
+        }
     }
 }

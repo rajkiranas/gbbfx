@@ -85,6 +85,11 @@ public class Screen8Controller implements Initializable, ControlledScreen {
             entertainmentMap.put(e, e);
         }
         
+        if(!e.equals(MU.getMsg(GlobalConstants.None)) && entertainmentMap.containsKey(MU.getMsg(GlobalConstants.None)))
+        {
+            entertainmentMap.remove(MU.getMsg(GlobalConstants.None));
+        }
+        
         entertainmentList.getSelectionModel().clearSelection();
         Set <String> ks = entertainmentMap.keySet();
         Iterator<String> itr = ks.iterator();
