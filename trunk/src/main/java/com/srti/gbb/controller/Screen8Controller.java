@@ -76,29 +76,37 @@ public class Screen8Controller implements Initializable, ControlledScreen {
     private void manageMultipleSelections(Event event) {
         //System.out.println("****="+entertainmentList.getSelectionModel().getSelectedItem().toString());
         String e = entertainmentList.getSelectionModel().getSelectedItem().toString();
-        if (entertainmentMap.containsKey(e)) 
+        if(e.equals(MU.getMsg(GlobalConstants.None)))
         {
-            entertainmentMap.remove(e);
+            entertainmentMap.clear();
+            entertainmentMap.put(e, e);
         }
         else
         {
-            entertainmentMap.put(e, e);
-        }
-        
-        if(!e.equals(MU.getMsg(GlobalConstants.None)) && entertainmentMap.containsKey(MU.getMsg(GlobalConstants.None)))
-        {
-            entertainmentMap.remove(MU.getMsg(GlobalConstants.None));
+            if (entertainmentMap.containsKey(e)) 
+            {
+                entertainmentMap.remove(e);
+            }
+            else
+            {
+                entertainmentMap.put(e, e);
+            }
+
+            if(!e.equals(MU.getMsg(GlobalConstants.None)) && entertainmentMap.containsKey(MU.getMsg(GlobalConstants.None)))
+            {
+                entertainmentMap.remove(MU.getMsg(GlobalConstants.None));
+            }
         }
         
         entertainmentList.getSelectionModel().clearSelection();
-        Set <String> ks = entertainmentMap.keySet();
-        Iterator<String> itr = ks.iterator();
-        String key = GlobalConstants.emptyString;
-        while(itr.hasNext())
-        {
-            key = itr.next();
-            entertainmentList.getSelectionModel().select(key);
-        }
+            Set <String> ks = entertainmentMap.keySet();
+            Iterator<String> itr = ks.iterator();
+            String key = GlobalConstants.emptyString;
+            while(itr.hasNext())
+            {
+                key = itr.next();
+                entertainmentList.getSelectionModel().select(key);
+            }
     }
 
     @FXML
