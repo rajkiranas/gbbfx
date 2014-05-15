@@ -90,7 +90,7 @@
             <Label text="%Lbl_Service" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label text="%Social_Service_Params" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="0" />
             <Label text="%Social_Service_Params" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label text="%Social_Service_Params" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="%Lbl_Addiction_Frequency_Params" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <TextField fx:id="txtAmtCash" alignment="CENTER_RIGHT" disable="false" editable="true" maxWidth="-Infinity" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Approximate_Amount" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             <ComboBox fx:id="cmbTimesPerWeekCash" prefHeight="35.0" prefWidth="82.0" promptText="%Input_Prompt_Times" GridPane.columnIndex="2" GridPane.rowIndex="0">
               <items>

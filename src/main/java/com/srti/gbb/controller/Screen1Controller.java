@@ -121,20 +121,17 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
      
      private boolean validatePersonalInformationForm()
      {
-         
          boolean isValid=true;
          if(txtName.getText() ==null || txtName.getText().trim().equals(GlobalConstants.emptyString))
          {
              
               UIUtils.showAlert("sc1_msg_enter_name", GlobalConstants.Lbl_Alert);
-    
-             isValid=false;
+              isValid=false;
          }
          else if(!GbbValidator.isValidName(txtName.getText()))
          {
               UIUtils.showAlert("sc1_msg_valid_name", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
+              isValid=false;
          }
          
          else if(cmbGenderList.getValue()==null || cmbGenderList.getValue().toString().trim().equals(GlobalConstants.emptyString))
@@ -177,29 +174,32 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
              UIUtils.showAlert("sc1_msg_sel_dob_year", GlobalConstants.Lbl_Alert); 
              isValid=false;
          }
-         else if(cmbHours.getValue()==null || cmbHours.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_dob_hours", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         else if(cmbMinutes.getValue()==null || cmbMinutes.getValue().toString().trim().equals(GlobalConstants.emptyString))
-         {
-             UIUtils.showAlert("sc1_msg_sel_dob_minutes", GlobalConstants.Lbl_Alert); 
-             isValid=false;
-         }
-         else if(txtBirthPlace.getText() ==null || txtBirthPlace.getText().trim().equals(GlobalConstants.emptyString))
+//         else if(cmbHours.getValue()==null || cmbHours.getValue().toString().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_sel_dob_hours", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
+//         else if(cmbMinutes.getValue()==null || cmbMinutes.getValue().toString().trim().equals(GlobalConstants.emptyString))
+//         {
+//             UIUtils.showAlert("sc1_msg_sel_dob_minutes", GlobalConstants.Lbl_Alert); 
+//             isValid=false;
+//         }
+         
+         else if(txtBirthPlace.getText() !=null 
+                 && !txtBirthPlace.getText().trim().equals(GlobalConstants.emptyString)
+                 && !GbbValidator.isValidName(txtBirthPlace.getText()))
          {
              
-              UIUtils.showAlert("sc1_msg_enter_birth_place", GlobalConstants.Lbl_Alert);
-    
+             UIUtils.showAlert("sc1_msg_enter_valid_birth_place", GlobalConstants.Lbl_Alert);  
+              //UIUtils.showAlert("sc1_msg_enter_birth_place", GlobalConstants.Lbl_Alert);    
              isValid=false;
          }
-         else if(!GbbValidator.isValidName(txtBirthPlace.getText()))
-         {
-              UIUtils.showAlert("sc1_msg_enter_valid_birth_place", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
-         }
+//         else if(!GbbValidator.isValidName(txtBirthPlace.getText()))
+//         {
+//              UIUtils.showAlert("sc1_msg_enter_valid_birth_place", GlobalConstants.Lbl_Alert);  
+//    
+//             isValid=false;
+//         }
          else if(txtAge.getText() ==null || txtAge.getText().trim().equals(GlobalConstants.emptyString))
          {
              UIUtils.showAlert("sc1_msg_enter_age", GlobalConstants.Lbl_Alert); 
@@ -208,14 +208,12 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
          else if(!GbbValidator.isValidNumber(txtAge.getText()))
          {
               UIUtils.showAlert("sc1_msg_valid_age", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
+              isValid=false;
          }
          else if(Integer.parseInt(txtAge.getText())>Integer.parseInt(GlobalConstants.getProperty(GlobalConstants.MaxAge)))
          {
               UIUtils.showAlert("sc1_msg_greater_age", GlobalConstants.Lbl_Alert);  
-    
-             isValid=false;
+              isValid=false;
          }
          
 //         else if(txtMobile.getText() ==null || txtMobile.getText().trim().equals(GlobalConstants.emptyString))
@@ -250,7 +248,26 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
 //             UIUtils.showAlert("sc1_msg_sel_income", GlobalConstants.Lbl_Alert); 
 //             isValid=false;
 //         }
+
          
+         if((cmbHours.getValue()!=null && !cmbHours.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+         {
+             if((cmbMinutes.getValue()==null || cmbMinutes.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+             {
+                UIUtils.showAlert("sc1_msg_sel_dob_minutes", GlobalConstants.Lbl_Alert); 
+                isValid=false;
+             }
+         }
+          if((cmbMinutes.getValue()!=null && !cmbMinutes.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+         {
+             if((cmbHours.getValue()==null || cmbHours.getValue().toString().trim().equals(GlobalConstants.emptyString)))
+             {
+                UIUtils.showAlert("sc1_msg_sel_dob_hours", GlobalConstants.Lbl_Alert); 
+                isValid=false;
+             }
+         }
+          
+          
          return isValid;
      }
 
@@ -452,6 +469,8 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
     private void setBirthInformation(PersonalInformationBean pi) {
         
         pi.setBirthDate(getDateForCurrentForm().getTime());
+        
+        if(txtBirthPlace.getText()!=null && !txtBirthPlace.getText().trim().equals(GlobalConstants.emptyString))
         pi.setBirthPlace(txtBirthPlace.getText().trim());
     }
     
@@ -485,8 +504,15 @@ public class Screen1Controller implements Initializable, ControlledScreen  {
         c.set(Calendar.MONTH, (Integer.parseInt(cmbDobMonth.getValue().toString()) - 1));
         c.set(Calendar.YEAR, Integer.parseInt(cmbDobYear.getValue().toString()));
         
-        c.set(Calendar.HOUR_OF_DAY, Integer.parseInt(cmbHours.getValue().toString()));
-        c.set(Calendar.MINUTE, Integer.parseInt(cmbMinutes.getValue().toString()));
+        if(cmbHours.getValue()!=null && !cmbHours.getValue().toString().trim().equals(GlobalConstants.emptyString))
+        {
+            c.set(Calendar.HOUR_OF_DAY, Integer.parseInt(cmbHours.getValue().toString()));
+        }
+        
+        if(cmbMinutes.getValue()!=null && !cmbMinutes.getValue().toString().trim().equals(GlobalConstants.emptyString))
+        {
+            c.set(Calendar.MINUTE, Integer.parseInt(cmbMinutes.getValue().toString()));
+        }
         c.set(Calendar.SECOND, 0);
         
         System.out.println("*****"+c.getTime());
