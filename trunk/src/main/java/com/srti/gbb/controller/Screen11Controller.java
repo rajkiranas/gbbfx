@@ -10,15 +10,17 @@ import com.srti.gbb.bean.PrakrutiQuestionAnsBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.TreeMap;
+import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,6 +36,7 @@ import javafx.scene.paint.Color;
 public class Screen11Controller implements Initializable, ControlledScreen {
     private ScreensNavigator navigator;
     private Map<String,PrakrutiQuestionAnsBean> prakrutiQuestionAnsMap = new HashMap<String,PrakrutiQuestionAnsBean>();
+    private Set<String> extremeSensitiveQuestionsSet = new HashSet<String>();
     
     @FXML
     private Color x1;
@@ -114,6 +117,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         hideExtraOptionsQ1();
         hideExtraOptionsQ2();
         hideExtraOptionsQ3();
+        populateExtremeSensitiveQuestionsSet();
         setNextQuestionsAndAnswersToLabels();
     }
     
@@ -464,9 +468,34 @@ public class Screen11Controller implements Initializable, ControlledScreen {
             isQ3Answered = true;
         }
          
-         if(isQ1Answered && isQ2Answered && isQ3Answered)
-         {             
-            isValid = true;
+         
+        if(isQ1Answered && isQ2Answered && isQ3Answered)
+         {
+             String q1Count = GlobalConstants.emptyString + (qC-2);
+             String q2Count = GlobalConstants.emptyString + (qC-1);
+             String q3Count = GlobalConstants.emptyString + (qC);
+             
+             System.out.println("q1Count="+q1Count+" q2Count="+q2Count+" q3Count="+q3Count);
+             
+             if(extremeSensitiveQuestionsSet.contains(q1Count) && (q1o1a.isSelected() || q1o1b.isSelected() || q1o1c.isSelected()) && (q1o3a.isSelected() || q1o3b.isSelected() || q1o3c.isSelected()))
+             {
+                 UIUtils.showAlert("sc11_msg_extreams", GlobalConstants.Lbl_Alert);
+                 isValid = false;
+             }
+             else if(extremeSensitiveQuestionsSet.contains(q2Count) && (q2o1a.isSelected() || q2o1b.isSelected() || q2o1c.isSelected()) && (q2o3a.isSelected() || q2o3b.isSelected() || q2o3c.isSelected()))
+             {
+                 UIUtils.showAlert("sc11_msg_extreams", GlobalConstants.Lbl_Alert);
+                 isValid = false;
+             }
+             else if(extremeSensitiveQuestionsSet.contains(q3Count) && (q3o1a.isSelected() || q3o1b.isSelected() || q3o1c.isSelected()) && (q3o3a.isSelected() || q3o3b.isSelected() || q3o3c.isSelected()))
+             {
+                 UIUtils.showAlert("sc11_msg_extreams", GlobalConstants.Lbl_Alert);
+                 isValid = false;
+             }
+             else
+             {
+                 isValid = true;
+             }
          }
          else
          {
@@ -1291,6 +1320,20 @@ public class Screen11Controller implements Initializable, ControlledScreen {
         {
             res.setOpt3Checked(true);
         }
+    }
+
+    private void populateExtremeSensitiveQuestionsSet() 
+    {
+        if(extremeSensitiveQuestionsSet.isEmpty())
+        {
+            String specialDiseases = MU.getMsg("extreme_sensitive_questions");
+            String[] list1 = specialDiseases.split(GlobalConstants.COMMA);
+
+            for (String d : list1) {
+                extremeSensitiveQuestionsSet.add(d);
+            }
+        }
+        
     }
 }
 
