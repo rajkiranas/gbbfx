@@ -8,11 +8,14 @@ import com.srti.gbb.bean.IllnessBean;
 import com.srti.gbb.global.GlobalConstants;
 import com.srti.gbb.main.ScreensFramework;
 import com.srti.gbb.navigator.ScreensNavigator;
+import com.srti.gbb.utils.MU;
 import com.srti.gbb.utils.UIUtils;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -55,6 +58,8 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     @FXML
     private ListView listSelfIllness;
     
+    private Set<String> specialDiseasesSet = new HashSet<String>();
+    
     
     /**
      * Initializes the controller class.
@@ -68,6 +73,7 @@ public class Screen22Controller implements Initializable, ControlledScreen {
         populateLastsFor();
         populateSinceYears();
         populateLossOfManDays();
+        populateSpecialDiseases();
     }    
 
     @FXML
@@ -102,6 +108,7 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     @FXML
     private void setFormData(MouseEvent event) 
     {
+        enableDisableOptionsAccordingToDisease();
         IllnessBean b =getIllnessBeanForSelectionFromNavigator();
         
         //System.out.println("***="+cmbIntensity.getItems().contains(String.valueOf(b.getIntensity())));
@@ -268,22 +275,22 @@ public class Screen22Controller implements Initializable, ControlledScreen {
             isValid = false;
             UIUtils.showAlert("sc22_msg_sel_illness", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbIntensity.getValue()==null || cmbIntensity.getValue().toString().equals(GlobalConstants.emptyString))
+        else if(!cmbIntensity.isDisabled() && (cmbIntensity.getValue()==null || cmbIntensity.getValue().toString().equals(GlobalConstants.emptyString)))
         {
             isValid=false;
             UIUtils.showAlert("sc22_msg_sel_intensity", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbFrequency.getValue()==null || cmbFrequency.getValue().toString().equals(GlobalConstants.emptyString))
+        else if(!cmbFrequency.isDisabled() && (cmbFrequency.getValue()==null || cmbFrequency.getValue().toString().equals(GlobalConstants.emptyString)))
         {
             isValid=false;
             UIUtils.showAlert("sc22_msg_sel_frequency", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbDuration.getValue()==null || cmbDuration.getValue().toString().equals(GlobalConstants.emptyString))
+        else if(!cmbDuration.isDisabled() && (cmbDuration.getValue()==null || cmbDuration.getValue().toString().equals(GlobalConstants.emptyString)))
         {
             isValid=false;
             UIUtils.showAlert("sc22_msg_sel_duration", GlobalConstants.Lbl_Alert);
         }
-        else if(cmbLastsForDays.getValue()==null || cmbLastsForDays.getValue().toString().equals(GlobalConstants.emptyString))
+        else if(!cmbLastsForDays.isDisabled() && (cmbLastsForDays.getValue()==null || cmbLastsForDays.getValue().toString().equals(GlobalConstants.emptyString)))
         {
             isValid=false;
             UIUtils.showAlert("sc22_msg_sel_lastsfordays", GlobalConstants.Lbl_Alert);
@@ -316,11 +323,19 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     private void updateSelfIllnessBean() 
     {
             IllnessBean b =getIllnessBeanForSelectionFromNavigator();
-            b.setIntensity(Short.valueOf(cmbIntensity.getValue().toString()));
-            b.setFrequency(Short.valueOf(cmbFrequency.getValue().toString()));
-            b.setDuration(Float.valueOf(cmbDuration.getValue().toString()));
             
-            b.setLastsForDays(Short.valueOf(cmbLastsForDays.getValue().toString()));
+            if(!cmbIntensity.isDisabled())
+                b.setIntensity(Short.valueOf(cmbIntensity.getValue().toString()));
+            
+            if(!cmbFrequency.isDisabled())
+                b.setFrequency(Short.valueOf(cmbFrequency.getValue().toString()));
+            
+            if(!cmbDuration.isDisabled())
+                b.setDuration(Float.valueOf(cmbDuration.getValue().toString()));
+            
+            if(!cmbLastsForDays.isDisabled())
+                b.setLastsForDays(Short.valueOf(cmbLastsForDays.getValue().toString()));
+            
             b.setSinceYears(Short.valueOf(cmbSinceYears.getValue().toString()));
             b.setLossOfManDays(Short.valueOf(cmbLossOfManDays.getValue().toString()));
             
@@ -346,5 +361,39 @@ public class Screen22Controller implements Initializable, ControlledScreen {
 
     private void navigateToNextScreen() {
         navigator.navigateTo(ScreensFramework.screen13ID);
+    }
+
+    
+    
+    private void enableDisableOptionsAccordingToDisease() 
+    {
+        String sel = (String) listSelfIllness.getSelectionModel().getSelectedItem();
+        if(specialDiseasesSet.contains(sel))
+        {
+            cmbIntensity.setDisable(true);
+            cmbFrequency.setDisable(true);
+            cmbDuration.setDisable(true);
+            cmbLastsForDays.setDisable(true);
+        }
+        else
+        {
+            cmbIntensity.setDisable(false);
+            cmbFrequency.setDisable(false);
+            cmbDuration.setDisable(false);
+            cmbLastsForDays.setDisable(false);
+        }
+    }
+
+    private void populateSpecialDiseases() {
+        if(specialDiseasesSet.isEmpty())
+        {
+           String specialDiseases = MU.getMsg("Special_Diseases");
+           String[] list1 =  specialDiseases.split(GlobalConstants.COMMA);
+           
+               for(String d : list1)
+               {
+                   specialDiseasesSet.add(d);
+               }
+        }
     }
 }
