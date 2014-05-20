@@ -471,27 +471,59 @@ public class Screen11Controller implements Initializable, ControlledScreen {
          
         if(isQ1Answered && isQ2Answered && isQ3Answered)
          {
+             /////////////////////////////////////start - of extreme ans handling ///////////////////////////
              String q1Count = GlobalConstants.emptyString + (qC-2);
              String q2Count = GlobalConstants.emptyString + (qC-1);
              String q3Count = GlobalConstants.emptyString + (qC);
              
              System.out.println("q1Count="+q1Count+" q2Count="+q2Count+" q3Count="+q3Count);
              
-             if(extremeSensitiveQuestionsSet.contains(q1Count) && (q1o1a.isSelected() || q1o1b.isSelected() || q1o1c.isSelected()) && (q1o3a.isSelected() || q1o3b.isSelected() || q1o3c.isSelected()))
+             if(extremeSensitiveQuestionsSet.contains(q1Count) 
+                     && (q1o1a.isSelected() || q1o1b.isSelected() || q1o1c.isSelected()) 
+                     && (q1o3a.isSelected() || q1o3b.isSelected() || q1o3c.isSelected()))
              {
                  UIUtils.showAlert("sc11_msg_extreams", GlobalConstants.Lbl_Alert);
                  isValid = false;
              }
-             else if(extremeSensitiveQuestionsSet.contains(q2Count) && (q2o1a.isSelected() || q2o1b.isSelected() || q2o1c.isSelected()) && (q2o3a.isSelected() || q2o3b.isSelected() || q2o3c.isSelected()))
+             else if(extremeSensitiveQuestionsSet.contains(q2Count) 
+                     && (q2o1a.isSelected() || q2o1b.isSelected() || q2o1c.isSelected()) 
+                     && (q2o3a.isSelected() || q2o3b.isSelected() || q2o3c.isSelected()))
              {
                  UIUtils.showAlert("sc11_msg_extreams", GlobalConstants.Lbl_Alert);
                  isValid = false;
              }
-             else if(extremeSensitiveQuestionsSet.contains(q3Count) && (q3o1a.isSelected() || q3o1b.isSelected() || q3o1c.isSelected()) && (q3o3a.isSelected() || q3o3b.isSelected() || q3o3c.isSelected()))
+             else if(extremeSensitiveQuestionsSet.contains(q3Count) 
+                     && (q3o1a.isSelected() || q3o1b.isSelected() || q3o1c.isSelected()) 
+                     && (q3o3a.isSelected() || q3o3b.isSelected() || q3o3c.isSelected()))
              {
                  UIUtils.showAlert("sc11_msg_extreams", GlobalConstants.Lbl_Alert);
                  isValid = false;
              }
+             
+             /////////////////////////////////////end - of extreme ans handling ///////////////////////////
+             /////////////////////////////////////start - of handling for all option selection///////////////////////////
+             else if((q1o1a.isSelected() || q1o1b.isSelected() || q1o1c.isSelected())
+                     && (q1o2a.isSelected() || q1o2b.isSelected() || q1o2c.isSelected())
+                     && (q1o3a.isSelected() || q1o3b.isSelected() || q1o3c.isSelected()))
+             {
+                 UIUtils.showAlert("sc11_msg_all_selections", GlobalConstants.Lbl_Alert);
+                 isValid = false;
+             }
+             else if((q2o1a.isSelected() || q2o1b.isSelected() || q2o1c.isSelected())
+                     && (q2o2a.isSelected() || q2o2b.isSelected() || q2o2c.isSelected())
+                     && (q2o3a.isSelected() || q2o3b.isSelected() || q2o3c.isSelected()))
+             {
+                 UIUtils.showAlert("sc11_msg_all_selections", GlobalConstants.Lbl_Alert);
+                 isValid = false;
+             }
+             else if((q3o1a.isSelected() || q3o1b.isSelected() || q3o1c.isSelected())
+                     && (q3o2a.isSelected() || q3o2b.isSelected() || q3o2c.isSelected())
+                     && (q3o3a.isSelected() || q3o3b.isSelected() || q3o3c.isSelected()))
+             {
+                 UIUtils.showAlert("sc11_msg_all_selections", GlobalConstants.Lbl_Alert);
+                 isValid = false;
+             }
+             /////////////////////////////////////END - of handling for all option selection///////////////////////////
              else
              {
                  isValid = true;
