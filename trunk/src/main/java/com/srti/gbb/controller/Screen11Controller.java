@@ -135,7 +135,7 @@ public class Screen11Controller implements Initializable, ControlledScreen {
     {
         if(qC==0)
         {
-            navigator.navigateTo(ScreensFramework.screen23ID);
+            navigator.navigateTo(ScreensFramework.Screen_Welcome_Prakruti_Nidaan);
         }
         else
         {

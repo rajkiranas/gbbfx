@@ -11,7 +11,7 @@
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 <?scenebuilder-stylesheet ../styles/Styles.css?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen14Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srti.gbb.controller.Screen14Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
     <AnchorPane layoutX="27.0" layoutY="88.0" prefHeight="322.0" prefWidth="352.0" styleClass="roundEdge">
@@ -196,7 +196,7 @@
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label alignment="CENTER_LEFT" layoutX="408.0" layoutY="9.0" prefWidth="104.0" styleClass="screenHeading" text="%WelcomeMsg_Prakruti_Nidaan" textAlignment="LEFT" textFill="$x1" wrapText="true" />
+        <Label alignment="CENTER_LEFT" layoutX="413.0" layoutY="1.0" prefHeight="33.0" prefWidth="300.0" styleClass="screenHeading" text="%First_Screen_Heading_Physical_Parameters" textAlignment="LEFT" textFill="$x1" wrapText="true" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />

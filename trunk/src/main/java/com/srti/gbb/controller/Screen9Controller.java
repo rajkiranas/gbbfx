@@ -435,7 +435,7 @@ public class Screen9Controller implements Initializable, ControlledScreen  {
     }
 
     private void navigateToNextScreen() {
-         navigator.navigateTo(ScreensFramework.screen10ID);
+         navigator.navigateTo(ScreensFramework.Screen_Illness);
     }
     
 //    @FXML

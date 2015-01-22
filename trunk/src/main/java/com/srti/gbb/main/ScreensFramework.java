@@ -49,10 +49,10 @@ public class ScreensFramework extends Application {
     public static String screen9ID = "screen9";
     public static String screen9File = "/screensframework/Screen9.fxml";
     
-    public static String screen10ID = "screen10";
+    public static String Screen_Illness = "screen10";
     public static String screen10File = "/screensframework/Screen10.fxml";
     
-    public static String screen13ID = "screen13";
+    public static String Screen_Hospitalization = "screen13";
     public static String screen13File = "/screensframework/Screen13.fxml";
     
     public static String screen14ID = "screen14";
@@ -76,10 +76,10 @@ public class ScreensFramework extends Application {
     public static String screen21ID = "screen21";
     public static String screen21File = "/screensframework/Screen21.fxml";
     
-    public static String screen22ID = "screen22";
+    public static String Screen_Illness_Quantification = "screen22";
     public static String screen22File = "/screensframework/Screen22.fxml";
     
-    public static String screen23ID = "screen23";
+    public static String Screen_Welcome_Prakruti_Nidaan = "screen23";
     public static String screen23File = "/screensframework/Screen23.fxml";
     
     public static String ThankyouSceneId = "ThankyouScene";
@@ -108,11 +108,11 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen8ID, ScreensFramework.screen8File);
         nav.loadScreen(ScreensFramework.screen15ID, ScreensFramework.screen15File);
         nav.loadScreen(ScreensFramework.screen9ID, ScreensFramework.screen9File);
-        nav.loadScreen(ScreensFramework.screen10ID, ScreensFramework.screen10File);
-        nav.loadScreen(ScreensFramework.screen22ID, ScreensFramework.screen22File);
-        nav.loadScreen(ScreensFramework.screen13ID, ScreensFramework.screen13File);
+        nav.loadScreen(ScreensFramework.Screen_Illness, ScreensFramework.screen10File);
+        nav.loadScreen(ScreensFramework.Screen_Illness_Quantification, ScreensFramework.screen22File);
+        nav.loadScreen(ScreensFramework.Screen_Hospitalization, ScreensFramework.screen13File);
 
-        nav.loadScreen(ScreensFramework.screen23ID, ScreensFramework.screen23File);
+        nav.loadScreen(ScreensFramework.Screen_Welcome_Prakruti_Nidaan, ScreensFramework.screen23File);
         nav.loadScreen(ScreensFramework.screen11ID, ScreensFramework.screen11File);
         nav.loadScreen(ScreensFramework.screen17ID, ScreensFramework.screen17File);
         
