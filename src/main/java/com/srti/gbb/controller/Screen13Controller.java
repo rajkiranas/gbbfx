@@ -176,11 +176,11 @@ public class Screen13Controller implements Initializable, ControlledScreen {
     {
         if(!navigator.getUserInfo().getSelfIllnessList().isEmpty())
             {
-                navigator.navigateTo(ScreensFramework.screen22ID);
+                navigator.navigateTo(ScreensFramework.Screen_Illness_Quantification);
             }
             else
             {
-               navigator.navigateTo(ScreensFramework.screen10ID);
+               navigator.navigateTo(ScreensFramework.Screen_Illness);
             }
     }
 
@@ -207,7 +207,7 @@ public class Screen13Controller implements Initializable, ControlledScreen {
 
             //System.out.println("***"+navigator.getUserInfo().getSelfIllnessList().get(0).isIsHospitalized());
             System.out.println("***getSelfIllnessList="+navigator.getUserInfo().getSelfIllnessList());
-            navigator.navigateTo(ScreensFramework.screen23ID);
+            navigator.navigateTo(ScreensFramework.Screen_Welcome_Prakruti_Nidaan);
         }
         
         

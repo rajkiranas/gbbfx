@@ -102,7 +102,7 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToPreviousScreen(ActionEvent event) 
     {
-        navigator.navigateTo(ScreensFramework.screen10ID);
+        navigator.navigateTo(ScreensFramework.Screen_Illness);
     }
 
     @FXML
@@ -360,7 +360,8 @@ public class Screen22Controller implements Initializable, ControlledScreen {
     }
 
     private void navigateToNextScreen() {
-        navigator.navigateTo(ScreensFramework.screen13ID);
+        //navigator.navigateTo(ScreensFramework.Screen_Hospitalization);
+        navigator.navigateTo(ScreensFramework.Screen_Welcome_Prakruti_Nidaan);
     }
 
     

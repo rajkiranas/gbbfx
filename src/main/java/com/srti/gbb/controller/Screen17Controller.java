@@ -82,6 +82,9 @@ public class Screen17Controller implements  Initializable, ControlledScreen {
         else
         {
             UIUtils.showAlert("sc17_msg_no_inet_available", GlobalConstants.Lbl_Alert);
+            //show constitution
+            showPrakrutiConstitution();
+            navigateToNextScreen();
         }
     }
 
