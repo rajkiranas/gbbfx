@@ -15,13 +15,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import com.srti.gbb.global.GlobalConstants;
+import com.srti.gbb.main.ScreensFramework;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.event.Event;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -47,6 +46,11 @@ public class ThankyouSceneController implements Initializable, ControlledScreen 
         // TODO
     }    
     
+    @FXML
+    private void goToNextScreen(Event event)
+    {
+        navigator.navigateTo(ScreensFramework.ScreenReportAndGraph);
+    }
     @FXML
     private void showHealthReport(ActionEvent event) 
     {

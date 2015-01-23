@@ -85,6 +85,9 @@ public class ScreensFramework extends Application {
     public static String ThankyouSceneId = "ThankyouScene";
     public static String ThankyouSceneFile = "/screensframework/ThankyouScene.fxml";
     
+    public static String ScreenReportAndGraph = "ScreenReportAndGraph";
+    public static String ScreenReportAndGraphFile = "/screensframework/Screen_Report_And_Graph.fxml";
+    
     private double xOffset;
     private double yOffset;
     
@@ -120,7 +123,7 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen20ID, ScreensFramework.screen20File);
         
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
-        
+        nav.loadScreen(ScreensFramework.ScreenReportAndGraph, ScreensFramework.ScreenReportAndGraphFile);        
         
         nav.navigateTo(ScreensFramework.screen0ID);
         
