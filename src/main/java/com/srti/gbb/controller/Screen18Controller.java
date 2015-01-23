@@ -100,7 +100,10 @@ public class Screen18Controller implements  Initializable, ControlledScreen {
             
             
     private void navigateToNextScreen() {
-         navigator.navigateTo(ScreensFramework.screen6ID);
+         //Friends screen
+         //navigator.navigateTo(ScreensFramework.Screen_FriendList);
+        
+        navigator.navigateTo(ScreensFramework.screen7ID);
     }
 
     @FXML

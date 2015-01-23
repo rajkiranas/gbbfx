@@ -34,7 +34,7 @@ public class ScreensFramework extends Application {
     public static String screen5ID = "screen5";
     public static String screen5File = "/screensframework/Screen5.fxml";
     
-    public static String screen6ID = "screen6";
+    public static String Screen_FriendList = "screen6";
     public static String screen6File = "/screensframework/Screen6.fxml";
     
     public static String screen7ID = "screen7";
@@ -103,7 +103,7 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
         nav.loadScreen(ScreensFramework.screen5ID, ScreensFramework.screen5File);
         nav.loadScreen(ScreensFramework.screen18ID, ScreensFramework.screen18File);
-        nav.loadScreen(ScreensFramework.screen6ID, ScreensFramework.screen6File);
+        nav.loadScreen(ScreensFramework.Screen_FriendList, ScreensFramework.screen6File);
         nav.loadScreen(ScreensFramework.screen7ID, ScreensFramework.screen7File);
         nav.loadScreen(ScreensFramework.screen8ID, ScreensFramework.screen8File);
         nav.loadScreen(ScreensFramework.screen15ID, ScreensFramework.screen15File);

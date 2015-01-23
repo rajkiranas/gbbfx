@@ -649,7 +649,8 @@ public class Screen5Controller implements Initializable, ControlledScreen {
         }
         else
         {
-            navigator.navigateTo(ScreensFramework.screen6ID);
+            //navigator.navigateTo(ScreensFramework.Screen_FriendList);
+            navigator.navigateTo(ScreensFramework.screen7ID);
         }
     }
 
