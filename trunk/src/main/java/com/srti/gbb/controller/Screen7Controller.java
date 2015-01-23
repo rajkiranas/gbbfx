@@ -200,7 +200,15 @@ public class Screen7Controller implements Initializable, ControlledScreen {
     @FXML
     private void goToScreen6(ActionEvent event) 
     {
-         navigator.navigateTo(ScreensFramework.screen6ID);
+         //navigator.navigateTo(ScreensFramework.Screen_FriendList);
+        if(navigator.getUserInfo().getPi().getMaritalStatus()!=null && !navigator.getUserInfo().getPi().getMaritalStatus().equals(GlobalConstants.getProperty(GlobalConstants.Lbl_Single_Status)))
+        {
+            navigator.navigateTo(ScreensFramework.screen18ID);
+        }
+        else
+        {
+            navigator.navigateTo(ScreensFramework.screen5ID);
+        }
     }
 
     @FXML
