@@ -154,7 +154,8 @@ public class Screen10Controller implements Initializable, ControlledScreen {
             else
             {
                 //navigator.navigateTo(ScreensFramework.Screen_Hospitalization);
-                navigator.navigateTo(ScreensFramework.Screen_Welcome_Prakruti_Nidaan);
+                //navigator.navigateTo(ScreensFramework.Screen_Welcome_Prakruti_Nidaan);
+                navigator.navigateTo(ScreensFramework.Screen_Illness_Graph);
             }
         }
     }

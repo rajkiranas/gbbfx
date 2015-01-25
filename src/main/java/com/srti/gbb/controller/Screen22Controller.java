@@ -361,7 +361,8 @@ public class Screen22Controller implements Initializable, ControlledScreen {
 
     private void navigateToNextScreen() {
         //navigator.navigateTo(ScreensFramework.Screen_Hospitalization);
-        navigator.navigateTo(ScreensFramework.Screen_Welcome_Prakruti_Nidaan);
+        //navigator.navigateTo(ScreensFramework.Screen_Welcome_Prakruti_Nidaan);
+        navigator.navigateTo(ScreensFramework.Screen_Illness_Graph);
     }
 
     

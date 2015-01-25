@@ -167,7 +167,8 @@ public class Screen4Controller implements Initializable, ControlledScreen {
 
     @FXML
     private void goToScreen3(ActionEvent event) {
-        navigator.navigateTo(ScreensFramework.screen3ID);
+        //navigator.navigateTo(ScreensFramework.screen3ID);
+        navigator.navigateTo(ScreensFramework.Screen_Life_Style_Graph);
     }
 
     @FXML
