@@ -35,7 +35,7 @@ public class ScreensFramework extends Application {
     public static String screen5File = "/screensframework/Screen5.fxml";
     
     public static String Screen_FriendList = "screen6";
-    public static String screen6File = "/screensframework/Screen6.fxml";
+    public static String Screen_FriendList_File = "/screensframework/Screen6.fxml";
     
     public static String screen7ID = "screen7";
     public static String screen7File = "/screensframework/Screen7.fxml";
@@ -50,13 +50,13 @@ public class ScreensFramework extends Application {
     public static String screen9File = "/screensframework/Screen9.fxml";
     
     public static String Screen_Illness = "screen10";
-    public static String screen10File = "/screensframework/Screen10.fxml";
+    public static String Screen_Illness_File = "/screensframework/Screen10.fxml";
     
     public static String Screen_Hospitalization = "screen13";
-    public static String screen13File = "/screensframework/Screen13.fxml";
+    public static String Screen_Hospitalization_File = "/screensframework/Screen13.fxml";
     
-    public static String screen14ID = "screen14";
-    public static String screen14File = "/screensframework/Screen14.fxml";
+    public static String Screen_Physiological = "screen14";
+    public static String Screen_Physiological_File = "/screensframework/Screen14.fxml";
     
     public static String screen11ID = "screen11";
     public static String screen11File = "/screensframework/Screen11.fxml";
@@ -77,16 +77,27 @@ public class ScreensFramework extends Application {
     public static String screen21File = "/screensframework/Screen21.fxml";
     
     public static String Screen_Illness_Quantification = "screen22";
-    public static String screen22File = "/screensframework/Screen22.fxml";
+    public static String Screen_Illness_Quantification_File = "/screensframework/Screen22.fxml";
     
     public static String Screen_Welcome_Prakruti_Nidaan = "screen23";
-    public static String screen23File = "/screensframework/Screen23.fxml";
+    public static String Screen_Welcome_Prakruti_Nidaan_File = "/screensframework/Screen23.fxml";
     
     public static String ThankyouSceneId = "ThankyouScene";
     public static String ThankyouSceneFile = "/screensframework/ThankyouScene.fxml";
     
     public static String ScreenReportAndGraph = "ScreenReportAndGraph";
     public static String ScreenReportAndGraphFile = "/screensframework/Screen_Report_And_Graph.fxml";
+    
+    public static String ScreenPhysiologicalGraph = "ScreenPhysiologicalGraph";
+    public static String ScreenPhysiologicalGraphFile = "/screensframework/Screen_Physiological_Graph.fxml";
+    
+    public static String Screen_Life_Style_Graph = "Screen_Life_Style_Graph";
+    public static String Screen_Life_Style_GraphFile = "/screensframework/Screen_Lifestyle_Graph.fxml";
+    
+    public static String Screen_Illness_Graph = "Screen_Illness_Graph";
+    public static String Screen_Illness_GraphFile = "/screensframework/Screen_Illness_Graph.fxml";
+    
+    
     
     private double xOffset;
     private double yOffset;
@@ -100,28 +111,33 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.screen21ID, ScreensFramework.screen21File);
         nav.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
         nav.loadScreen(ScreensFramework.screen12ID, ScreensFramework.screen12File);
-        nav.loadScreen(ScreensFramework.screen14ID, ScreensFramework.screen14File);
+        nav.loadScreen(ScreensFramework.Screen_Physiological, ScreensFramework.Screen_Physiological_File);
         nav.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
         nav.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
         nav.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
         nav.loadScreen(ScreensFramework.screen5ID, ScreensFramework.screen5File);
         nav.loadScreen(ScreensFramework.screen18ID, ScreensFramework.screen18File);
-        nav.loadScreen(ScreensFramework.Screen_FriendList, ScreensFramework.screen6File);
+        nav.loadScreen(ScreensFramework.Screen_FriendList, ScreensFramework.Screen_FriendList_File);
         nav.loadScreen(ScreensFramework.screen7ID, ScreensFramework.screen7File);
         nav.loadScreen(ScreensFramework.screen8ID, ScreensFramework.screen8File);
         nav.loadScreen(ScreensFramework.screen15ID, ScreensFramework.screen15File);
         nav.loadScreen(ScreensFramework.screen9ID, ScreensFramework.screen9File);
-        nav.loadScreen(ScreensFramework.Screen_Illness, ScreensFramework.screen10File);
-        nav.loadScreen(ScreensFramework.Screen_Illness_Quantification, ScreensFramework.screen22File);
-        nav.loadScreen(ScreensFramework.Screen_Hospitalization, ScreensFramework.screen13File);
+        nav.loadScreen(ScreensFramework.Screen_Illness, ScreensFramework.Screen_Illness_File);
+        nav.loadScreen(ScreensFramework.Screen_Illness_Quantification, ScreensFramework.Screen_Illness_Quantification_File);
+        nav.loadScreen(ScreensFramework.Screen_Hospitalization, ScreensFramework.Screen_Hospitalization_File);
 
-        nav.loadScreen(ScreensFramework.Screen_Welcome_Prakruti_Nidaan, ScreensFramework.screen23File);
+        nav.loadScreen(ScreensFramework.Screen_Welcome_Prakruti_Nidaan, ScreensFramework.Screen_Welcome_Prakruti_Nidaan_File);
+        
         nav.loadScreen(ScreensFramework.screen11ID, ScreensFramework.screen11File);
         nav.loadScreen(ScreensFramework.screen17ID, ScreensFramework.screen17File);
         
         nav.loadScreen(ScreensFramework.screen19ID, ScreensFramework.screen19File);
         nav.loadScreen(ScreensFramework.screen20ID, ScreensFramework.screen20File);
         
+                
+        nav.loadScreen(ScreensFramework.ScreenPhysiologicalGraph, ScreensFramework.ScreenPhysiologicalGraphFile);        
+        nav.loadScreen(ScreensFramework.Screen_Life_Style_Graph, ScreensFramework.Screen_Life_Style_GraphFile);        
+        nav.loadScreen(ScreensFramework.Screen_Illness_Graph, ScreensFramework.Screen_Illness_GraphFile);
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         nav.loadScreen(ScreensFramework.ScreenReportAndGraph, ScreensFramework.ScreenReportAndGraphFile);        
         

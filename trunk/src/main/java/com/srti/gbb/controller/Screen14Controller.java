@@ -256,7 +256,8 @@ public class Screen14Controller implements Initializable, ControlledScreen  {
 
     private void navigateToNextScreen() {
         //navigator.navigateTo(ScreensFramework.screen11ID);
-        navigator.navigateTo(ScreensFramework.screen2ID);
+        //navigator.navigateTo(ScreensFramework.screen2ID);
+        navigator.navigateTo(ScreensFramework.ScreenPhysiologicalGraph);
     }
     
     

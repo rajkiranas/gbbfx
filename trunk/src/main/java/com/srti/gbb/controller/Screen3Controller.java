@@ -79,7 +79,8 @@ public class Screen3Controller implements Initializable, ControlledScreen {
             setLifestyleData();
             setGynecData();
             setAddictionData();
-            navigator.navigateTo(ScreensFramework.screen4ID);
+            //navigator.navigateTo(ScreensFramework.screen4ID);
+            navigator.navigateTo(ScreensFramework.Screen_Life_Style_Graph);
         }
        
     }

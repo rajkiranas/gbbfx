@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srti.gbb.controller.ScreenPhysiologicalController">
+  <children>
+    <fx:include layoutX="0.0" layoutY="0.0" source="ProductBannerScene.fxml" />
+    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
+      <children>
+        <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
+      </children>
+      <padding>
+        <Insets left="10.0" />
+      </padding>
+    </HBox>
+      <ScrollPane layoutX="15.0" layoutY="52.0" prefHeight="353.0" prefWidth="771.0">
+         <content>
+            <LineChart fx:id="demoLineGraph" prefHeight="348.0" prefWidth="755.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="415.0" prefHeight="35.0" prefWidth="531.0">
+         <children>
+            <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+      </HBox>
+  </children>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>
