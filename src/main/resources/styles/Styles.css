@@ -18,7 +18,8 @@
 }
 
 .screenHeadingBg {
-    -fx-background-color: #D4EBF5;
+/*    -fx-background-color: #D4EBF5;*/
+    -fx-background-color: #E7E7E7;
 }
 
 .screenHeading
@@ -26,7 +27,7 @@
     -fx-font-size: 14px;
 /*    -fx-font-family: "Arial Black";*/
     -fx-text-fill: #2E7C95;
-    
+    -fx-font-weight: bold;
 /*    -fx-font: 14px Arial Black;
     -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, #2E7C95 0%, red 50%);
     -fx-stroke: black;
@@ -219,6 +220,20 @@
 	line-height: 0.8em;
 }
 
+.sliderBoxHowWeDoIt {
+	-fx-background-color: #CDD2D6;
+	box-sizing: border-box;
+	-fx-text-fill: #004E75;
+	display: block;
+	position: relative;
+	-fx-text-alignment: center;
+	text-decoration: none;
+	-fx-font-size: 62px;
+	-fx-font-weight: 900;
+	letter-spacing: -0.1em;
+	line-height: 0.8em;
+}
+
 .watchingStyle {
 	-fx-text-fill: #0e6896;
 	display: block;
@@ -237,8 +252,31 @@
 	line-height: 1.6em;
 }
 
+.whatWeDoWatchingStyle {
+	-fx-text-fill: black;
+	display: block;
+	-fx-font-size: 48px;
+	letter-spacing: -0.05em;
+	line-height: 0.8em;
+	margin: 0 0 25px;
+	-fx-font-weight: 100;
+	line-height: 1em;
+}
+
+.whatWeDoBackStyle {
+	-fx-text-fill: black;
+	text-decoration: none;
+	-fx-font-size: 18px;
+	-fx-font-weight: 100;
+	line-height: 1.6em;
+}
+
+.whatWeDoInfoParentStyle {
+	-fx-background-color: #EEEEEE;
+}
+
 .box {
-	-fx-background-color: #f1f1f1;
+	-fx-background-color: #E8E8E8;
 	border-bottom: 2px solid #fff;
 	border-left: 1px solid #fff;
 	border-right: 1px solid #fff;

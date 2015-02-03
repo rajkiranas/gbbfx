@@ -103,6 +103,12 @@ public class ScreensFramework extends Application {
     public static String Screen_Menu_Banner = "Screen_Menu_Banner";
     public static String Screen_Menu_BannerFile = "/screensframework/MenuBanner.fxml";
     
+    public static String Screen_HowWeDoIt = "Screen_HowWeDoIt";
+    public static String Screen_HowWeDoItFile = "/screensframework/Screen_HowWeDoIt.fxml";
+    
+    public static String Screen_WhatYouGet = "Screen_WhatYouGet";
+    public static String Screen_WhatYouGetFile = "/screensframework/Screen_WhatYouGet.fxml";
+    
     
     
     private double xOffset;
@@ -153,7 +159,8 @@ public class ScreensFramework extends Application {
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         nav.loadScreen(ScreensFramework.ScreenReportAndGraph, ScreensFramework.ScreenReportAndGraphFile);        
         nav.loadScreen(ScreensFramework.Screen_Home, ScreensFramework.Screen_HomeFile);
-        //nav.loadScreen(ScreensFramework.Screen_Menu_Banner, ScreensFramework.Screen_Menu_BannerFile);
+        nav.loadScreen(ScreensFramework.Screen_HowWeDoIt, ScreensFramework.Screen_HowWeDoItFile);
+        nav.loadScreen(ScreensFramework.Screen_WhatYouGet, ScreensFramework.Screen_WhatYouGetFile);
         
         nav.navigateTo(ScreensFramework.Screen_Home);
         
