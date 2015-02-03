@@ -43,10 +43,12 @@ public class MenuBannerController implements Initializable, ControlledScreen {
 
     @FXML
     private void goToHowWeDoIt(ActionEvent event) {
+        ScreensFramework.getDummyNavigator().navigateTo(ScreensFramework.Screen_HowWeDoIt);
     }
 
     @FXML
     private void goToWhatYouGet(ActionEvent event) {
+        ScreensFramework.getDummyNavigator().navigateTo(ScreensFramework.Screen_WhatYouGet);
     }
 
     @FXML
