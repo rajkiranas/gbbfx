@@ -10,23 +10,23 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen1Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="122.0" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen1Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-    <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+    <AnchorPane layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
         <Label layoutX="26.0" layoutY="9.0" styleClass="screenHeading" text="%First_Screen_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="426.0" layoutY="10.0" styleClass="screenHeading" text="%Lbl_Date_Of_Birth" textFill="#2e7c95" />
+        <Label layoutX="507.0" layoutY="12.0" styleClass="screenHeading" text="%Lbl_Date_Of_Birth" textFill="#2e7c95" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="42.00000011920929" prefWidth="268.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="267.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="42.00000011920929" prefWidth="268.0" spacing="40.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="7.5" AnchorPane.rightAnchor="259.5">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen0" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -34,7 +34,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="268.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="268.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="259.5" AnchorPane.rightAnchor="7.5">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen2" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -46,9 +46,9 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="23.0" layoutY="82.0" mouseTransparent="false" opacity="1.0" prefHeight="332.0" prefWidth="369.0" styleClass="roundEdge">
+    <AnchorPane layoutX="26.0" layoutY="180.0" mouseTransparent="false" opacity="1.0" prefHeight="458.0" prefWidth="452.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="14.0" layoutY="14.0" prefHeight="288.0" prefWidth="340.0">
+        <GridPane id="GridPane" layoutX="33.0" layoutY="23.0" prefHeight="391.0" prefWidth="340.0">
           <children>
             <Label text="%Lbl_Name" GridPane.columnIndex="0" GridPane.rowIndex="0">
               <font>
@@ -111,9 +111,9 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="426.0" layoutY="82.0" prefHeight="332.0" prefWidth="350.0" styleClass="roundEdge">
+    <AnchorPane layoutX="504.0" layoutY="180.0" prefHeight="458.0" prefWidth="506.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="37.0" layoutY="35.0" prefHeight="192.0" prefWidth="117.0">
+        <GridPane id="GridPane" layoutX="59.0" layoutY="35.0" prefHeight="270.0" prefWidth="176.0">
           <children>
             <ComboBox fx:id="cmbDobDay" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Day" GridPane.columnIndex="0" GridPane.rowIndex="1">
               <items>
@@ -142,7 +142,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <GridPane id="GridPane" layoutX="216.0" layoutY="35.0" prefHeight="200.0">
+        <GridPane id="GridPane" layoutX="284.0" layoutY="35.0" prefHeight="270.0" prefWidth="200.0">
           <children>
             <Label text="%Lbl_Birth_Time" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <ComboBox fx:id="cmbHours" prefHeight="35.0" prefWidth="81.0" promptText="%Lbl_Hours" GridPane.columnIndex="0" GridPane.rowIndex="1">
@@ -155,7 +155,7 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <children>
                 <Label font="$x2" text="%Lbl_Age" />
                 <TextField fx:id="txtAge" alignment="CENTER_RIGHT" disable="true" maxWidth="-Infinity" minWidth="-Infinity" onKeyPressed="#setAgeLimit" prefHeight="35.0" prefWidth="50.0" text="" />
@@ -172,11 +172,12 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Label layoutX="37.0" layoutY="255.0" text="%Lbl_Place_Of_Birth" />
-        <TextField fx:id="txtBirthPlace" layoutX="123.0" layoutY="245.0" prefHeight="35.0" prefWidth="200.0" />
-        <Separator layoutX="175.0" layoutY="18.0" orientation="VERTICAL" prefHeight="200.0" />
+        <Label layoutX="84.0" layoutY="351.0" text="%Lbl_Place_Of_Birth" />
+        <TextField fx:id="txtBirthPlace" layoutX="170.0" layoutY="341.0" prefHeight="35.0" prefWidth="200.0" />
+        <Separator layoutX="242.0" layoutY="49.0" orientation="VERTICAL" prefHeight="256.0" />
       </children>
     </AnchorPane>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="35.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

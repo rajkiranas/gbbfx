@@ -7,10 +7,10 @@
 <?import javafx.scene.layout.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen10Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen10Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
         <Label layoutX="14.0" layoutY="8.0" styleClass="screenHeading" text="%Illness_Heading" textFill="#2e7c95" />
       </children>
@@ -35,35 +35,36 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <HBox id="HBox" alignment="TOP_CENTER" layoutX="24.0" layoutY="111.0" prefHeight="248.0" prefWidth="753.0" spacing="5.0" styleClass="diseaseStyle">
+    <HBox id="HBox" alignment="TOP_CENTER" layoutX="69.0" layoutY="223.0" prefHeight="338.0" prefWidth="926.0" spacing="5.0" styleClass="diseaseStyle">
       <children>
-        <ListView fx:id="listSelfDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSelf" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsParents" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listGrandParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsGrandParents" prefHeight="243.0" prefWidth="180.0" />
-        <ListView fx:id="listSiblingsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSiblings" prefHeight="243.0" prefWidth="180.0" />
+        <ListView fx:id="listSelfDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSelf" prefHeight="330.0" prefWidth="225.0" />
+        <ListView fx:id="listParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsParents" prefHeight="330.0" prefWidth="225.0" />
+        <ListView fx:id="listGrandParentsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsGrandParents" prefHeight="330.0" prefWidth="225.0" />
+        <ListView fx:id="listSiblingsDiseases" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#listSelfDiseases" onMouseClicked="#manageMultipleSelectionsSiblings" prefHeight="330.0" prefWidth="225.0" />
       </children>
     </HBox>
-    <Label layoutX="33.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Self" />
-    <Label layoutX="219.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Parents" />
-    <Label layoutX="593.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Siblings" />
-    <Label layoutX="407.0" layoutY="84.0" styleClass="throughoutLabelsStyle" text="%Lbl_Grand_Parents" />
-    <VBox id="VBox" alignment="CENTER" layoutX="33.0" layoutY="360.0" spacing="5.0">
+    <Label layoutX="82.0" layoutY="179.0" prefWidth="27.000091552734375" styleClass="throughoutLabelsStyle" text="%Lbl_Self" />
+    <Label layoutX="305.0" layoutY="184.0" styleClass="throughoutLabelsStyle" text="%Lbl_Parents" />
+    <Label layoutX="765.0" layoutY="184.0" styleClass="throughoutLabelsStyle" text="%Lbl_Siblings" />
+    <Label layoutX="535.0" layoutY="181.0" styleClass="throughoutLabelsStyle" text="%Lbl_Grand_Parents" />
+    <VBox id="VBox" alignment="CENTER" layoutX="74.0" layoutY="579.0" prefHeight="91.0" prefWidth="915.0" spacing="5.0">
       <children>
         <Label text="%Lbl_Add_Other_Disease_Msg" />
-        <HBox id="HBox" alignment="CENTER_LEFT" fillHeight="true" spacing="2.0">
+        <HBox id="HBox" alignment="CENTER_LEFT" fillHeight="true" spacing="11.0">
           <children>
-            <TextField fx:id="txtDiseaseAddSelf" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <TextField fx:id="txtDiseaseAddSelf" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="165.0" />
             <Button mnemonicParsing="false" onAction="#addSelfDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtDiseaseAddParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <TextField fx:id="txtDiseaseAddParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="165.0" />
             <Button mnemonicParsing="false" onAction="#addParentsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtDiseaseAddGrandParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <TextField fx:id="txtDiseaseAddGrandParents" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="165.0" />
             <Button mnemonicParsing="false" onAction="#addGrandParentsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
-            <TextField fx:id="txtDiseaseAddSiblings" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="132.0" />
+            <TextField fx:id="txtDiseaseAddSiblings" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="165.0" />
             <Button mnemonicParsing="false" onAction="#addSiblingsDiseaseToList" prefHeight="30.0" text="%Btn_Add_Addiction" />
           </children>
         </HBox>
       </children>
     </VBox>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

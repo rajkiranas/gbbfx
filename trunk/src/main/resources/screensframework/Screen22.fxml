@@ -9,15 +9,15 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#populateIllnessListView" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen22Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#populateIllnessListView" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen22Controller">
   <children>
     <HBox id="HBox" alignment="TOP_CENTER" layoutX="34.0" layoutY="117.0" prefHeight="261.0000999999975" prefWidth="180.0" spacing="5.0" styleClass="diseaseStyle" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
         <Label layoutX="25.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Illness_Quantification" textFill="#2e7c95" />
       </children>
     </AnchorPane>
-    <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="409.0" prefHeight="35.0" prefWidth="531.0">
+    <HBox alignment="CENTER_RIGHT" layoutX="514.0" layoutY="708.0" prefHeight="35.0" prefWidth="531.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -29,7 +29,7 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
+    <HBox alignment="CENTER_LEFT" layoutX="6.0" layoutY="708.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -37,13 +37,13 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <AnchorPane id="AnchorPane" layoutX="20.0" layoutY="84.0" prefHeight="328.0" prefWidth="759.0" styleClass="roundEdge">
+    <AnchorPane id="AnchorPane" layoutX="34.0" layoutY="190.0" prefHeight="456.0" prefWidth="935.0" styleClass="roundEdge">
       <children>
         <Label layoutX="41.0" layoutY="7.0" styleClass="throughoutLabelsStyle" text="%Lbl_Self" />
-        <ListView id="listSelfHostpitalization" fx:id="listSelfIllness" layoutX="41.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#setFormData" prefHeight="262.0" prefWidth="205.0" />
-        <GridPane id="GridPane" layoutX="269.0" layoutY="31.0" prefHeight="215.0" prefWidth="174.0">
+        <ListView id="listSelfHostpitalization" fx:id="listSelfIllness" layoutX="41.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#setFormData" prefHeight="332.0" prefWidth="205.0" />
+        <GridPane id="GridPane" layoutX="273.0" layoutY="17.0" prefHeight="351.0" prefWidth="195.0">
           <children>
-            <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
               <children>
                 <ComboBox fx:id="cmbIntensity" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="103.0" promptText="%Lbl_Intensity">
                   <items>
@@ -83,7 +83,7 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <GridPane id="GridPane" layoutX="494.0" layoutY="31.0" prefHeight="215.0" prefWidth="247.0">
+        <GridPane id="GridPane" layoutX="545.0" layoutY="31.0" prefHeight="307.0" prefWidth="331.0">
           <children>
             <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
               <children>
@@ -100,7 +100,7 @@
                 <FXCollections fx:factory="observableArrayList" />
               </items>
             </ComboBox>
-            <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <children>
                 <ComboBox fx:id="cmbLossOfManDays" prefHeight="35.0" prefWidth="145.0" promptText="%Lbl_loss_of_mandays">
                   <items>
@@ -120,12 +120,13 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button fx:id="btnAdd" layoutX="494.0" layoutY="263.0" mnemonicParsing="false" onAction="#recordSelfIllnessQuantificationDetails" prefHeight="30.0" text="%Btn_Record_Dtls" />
-        <Separator layoutX="462.0" layoutY="37.0" orientation="VERTICAL" prefHeight="236.0" />
-        <Label layoutX="40.0" layoutY="307.0" styleClass="diseaseStyle, throughoutLabelsStyle" text="%Lbl_Illness_Quantification_Msg" />
+        <Button fx:id="btnAdd" layoutX="545.0" layoutY="352.0" mnemonicParsing="false" onAction="#recordSelfIllnessQuantificationDetails" prefHeight="30.0" text="%Btn_Record_Dtls" />
+        <Separator layoutX="481.0" layoutY="50.0" orientation="VERTICAL" prefHeight="322.0" />
+        <Label layoutX="102.0" layoutY="414.0" styleClass="diseaseStyle, throughoutLabelsStyle" text="%Lbl_Illness_Quantification_Msg" />
       </children>
     </AnchorPane>
-    <fx:include source="ProductBannerScene.fxml" layoutX="-1.0" layoutY="0.0" prefHeight="39.0" prefWidth="800.0000999999975" />
+    <fx:include source="ProductBannerScene.fxml" layoutX="-1.0" layoutY="0.0" prefHeight="39.0" prefWidth="1050.0" />
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

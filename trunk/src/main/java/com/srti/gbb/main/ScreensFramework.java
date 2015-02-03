@@ -97,16 +97,29 @@ public class ScreensFramework extends Application {
     public static String Screen_Illness_Graph = "Screen_Illness_Graph";
     public static String Screen_Illness_GraphFile = "/screensframework/Screen_Illness_Graph.fxml";
     
+    public static String Screen_Home = "Screen_Home";
+    public static String Screen_HomeFile = "/screensframework/Screen_Home.fxml";
+    
+    public static String Screen_Menu_Banner = "Screen_Menu_Banner";
+    public static String Screen_Menu_BannerFile = "/screensframework/MenuBanner.fxml";
+    
     
     
     private double xOffset;
     private double yOffset;
     
+    private ScreensNavigator nav = new ScreensNavigator();
+    private static ScreensNavigator dummyNavigator;
+    
+    public static ScreensNavigator getDummyNavigator()
+    {
+        return dummyNavigator;
+    }
     
     @Override
     public void start(final Stage primaryStage) {
         
-        ScreensNavigator nav = new ScreensNavigator();
+        dummyNavigator=nav;
         nav.loadScreen(ScreensFramework.screen0ID, ScreensFramework.screen0File);
         nav.loadScreen(ScreensFramework.screen21ID, ScreensFramework.screen21File);
         nav.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
@@ -133,15 +146,16 @@ public class ScreensFramework extends Application {
         
         nav.loadScreen(ScreensFramework.screen19ID, ScreensFramework.screen19File);
         nav.loadScreen(ScreensFramework.screen20ID, ScreensFramework.screen20File);
-        
-                
+                        
         nav.loadScreen(ScreensFramework.ScreenPhysiologicalGraph, ScreensFramework.ScreenPhysiologicalGraphFile);        
         nav.loadScreen(ScreensFramework.Screen_Life_Style_Graph, ScreensFramework.Screen_Life_Style_GraphFile);        
         nav.loadScreen(ScreensFramework.Screen_Illness_Graph, ScreensFramework.Screen_Illness_GraphFile);
         nav.loadScreen(ScreensFramework.ThankyouSceneId, ScreensFramework.ThankyouSceneFile);
         nav.loadScreen(ScreensFramework.ScreenReportAndGraph, ScreensFramework.ScreenReportAndGraphFile);        
+        nav.loadScreen(ScreensFramework.Screen_Home, ScreensFramework.Screen_HomeFile);
+        //nav.loadScreen(ScreensFramework.Screen_Menu_Banner, ScreensFramework.Screen_Menu_BannerFile);
         
-        nav.navigateTo(ScreensFramework.screen0ID);
+        nav.navigateTo(ScreensFramework.Screen_Home);
         
         Group root = new Group();
         root.getChildren().addAll(nav);
@@ -162,7 +176,7 @@ public class ScreensFramework extends Application {
         });
         
         
-        Scene scene = new Scene(root,800,450);
+        Scene scene = new Scene(root,1050,750);
         //root.setLayoutX(800);
         scene.getStylesheets().add("/styles/Styles.css");
         primaryStage.initStyle(StageStyle.TRANSPARENT);

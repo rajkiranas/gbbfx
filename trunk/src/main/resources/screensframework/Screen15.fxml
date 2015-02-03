@@ -9,24 +9,24 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen15Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen15Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="112.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
-        <Label layoutX="21.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Colour_Heading">
+        <Label layoutX="87.0" layoutY="9.0" styleClass="screenHeading" text="%Lbl_Colour_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="297.0" layoutY="13.0" styleClass="screenHeading" text="%Lbl_Taste_Heading" textFill="$x1" />
-        <Label layoutX="564.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Idol_Heading" textFill="#2e7c95" />
+        <Label layoutX="385.0" layoutY="9.0" styleClass="screenHeading" text="%Lbl_Taste_Heading" textFill="$x1" />
+        <Label layoutX="700.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Idol_Heading" textFill="#2e7c95" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="700.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -34,7 +34,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" layoutX="266.0" layoutY="406.0" prefHeight="43.0" prefWidth="531.0">
+    <HBox alignment="CENTER_RIGHT" layoutX="511.0" layoutY="700.0" prefHeight="43.0" prefWidth="531.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -46,10 +46,10 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="14.0" layoutY="103.0" prefHeight="278.0" prefWidth="259.0" styleClass="roundEdge">
+    <AnchorPane layoutX="69.0" layoutY="196.0" prefHeight="350.0" prefWidth="280.0" styleClass="roundEdge">
       <children>
         <Label layoutX="21.0" layoutY="14.0" styleClass="throughoutLabelsStyle" text="%Lbl_Colour_Qestion" />
-        <GridPane id="GridPane" layoutX="21.0" layoutY="44.0" prefHeight="220.0" prefWidth="234.0">
+        <GridPane id="GridPane" layoutX="21.0" layoutY="44.0" prefHeight="292.0" prefWidth="234.0">
           <children>
             <CheckBox fx:id="chkRed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" styleClass="redFont" text="%Lbl_Colour_Option_Red" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <CheckBox fx:id="chkYellow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" styleClass="yellowBg" text="%Lbl_Colour_Option_Yellow" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -72,10 +72,10 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="291.0" layoutY="103.0" prefHeight="278.0" prefWidth="251.0" styleClass="roundEdge">
+    <AnchorPane layoutX="379.0" layoutY="196.0" prefHeight="350.0" prefWidth="280.0" styleClass="roundEdge">
       <children>
         <Label layoutX="14.0" layoutY="14.0" styleClass="throughoutLabelsStyle" text="%Lbl_Taste_Qestion" />
-        <GridPane id="GridPane" layoutX="25.0" layoutY="43.0" prefHeight="162.0" prefWidth="234.0">
+        <GridPane id="GridPane" layoutX="25.0" layoutY="43.0" prefHeight="279.0" prefWidth="234.0">
           <children>
             <CheckBox fx:id="chkSweet" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="%Lbl_Taste_Option_Sweet" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <CheckBox fx:id="chkSour" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="%Lbl_Taste_Option_Sour" GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -96,7 +96,7 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="564.0" layoutY="103.0" prefHeight="278.0" prefWidth="222.0" styleClass="roundEdge">
+    <AnchorPane layoutX="692.0" layoutY="196.0" prefHeight="350.0" prefWidth="280.0" styleClass="roundEdge">
       <children>
         <Label layoutX="14.0" layoutY="14.0" styleClass="throughoutLabelsStyle" text="%Lbl_Idol_Qestion" />
         <TextField fx:id="txtIdolName" layoutX="11.0" layoutY="74.0" prefHeight="40.0" prefWidth="200.0" promptText="%Lbl_Idol_Name_Input_Prompt" />
@@ -104,6 +104,7 @@
         <Hyperlink fx:id="linkShowPrevious" layoutX="104.0" layoutY="146.0" onAction="#showPrevious" prefWidth="108.0" text="%Link_View_Previous" visible="true" />
       </children>
     </AnchorPane>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

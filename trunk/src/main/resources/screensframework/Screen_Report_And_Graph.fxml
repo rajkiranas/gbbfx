@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srti.gbb.controller.ReportAndGraphController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.ReportAndGraphController">
   <children>
-    <fx:include layoutX="0.0" layoutY="0.0" source="ProductBannerScene.fxml" />
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="708.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -22,18 +22,19 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-      <ScrollPane layoutX="15.0" layoutY="52.0" prefHeight="353.0" prefWidth="771.0">
-         <content>
-            <LineChart fx:id="demoLineGraph" prefHeight="348.0" prefWidth="755.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </LineChart>
-         </content>
-      </ScrollPane>
+    <ScrollPane layoutX="31.0" layoutY="120.0" prefHeight="523.0" prefWidth="964.0">
+      <content>
+        <LineChart fx:id="demoLineGraph" prefHeight="491.0" prefWidth="936.0">
+          <xAxis>
+            <CategoryAxis side="BOTTOM" />
+          </xAxis>
+          <yAxis>
+            <NumberAxis side="LEFT" />
+          </yAxis>
+        </LineChart>
+      </content>
+    </ScrollPane>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

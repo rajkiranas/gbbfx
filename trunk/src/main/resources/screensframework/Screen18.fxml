@@ -10,9 +10,9 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#enableDisableChildrenSection" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen18Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#enableDisableChildrenSection" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen18Controller">
   <children>
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+    <HBox alignment="CENTER_LEFT" layoutX="7.0" layoutY="700.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -20,7 +20,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="407.0" prefHeight="43.0" prefWidth="531.0">
+    <HBox alignment="CENTER_RIGHT" layoutX="505.0" layoutY="700.0" prefHeight="43.0" prefWidth="531.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -33,7 +33,7 @@
       </padding>
     </HBox>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="118.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
         <Label layoutX="55.0" layoutY="8.0" styleClass="screenHeading" text="%Lbl_Spouse_And_Children" textFill="#2e7c95" />
       </children>
@@ -41,9 +41,9 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="47.0" layoutY="87.0" prefHeight="320.0" prefWidth="710.0" styleClass="roundEdge">
+    <AnchorPane layoutX="49.0" layoutY="193.0" prefHeight="462.0" prefWidth="913.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="42.0" layoutY="11.0" prefHeight="260.0" prefWidth="246.0">
+        <GridPane id="GridPane" layoutX="75.0" layoutY="11.0" prefHeight="419.0" prefWidth="291.0">
           <children>
             <Label styleClass="throughoutLabelsStyle" text="%Lbl_Spouse" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField id="txtNameMother" fx:id="txtSpouseName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Input_Prompt_Wife_Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -81,8 +81,8 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Separator layoutX="355.0" layoutY="14.0" orientation="VERTICAL" prefHeight="292.0" />
-        <GridPane id="GridPane" fx:id="childrenGrid" layoutX="429.0" layoutY="11.0" prefHeight="260.0" prefWidth="262.0">
+        <Separator layoutX="430.0" layoutY="45.0" orientation="VERTICAL" prefHeight="371.0" />
+        <GridPane id="GridPane" fx:id="childrenGrid" layoutX="500.0" layoutY="21.0" prefHeight="353.0" prefWidth="299.0">
           <children>
             <Label styleClass="throughoutLabelsStyle" text="%Lbl_Child" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField id="txtNameMother" fx:id="txtChildName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" promptText="%Lbl_Children_Input_Prompt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -129,13 +129,14 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Button id="btnAddFM" fx:id="btnAddChild" layoutX="429.0" layoutY="274.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="157.0" text="%Lbl_Add_Child_Btn" />
-        <Hyperlink fx:id="linkShowPrevious" layoutX="593.0" layoutY="276.0" onAction="#showPrevious" prefWidth="103.0" text="%Link_View_Previous" visible="true" />
+        <Button id="btnAddFM" fx:id="btnAddChild" layoutX="500.0" layoutY="387.0" mnemonicParsing="false" onAction="#addFamilyMember" prefHeight="26.0" prefWidth="157.0" text="%Lbl_Add_Child_Btn" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="664.0" layoutY="389.0" onAction="#showPrevious" prefWidth="103.0" text="%Link_View_Previous" visible="true" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

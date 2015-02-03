@@ -181,7 +181,7 @@
 
 .msgsStyle
 {
-    -fx-font-size: 12px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #105675;
 }
@@ -189,4 +189,66 @@
 .msgsBg
 {
     -fx-background-color: #E7E7E7;
+}
+
+.menuButtonsStyle
+{
+/*    -fx-background-color: #F3F3F3;*/
+    -fx-background-color: #FFFFFF;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: #004E75;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.whiteBg {
+    -fx-background-color: white;
+}
+
+.sliderBox {
+	-fx-background-color: #CDD2D6;
+	box-sizing: border-box;
+	-fx-text-fill: #004E75;
+	display: block;
+	position: relative;
+	-fx-text-alignment: center;
+	text-decoration: none;
+	-fx-font-size: 70px;
+	-fx-font-weight: 900;
+	letter-spacing: -0.1em;
+	line-height: 0.8em;
+}
+
+.watchingStyle {
+	-fx-text-fill: #0e6896;
+	display: block;
+	-fx-font-size: 24px;
+	-fx-font-weight: bold;
+	letter-spacing: -0.05em;
+	line-height: 0.8em;
+	text-transform: uppercase;
+}
+
+.backStyle {
+	-fx-text-fill: #0e6896;
+	text-decoration: none;
+	-fx-font-size: 18px;
+	-fx-font-weight: 100;
+	line-height: 1.6em;
+}
+
+.box {
+	-fx-background-color: #f1f1f1;
+	border-bottom: 2px solid #fff;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	box-sizing: border-box;
+	-fx-text-fill: #404040;
+	display: inline-block;
+	-fx-font-size: 14px;
+	line-height: 1;
+	position: relative;
+	-fx-text-alignment: center;
+	text-decoration: none;
+	width: 50%;
 }

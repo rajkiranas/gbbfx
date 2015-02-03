@@ -10,25 +10,25 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen7Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen7Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="116.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
-        <Label layoutX="35.0" layoutY="8.0" styleClass="screenHeading" text="%Regular_Prayers_Heading">
+        <Label layoutX="58.0" layoutY="7.0" styleClass="screenHeading" text="%Regular_Prayers_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="409.0" layoutY="11.0" styleClass="screenHeading" text="%Social_Service_Heading" textFill="$x1" />
+        <Label layoutX="525.0" layoutY="8.0" styleClass="screenHeading" text="%Social_Service_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="14.0" layoutY="93.0" prefHeight="305.0" prefWidth="359.0" styleClass="roundEdge">
+    <AnchorPane layoutX="51.0" layoutY="195.0" prefHeight="422.0" prefWidth="435.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="46.0" layoutY="-8.0" prefHeight="270.0" prefWidth="289.0">
+        <GridPane id="GridPane" layoutX="55.0" layoutY="0.0" prefHeight="379.0" prefWidth="345.0">
           <children>
             <Label text="%Lbl_Regular" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Individual" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -72,18 +72,18 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="10.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="403.0" layoutY="93.0" minHeight="305.0" prefHeight="305.0" prefWidth="383.0" styleClass="roundEdge">
+    <AnchorPane layoutX="525.0" layoutY="198.0" minHeight="305.0" prefHeight="417.0" prefWidth="435.0" styleClass="roundEdge">
       <children>
-        <CheckBox id="chkIsRegularPray" fx:id="chkSocialService" layoutX="19.0" layoutY="3.0" mnemonicParsing="false" onAction="#toggleSocialServiceCombos" prefHeight="39.0" styleClass="throughoutLabelsStyle" text="%Lbl_Social_Service_Checkbox_Text" />
-        <GridPane id="GridPane" layoutX="17.0" layoutY="35.0" prefHeight="207.0" prefWidth="359.0">
+        <CheckBox id="chkIsRegularPray" fx:id="chkSocialService" layoutX="14.0" layoutY="3.0" mnemonicParsing="false" onAction="#toggleSocialServiceCombos" prefHeight="39.0" styleClass="throughoutLabelsStyle" text="%Lbl_Social_Service_Checkbox_Text" />
+        <GridPane id="GridPane" layoutX="28.0" layoutY="35.0" prefHeight="277.0" prefWidth="384.0">
           <children>
             <Label text="%Lbl_Cash" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Kind" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -121,11 +121,11 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Label layoutX="25.0" layoutY="248.0" prefHeight="43.0" prefWidth="51.0" text="%Lbl_Area_Of_Work" wrapText="true" />
-        <TextField fx:id="txtAreaOfWork" layoutX="80.0" layoutY="250.0" prefHeight="35.0" prefWidth="242.0" />
+        <Label layoutX="28.0" layoutY="321.0" prefHeight="43.0" prefWidth="51.0" text="%Lbl_Area_Of_Work" wrapText="true" />
+        <TextField fx:id="txtAreaOfWork" layoutX="83.0" layoutY="323.0" prefHeight="35.0" prefWidth="242.0" />
       </children>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="270.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="262.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen6" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -133,7 +133,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="10.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen8" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -145,6 +145,7 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />
