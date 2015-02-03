@@ -9,17 +9,17 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen17Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen17Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <VBox id="VBox" alignment="CENTER" layoutX="121.0" layoutY="101.0" prefHeight="130.0" prefWidth="572.0" spacing="15.0" styleClass="msgsBg, roundEdge">
+    <VBox id="VBox" alignment="CENTER" layoutX="121.0" layoutY="116.0" prefHeight="321.0" prefWidth="827.0" spacing="15.0" styleClass="msgsBg, roundEdge">
       <children>
-        <Label alignment="CENTER" styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P1" wrapText="true" />
-        <Label styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P2" />
-        <Label styleClass="throughoutLabelsStyle" text="%Upload_Info_Message_P3" />
+        <Label alignment="CENTER" styleClass="msgsStyle" text="%Upload_Info_Message_P1" wrapText="true" />
+        <Label styleClass="msgsStyle" text="%Upload_Info_Message_P2" />
+        <Label styleClass="msgsStyle" text="%Upload_Info_Message_P3" />
       </children>
     </VBox>
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="407.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
+    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="700.0" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -27,7 +27,8 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <Button fx:id="submitDataBtn" layoutX="325.0" layoutY="297.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submitDataAndShowReport" prefHeight="35.0" prefWidth="150.0" text="%Lbl_Submit" />
+    <Button fx:id="submitDataBtn" layoutX="450.0" layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submitDataAndShowReport" prefHeight="35.0" prefWidth="150.0" text="%Lbl_Submit" />
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

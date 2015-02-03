@@ -10,25 +10,25 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen4Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen4Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="114.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
         <Label layoutX="33.0" layoutY="8.0" styleClass="screenHeading" text="%Education_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="415.0" layoutY="8.0" styleClass="screenHeading" text="%Average_Academic_Performance" textFill="$x1" />
+        <Label layoutX="533.0" layoutY="8.0" styleClass="screenHeading" text="%Average_Academic_Performance" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="14.0" layoutY="91.0" minHeight="310.0" prefHeight="317.0" prefWidth="386.0" styleClass="roundEdge">
+    <AnchorPane layoutX="41.0" layoutY="195.0" minHeight="310.0" prefHeight="394.0" prefWidth="433.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="14.0" layoutY="24.0" prefHeight="255.0" prefWidth="366.0">
+        <GridPane id="GridPane" layoutX="12.0" layoutY="24.0" prefHeight="305.0" prefWidth="407.0">
           <children>
             <Label text="%Lbl_School_College_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Class_Degree" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -66,13 +66,13 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Hyperlink fx:id="linkShowPrevious" layoutX="75.0" layoutY="284.0" onAction="#showPrevious" prefWidth="106.0" text="%Link_View_Previous" visible="true" />
-        <Button fx:id="btnAddSchool" layoutX="189.0" layoutY="281.0" mnemonicParsing="false" onAction="#addSchoolAndClearForm" prefHeight="26.0" prefWidth="186.0" text="%Btn_Add_More_Schools" />
+        <Hyperlink fx:id="linkShowPrevious" layoutX="75.0" layoutY="344.0" onAction="#showPrevious" prefWidth="106.0" text="%Link_View_Previous" visible="true" />
+        <Button fx:id="btnAddSchool" layoutX="190.0" layoutY="342.0" mnemonicParsing="false" onAction="#addSchoolAndClearForm" prefHeight="26.0" prefWidth="186.0" text="%Btn_Add_More_Schools" />
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="415.0" layoutY="91.0" prefHeight="317.0" prefWidth="366.0" styleClass="roundEdge">
+    <AnchorPane layoutX="532.0" layoutY="193.0" prefHeight="394.0" prefWidth="477.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="32.0" layoutY="14.0" prefHeight="285.0" prefWidth="320.0">
+        <GridPane id="GridPane" layoutX="32.0" layoutY="14.0" prefHeight="354.0" prefWidth="411.0">
           <children>
             <Label text="%Lbl_Avg_School_Per" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_School_Repeat" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -108,7 +108,7 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="269.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="262.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen3" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -116,7 +116,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="10.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen5" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -128,6 +128,7 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

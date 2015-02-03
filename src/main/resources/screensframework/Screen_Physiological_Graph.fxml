@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srti.gbb.controller.ScreenPhysiologicalController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.ScreenPhysiologicalController">
   <children>
-    <fx:include layoutX="0.0" layoutY="0.0" source="ProductBannerScene.fxml" />
-    <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="415.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
+    <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
+    <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="708.0" minHeight="25.0" mouseTransparent="false" prefHeight="35.0" prefWidth="531.0" spacing="40.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToPreviousScreen" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -22,30 +22,76 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-      <ScrollPane layoutX="15.0" layoutY="52.0" prefHeight="353.0" prefWidth="771.0">
-         <content>
-            <LineChart fx:id="demoLineGraph" prefHeight="348.0" prefWidth="755.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </LineChart>
-         </content>
-      </ScrollPane>
-      <HBox alignment="CENTER_RIGHT" layoutX="269.0" layoutY="415.0" prefHeight="35.0" prefWidth="531.0">
-         <children>
-            <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
-         </children>
-         <padding>
-            <Insets right="10.0" />
-         </padding>
-      </HBox>
+    <ScrollPane layoutX="29.0" layoutY="117.0" prefHeight="553.0" prefViewportHeight="353.0" prefViewportWidth="771.0" prefWidth="1007.0">
+      <content>
+        <VBox>
+          <children>
+            <ScrollPane prefHeight="353.0" prefWidth="992.0">
+              <content>
+                <LineChart fx:id="demoLineGraph" prefHeight="348.0" prefWidth="984.0">
+                  <xAxis>
+                    <CategoryAxis side="BOTTOM" />
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis side="LEFT" />
+                  </yAxis>
+                </LineChart>
+              </content>
+            </ScrollPane>
+            <GridPane gridLinesVisible="true">
+              <children>
+                <Label text="Items" />
+                <Label text="Below Average" GridPane.columnIndex="1" />
+                <Label text="Average" GridPane.columnIndex="2" />
+                <Label text="Above Average" GridPane.columnIndex="3" />
+                <Label prefHeight="17.0" prefWidth="188.0" text="BMI (Body Mass Index)" GridPane.rowIndex="1" />
+                <Label prefHeight="17.0" prefWidth="187.0" text=" Waist-to-Hip Ratio " GridPane.rowIndex="2" />
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="191.0" text="*" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="183.0" text="*" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label prefHeight="17.0" prefWidth="188.0" text=" Resting Pulse Rate " GridPane.rowIndex="4" />
+                <Label prefHeight="17.0" prefWidth="183.0" text=" Blood Pressure SYS" GridPane.rowIndex="5" />
+                <Label prefHeight="17.0" prefWidth="187.0" text=" Blood Pressure DIA" GridPane.rowIndex="6" />
+                <Label prefHeight="17.0" prefWidth="188.0" text="Breath Holding Capacity " GridPane.rowIndex="3" />
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="188.0" text="*" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="185.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="185.0" text="*" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="185.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </VBox>
+      </content>
+    </ScrollPane>
+    <HBox alignment="CENTER_RIGHT" layoutX="515.0" layoutY="705.0" prefHeight="35.0" prefWidth="531.0">
+      <children>
+        <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToNextScreen" styleClass="previousNextButtons" text="%Btn_Next">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets right="10.0" />
+      </padding>
+    </HBox>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

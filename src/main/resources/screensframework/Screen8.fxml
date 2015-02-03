@@ -10,25 +10,25 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen8Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen8Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="121.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
         <Label layoutX="21.0" layoutY="11.0" styleClass="screenHeading" text="%Traveling_Hobby_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="441.0" layoutY="11.0" styleClass="screenHeading" text="%Hobby_Entertainment_Heading" textFill="$x1" />
+        <Label layoutX="538.0" layoutY="8.0" styleClass="screenHeading" text="%Hobby_Entertainment_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="305.0" prefWidth="413.0" styleClass="roundEdge">
+    <AnchorPane layoutX="29.0" layoutY="201.0" prefHeight="439.0" prefWidth="457.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="10.0" layoutY="46.0" prefHeight="211.0" prefWidth="396.0">
+        <GridPane id="GridPane" layoutX="10.0" layoutY="46.0" prefHeight="350.0" prefWidth="422.0">
           <children>
             <Label text="%Lbl_Individual_Traveling" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Family_Traveling" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -98,14 +98,47 @@
         <Label layoutX="14.0" layoutY="21.0" prefWidth="167.0" styleClass="throughoutLabelsStyle" text="%Lbl_Travel" wrapText="false" />
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="441.0" layoutY="100.0" prefHeight="305.0" prefWidth="344.0" styleClass="roundEdge">
+    <AnchorPane layoutX="532.0" layoutY="201.0" prefHeight="433.0" prefWidth="457.0" styleClass="roundEdge">
       <children>
-        <Label layoutX="180.0" layoutY="20.0" styleClass="throughoutLabelsStyle" text="%Lbl_Entertainment" />
-        <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="163.0" layoutY="46.0" onMouseClicked="#manageMultipleSelections" prefHeight="241.0" prefWidth="167.0" styleClass="diseaseStyle" />
-        <Separator layoutX="154.0" layoutY="29.0" orientation="VERTICAL" prefHeight="259.0" />
+        <Label layoutX="197.0" layoutY="20.0" styleClass="throughoutLabelsStyle" text="%Lbl_Entertainment" />
+        <ListView fx:id="entertainmentList" disable="false" editable="false" layoutX="197.0" layoutY="47.0" onMouseClicked="#manageMultipleSelections" prefHeight="360.0" prefWidth="233.0" styleClass="diseaseStyle" />
+        <Separator layoutX="176.0" layoutY="46.0" orientation="VERTICAL" prefHeight="360.0" />
+        <GridPane id="GridPane" layoutX="21.0" layoutY="-1.0" prefHeight="407.0" prefWidth="128.0" styleClass="throughoutLabelsStyle">
+          <children>
+            <VBox id="VBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+              <children>
+                <ComboBox fx:id="cmbHobby" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#chkForNoneHobby" prefHeight="35.0" prefWidth="128.0" promptText="%Input_Prompt_Hobby">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList" />
+                  </items>
+                </ComboBox>
+                <Label prefHeight="17.0" text="%Lbl_Or" wrapText="true" />
+                <TextField id="txtReligion" fx:id="txtHobby" prefHeight="35.0" prefWidth="128.0" />
+              </children>
+            </VBox>
+            <Label prefWidth="52.0" styleClass="throughoutLabelsStyle" text="%Lbl_Hobby" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cmbHobbyHoursPerWeek" prefHeight="35.0" prefWidth="110.0" promptText="%Input_Prompt_Hobby_Params" GridPane.columnIndex="0" GridPane.rowIndex="2">
+              <items>
+                <FXCollections fx:factory="observableArrayList" />
+              </items>
+            </ComboBox>
+            <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="114.0" text="%Link_View_Previous" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Button fx:id="btnAddHobby" mnemonicParsing="false" onAction="#addHobbyToList" prefHeight="35.0" text="%Btn_Add_More_Hobbies" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="137.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
       </children>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="269.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="531.0" spacing="40.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="262.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen7" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -113,7 +146,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="269.0" AnchorPane.rightAnchor="0.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="531.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="10.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen9" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -125,39 +158,7 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <GridPane id="GridPane" layoutX="453.0" layoutY="117.0" prefHeight="288.0" prefWidth="142.0" styleClass="throughoutLabelsStyle">
-      <children>
-        <VBox id="VBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
-          <children>
-            <ComboBox fx:id="cmbHobby" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#chkForNoneHobby" prefHeight="35.0" prefWidth="128.0" promptText="%Input_Prompt_Hobby">
-              <items>
-                <FXCollections fx:factory="observableArrayList" />
-              </items>
-            </ComboBox>
-            <Label prefHeight="17.0" text="%Lbl_Or" wrapText="true" />
-            <TextField id="txtReligion" fx:id="txtHobby" prefHeight="35.0" prefWidth="128.0" />
-          </children>
-        </VBox>
-        <Label prefWidth="52.0" styleClass="throughoutLabelsStyle" text="%Lbl_Hobby" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <ComboBox fx:id="cmbHobbyHoursPerWeek" prefHeight="35.0" prefWidth="110.0" promptText="%Input_Prompt_Hobby_Params" GridPane.columnIndex="0" GridPane.rowIndex="2">
-          <items>
-            <FXCollections fx:factory="observableArrayList" />
-          </items>
-        </ComboBox>
-        <Hyperlink fx:id="linkShowPrevious" onAction="#showPrevious" prefWidth="114.0" text="%Link_View_Previous" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <Button fx:id="btnAddHobby" mnemonicParsing="false" onAction="#addHobbyToList" prefHeight="35.0" text="%Btn_Add_More_Hobbies" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-      </children>
-      <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="137.0" />
-      </columnConstraints>
-      <rowConstraints>
-        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
-      </rowConstraints>
-    </GridPane>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

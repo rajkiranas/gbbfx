@@ -9,10 +9,10 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen11Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen11Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="117.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
         <Label layoutX="14.0" layoutY="8.0" styleClass="screenHeading" text="%Questions_Ans_Heading">
           <textFill>
@@ -24,12 +24,12 @@
         <URL value="file:/C:/Users/rajkiran/Documents/NetBeansProjects/GBBfx/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="74.0" prefHeight="346.0" prefWidth="779.0">
+    <AnchorPane id="AnchorPane" layoutX="36.0" layoutY="193.0" prefHeight="450.0" prefWidth="972.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="-10.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="250.0">
+        <GridPane id="GridPane" layoutX="14.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="290.0">
           <children>
-            <Label fx:id="q1" prefHeight="105.0" prefWidth="220.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <VBox id="VBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="250.0" spacing="5.0" styleClass="option1" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Label fx:id="q1" prefHeight="91.0" prefWidth="289.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <VBox id="VBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="101.0" prefWidth="289.0" spacing="5.0" styleClass="option1" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <children>
                 <CheckBox id="chkQ1" fx:id="q1o1a" mnemonicParsing="false" prefHeight="30.0" prefWidth="231.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox fx:id="q1o1b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="231.0" styleClass="answersStyle" text="" wrapText="true" />
@@ -39,14 +39,14 @@
                 <Insets left="1.0" fx:id="x2" />
               </padding>
             </VBox>
-            <VBox id="VBox" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="85.0" prefWidth="250.0" spacing="5.0" styleClass="option2" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <VBox id="VBox" alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="101.0" prefWidth="289.0" spacing="5.0" styleClass="option2" GridPane.columnIndex="0" GridPane.rowIndex="3">
               <children>
                 <CheckBox id="q1o2" fx:id="q1o2a" mnemonicParsing="false" prefHeight="30.0" prefWidth="231.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox fx:id="q1o2b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="231.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox fx:id="q1o2c" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="231.0" styleClass="answersStyle" text="" wrapText="true" />
               </children>
             </VBox>
-            <VBox id="VBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="81.0" prefWidth="250.0" spacing="5.0" styleClass="option3" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <VBox id="VBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="97.0" prefWidth="289.0" spacing="5.0" styleClass="option3" GridPane.columnIndex="0" GridPane.rowIndex="4">
               <children>
                 <CheckBox id="q1o3" fx:id="q1o3a" mnemonicParsing="false" prefHeight="31.0" prefWidth="231.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox fx:id="q1o3b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="231.0" styleClass="answersStyle" text="" wrapText="true" />
@@ -66,11 +66,11 @@
             <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Separator layoutX="237.0" layoutY="3.0" orientation="VERTICAL" prefHeight="338.0" />
-        <GridPane id="GridPane" layoutX="240.0" layoutY="0.0" prefHeight="338.0" prefWidth="289.0">
+        <Separator layoutX="308.0" layoutY="31.0" orientation="VERTICAL" prefHeight="395.0" />
+        <GridPane id="GridPane" layoutX="335.0" layoutY="13.0" prefHeight="420.0" prefWidth="290.0">
           <children>
-            <Label fx:id="q2" prefHeight="114.0" prefWidth="240.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <VBox id="VBox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="289.0" spacing="5.0" styleClass="option1" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Label fx:id="q2" prefHeight="93.0" prefWidth="289.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <VBox id="VBox" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.00009999999747" prefWidth="289.0" spacing="5.0" styleClass="option1" GridPane.columnIndex="0" GridPane.rowIndex="2">
               <children>
                 <CheckBox id="q2o1" fx:id="q2o1a" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" prefWidth="245.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox id="q1o1b" fx:id="q2o1b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="245.0" styleClass="answersStyle" text="" wrapText="true" />
@@ -107,8 +107,8 @@
             <RowConstraints maxHeight="109.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
-        <Separator layoutX="526.0" layoutY="0.0" orientation="VERTICAL" prefHeight="338.0" />
-        <GridPane id="GridPane" layoutX="529.0" layoutY="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="259.0">
+        <Separator layoutX="641.0" layoutY="31.0" orientation="VERTICAL" prefHeight="395.0" />
+        <GridPane id="GridPane" layoutX="661.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="290.0">
           <children>
             <Label fx:id="q3" prefHeight="114.0" prefWidth="212.0" styleClass="questionsStyle" text="" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <VBox id="VBox" alignment="CENTER" padding="$x2" prefWidth="245.0" spacing="5.0" styleClass="option1" GridPane.columnIndex="0" GridPane.rowIndex="2">
@@ -125,7 +125,7 @@
                 <CheckBox id="q1o1b" fx:id="q3o2c" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="23.0" prefWidth="240.0" styleClass="answersStyle" text="" wrapText="true" />
               </children>
             </VBox>
-            <VBox id="VBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="81.0" prefWidth="259.0" spacing="5.0" styleClass="option3" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <VBox id="VBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" padding="$x2" prefHeight="91.0" prefWidth="289.0" spacing="5.0" styleClass="option3" GridPane.columnIndex="0" GridPane.rowIndex="4">
               <children>
                 <CheckBox id="q3o3" fx:id="q3o3a" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="240.0" styleClass="answersStyle" text="" wrapText="true" />
                 <CheckBox id="q1o1b" fx:id="q3o3b" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="21.0" prefWidth="240.0" styleClass="answersStyle" text="" wrapText="true" />
@@ -167,6 +167,7 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
+    <fx:include source="MenuBanner.fxml" layoutX="1.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

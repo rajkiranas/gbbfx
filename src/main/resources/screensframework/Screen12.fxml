@@ -10,23 +10,23 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen12Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen12Controller">
   <children>
     <fx:include source="ProductBannerScene.fxml" layoutX="0.0" layoutY="0.0" />
-    <AnchorPane layoutX="0.0" layoutY="39.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="800.0" styleClass="screenHeadingBg">
+    <AnchorPane layoutX="0.0" layoutY="118.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg">
       <children>
-        <Label layoutX="407.0" layoutY="13.0" styleClass="screenHeading" text="%Address_Heading">
+        <Label layoutX="534.0" layoutY="5.0" styleClass="screenHeading" text="%Address_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="14.0" layoutY="9.0" styleClass="screenHeading" text="%Second_Screen_Heading" textFill="$x1" />
+        <Label layoutX="52.0" layoutY="9.0" styleClass="screenHeading" text="%Second_Screen_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="file:/home/rajkirans/NetBeansProjects/fx/GBBfxSvn/trunk/src/main/resources/styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="533.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="266.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="43.0" prefWidth="533.0" spacing="40.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="260.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen0" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -34,7 +34,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="533.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="533.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="10.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen2" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -46,9 +46,9 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane id="AnchorPane" layoutX="11.0" layoutY="86.0" minHeight="325.0" minWidth="325.0" prefHeight="325.0" prefWidth="367.0" styleClass="roundEdge">
+    <AnchorPane id="AnchorPane" layoutX="45.0" layoutY="193.0" minHeight="325.0" minWidth="325.0" prefHeight="432.0" prefWidth="451.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="11.0" layoutY="25.0" prefHeight="261.0" prefWidth="352.0">
+        <GridPane id="GridPane" layoutX="11.0" layoutY="25.0" prefHeight="378.0" prefWidth="416.0">
           <children>
             <Label text="%Lbl_Mobile" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField fx:id="txtMobile" alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -96,9 +96,9 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="400.0" layoutY="87.0" prefHeight="327.0" prefWidth="386.0" styleClass="roundEdge">
+    <AnchorPane layoutX="532.0" layoutY="196.0" prefHeight="425.0" prefWidth="451.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" alignment="TOP_LEFT" layoutX="12.0" layoutY="7.0" prefHeight="313.0" prefWidth="352.0">
+        <GridPane id="GridPane" alignment="TOP_LEFT" layoutX="12.0" layoutY="7.0" prefHeight="396.0" prefWidth="412.0">
           <children>
             <Label text="%Lbl_House" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_Area" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -136,6 +136,7 @@
         </GridPane>
       </children>
     </AnchorPane>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="39.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

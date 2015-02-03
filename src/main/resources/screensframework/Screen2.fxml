@@ -9,23 +9,23 @@
 <?import javafx.scene.paint.*?>
 <?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen2Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.Screen2Controller">
   <children>
-    <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-    <AnchorPane layoutY="35.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="535.0000999999975" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+    <fx:include source="ProductBannerScene.fxml" layoutY="0.0" maxWidth="-Infinity" minHeight="35.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    <AnchorPane layoutY="115.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="1050.0" styleClass="screenHeadingBg" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <children>
         <Label layoutX="37.0" layoutY="8.0" styleClass="screenHeading" text="%Meal_Type_Heading">
           <textFill>
             <Color blue="0.584" green="0.486" red="0.180" fx:id="x1" />
           </textFill>
         </Label>
-        <Label layoutX="437.0" layoutY="8.0" styleClass="screenHeading" text="%Exercise_Heading" textFill="$x1" />
+        <Label layoutX="536.0" layoutY="12.0" styleClass="screenHeading" text="%Exercise_Heading" textFill="$x1" />
       </children>
       <stylesheets>
         <URL value="@../styles/Styles.css" />
       </stylesheets>
     </AnchorPane>
-    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="42.00000011920929" prefWidth="268.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="267.0">
+    <HBox alignment="CENTER_LEFT" mouseTransparent="false" prefHeight="42.00000011920929" prefWidth="268.0" spacing="40.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="260.0">
       <children>
         <Button alignment="CENTER_LEFT" cancelButton="false" defaultButton="false" mnemonicParsing="false" onAction="#goToScreen1" styleClass="previousNextButtons" text="%Btn_Previous" textAlignment="LEFT" underline="false" />
       </children>
@@ -33,7 +33,7 @@
         <Insets left="10.0" />
       </padding>
     </HBox>
-    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="268.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="268.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="10.0">
       <children>
         <Button alignment="CENTER_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#goToScreen3" styleClass="previousNextButtons" text="%Btn_Next">
           <HBox.margin>
@@ -45,9 +45,9 @@
         <Insets right="10.0" />
       </padding>
     </HBox>
-    <AnchorPane layoutX="32.0" layoutY="90.0" prefHeight="304.0" prefWidth="380.0" styleClass="roundEdge">
+    <AnchorPane layoutX="51.0" layoutY="196.0" prefHeight="394.0" prefWidth="435.0" styleClass="roundEdge">
       <children>
-        <GridPane id="GridPane" layoutX="11.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="243.0" prefWidth="368.0">
+        <GridPane id="GridPane" layoutX="11.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="368.0">
           <children>
             <Label text="%Lbl_Diet" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label text="%Lbl_NonVeg_Per_Week" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -115,7 +115,7 @@
         </GridPane>
       </children>
     </AnchorPane>
-    <AnchorPane layoutX="437.0" layoutY="91.0" prefHeight="304.0" prefWidth="323.0" styleClass="roundEdge">
+    <AnchorPane layoutX="539.0" layoutY="196.0" prefHeight="396.0" prefWidth="449.0" styleClass="roundEdge">
       <children>
         <CheckBox fx:id="chkRegularExercise" layoutX="28.0" layoutY="16.0" mnemonicParsing="false" onAction="#toggleExerciseCombos" styleClass="throughoutLabelsStyle" text="%Lbl_CheckBox_Regular_Exercise" />
         <GridPane id="GridPane" prefHeight="249.0" prefWidth="295.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="41.0">
@@ -154,6 +154,7 @@
         </GridPane>
       </children>
     </AnchorPane>
+    <fx:include source="MenuBanner.fxml" layoutX="0.0" layoutY="35.0" />
   </children>
   <stylesheets>
     <URL value="@../styles/Styles.css" />

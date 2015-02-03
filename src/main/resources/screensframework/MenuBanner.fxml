@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-preview-i18n-resource ../default_en_US.properties?>
+
+<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1050.0" styleClass="whiteBg" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.srti.gbb.controller.MenuBannerController">
+  <children>
+    <Button layoutX="0.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToHome" styleClass="menuButtonsStyle" text="%Menu1" />
+    <Button layoutX="74.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToHowWeDoIt" styleClass="menuButtonsStyle" text="%Menu2" />
+    <Button layoutX="208.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToWhatYouGet" styleClass="menuButtonsStyle" text="%Menu3" />
+    <Button layoutX="342.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToGetStarted" styleClass="menuButtonsStyle" text="%Menu4" />
+    <Button layoutX="462.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToAboutUs" styleClass="menuButtonsStyle" text="%Menu5" />
+    <Button layoutX="553.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToContactUs" styleClass="menuButtonsStyle" text="%Menu6" />
+  </children>
+  <stylesheets>
+    <URL value="@../styles/Styles.css" />
+  </stylesheets>
+</AnchorPane>
